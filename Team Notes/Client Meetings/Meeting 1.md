@@ -2,9 +2,9 @@
 
 ## Meeting Date: 18/10/24
 
-Meeting to introduce our group to Louise.
-Discuss project brief
-Ask a few baseline questions to better understand the project and to discuss what direction it needs to go in. 
+- Meeting to introduce our group to Louise.
+- Discuss project brief
+- Ask a few baseline questions to better understand the project and to discuss what direction it needs to go in. 
 
 1. Would you be able to brief us about this project from your point of view and what you’re expecting from us? 
 2. Are we able to see the current system? Are we building on this foundation or creating a completely new set-up? (answered in previous question and have been sent the excel doc)
