@@ -48,7 +48,7 @@ Allows managers to control other staff permissions, ensuring only authorized use
 
 #### Scenario
 Scenario 1:
-team members attempt to view another team’s project progress
+Team members attempt to view another team’s project progress
 Then they are denied access and shown a message that said that they have no permission to view the project
 
 Scenario 2:
