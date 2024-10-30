@@ -5,7 +5,7 @@ It has three parts. The first part is an overview, which includes the introducti
 
 ### Overview and Justification
 
-**Client details and their goals in this space**
+**Write client details and their goals in this space**
 
 
 
