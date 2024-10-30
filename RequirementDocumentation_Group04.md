@@ -2,7 +2,7 @@
 ## Introduction
 This document is the Requirement Specification for our CERP (Climate Emergency Response Plan) Target Tracking Project. It has three parts. The first part is an overview, which includes the introduction, project scope, and technical description of the system. The second part is about how we collaborated with the client to gather requirements and list features that the user needed for our proposed solution. Finally, the last part will talk about the risks we may face during the project, the software development life cycle, and our plan to make it more organized.
 ### Overview and Justification
-Our client, Durham County Council, is the local authority for the non-metropolitan county of County Durham. The council is dedicated to achieving numerous net-zero carbon emission goals for council operations by 2030. With numerous ongoing projects to reach this target, they currently track their progress using an Excel spreadsheet accessible to multiple stakeholders. 
+Our client, Durham County Council, is the local authority for the non-metropolitan county of County Durham. The Council is dedicated to achieving numerous net-zero carbon emission goals for council operations by 2030. With numerous ongoing projects to reach this target, they currently track their progress using an Excel spreadsheet accessible to multiple stakeholders. 
 
 However, the existing system poses some challenges—it operates within Microsoft Teams and requires frequent manual interventions, including reminder notifications and permission management. Complicated visuals, unclear role assignments and duplication of project entries also hinder the tracking process.
 
