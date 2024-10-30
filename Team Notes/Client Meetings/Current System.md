@@ -51,7 +51,9 @@ ii) Renewable Energy
 ### Project Categories
 
 i) Capitalised Maintenance
+
 ii) Leisure Transformation
+
 iii) None
 
 - Related work programmes if any 
@@ -59,6 +61,7 @@ iii) None
 
 ### Determining Action Classification
 i) Business as usual
+
 ii) Additional
 
 - Business as usual activity is actions that were undertaken before the Climate Emergency was declared in 2019 (before 2019)
