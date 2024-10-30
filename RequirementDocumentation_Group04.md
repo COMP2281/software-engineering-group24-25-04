@@ -16,7 +16,13 @@ Their project goals are to:
 
 •	Enhance the security of the project’s data, ensuring only relevant parties can modify the input
 
-•	Automate periodic reminders to update progress, ensuring consistent communication across teams.
+•	Automate periodic reminders to update progress, ensuring consistent communication across teams
+
+The proposed system seeks to replace Excel-based tracking with a more user-friendly, web-based platform. The system will enable stakeholders to update their targets independently, provide automated reminders, and generate visual reports accessible across various computers. In addition, by offering more secure and role-based access, the system ensures that each user inputs or updates data without affecting others’ entries.
+
+Generally, this solution aims to facilitate efficient progress tracking and optimise the Council’s resource management towards their net-zero target.
+
+
 
 ### Project Scope
 ### System Description
