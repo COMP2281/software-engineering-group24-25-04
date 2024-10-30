@@ -24,6 +24,18 @@ The current legacy system is an Excel sheet used to display projects, themes, an
 ##### 5. Display Issues
 - For tasks with large amounts of complex data, the page is cluttered and lacks clarity. The structure between projects is chaotic, data is not intuitive, and it easily leads to redundancy.
 
+#### Alternative Solution: Jira
+
+Jira is a project management and issue tracking tool developed by Atlassian, widely used in software development and IT projects. Initially designed for bug tracking and defect management, it has now become a feature-rich platform for managing various project processes, including task assignment, progress tracking, project management, and agile development (such as Scrum and Kanban).
+
+##### Advantages:
+- Rich features, including task assignment, progress tracking, issue management, and time tracking, supporting multiple project management methodologies.
+- Chart support (burndown charts, cumulative flow diagrams, control charts) for visualizing task progress.
+
+##### Disadvantages:
+- Mobile application is available, but mobile functionality is somewhat limited compared to the desktop version, making it challenging to fully utilize all features on mobile.
+- Pricing is relatively high for enterprises, with costs increasing as the number of users grows.
+- The interface is complex for new users and requires time to adapt.
 
 ## Solution Requirements
 ### Requirements Elicitation
