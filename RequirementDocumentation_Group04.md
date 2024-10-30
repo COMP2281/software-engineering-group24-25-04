@@ -4,7 +4,7 @@ This document is the Requirement Specification for our CERP (Climate Emergency R
 It has three parts. The first part is an overview, which includes the introduction, project scope, and technical description of the system. The second part is about how we collaborated with the client to gather requirements and list features that the user needed for our proposed solution. Finally, the last part will talk about the risks we may face during the project, the software development life cycle, and our plan to make it more organized.
 
 ### Overview and Justification
-However, the existing system poses some challenges—it operates within Microsoft Teams and requires frequent manual interventions, including reminder notifications and permission management. Complicated visuals, unclear role assignments and duplication of project entries also hinder the tracking process.
+
 
 
 Our proposed system seeks to replace Excel-based tracking with a more user-friendly, web-based platform. The system will enable stakeholders to update their targets independently, provide automated reminders, and generate visual reports accessible across various computers. In addition, by offering more secure and role-based access, the system ensures that each user inputs or updates data without affecting others’ entries.
