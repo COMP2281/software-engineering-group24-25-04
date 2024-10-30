@@ -1,6 +1,6 @@
 # Requirement Documentation
 ## Introduction
-This document is the Requirement Specification for our CERP Target Tracking Project. It has three parts. The first part is an overview, which includes the introduction, project scope, and technical description of the system. The Second part is about how we collaborated with the client to gather requirements and list features that the user needed for our proposed solution. Finally, the last part will talk about the risks we may face during the project, the software development lifecycle, and the plan we will do to make it more organized.
+This document is the Requirement Specification for our CERP Target Tracking Project. It has three parts. The first part is an overview, which includes the introduction, project scope, and technical description of the system. The second part is about how we collaborated with the client to gather requirements and list features that the user needed for our proposed solution. Finally, the last part will talk about the risks we may face during the project, the software development life cycle, and our plan to make it more organized.
 ### Overview and Justification
 ### Project Scope
 ### System Description
