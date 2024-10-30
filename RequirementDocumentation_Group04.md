@@ -15,7 +15,7 @@ Generally, our solution aims to facilitate efficient progress tracking and optim
 
 
 ### Project Scope
-Our target tracking system aims to provide the council with a well-structured, automated platform to track progress towards their net-zero carbon emissions target.
+Our target tracking system aims to provide the council with a well-structured, automated platform to track progress towards the council's net-zero carbon emissions target.
 
 Their current approach, which relies on a shared Excel spreadsheet within Microsoft Teams, requires frequent manual interventions, including reminder notifications and permission management. Difficult-to-interpret visuals, unclear role assignments, irregular updates and duplication of project entries also hinder the tracking process. Our project proposes a web-based application that addresses these issues by offering automated reminders, secure and role-based access and clear visual progress indicators, enabling a more productive, transparent and collaborative tracking process.
 
