@@ -5,7 +5,7 @@ It has three parts. The first part is an overview, which includes the introducti
 
 ### Overview and Justification
 
-
+**Client details and their goals in this space**
 
 
 
@@ -15,9 +15,14 @@ Generally, our solution aims to facilitate efficient progress tracking and optim
 
 
 ### Project Scope
+Our target tracking system aims to provide the council with a well-structured, automated platform to track progress towards their net-zero carbon emissions target.
 
+Their current approach, which relies on a shared Excel spreadsheet within Microsoft Teams, requires frequent manual interventions, including reminder notifications and permission management. Difficult-to-interpret visuals, unclear role assignments, irregular updates and duplication of project entries also hinder the tracking process. Our project proposes a web-based application that addresses these issues by offering automated reminders, secure and role-based access and clear visual progress indicators, enabling a more productive, transparent and collaborative tracking process.
 
+Our software’s primary purpose is to streamline the council’s target tracking while maintaining data integrity and accessibility. The core goals include reducing administrative load through automated permissions and reminders, enhancing data visualisation for more accessible progress assessments, and clarifying role assignments to prevent confusion. These goals are aligned with the council’s operational efficiency needs and commitment to transparency with the governing group, Carbon Capital Group, and other external stakeholders.
+Our software's user base includes project managers, team members, potential data analysts who will interact directly with the system, and external partners who will access the reports.
 
+By enabling consistent real-time updates and user-friendly data management, our target tracking system is designed to support the council’s goals efficiently and effectively.
 
 ### System Description
 
