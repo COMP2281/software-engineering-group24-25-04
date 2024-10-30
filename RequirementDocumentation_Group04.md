@@ -1,8 +1,10 @@
 # Requirement Documentation
-## Introduction
-This document is the Requirement Specification for our CERP (Climate Emergency Response Plan) Target Tracking Project. It has three parts. The first part is an overview, which includes the introduction, project scope, and technical description of the system. The second part is about how we collaborated with the client to gather requirements and list features that the user needed for our proposed solution. Finally, the last part will talk about the risks we may face during the project, the software development life cycle, and our plan to make it more organized.
+### Introduction
+This document is the Requirement Specification for our CERP (Climate Emergency Response Plan) Target Tracking Project.
+It has three parts. The first part is an overview, which includes the introduction, project scope, and technical description of the system. The second part is about how we collaborated with the client to gather requirements and list features that the user needed for our proposed solution. Finally, the last part will talk about the risks we may face during the project, the software development life cycle, and our plan to make it more organized.
+
 ### Overview and Justification
-Our client, Durham County Council, is the local authority for the non-metropolitan county of County Durham. The Council is dedicated to achieving numerous net-zero carbon emission goals for council operations by 2030. With numerous ongoing projects to reach this target, they currently track their progress using an Excel spreadsheet accessible to multiple stakeholders. 
+Our client, Durham County Council, is the local authority for the non-metropolitan county of County Durham. The council is dedicated to achieving numerous net-zero carbon emission goals for council operations by 2030, through their CERP (Climate Emergency Response Plan). With numerous ongoing projects to reach this target, they currently track their progress using an Excel spreadsheet accessible to multiple stakeholders. 
 
 However, the existing system poses some challenges—it operates within Microsoft Teams and requires frequent manual interventions, including reminder notifications and permission management. Complicated visuals, unclear role assignments and duplication of project entries also hinder the tracking process.
 
@@ -18,10 +20,9 @@ Their project goals are to:
 
 •	Automate periodic reminders to update progress, ensuring consistent communication across teams
 
-The proposed system seeks to replace Excel-based tracking with a more user-friendly, web-based platform. The system will enable stakeholders to update their targets independently, provide automated reminders, and generate visual reports accessible across various computers. In addition, by offering more secure and role-based access, the system ensures that each user inputs or updates data without affecting others’ entries.
+Our proposed system seeks to replace Excel-based tracking with a more user-friendly, web-based platform. The system will enable stakeholders to update their targets independently, provide automated reminders, and generate visual reports accessible across various computers. In addition, by offering more secure and role-based access, the system ensures that each user inputs or updates data without affecting others’ entries.
 
-Generally, this solution aims to facilitate efficient progress tracking and optimise the Council’s resource management towards their net-zero target.
-
+Generally, this solution aims to facilitate efficient progress tracking and optimise the council’s resource management towards their net-zero target.
 
 
 ### Project Scope
