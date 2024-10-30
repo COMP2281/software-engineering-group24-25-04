@@ -7,6 +7,8 @@ It has three parts. The first part is an overview, which includes the introducti
 
 
 
+
+
 Our proposed system seeks to replace Excel-based tracking with a more user-friendly, web-based platform. The system will enable stakeholders to update their targets independently, provide automated reminders, and generate visual reports accessible across various computers. In addition, by offering more secure and role-based access, the system ensures that each user inputs or updates data without affecting others’ entries.
 
 Generally, our solution aims to facilitate efficient progress tracking and optimise the council’s resource management towards their net-zero target.
