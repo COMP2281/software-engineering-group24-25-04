@@ -30,32 +30,33 @@ By enabling consistent real-time updates and user-friendly data management, our 
 
 The current legacy system is an Excel sheet used to display projects, themes, and specific descriptions of actions related to building decarbonization. The current system has the following limitations:
 
-##### 1. Insufficient Data Security
+#### Insufficient Data Security
 - All project data cannot be permission-controlled and can be accessed and modified by anyone, posing a risk of data exposure and unintentional edits.
 
-##### 2. Lack of Support for Multi-user Collaboration
+#### Lack of Support for Multi-user Collaboration
 - When multiple people work on the same project, version conflicts arise, leading to data overwrites and loss.
 
-##### 3. Lack of Data Synchronization
+#### Lack of Data Synchronization
 - When team members update the file, it often requires manual sharing to synchronize data, resulting in delays.
 
-##### 4. Limited Functionality
+#### Limited Functionality
 - The system cannot display ongoing projects or project progress.
 - Attachments cannot be added to the document, affecting the completeness of information.
 
-##### 5. Display Issues
+#### Display Issues
 - For tasks with large amounts of complex data, the page is cluttered and lacks clarity. The structure between projects is chaotic, data is not intuitive, and it easily leads to redundancy.
 
-#### Alternative Solution: Jira
+#### Alternative Solutions
 
+#### Jira
 Jira is a project management and issue tracking tool developed by Atlassian, widely used in software development and IT projects. Initially designed for bug tracking and defect management, it has now become a feature-rich platform for managing various project processes, including task assignment, progress tracking, project management, and agile development (such as Scrum and Kanban).
 
-##### Advantages:
-- Rich features, including task assignment, progress tracking, issue management, and time tracking, supporting multiple project management methodologies.
+#### Advantages:
+- There is a number of useful features, including task assignment, progress tracking, issue management, and time tracking, supporting multiple project management methodologies.
 - Chart support (burndown charts, cumulative flow diagrams, control charts) for visualizing task progress.
 
-##### Disadvantages:
-- Mobile application is available, but mobile functionality is somewhat limited compared to the desktop version, making it challenging to fully utilize all features on mobile.
+#### Disadvantages:
+- A mobile application is available, but mobile functionality is somewhat limited compared to the desktop version, making it challenging to fully utilize all features on mobile.
 - Pricing is relatively high for enterprises, with costs increasing as the number of users grows.
 - The interface is complex for new users and requires time to adapt.
 
