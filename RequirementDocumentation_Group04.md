@@ -57,15 +57,8 @@ Notion is a website that is flexible for tracking goals. It allows users to set,
 However, Notion can be overwhelming to use as there is a variety of features, which can overwhelm new users. Furthermore, despite it allowing you to create and track goals, it doesn’t have a tool specifically designed for this. The template system can also be confusing to use as although they state that certain templates are free, it suggests paying and then presents multiple pop-ups offering different templates that all cost money.
 
 #### Non-Commercial App
-##### Pros:
--	Fast: Mobile apps are often hosted on local databases, therefore consistent fast speeds.
--	Offline: Can be used offline without Wi-Fi or data if already downloaded.
--	Push Notifications: Apps allow push notifications to be integrated more easily. This was something we discussed adding to our solution but after talking to Louise it was decided that quarterly email reminders to update goals is what they need.
-##### Cons:
--	The project brief favoured a web-based application
--	Maintenance: Need regular updates compared to web applications
--	Storage: If it’s a large app it’ll take up a lot of storage on a mobile phone
--	Download: Requires downloading from an app store
+A non-commercial app-based solution would allow us to create a specific platform that can be designed specifically for the solution. It also provides a fast and responsive application, due to it being hosted on a local database, enabling consistent fast speeds. Once downloaded it also allows offline use, making it more accessible. Apps also allow push notifications to be integrated more easily. However, after speaking to the client, push notifications were not what they were after. The downsides of creating an app would be the maintenance required. In comparison a web-based application wouldn’t require as regular updates. Furthermore, if it’s a large app, it will likely take up a lot of storage on a mobile phone. It also requires downloading from an app store prior to use. The project brief also favours a web-based application, which is why we won’t be creating a non-commercial app. 
+
 
 #### Non-Commercial Web Based Solution
 ##### Pros:
