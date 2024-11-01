@@ -61,14 +61,7 @@ A non-commercial app-based solution would allow us to create a specific platform
 
 
 #### Non-Commercial Web Based Solution
-##### Pros:
--	Requested by user
--	Web based platforms can generally be used anywhere provided there is an internet connection. They can be accessed on desktop, laptops and mobile devices. 
--	We can customise the solution to have specific features the brief requests as well as keeping it simple and not overwhelming by having an abundance of features that aren’t necessary.
-##### Cons:
--	Takes time to build the website, as opposed to using a prebuilt one. 
--	Takes time to learn the specific skills needed to build the website
--	May lack ongoing development once solution has been built. Commercial solutions tend to have frequent updates.
+A web-based application was requested by the client and would allow us to customise the solution to have specific features the brief requests. Rather than having an abundance of features that aren’t necessary. Web based platforms can generally be used anywhere provided there is an internet connection. They can be accessed on desktop, laptops and mobile devices. But it takes time to build the website as well as learning the specific skills that would be needed, as opposed to using a prebuilt commercial one. Additionally, once the solution has been built, it may lack ongoing development, in contrast with commercial solutions that tend to have frequent updates.
 
 
 #### Jira
