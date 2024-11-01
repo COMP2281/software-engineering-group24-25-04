@@ -46,7 +46,7 @@ The current legacy system is an Excel sheet used to display projects, themes, an
 #### Display Issues
 - For tasks with large amounts of complex data, the page is cluttered and lacks clarity. The structure between projects is chaotic, data is not intuitive, and it easily leads to redundancy.
 
-#### Alternative Solutions
+#### Existing/Alternative Solutions
 
 #### Jira
 Jira is a project management and issue tracking tool developed by Atlassian, widely used in software development and IT projects. Initially designed for bug tracking and defect management, it has now become a feature-rich platform for managing various project processes, including task assignment, progress tracking, project management, and agile development (such as Scrum and Kanban).
