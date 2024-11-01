@@ -53,19 +53,8 @@ Following our initial discussion of the brief, the team conducted research on so
 As a team we researched various commercial and non-commercial solutions for the problem. 
 
 #### Notion
-Notion is a website that is flexible for tracking goals. It allows users to set, monitor and edit their goals in a structured way.
-##### Pros:
--	User friendly for teams: It is designed to be clear and intuitive which makes it easier for varying skill levels.
--	Collaboration: It allows collaboration on projects, as well as sharing notes and task assignment.
--	Cost efficient: There is a free version that provides an abundance of features, as well as a paid version that offers a much wider range of features for a reasonable price.
--	Portable: Notion can be accessed from the web or locally on an app. This allows it to be used anywhere
--	Documentation: There is an extensive number of tutorials and documentation as it is a widely used platform
--	Database: Notion has a database format that you can add to track the goals. This would allow a similar system to be implemented to what they currently use, with the excel spreadsheet, but in a better format. This is something that we’d like to implement in our chosen solution.
--	Progress Bar/Status: Notion has a progress bar and status system that allows efficient tracking of the goals. This is something we will implement into our chosen solution.
-##### Cons:
--	Overwhelming: As Notion offers a wide variety of features, it can be quite overwhelming to use especially when new to the platform. 
--	No goal tracking: Although it allows you create and track goals, it doesn’t have tools designed specifically for this. So, it’s not necessarily the most efficient software to use.
--	Confusing: The template system is confusing to use. When selecting a free template, it suggests paying and then shows multiple pop-ups asking to add multiple different templates that cost money. 
+Notion is a website that is flexible for tracking goals. It allows users to set, monitor and edit their goals in a structured way. It is user friendly, designed in a clear and intuitive way. It allows collaboration for projects, which is relevant to the CERP solution. It is cost efficient as it operates with a free version as well as a paid one. It can be accessed from the web or locally on an app, making it portable. There is also heavy documentation and tutorials online. Features we plan to include in our solution that notion provide is their progress bar and status option. This allows efficient tracking of the goals. We would also like to implement something similar to the database system that Notion offers. 
+However, Notion can be overwhelming to use as there is a variety of features, which can overwhelm new users. Furthermore, despite it allowing you to create and track goals, it doesn’t have a tool specifically designed for this. The template system can also be confusing to use as although they state that certain templates are free, it suggests paying and then presents multiple pop-ups offering different templates that all cost money.
 
 #### Non-Commercial App
 ##### Pros:
