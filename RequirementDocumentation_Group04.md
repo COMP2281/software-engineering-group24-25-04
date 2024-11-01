@@ -52,16 +52,9 @@ Following our initial discussion of the brief, the team conducted research on so
 
 As a team we researched various commercial and non-commercial solutions for the problem. 
 
-#### Notion
-Notion is a website that is flexible for tracking goals. It allows users to set, monitor and edit their goals in a structured way. It is user friendly, designed in a clear and intuitive way. It allows collaboration for projects, which is relevant to the CERP solution. It is cost efficient as it operates with a free version as well as a paid one. It can be accessed from the web or locally on an app, making it portable. There is also heavy documentation and tutorials online. Features we plan to include in our solution that notion provide is their progress bar and status option. This allows efficient tracking of the goals. We would also like to implement something similar to the database system that Notion offers. 
-However, Notion can be overwhelming to use as there is a variety of features, which can overwhelm new users. Furthermore, despite it allowing you to create and track goals, it doesn’t have a tool specifically designed for this. The template system can also be confusing to use as although they state that certain templates are free, it suggests paying and then presents multiple pop-ups offering different templates that all cost money.
-
-#### Non-Commercial App
-A non-commercial app-based solution would allow us to create a specific platform that can be designed specifically for the solution. It also provides a fast and responsive application, due to it being hosted on a local database, enabling consistent fast speeds. Once downloaded it also allows offline use, making it more accessible. Apps also allow push notifications to be integrated more easily. However, after speaking to the client, push notifications were not what they were after. The downsides of creating an app would be the maintenance required. In comparison a web-based application wouldn’t require as regular updates. Furthermore, if it’s a large app, it will likely take up a lot of storage on a mobile phone. It also requires downloading from an app store prior to use. The project brief also favours a web-based application, which is why we won’t be creating a non-commercial app. 
-
-
-#### Non-Commercial Web Based Solution
-A web-based application was requested by the client and would allow us to customise the solution to have specific features the brief requests. Rather than having an abundance of features that aren’t necessary. Web based platforms can generally be used anywhere provided there is an internet connection. They can be accessed on desktop, laptops and mobile devices. But it takes time to build the website as well as learning the specific skills that would be needed, as opposed to using a prebuilt commercial one. Additionally, once the solution has been built, it may lack ongoing development, in contrast with commercial solutions that tend to have frequent updates.
+Notion is a user friendly, collaborative and cost-efficient commercial website. Notion provides a progress bar and status mode, allowing efficient tracking of goals. We plan to use this in our final solution. However, it can be overwhelming to use.
+A non-commercial app allows customisation. Using a local database would increase load times and once downloaded it could be used anywhere. It allows push notifications, but after discussions with client, this isn’t required. The brief also favours a web-based solution.
+A non-commercial website is also customisable and can be loaded on any device provided there’s an internet connection. However, it will take time to build and learn the specific skills needed.
 
 
 #### Jira
