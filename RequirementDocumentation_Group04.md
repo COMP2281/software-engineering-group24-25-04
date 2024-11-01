@@ -48,8 +48,6 @@ The current legacy system is an Excel sheet used to display projects, themes, an
 
 #### Existing/Alternative Solutions
 
-Following our initial discussion of the brief, the team conducted research on solutions for the problem
-
 As a team we researched various commercial and non-commercial solutions for the problem. 
 
 Notion is a user friendly, collaborative and cost-efficient commercial website. Notion provides a progress bar and status mode, allowing efficient tracking of goals. We plan to use this in our final solution. However, it can be overwhelming to use.
