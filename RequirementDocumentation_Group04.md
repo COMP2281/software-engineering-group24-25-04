@@ -50,7 +50,7 @@ The current legacy system is an Excel sheet used to display projects, themes, an
 
 As a team we researched various commercial and non-commercial solutions for the problem. 
 
-Notion is a user friendly, collaborative and cost-efficient commercial website. Notion provides a progress bar and status mode, allowing efficient tracking of goals. We plan to use this in our final solution. However, it can be overwhelming to use.
+A commercial website, Notion, is a user friendly, collaborative and cost-efficient commercial website. Notion provides a progress bar and status mode, allowing efficient tracking of goals. We plan to use this in our final solution. However, it can be overwhelming to use.
 A non-commercial app allows customisation. Using a local database would increase load times and once downloaded it could be used anywhere. It allows push notifications, but after discussions with client, this isn’t required. The brief also favours a web-based solution.
 A non-commercial website is also customisable and can be loaded on any device provided there’s an internet connection. However, it will take time to build and learn the specific skills needed.
 
