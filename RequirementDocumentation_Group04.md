@@ -53,7 +53,7 @@ Jira is a project management and issue tracking tool developed by Atlassian, wid
 
 #### Advantages:
 - There is a number of useful features, including task assignment, progress tracking, issue management, and time tracking, supporting multiple project management methodologies.
-- Chart support (burndown charts, cumulative flow diagrams, control charts) for visualizing task progress.
+- It supports different types of charts, such as burndown charts, cumulative flow diagrams, control charts for visualizing task progress.
 
 #### Disadvantages:
 - A mobile application is available, but mobile functionality is somewhat limited compared to the desktop version, making it challenging to fully utilize all features on mobile.
