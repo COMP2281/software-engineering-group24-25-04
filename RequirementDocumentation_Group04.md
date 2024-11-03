@@ -23,6 +23,12 @@ Our software’s primary purpose is to streamline the council’s target trackin
 Our software's user base includes project managers, team members, potential data analysts who will interact directly with the system, and external partners who will access the reports.
 
 By enabling consistent real-time updates and user-friendly data management, our target tracking system is designed to support the council’s goals efficiently and effectively.
+#### Exact Users Base for this Project
+- Durham County Council: They are responsible for managing projects to achieve net zero emissions and must input, track, and report progress on their respective projects.
+- External Partners:  Collaborators from other organizations need to have access to track progress
+- Project Stakeholders: Staff who are involved in specific projects and need to update their progress regularly.
+
+
 
 ### System Description
 
