@@ -26,25 +26,11 @@ By enabling consistent real-time updates and user-friendly data management, our 
 
 ### System Description
 
-#### Current System and Issues
+#### Current System
 
-The current legacy system is an Excel sheet used to display projects, themes, and specific descriptions of actions related to building decarbonization. The current system has the following limitations:
+As previously mentioned, the current target-tracking system is an Excel spreadsheet. As a platform, Excel is limited in its features for advanced multi-project management, deeming it insufficient for our client’s needs.
+Multi-user collaboration on Excel is limited, there is no way of allowing users to see real-time changes, increasing the risk of losing data integrity. There is a way to set password protection, but managing user permissions is less flexible, not supporting secure, role-based access on specific targets. The spreadsheet itself lacks clarity: the tabular format isn’t suitable for tracking progress on multiple, complex, goals, and makes it hard for users to focus on one specific task. Excel does allow users to visualise data as charts, but this functionality is limited and redundant for our client. Unlike dedicated project management software, Excel doesn’t provide a clear. visual representation for the amount of progress on each goal, and there is no way of automating reminders.
 
-#### Insufficient Data Security
-- All project data cannot be permission-controlled and can be accessed and modified by anyone, posing a risk of data exposure and unintentional edits.
-
-#### Lack of Support for Multi-user Collaboration
-- When multiple people work on the same project, version conflicts arise, leading to data overwrites and loss.
-
-#### Lack of Data Synchronization
-- When team members update the file, it often requires manual sharing to synchronize data, resulting in delays.
-
-#### Limited Functionality
-- The system cannot display ongoing projects or project progress.
-- Attachments cannot be added to the document, affecting the completeness of information.
-
-#### Display Issues
-- For tasks with large amounts of complex data, the page is cluttered and lacks clarity. The structure between projects is chaotic, data is not intuitive, and it easily leads to redundancy.
 
 #### Existing/Alternative Solutions
 
@@ -54,18 +40,7 @@ A commercial website, Notion, is a user friendly, collaborative and cost-efficie
 A non-commercial app allows customisation. Using a local database would increase load times and once downloaded it could be used anywhere. It allows push notifications, but after discussions with client, this isn’t required. The brief also favours a web-based solution.
 A non-commercial website is also customisable and can be loaded on any device provided there’s an internet connection. However, it will take time to build and learn the specific skills needed.
 
-
-#### Jira
-Jira is a project management and issue tracking tool developed by Atlassian, widely used in software development and IT projects. Initially designed for bug tracking and defect management, it has now become a feature-rich platform for managing various project processes, including task assignment, progress tracking, project management, and agile development (such as Scrum and Kanban).
-
-#### Advantages:
-- There is a number of useful features, including task assignment, progress tracking, issue management, and time tracking, supporting multiple project management methodologies.
-- It supports different types of charts, such as burndown charts, cumulative flow diagrams, control charts for visualizing task progress.
-
-#### Disadvantages:
-- A mobile application is available, but mobile functionality is somewhat limited compared to the desktop version, making it challenging to fully utilize all features on mobile.
-- Pricing is relatively high for enterprises, with costs increasing as the number of users grows.
-- The interface is complex for new users and requires time to adapt.
+Jira is a project management and issue tracking tool developed by Atlassian, widely used in software development and IT projects. Initially designed for bug tracking and defect management, it has now become a feature-rich platform for managing various project processes, including task assignment, progress tracking, project management, and agile development (such as Scrum and Kanban). There is a number of useful features, including task assignment, progress tracking, issue management, and time tracking, supporting multiple project management methodologies. It supports different types of charts, such as burndown charts, cumulative flow diagrams, control charts for visualizing task progress. However, pricing is relatively high for enterprises, with costs increasing as the number of users grow, and the interface is complex for new users and requires time to adapt.
 
 ## Solution Requirements
 ### Requirements Elicitation
