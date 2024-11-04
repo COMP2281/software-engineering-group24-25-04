@@ -32,6 +32,8 @@ By enabling consistent real-time updates and user-friendly data management, our 
 
 ### System Description
 
+(cut this down to a page)
+
 #### Current System
 
 As previously mentioned, the current target-tracking system is an Excel spreadsheet. As a platform, Excel is limited in its features for advanced multi-project management, deeming it insufficient for our client’s needs.
@@ -47,6 +49,16 @@ A non-commercial app allows customisation. Using a local database would increase
 A non-commercial website is also customisable and can be loaded on any device provided there’s an internet connection. However, it will take time to build and learn the specific skills needed.
 
 Jira is a project management and issue tracking tool developed by Atlassian, widely used in software development and IT projects. Initially designed for bug tracking and defect management, it has now become a feature-rich platform for managing various project processes, including task assignment, progress tracking, project management, and agile development (such as Scrum and Kanban). There is a number of useful features, including task assignment, progress tracking, issue management, and time tracking, supporting multiple project management methodologies. It supports different types of charts, such as burndown charts, cumulative flow diagrams, control charts for visualizing task progress. However, pricing is relatively high for enterprises, with costs increasing as the number of users grow, and the interface is complex for new users and requires time to adapt.
+
+#### New System
+
+Following our analysis on the current system and research on alternative solutions, we concluded that the new system to be built shall be a React.js web application. Using React.js will allow for a customisable, dynamic and responsive user interface, allowing us to create components in order to display the targets in a user-friendly way. We shall take inspiration from the commercial solutions to help us design the features that will allow the users to visualise each goal, without the complexity the current system and other solutions hold.
+
+In the backend, we will make use of the REST API with node.js to handle requests to the server, and store all changes made to each target data in a secure database. We will implement robust data management, ensuring data integrity is kept and data redundancy is minimised.
+
+To incorporate user permissions, we plan to use an API that will allow workers to log in to the system with their work Outlook email, enabling us to tailor each target to each person. We will need to check with Durham City Council on whether we have permission to do so, and if not we shall incorporate a login system where each person must create an account, login details securely stored, and give administrative roles the ability to assign each person to their goal. In any case, we shall build the system so that each user’s view of all targets is specifically tailored to them.
+
+We shall use another API that will send monthly emails to each person about the targets they are working on. Again, we must liaise with Durham City Council to ensure we have the permission to do so.
 
 ## Solution Requirements
 ### Requirements Elicitation
