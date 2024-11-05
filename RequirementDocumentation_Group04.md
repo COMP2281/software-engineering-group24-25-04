@@ -5,8 +5,7 @@ It has three parts. The first part is an overview, which includes the introducti
 
 ### Overview and Justification
 
-**Write client details and their goals in this space**
-
+Durham County Council, our client, is committed to attaining net-zero carbon emissions by 2030 to address Durham's climate crisis. They seek to develop a tool to efficiently manage and assess the progress of their climate initiatives, replacing their current, inefficient Excel-based system. Their goals are to enhance usability, provide stakeholders with clear visibility into progress, and reduce reliance on manual reminders. Our main point of contact for this project is Louise Austin, the Senior Carbon and Energy Officer at Durham County Council. 
 
 
 Our proposed system seeks to replace Excel-based tracking with a more user-friendly, web-based platform. The system will enable stakeholders to update their targets independently, provide automated reminders, and generate visual reports accessible across various computers. In addition, by offering more secure and role-based access, the system ensures that each user inputs or updates data without affecting others’ entries.
