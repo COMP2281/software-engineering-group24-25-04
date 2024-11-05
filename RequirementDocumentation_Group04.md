@@ -17,10 +17,8 @@ Our target tracking system aims to provide the council with a well-structured, a
 
 Their current approach, which relies on a shared Excel spreadsheet within Microsoft Teams, requires frequent manual interventions, including reminder notifications and permission management. Difficult-to-interpret visuals, unclear role assignments, irregular updates and duplication of project entries also hinder the tracking process. Our project proposes a web-based application that addresses these issues by offering automated reminders, secure and role-based access and clear visual progress indicators, enabling a more productive, transparent and collaborative tracking process.
 
-Our software’s primary purpose is to streamline the council’s target tracking while maintaining data integrity and accessibility. The core goals include reducing administrative load through automated permissions and reminders, enhancing data visualisation for more accessible progress assessments, and clarifying role assignments to prevent task overlap. These goals are aligned with the council’s operational efficiency needs and commitment to transparency with the governing group, Carbon Capital Group, and other external stakeholders.
-Our software's user base includes project managers, team members, potential data analysts who will interact directly with the system, and external partners who will access the reports.
+**write overall goals and how they align with ours and stakeholders interests here.**
 
-By enabling consistent real-time updates and user-friendly data management, our target tracking system is designed to support the council’s goals efficiently and effectively.
 #### Exact User Base for this Project
 - Durham County Council: They are responsible for managing projects to achieve net zero emissions and must input, track, and report progress on their respective projects.
 - External Partners:  Collaborators from other organizations need to have access to track progress
