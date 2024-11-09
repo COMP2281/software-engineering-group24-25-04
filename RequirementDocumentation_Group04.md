@@ -112,6 +112,57 @@ User story: As a user, I would like to filter tasks by period (e.g day, week, mo
 
 Implementing a "filter by period" functionality aligns with the council's overall objectives to improve task management efficiency. It allows users to assess upcoming tasks, helping them prioritise and plan effectively. It is classed as having a "should have" priority, as it supports user productivity but is not critical to the applications main functionality.
 
+**Feature** Ability to edit goals (**Priority**: **Must have**)
+
+  As a staff member I want to have the ability to edit goals because I need to keep track of the targets I have been set.
+
+  **Scenario 1:** Ability to add a goal
+
+    Given I have been allocated a new task
+
+    And I need to keep track of the task
+    
+    Then I can add a goal related to the task
+    
+    And further expand it using the SMART details.
+
+  **Scenario 2:** Ability to remove a goal
+
+    Given I have already have a task
+    
+    When the task has been terminated/finished
+    
+    Then I need can delete the goal related to the task
+    
+    And only those on that task can remove this goal.
+
+  Implementing the "ability to edit goals" functionality aligns with the council's overall objectives to improve the structure of the goal tracking software. This will enable better readability for the users, and will help with efficiency. The priority has been classed as "must have", as it is essential for the purpose of a goal tracking system, therefore it is crucial to the functionality of the application.
+
+**Feature** Progress Bar (**Priority**: **Must have**)
+
+  As a member of CERP I want a progress bar because I want to be able to view the progress of my goals visually.
+
+  **Scenario 1:** Staff members view their progress of their goal completeness visually
+
+    Given I have a goal that is currently being tracked
+
+    And I need to see how far I have progressed in the task
+    
+    Then I want to be able to see visually how far I have progressed.
+
+  **Scenario 2:** Managers view the progress of their staff visually
+
+    Given my staff all have tasks to complete
+
+    When I want to see how far each staff member has progressed on their goals
+    
+    Then I need a progress bar to see said progress
+    
+    And it should only be full if they have completed all set tasks.
+
+  Implementing the "progress bar" feature aligns with the council's overall objectives to improve the user friendliness of the goal tracking software. This will enable better visual aids for the users, and will help them achieve efficient results. The priority has been classed as "must have", as it is a requirement requested by the client.
+
+
 ## Project Management
 ### Risks and Issues
 ### Development Approach
