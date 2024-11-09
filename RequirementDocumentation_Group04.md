@@ -72,6 +72,31 @@ Then they are denied access and shown a message that said that they have no perm
 Scenario 2:
 When the manager selects a new team member
 Then the manager can grant or revoke permission for that user to have access to view or edit the project.
+Filtering tasks by period:
+User story: As a user, I would like to filter tasks by period (e.g day, week, month, year) in order to know which tasks are due within a specific timeframe.
+
+**Feature:** Filter tasks by day
+  As a user, I want to filter tasks by the day period, so that I can see tasks due within the selected day.
+
+ **Scenario:** View tasks due today
+ 
+    Given I have tasks with various due dates
+    
+    When I select the "Day" filter
+    
+    And choose "Today" as the day
+    
+    Then I should see only the tasks that are due today.
+
+  **Scenario:** View tasks due on a specific date
+  
+    Given I have tasks with various due dates
+    
+    When I select the "Day" filter
+    
+    And choose a specific date
+    
+    Then I should see only the tasks that are due on that selected date.
 
 ## Project Management
 ### Risks and Issues
