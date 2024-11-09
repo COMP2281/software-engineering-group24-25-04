@@ -110,7 +110,7 @@ User story: As a user, I would like to filter tasks by period (e.g day, week, mo
     
     Then I should see only the tasks that are due on that selected date.
 
-Implementing a "filter by period" functionality aligns with the council's overall objectives to improve task management efficiency. It allows users to assess upcoming tasks, helping them prioritise and plan effectively. 
+Implementing a "filter by period" functionality aligns with the council's overall objectives to improve task management efficiency. It allows users to assess upcoming tasks, helping them prioritise and plan effectively. It is classed as having a "should have" priority, as it supports user productivity but is not critical to the applications main functionality.
 
 ## Project Management
 ### Risks and Issues
