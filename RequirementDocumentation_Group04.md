@@ -75,10 +75,11 @@ Then the manager can grant or revoke permission for that user to have access to 
 Filtering tasks by period:
 User story: As a user, I would like to filter tasks by period (e.g day, week, month, year) in order to know which tasks are due within a specific timeframe.
 
-**Feature:** Filter tasks by day
+**Feature:** Filter tasks by day (**Priority**: **Should Have**)
+
   As a user, I want to filter tasks by the day period, so that I can see tasks due within the selected day.
 
- **Scenario:** View tasks due today
+ **Scenario 1:** View tasks due today
  
     Given I have tasks with various due dates
     
@@ -87,8 +88,19 @@ User story: As a user, I would like to filter tasks by period (e.g day, week, mo
     And choose "Today" as the day
     
     Then I should see only the tasks that are due today.
+    
 
-  **Scenario:** View tasks due on a specific date
+  **Scenario 2:** View tasks due this week
+    
+    Given I have tasks with various due dates
+    
+    When I select the "Week" filter
+    
+    And choose "This week" as the period
+    
+    Then I should see only the tasks that are due within the current week.
+
+  **Scenario 3:** View tasks due on a specific date
   
     Given I have tasks with various due dates
     
@@ -97,6 +109,8 @@ User story: As a user, I would like to filter tasks by period (e.g day, week, mo
     And choose a specific date
     
     Then I should see only the tasks that are due on that selected date.
+
+Implementing a "filter by period" functionality aligns with the council's overall objectives to improve task management efficiency. It allows users to assess upcoming tasks, helping them prioritise and plan effectively. 
 
 ## Project Management
 ### Risks and Issues
