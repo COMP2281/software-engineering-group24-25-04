@@ -81,6 +81,26 @@ We shall use another API that will send monthly emails to each person about the 
 
 Implementing a "permission level" functionality aligns with the council's overall objectives to improve data security and access control. It allows managers to  edit permission level to users and user can only edit or view project progress across their own teams.The priority has been classed as "must have", as it is essential for the purpose of a goal tracking system, therefore it is crucial to the functionality of the application.
 
+**Feature:** Responsive web design (**Priority**: **Must have**)
+
+   As a user ,I want the system to be accessible and responsive on various devices.
+
+**Scenario 1:** User Experience Across Different Devices
+
+   Given the user is accessing the tracking system from any device (desktop, tablet, or mobile)
+   
+   When they open the web application
+   
+   Then  the screen size and the layout should be automatically changed.
+
+**Scenario 2:** Customizable Visual Settings
+
+   Given the user prefers to change the visual settings of the website
+   
+   When they visit the website
+   
+   Then they should have the option to adjust the font size and color to suit their requirement
+
 Filtering tasks by period:
 User story: As a user, I would like to filter tasks by period (e.g day, week, month, year) in order to know which tasks are due within a specific timeframe.
 
