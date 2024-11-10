@@ -75,7 +75,7 @@ User story: As a user, I would like to filter tasks by period (e.g day, week, mo
 
 **Feature:** Filter tasks by day (**Priority**: **Should Have**)
 
-  As a user, I want to filter tasks by the day period, so that I can see tasks due within the selected day.
+  As a staff member, I want to filter tasks by the day period, so that I can see tasks due within the selected day.
 
  **Scenario 1:** View tasks due today
  
