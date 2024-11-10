@@ -57,19 +57,30 @@ We shall use another API that will send monthly emails to each person about the 
 ## Solution Requirements
 ### Requirements Elicitation
 ### Behavioural Requirements
-#### User Story(Permission levels (by team/ company))
-As a user, I want permission levels on project progress visibility so that my teams can’t view other teams' projects, but managers can grant access if needed.
-#### Features
-Allows managers to control other staff permissions, ensuring only authorized users can view or edit project progress across teams
+**Feature:** Permission levels (**Priority**: **Must have**)
 
-#### Scenario
-Scenario 1:
-Team members attempt to view another team’s project progress
-Then they are denied access and shown a message that said that they have no permission to view the project
+   As a user, I want permission levels on project progress visibility so that my teams can’t view other teams' projects.
 
-Scenario 2:
-When the manager selects a new team member
-Then the manager can grant or revoke permission for that user to have access to view or edit the project.
+**Scenario 1:** View other team task
+
+   Given team members want to view another team’s project progress
+
+   When they try to access the project
+
+   Then a message is shown stating that they do not have permission to view the project
+
+**Scenario 2:** grant permission
+
+   Given a manager want to selects a new team member
+   
+   When the manager assigns permissions
+
+   And the manager can choose to grant or cancel the team member’s access
+
+   Then the team member will be able to edit or view the project that he was assigned
+
+Implementing a "permission level" functionality aligns with the council's overall objectives to improve data security and access control. It allows managers to  edit permission level to users and user can only edit or view project progress across their own teams.The priority has been classed as "must have", as it is essential for the purpose of a goal tracking system, therefore it is crucial to the functionality of the application.
+
 Filtering tasks by period:
 User story: As a user, I would like to filter tasks by period (e.g day, week, month, year) in order to know which tasks are due within a specific timeframe.
 
