@@ -59,50 +59,51 @@ We shall use another API that will send monthly emails to each person about the 
 ### Behavioural Requirements
 **Feature:** Permission levels (**Priority**: **Must have**)
 
-   As a user, I want permission levels on project progress visibility so that my teams can’t view other teams' projects.
+As a user, I want permission levels on project progress visibility so that my teams can’t view other teams' projects.
 
-**Scenario 1:** View other team task
+**Scenario 1:** View other teams' tasks
 
-   Given team members want to view another team’s project progress
+      Given team members want to view another team’s project progress
+      
+      When they try to access the project
 
-   When they try to access the project
+      Then a message is shown stating that they do not have permission to view the project
 
-   Then a message is shown stating that they do not have permission to view the project
+**Scenario 2:** Grant permissions
 
-**Scenario 2:** grant permission
-
-   Given a manager want to selects a new team member
+      Given a manager wants to select a new team member
    
-   When the manager assigns permissions
+      When the manager assigns permissions
 
-   And the manager can choose to grant or cancel the team member’s access
+      And the manager can choose to grant or cancel the team member’s access
 
-   Then the team member will be able to edit or view the project that he was assigned
+      Then the team member will be able to edit or view the project that he was assigned
 
-Implementing a "permission level" functionality aligns with the council's overall objectives to improve data security and access control. It allows managers to  edit permission level to users and user can only edit or view project progress across their own teams.The priority has been classed as "must have", as it is essential for the purpose of a goal tracking system, therefore it is crucial to the functionality of the application.
+Implementing a "permission level" functionality aligns with the council's overall objectives to improve data security and access control. It allows managers to edit permission level to users and user can only edit or view project progress across their own teams.The priority has been classed as "must have", as it is essential for the purpose of a goal tracking system, therefore it is crucial to the functionality of the application.
 
 **Feature:** Responsive web design (**Priority**: **Must have**)
 
-   As a user ,I want the system to be accessible and responsive on various devices.
+   As a user, I want the system to be accessible and responsive on various devices (why?).
 
-**Scenario 1:** User Experience Across Different Devices
+**Scenario 1:** User experience across different devices
 
-   Given the user is accessing the tracking system from any device (desktop, tablet, or mobile)
+      Given the user is accessing the tracking system from any device (desktop, tablet, or mobile)
    
-   When they open the web application
+      When they open the web application
    
-   Then  the screen size and the layout should be automatically changed.
+      Then the screen size and the layout should be automatically changed.
 
-**Scenario 2:** Customizable Visual Settings
+**Scenario 2:** Customizable visual settings
 
-   Given the user prefers to change the visual settings of the website
+      Given the user prefers to change the visual settings of the website
    
-   When they visit the website
+      When they visit the website
    
-   Then they should have the option to adjust the font size and color to suit their requirement
+      Then they should have the option to adjust the font size and color to suit their requirement
 
-Filtering tasks by period:
-User story: As a user, I would like to filter tasks by period (e.g day, week, month, year) in order to know which tasks are due within a specific timeframe.
+**Filtering tasks by period:**
+
+**User story:** As a staff member, I would like to filter tasks by period (e.g day, week, month, year) in order to know which tasks are due within a specific timeframe.
 
 **Feature:** Filter tasks by day (**Priority**: **Should Have**)
 
