@@ -154,8 +154,7 @@ Implementing a "permission level" functionality aligns with the council's overal
 
 **Feature:** Filter tasks by period (**Priority**: **Should Have**)
 
-_As a staff member, I would like to filter tasks by period (e.g day, week, month, year) in order to know which tasks are due within a specific timeframe.
-_
+_As a staff member, I would like to filter tasks by period (e.g day, week, month, year) in order to know which tasks are due within a specific timeframe._
 
  **Scenario 1:** View tasks due today/this week/this month/this year
  
@@ -219,6 +218,16 @@ Implementing a "filter by period" functionality aligns with the council's overal
     Then I need can delete the goal related to the task
     
     And only those on that task can remove this goal.
+
+  **Scenario 3:** Ability to transfer a goal
+
+    Given a staff member already has a goal
+    
+    And I need to transfer the goal to another staff member
+    
+    Then I, a manager need to transfer the goal to another staff member
+    
+    And remove the previous staff member from it.
 
   Implementing the "ability to edit goals" functionality aligns with the council's overall objectives to improve the structure of the goal tracking software. This will enable better readability for the users, and will help with efficiency. The priority has been classed as "must have", as it is essential for the purpose of a goal tracking system, therefore it is crucial to the functionality of the application.
 
