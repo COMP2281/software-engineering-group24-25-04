@@ -101,44 +101,47 @@ Implementing a "permission level" functionality aligns with the council's overal
    
       Then they should have the option to adjust the font size and color to suit their requirement
 
-**Filtering tasks by period:**
+**Feature:** Filter tasks by period (**Priority**: **Should Have**)
 
 **User story:** As a staff member, I would like to filter tasks by period (e.g day, week, month, year) in order to know which tasks are due within a specific timeframe.
 
-**Feature:** Filter tasks by day (**Priority**: **Should Have**)
 
-  As a staff member, I want to filter tasks by the day period, so that I can see tasks due within the selected day.
-
- **Scenario 1:** View tasks due today
+ **Scenario 1:** View tasks due today/this week/this month/this year
  
     Given I have tasks with various due dates
     
-    When I select the "Day" filter
+    When I select the "Day/Week/Month/Year" filter
     
-    And choose "Today" as the day
+    And choose "Today/This week/This month/This year" as the period
     
-    Then I should see only the tasks that are due today.
+    Then I should see only the tasks that are due within the selected time period.
+
+    And tasks outside this time period should not be displayed.
+
     
 
-  **Scenario 2:** View tasks due this week
-    
-    Given I have tasks with various due dates
-    
-    When I select the "Week" filter
-    
-    And choose "This week" as the period
-    
-    Then I should see only the tasks that are due within the current week.
-
-  **Scenario 3:** View tasks due on a specific date
+  **Scenario 2:** View sub-task due dates
   
-    Given I have tasks with various due dates
+    Given I have sub-tasks (tasks within tasks) with various due dates
     
-    When I select the "Day" filter
+    When I select the "Day/Week/Month/Year" filter
     
-    And choose a specific date
+    And choose a specific date as the period
     
-    Then I should see only the tasks that are due on that selected date.
+    Then I should see only the sub-tasks that are due on that selected date.
+
+    And parent tasks not due on that date should be excluded unless they contain a matching sub-task.
+    
+
+
+**Scenario 3:** Clear filter
+
+    Given I have applied a filter to view tasks within a specific period
+
+    When I choose to clear or reset the filter
+
+    Then I should see a list of all my tasks regardless of due date.
+
 
 Implementing a "filter by period" functionality aligns with the council's overall objectives to improve task management efficiency. It allows users to assess upcoming tasks, helping them prioritise and plan effectively. It is classed as having a "should have" priority, as it supports user productivity but is not critical to the applications main functionality.
 
