@@ -56,6 +56,12 @@ We shall use another API that will send monthly emails to each person about the 
 
 ## Solution Requirements
 ### Requirements Elicitation
+
+One challenge we faced upon receiving the project brief related to the permissions. Originally ... (why we were confused). To overcome this we organised a meeting with our client and clarified her meaning of 'permissions'. We know understand the structure that she wants, that being to have different companies being able to edit their own goals only, but being able to see all goals.
+A further challenge we faced based on the brief was the understanding of the goals that they would be tracking, as there was no evidence given of what they currently track. We used the same meeting as above and asked for some examples of what they currently use to track their goals. During the meeting our client showed, and sent us, a spreadsheet that they currently use. She also mentioned that they currently use SMART targets for the tracking of their goals. Following the meeting we all went through the excel spreadsheet.
+Upon reading the spreadsheet, after discussing as a group, we came to the conclusion that it was confusing. There were too many categories, there was missing data, it had confusing deadlines and it wasn't consistent in the measuring of the goals. We then arranged another meeting to discuss the spreadsheet. We asked her to go step by step through one of the goals, and each of the headings in the spreadsheet. We are now aware of which columns are essential and which are optional, as well as which column should be used for the goal tracking. 
+
+
 ### Behavioural Requirements
 
 **Feature:** Login System (**Priority**: **Must have**)
@@ -283,8 +289,8 @@ _As an administrator, I hope that the system will automatically push the new tas
 
 **Feature:** Automated Reminders (**Priority**: **Must Have**)
   
-**User story:** _As a manager, I want the system to send automated monthly reminders to project stakeholders so they can update their progress on the project and complete overdue tasks, enabling me to keep track of the monthly status without needing manual reminders.
-_
+**User story:** _As a manager, I want the system to send automated monthly reminders to project stakeholders so they can update their progress on the project and complete overdue tasks, enabling me to keep track of the monthly status without needing manual reminders._
+
 **Scenario 1:** Send automated reminders on project progress
 
     Given projects are assigned to respective team members
