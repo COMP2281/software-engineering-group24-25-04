@@ -235,17 +235,17 @@ As a manager, I want the system to send automated monthly reminders to project s
 
 **Scenario 2:** Receive automated reminders for overdue tasks
 
-    Given I have tasks that are overdue and need to be completed
+    Given staff members have tasks that are overdue and need to be completed
 
-    And I may have forgotten about the due date of these tasks
+    And staff members may have forgotten about the due date of these tasks
 
-    When I receive an automated reminder for the overdue task
+    When staff member receive an automated reminder for the overdue task
 
-    Then I am prompted to complete the task immediately
+    Then staff member is prompted to complete the task immediately
 
-    And I will resume working on the task.
+    And staff member will resume working on the task.
 
- Implementing the "automated monthly reminders" is crucial for maintaining project transparency and accountability. It supports effective project management by prompting team members to provide regular updates, aligning with the client’s objective to ensure a functional and efficient progress tracking tool. The overdue task reminder feature ensures that staff members are notified promptly about tasks they might have overlooked. This functionality is essential for reducing project delays and improving overall productivity.This feature is prioritized as a "Must Have" using the MoSCoW prioritization method, given its importance to the overall system functionality and it directly contributes to the client’s goal of creating an effective task management system.
+ Implementing the "automated monthly reminders" feature is crucial for maintaining project transparency and accountability. It supports effective project management by prompting team members to provide regular updates, aligning with the client’s objective to ensure a functional and efficient progress tracking tool. The overdue task reminder feature ensures that staff members are notified promptly about tasks they might have overlooked. This functionality is essential for reducing project delays and improving overall productivity.This feature is prioritized as a "Must Have" using the MoSCoW prioritization method, given its importance to the overall system functionality and it directly contributes to the client’s goal of creating an effective task management system.
 
 
     
