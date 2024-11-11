@@ -191,8 +191,19 @@ Implementing a "filter by period" functionality aligns with the council's overal
     And it should only be full if they have completed all set tasks.
 
   Implementing the "progress bar" feature aligns with the council's overall objectives to improve the user friendliness of the goal tracking software. This will enable better visual aids for the users, and will help them achieve efficient results. The priority has been classed as "must have", as it is a requirement requested by the client.
+
 **Feature:** Automatic notification (**Priority**: **Must have**)
-As an administrator, I hope that the system will automatically push the
+As an administrator, I hope that the system will automatically push the new tasks to the employees' mailboxes
+  **Scenario 1:** Administrator publishes tasks
+
+    Given I have a new project to be released
+
+    When Employees need to be notified of new projects as soon as possible
+    
+    Then I need to ensure that they can receive task notifications in a timely manner
+
+    And they should be notified immediately after the project is released.
+    
 ## Project Management
 ### Risks and Issues
 ### Development Approach
