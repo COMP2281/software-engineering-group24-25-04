@@ -57,6 +57,57 @@ We shall use another API that will send monthly emails to each person about the 
 ## Solution Requirements
 ### Requirements Elicitation
 ### Behavioural Requirements
+
+**Feature:** Login System (**Priority**: **Must have**)
+
+_As a user, I want to be able to create an account so that I can securely log in to the system that is tailored towards me._
+
+**Scenario 1:** User tries to log in to system without an account
+
+      Given a user attempts to log in to system with no account details
+      
+      When they try to log in
+      
+      Then a message tells the user that they need to fill in the fields OR that they need to create an account
+      
+**Scenario 2:** User creates an account
+
+      Given a user wants to create an account to be able to log in
+      
+      When they enter their email and secure password
+      
+      Then an account is created for the user, and a message tells them they are ready to log in
+
+**Scenario 3:** User logs in to system with the correct account details
+
+      Given a user, with an account, wants to log in to the system
+      
+      When they log in with the correct account details
+      
+      Then they are taken to the home page
+
+**Scenario 4:** User logs in to the system with the incorrect account details and this attempt is less than three
+
+      Given a user attempts to log in to the system
+      
+      When they log in with the incorrect account details
+      
+      AND this attempt is NOT less than 3
+      
+      Then they are NOT taken to the home page and a message prompts them to re-enter their details OR create an account if they don't already have one
+
+**Scenario 5:** User logs in to the system with the incorrect account details and this is their third attempt
+
+      Given a user attempts to log in to the system
+      
+      When they log in with the incorrect account details
+      
+      AND this is attempt 3
+      
+      Then they are NOT taken to the home page, a message prompts the user to reset their password and a link is sent to their email to do so
+
+Implementing a login system for our web application aligns with our client's needs as it will enable administrator roles to grant specific permissions to each person based on the projects they are working on.
+
 **Feature:** Permission levels (**Priority**: **Must have**)
 
 _As a user, I want permission levels on project progress visibility so that my teams can’t view other teams' projects._
