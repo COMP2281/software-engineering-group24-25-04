@@ -59,7 +59,7 @@ We shall use another API that will send monthly emails to each person about the 
 ### Behavioural Requirements
 **Feature:** Permission levels (**Priority**: **Must have**)
 
-As a user, I want permission levels on project progress visibility so that my teams can’t view other teams' projects.
+_As a user, I want permission levels on project progress visibility so that my teams can’t view other teams' projects._
 
 **Scenario 1:** View other teams' tasks
 
@@ -79,11 +79,11 @@ As a user, I want permission levels on project progress visibility so that my te
 
       Then the team member will be able to edit or view the project that he was assigned
 
-Implementing a "permission level" functionality aligns with the council's overall objectives to improve data security and access control. It allows managers to edit permission level to users and user can only edit or view project progress across their own teams.The priority has been classed as "must have", as it is essential for the purpose of a goal tracking system, therefore it is crucial to the functionality of the application.
+Implementing a "permission level" functionality aligns with the council's overall objectives to improve data security and access control. It allows managers to edit permission level to users and user can only edit or view project progress across their own teams. The priority has been classed as "must have", as it is essential for the purpose of a goal tracking system, therefore it is crucial to the functionality of the application.
 
 **Feature:** Responsive web design (**Priority**: **Must have**)
 
-   As a user, I want the system to be accessible and responsive on various devices (why?).
+   _As a user, I want the system to be accessible and responsive on various devices (why?)._
 
 **Scenario 1:** User experience across different devices
 
@@ -103,8 +103,8 @@ Implementing a "permission level" functionality aligns with the council's overal
 
 **Feature:** Filter tasks by period (**Priority**: **Should Have**)
 
-**User story:** As a staff member, I would like to filter tasks by period (e.g day, week, month, year) in order to know which tasks are due within a specific timeframe.
-
+_As a staff member, I would like to filter tasks by period (e.g day, week, month, year) in order to know which tasks are due within a specific timeframe.
+_
 
  **Scenario 1:** View tasks due today/this week/this month/this year
  
@@ -143,11 +143,11 @@ Implementing a "permission level" functionality aligns with the council's overal
     Then I should see a list of all my tasks regardless of due date.
 
 
-Implementing a "filter by period" functionality aligns with the council's overall objectives to improve task management efficiency. It allows users to assess upcoming tasks, helping them prioritise and plan effectively. It is classed as having a "should have" priority, as it supports user productivity but is not critical to the application's main functionality.
+Implementing a "filter by period" functionality aligns with the council's overall objectives to improve task management efficiency. It allows users to assess upcoming tasks, helping them prioritise and plan effectively. The priority has been classed as "should have", as it supports user productivity but is not critical to the application's main functionality.
 
 **Feature:** Ability to edit goals (**Priority**: **Must have**)
 
-  As a staff member I want to have the ability to edit goals because I need to keep track of the targets I have been set.
+  _As a staff member I want to have the ability to edit goals because I need to keep track of the targets I have been set._
 
   **Scenario 1:** Ability to add a goal
 
@@ -173,7 +173,7 @@ Implementing a "filter by period" functionality aligns with the council's overal
 
 **Feature:** Progress bar (**Priority**: **Must have**)
 
-  As a staff member, I want a progress bar because I want to be able to view the progress of my goals visually.
+  _As a staff member, I want a progress bar because I want to be able to view the progress of my goals visually._
 
   **Scenario 1:** Staff members view their progress of their goal completeness visually
 
@@ -197,7 +197,7 @@ Implementing a "filter by period" functionality aligns with the council's overal
 
 **Feature:** Automatic notification (**Priority**: **Must have**)
 
-As an administrator, I hope that the system will automatically push the new tasks to the employees' mailboxes
+_As an administrator, I hope that the system will automatically push the new tasks to the employees' mailboxes._
 
   **Scenario 1:** Administrator publishes tasks
 
@@ -223,8 +223,8 @@ As an administrator, I hope that the system will automatically push the new task
 
 **Feature:** Automated Reminders (**Priority**: **Must Have**)
   
-**User story:** As a manager, I want the system to send automated monthly reminders to project stakeholders so they can update their progress on the project and complete overdue tasks, enabling me to keep track of the monthly status without needing manual reminders.
-
+**User story:** _As a manager, I want the system to send automated monthly reminders to project stakeholders so they can update their progress on the project and complete overdue tasks, enabling me to keep track of the monthly status without needing manual reminders.
+_
 **Scenario 1:** Send automated reminders on project progress
 
     Given projects are assigned to respective team members
