@@ -218,8 +218,9 @@ As an administrator, I hope that the system will automatically push the new task
 
   Implementing "automatic system notification" is a feature customers require. It is a must-have priority, which reduces the burden of administrators to notify employees one by one. Timely and clear notifications allow all employees to synchronize task information and avoid misunderstandings or conflicts caused by delayed or omitted information.
 
-  **Feature:** Automated Reminders (**Priority**: **Must Have**)
-As a manager, I want the system to send automated monthly reminders to project stakeholders so they can update their progress on the project and complete overdue tasks, enabling me to keep track of the monthly status without needing manual reminders.
+**Feature:** Automated Reminders (**Priority**: **Must Have**)
+  
+**User story:** As a manager, I want the system to send automated monthly reminders to project stakeholders so they can update their progress on the project and complete overdue tasks, enabling me to keep track of the monthly status without needing manual reminders.
 
 **Scenario 1:** Send automated reminders on project progress
 
