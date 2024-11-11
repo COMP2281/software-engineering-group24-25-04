@@ -215,7 +215,9 @@ As an administrator, I hope that the system will automatically push the new task
     Then they log in to the system to confirm the task
 
     And the system will record the employee's confirmation operation so that the administrator can check the receipt of the task.
-    
+
+  Implementing "automatic system notification" is a feature customers require. It is a must-have priority, which reduces the burden of administrators to notify employees one by one. Timely and clear notifications allow all employees to synchronize task information and avoid misunderstandings or conflicts caused by delayed or omitted information.
+  
 ## Project Management
 ### Risks and Issues
 ### Development Approach
