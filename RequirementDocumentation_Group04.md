@@ -143,7 +143,7 @@ Implementing a "permission level" functionality aligns with the council's overal
     Then I should see a list of all my tasks regardless of due date.
 
 
-Implementing a "filter by period" functionality aligns with the council's overall objectives to improve task management efficiency. It allows users to assess upcoming tasks, helping them prioritise and plan effectively. It is classed as having a "should have" priority, as it supports user productivity but is not critical to the applications main functionality.
+Implementing a "filter by period" functionality aligns with the council's overall objectives to improve task management efficiency. It allows users to assess upcoming tasks, helping them prioritise and plan effectively. It is classed as having a "should have" priority, as it supports user productivity but is not critical to the application's main functionality.
 
 **Feature:** Ability to edit goals (**Priority**: **Must have**)
 
