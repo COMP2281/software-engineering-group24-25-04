@@ -218,6 +218,42 @@ As an administrator, I hope that the system will automatically push the new task
 
   Implementing "automatic system notification" is a feature customers require. It is a must-have priority, which reduces the burden of administrators to notify employees one by one. Timely and clear notifications allow all employees to synchronize task information and avoid misunderstandings or conflicts caused by delayed or omitted information.
 
+  **Feature:** Automated Reminders (**Priority**: **Must Have**)
+As a manager, I want the system to send automated monthly reminders to project stakeholders so they can update their progress on the project and complete overdue tasks, enabling me to keep track of the monthly status without needing manual reminders.
+
+**Scenario 1:** Send automated reminders on project progress
+
+    Given projects are assigned to respective team members
+
+    And I want them to provide monthly updates on their project progress
+
+    When team members receive the monthly reminders
+
+    Then they are reminded to update their progress on the web application
+
+    And I will be able to track their monthly progress, ensuring project accountability.
+
+**Scenario 2:** Receive automated reminders for overdue tasks
+
+    Given I have tasks that are overdue and need to be completed
+
+    And I may have forgotten about the due date of these tasks
+
+    When I receive an automated reminder for the overdue task
+
+    Then I am prompted to complete the task immediately
+
+    And I will resume working on the task.
+
+ Implementing the "automated monthly reminders" is crucial for maintaining project transparency and accountability. It supports effective project management by prompting team members to provide regular updates, aligning with the client’s objective to ensure a functional and efficient progress tracking tool. The overdue task reminder feature ensures that staff members are notified promptly about tasks they might have overlooked. This functionality is essential for reducing project delays and improving overall productivity.This feature is prioritized as a "Must Have" using the MoSCoW prioritization method, given its importance to the overall system functionality and it directly contributes to the client’s goal of creating an effective task management system.
+
+
+    
+    
+    
+
+  
+
 ### Non-functional features
   | Type       | Goal                                                                                                      | Scenario/Background                                                                                                                                                                                                                                                                                           | Priority     |
 |------------|-----------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------|
