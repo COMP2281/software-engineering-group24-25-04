@@ -341,7 +341,7 @@ _As an administrator, I hope that the system will automatically push the new tas
 
  Implementing the "automated monthly reminders" feature is essential for maintaining project transparency and accountability. It supports effective project management by prompting team members to provide regular updates snd avoiding project delays, aligning with the client’s objective to ensure an efficient progress tracking tool. This feature is prioritized as a "must have", given its importance to the overall system functionality and its direct contribution to the client’s goal of creating an effective task management system.
  
-**Feature:** Subpages (**Priority**: **Must Have**)
+**Feature:** Subpages (**Priority**: **Must have**)
 
 _As an employee, I want each project to have its own subpage when displayed, avoiding stacking all content on one page._
 
