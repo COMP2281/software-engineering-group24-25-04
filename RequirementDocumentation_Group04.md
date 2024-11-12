@@ -326,8 +326,21 @@ _As an administrator, I hope that the system will automatically push the new tas
 
     And staff member will resume working on the task.
 
- Implementing the "automated monthly reminders" feature is crucial for maintaining project transparency and accountability. It supports effective project management by prompting team members to provide regular updates, aligning with the client’s objective to ensure a functional and efficient progress tracking tool. The overdue task reminder feature ensures that staff members are notified promptly about tasks they might have overlooked. This functionality is essential for reducing project delays and improving overall productivity.This feature is prioritized as a "Must Have" using the MoSCoW prioritization method, given its importance to the overall system functionality and it directly contributes to the client’s goal of creating an effective task management system.
+**Scenario 3:** Receive automated reminders when project is transferred to a new user
 
+    Given a project is transferred from an old user to a new user
+
+    When a project is assigned to the new user
+
+    And the new user starts receiving automated reminders for the project
+
+    Then the old user will stop receiving the reminders for the project    
+    
+    And the old user no longer has access to the project    
+    
+
+ Implementing the "automated monthly reminders" feature is essential for maintaining project transparency and accountability. It supports effective project management by prompting team members to provide regular updates snd avoiding project delays, aligning with the client’s objective to ensure an efficient progress tracking tool. This feature is prioritized as a "must have", given its importance to the overall system functionality and its direct contribution to the client’s goal of creating an effective task management system.
+ 
 **Feature:** Subpages (**Priority**: **Must Have**)
 
 _As an employee, I want each project to have its own subpage when displayed, avoiding stacking all content on one page._
