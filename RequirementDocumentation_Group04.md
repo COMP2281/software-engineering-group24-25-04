@@ -344,11 +344,7 @@ _As an administrator, I hope that the system will automatically push the new tas
   
 Page clarity is also one of the client's requirements, so the priority is must-have. The main information of each project will be concentrated on the main page, while detailed project information and specific details will be stored in related subpages. In this way, users can browse and manage each project more systematically, reducing confusion and unnecessary information stacking.
 
-### Non-functional features
-  | Type       | Goal                                                                                                      | Scenario/Background                                                                                                                                                                                                                                                                                           | Priority     |
-|------------|-----------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------|
-| Reliability| Support large-scale concurrent user access while ensuring stable operation and quick recovery during high load and sudden failures through load balancing and disaster recovery mechanisms | Even during a surge in user numbers, the system should support a large number of users simultaneously with high availability. The system should run stably even under high load or during peak times without crashing or experiencing severe performance degradation, ensuring users can continuously access and use the service, avoiding interruptions caused by high concurrency. | High         |
-| Availability| Efficiently store and quickly read data                                                                  | User data, department member information, etc., are frequently accessed but seldom updated. For example, whenever the user homepage is refreshed, it will access this information. Store essential user information, friend lists, and other data in a distributed cache with an appropriate expiration time , and synchronize the updates to both the database and the cache when necessary.               | Medium       |
+
 
 ## Project Management
 ### Risks and Issues
