@@ -318,10 +318,18 @@ _As an administrator, I hope that the system will automatically push the new tas
  Implementing the "automated monthly reminders" feature is crucial for maintaining project transparency and accountability. It supports effective project management by prompting team members to provide regular updates, aligning with the client’s objective to ensure a functional and efficient progress tracking tool. The overdue task reminder feature ensures that staff members are notified promptly about tasks they might have overlooked. This functionality is essential for reducing project delays and improving overall productivity.This feature is prioritized as a "Must Have" using the MoSCoW prioritization method, given its importance to the overall system functionality and it directly contributes to the client’s goal of creating an effective task management system.
 
 **Feature:** Subpages (**Priority**: **Must Have**)
-**User story:** As an employee, I want each project to have its own subpage when displayed, avoiding stacking all content on one page
-**Scenario 1:**
-    
 
+**User story:** As an employee, I want each project to have its own subpage when displayed, avoiding stacking all content on one page
+
+**Scenario 1:** View project details
+        
+    Given each project has a lot of detailed information and clear metrics
+    
+    When as an employee, I want to view or update the details of a project
+
+    Then I want this project to have a subpage to display the details and metrics
+
+    And this keeps the main page simple, making it easier to classify, find and update, avoiding confusion caused by stacking all content together.
   
 
 ### Non-functional features
