@@ -373,11 +373,11 @@ Page clarity is also one of the client's requirements, so the priority is must-h
 | Risk Type | Risk | Explanation | Mitigation |
 | ----------- | ----------- | ----------- | ----------- |
 | Group | Someone won’t/can’t do project | If during the project a group member is refusing to do their work, is ignoring messages, or is unable to continue the project for ligitimate reasons | We will remove single points of failure i.e. have multiple people (at least 2) on significant parts of the project. In the event this occurs, we would reduce project scope with the client and we would re-distribute group tasks. |
-| Group| We lose all of our work | | | 
-| Client | No response | | |
+| Group| Work lost/Out of sync updates | Collaborative project means multiple people working on same thing at the same time. If changes are not saved, people may work on same thing unknowingly, decreasing productivity and wasting time. Losing work would be harmful, pushing back the work flow and schedule. | Ensure that all work is saved and backed up iteratively. Commit all changes to the shared GitHub repository. | 
+| Client | No response | We are working with Durham City Council whom will be busy with other commitments and may not have the time to correspond with us. This may pose issues for us for example when we ultimately encounter a problem that requires the client’s input. | Continue efforts to communicate and contact the client. Worst case, speak to module leaders to address the issue. |
 | Client | Use a commercial option | If the client decides to use a different solution, one that has already been made and is available online. | Try ensure that we communicate with the client and head in the direction they would like. |
 | Software Development | Data security breach | There are different companies that will be using this solution. Companies should only be able to edit their own goals. If another company edited/deleted another companies goals then it could result in a halt in development. | Ensure permissions work so that unauthorised staff members don’t edit other companies goals (only managers have access to edit permissions). |
-| Software Development | | | |
+| Software Development | New updates on frameworks used cause bugs| We plan to use React.js and other open source frameworks like APIs in our solution. These may be updated and our written solution may not be compatible with the new updates. | Make sure that from now we are using updated versions and iteratively check for new updates. |
 
 
 
