@@ -353,3 +353,4 @@ Page clarity is also one of the client's requirements, so the priority is must-h
 ## Project Management
 ### Risks and Issues
 ### Development Approach
+### Project Schedule
