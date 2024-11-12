@@ -296,7 +296,7 @@ _As an administrator, I hope that the system will automatically push the new tas
 
     And the system will record the employee's confirmation operation so that the administrator can check the receipt of the task.
 
-  Implementing "automatic system notification" is a feature customers require. It is a must-have priority, which reduces the burden of administrators to notify employees one by one. Timely and clear notifications allow all employees to synchronize task information and avoid misunderstandings or conflicts caused by delayed or omitted information.
+  Implementing "automatic system notifications" is a feature customers require. It is a must-have priority, which reduces the burden of administrators to notify employees one by one. Timely and clear notifications allow all employees to synchronize task information and avoid misunderstandings or conflicts caused by delayed or omitted information.
 
 **Feature:** Automated Reminders (**Priority**: **Must Have**)
   
@@ -330,7 +330,7 @@ _As an administrator, I hope that the system will automatically push the new tas
 
 **Feature:** Subpages (**Priority**: **Must Have**)
 
-**User story:** As an employee, I want each project to have its own subpage when displayed, avoiding stacking all content on one page
+_As an employee, I want each project to have its own subpage when displayed, avoiding stacking all content on one page._
 
 **Scenario 1:** View project details
         
