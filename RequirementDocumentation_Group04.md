@@ -331,7 +331,7 @@ _As an administrator, I hope that the system will automatically push the new tas
 
     And this keeps the main page simple, making it easier to classify, find and update, avoiding confusion caused by stacking all content together.
   
-Page clarity is also one of the client's requirements, so the priority is must-have.The main information of each project will be concentrated on the main page, while detailed project information and specific details will be stored in related subpages. In this way, users can browse and manage each project more systematically, reducing confusion and unnecessary information stacking
+Page clarity is also one of the client's requirements, so the priority is must-have.The main information of each project will be concentrated on the main page, while detailed project information and specific details will be stored in related subpages. In this way, users can browse and manage each project more systematically, reducing confusion and unnecessary information stacking.
 
 ### Non-functional features
   | Type       | Goal                                                                                                      | Scenario/Background                                                                                                                                                                                                                                                                                           | Priority     |
