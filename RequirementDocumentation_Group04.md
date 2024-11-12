@@ -69,6 +69,9 @@ One challenge we faced upon receiving the project brief related to the permissio
 A further challenge we faced based on the brief was the understanding of the goals that they would be tracking, as there was no evidence given of what they currently track. We used the same meeting as above and asked for some examples of what they currently use to track their goals. During the meeting our client showed, and sent us, a spreadsheet that they currently use. She also mentioned that they currently use SMART targets for the tracking of their goals. Following the meeting we all went through the excel spreadsheet. 
 Upon reading the spreadsheet, after discussing as a group, we came to the conclusion that it was confusing. There were too many categories, there was missing data, it had confusing deadlines, and it wasn't consistent in the measuring of the goals. We then arranged another meeting to discuss the spreadsheet. We asked her to go step by step through one of the goals, and each of the headings in the spreadsheet. We are now aware of which columns are essential, and which are optional, as well as which column should be used for the goal tracking.
 
+In our internal meetings, we analysed the documents provided by our client by breaking them down and going into detail on how their current system works. We did some research on existing solutions to figure out the potential features that could be added to fulfil the requirements of our client. We then brainstormed a few ideas together and reached a mutual decision on which features were the most useful and required for our web application. After coming to an agreement, we presented those features in our meeting with our client to seek feedback and our client was satisfied with our delivery.
+
+
 ### Behavioural Requirements
 
 **Feature:** Login System (**Priority**: **Must have**)
