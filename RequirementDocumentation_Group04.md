@@ -246,7 +246,7 @@ Implementing a "filter by period" functionality aligns with the council's overal
     
     And remove the previous staff member from it.
 
-  Implementing the "ability to edit goals" functionality aligns with the council's overall objectives to improve the structure of the goal tracking software. This will enable better readability for the users, and will help with efficiency. The priority has been classed as "must have", as it is essential for the purpose of a goal tracking system, therefore it is crucial to the functionality of the application.
+  Implementing the "ability to edit goals" functionality aligns with the council's overall objectives to improve the structure of the goal tracking software. This will enable better readability for the users, as it will be easier to read the goals and all the requirements once added. It should also improve efficiency when adding new goals, due to a clear structure. The priority has been classed as "must have", as it is essential for the purpose of a goal tracking system, therefore it is crucial to the functionality of the application.
 
 **Feature:** Progress bar (**Priority**: **Must have**)
 
@@ -270,7 +270,7 @@ Implementing a "filter by period" functionality aligns with the council's overal
     
     And it should only be full if they have completed all set tasks.
 
-  Implementing the "progress bar" feature aligns with the council's overall objectives to improve the user friendliness of the goal tracking software. This will enable better visual aids for the users, and will help them achieve efficient results. The priority has been classed as "must have", as it is a requirement requested by the client.
+  Implementing the "progress bar" feature aligns with the council's overall objectives to improve the user friendliness of the goal tracking software. This will enable better visual aids for the users, and will help them achieve efficient results, as they will be able to see the progression of their goals visually. The priority has been classed as "must have", as it is a requirement requested by the client.
 
 **Feature:** Automatic notification (**Priority**: **Must have**)
 
@@ -352,5 +352,17 @@ Page clarity is also one of the client's requirements, so the priority is must-h
 
 ## Project Management
 ### Risks and Issues
+
+| Risk Type | Risk | Explanation | Mitigation |
+| ----------- | ----------- | ----------- | ----------- |
+| Group | Someone won’t/can’t do project | If during the project a group member is refusing to do their work, is ignoring messages, or is unable to continue the project for ligitimate reasons | We will remove single points of failure i.e. have multiple people (at least 2) on significant parts of the project. In the event this occurs, we would reduce project scope with the client and we would re-distribute group tasks. |
+| Group| We lose all of our work | | | 
+| Client | No response | | |
+| Client | Use a commercial option | If the client decides to use a different solution, one that has already been made and is available online. | Try ensure that we communicate with the client and head in the direction they would like. |
+| Software Development | Data security breach | There are different companies that will be using this solution. Companies should only be able to edit their own goals. If another company edited/deleted another companies goals then it could result in a halt in development. | Ensure permissions work so that unauthorised staff members don’t edit other companies goals (only managers have access to edit permissions). |
+| Software Development | | | |
+
+
+
 ### Development Approach
 ### Project Schedule
