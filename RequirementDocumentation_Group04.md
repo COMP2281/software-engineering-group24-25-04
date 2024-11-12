@@ -165,6 +165,10 @@ Implementing a "permission level" functionality aligns with the council's overal
    
       Then they should have the option to adjust the font size and color to suit their requirement
 
+      
+Implementing a "Responsive web design" functionality aligns with the council's overall objectives to improve readibility. It allows user to customizable visual setting and change the layout based on different devices. The priority has been classed as "must have", as it is essential for the purpose of a goal tracking system, therefore it is crucial to the functionality of the application.
+
+
 **Feature:** Filter tasks by period (**Priority**: **Should Have**)
 
 _As a staff member, I would like to filter tasks by period (e.g day, week, month, year) in order to know which tasks are due within a specific timeframe._
