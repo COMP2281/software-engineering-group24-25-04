@@ -135,7 +135,15 @@ _As a user, I want permission levels on project progress visibility so that my t
 
       Then the team member will be able to edit or view the project that he was assigned
 
-Implementing a "permission level" functionality aligns with the council's overall objectives to improve data security and access control. It allows managers to edit permission level to users and user can only edit or view project progress across their own teams. The priority has been classed as "must have", as it is essential for the purpose of a goal tracking system, therefore it is crucial to the functionality of the application.
+**Scenario 3:** Transfer task
+
+      Given that the staff member is unable to follow up on the task
+
+      And the manager wants to transfer tasks between staff members
+
+      Then the task will be transfered.
+
+Implementing a "permission level" functionality aligns with the council's overall objectives to improve data security and access control. It allows managers to transfer task between staff members, edit permission level to users and user can only edit or view project progress across their own teams. The priority has been classed as "must have", as it is essential for the purpose of a goal tracking system, therefore it is crucial to the functionality of the application.
 
 **Feature:** Responsive web design (**Priority**: **Must have**)
 
