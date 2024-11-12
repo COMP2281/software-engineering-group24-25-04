@@ -296,7 +296,7 @@ _As an administrator, I hope that the system will automatically push the new tas
 
     And the system will record the employee's confirmation operation so that the administrator can check the receipt of the task.
 
-  Implementing "automatic system notification" is a feature customers require. It is a must-have priority, which reduces the burden of administrators to notify employees one by one. Timely and clear notifications allow all employees to synchronize task information and avoid misunderstandings or conflicts caused by delayed or omitted information.
+  Implementing "automatic system notifications" is a feature customers require. It is a must-have priority, which reduces the burden of administrators to notify employees one by one. Timely and clear notifications allow all employees to synchronize task information and avoid misunderstandings or conflicts caused by delayed or omitted information.
 
 **Feature:** Automated Reminders (**Priority**: **Must Have**)
   
@@ -326,11 +326,24 @@ _As an administrator, I hope that the system will automatically push the new tas
 
     And staff member will resume working on the task.
 
- Implementing the "automated monthly reminders" feature is crucial for maintaining project transparency and accountability. It supports effective project management by prompting team members to provide regular updates, aligning with the client’s objective to ensure a functional and efficient progress tracking tool. The overdue task reminder feature ensures that staff members are notified promptly about tasks they might have overlooked. This functionality is essential for reducing project delays and improving overall productivity.This feature is prioritized as a "Must Have" using the MoSCoW prioritization method, given its importance to the overall system functionality and it directly contributes to the client’s goal of creating an effective task management system.
+**Scenario 3:** Receive automated reminders when project is transferred to a new user
 
-**Feature:** Subpages (**Priority**: **Must Have**)
+    Given a project is transferred from an old user to a new user
 
-**User story:** As an employee, I want each project to have its own subpage when displayed, avoiding stacking all content on one page
+    When a project is assigned to the new user
+
+    And the new user starts receiving automated reminders for the project
+
+    Then the old user will stop receiving the reminders for the project    
+    
+    And the old user no longer has access to the project    
+    
+
+ Implementing the "automated monthly reminders" feature is essential for maintaining project transparency and accountability. It supports effective project management by prompting team members to provide regular updates snd avoiding project delays, aligning with the client’s objective to ensure an efficient progress tracking tool. This feature is prioritized as a "must have", given its importance to the overall system functionality and its direct contribution to the client’s goal of creating an effective task management system.
+ 
+**Feature:** Subpages (**Priority**: **Must have**)
+
+_As an employee, I want each project to have its own subpage when displayed, avoiding stacking all content on one page._
 
 **Scenario 1:** View project details
         
@@ -344,11 +357,7 @@ _As an administrator, I hope that the system will automatically push the new tas
   
 Page clarity is also one of the client's requirements, so the priority is must-have. The main information of each project will be concentrated on the main page, while detailed project information and specific details will be stored in related subpages. In this way, users can browse and manage each project more systematically, reducing confusion and unnecessary information stacking.
 
-### Non-functional features
-  | Type       | Goal                                                                                                      | Scenario/Background                                                                                                                                                                                                                                                                                           | Priority     |
-|------------|-----------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------|
-| Reliability| Support large-scale concurrent user access while ensuring stable operation and quick recovery during high load and sudden failures through load balancing and disaster recovery mechanisms | Even during a surge in user numbers, the system should support a large number of users simultaneously with high availability. The system should run stably even under high load or during peak times without crashing or experiencing severe performance degradation, ensuring users can continuously access and use the service, avoiding interruptions caused by high concurrency. | High         |
-| Availability| Efficiently store and quickly read data                                                                  | User data, department member information, etc., are frequently accessed but seldom updated. For example, whenever the user homepage is refreshed, it will access this information. Store essential user information, friend lists, and other data in a distributed cache with an appropriate expiration time , and synchronize the updates to both the database and the cache when necessary.               | Medium       |
+
 
 ## Project Management
 ### Risks and Issues
