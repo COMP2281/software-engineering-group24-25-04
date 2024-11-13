@@ -404,7 +404,7 @@ The V-model, also known as the Verification and Validation model, is a model in 
 
 The DevOps model combines **dev**elopment and **op**erations teams to improve the speed, efficiency and quality of software delivery. It involves breaking down the separate divisions between developers, who write and improve code, and operations, who manage the deployment and maintenance, which fosters continuous integration (CI) and continuous delivery (CD). This model is very useful to implement, although not in the early stages of development, where requirements are continuously evolving. It also mainly focuses on automating and stabilising delivery, rather than refining the project requirements and specifications. Since our project involves creating and refining a feature set (in this case, target tracking functionalities), an iterative approach would be much better to use.
 
-In summary, we have decided to choose the Agile Scrum methodology, as it enables each member of the team to have a specific task to focus on over a period of time, encourages frequent feedback from both the team members and client, which will allow us to gradually build, test and adjust features as insights are given and also ensures the final product is tailored to user needs and is feature-complete within the timeframe.
+In summary, we have decided to choose the Agile Scrum model, as it enables each member of the team to have a specific task to focus on over a period of time, encourages frequent feedback from both the team members and client, which will allow us to gradually build, test and adjust features as insights are given and also ensures the final product is tailored to user needs and is feature-complete within the timeframe.
 
 
 ### Project Schedule
