@@ -195,24 +195,32 @@ _As a staff member, I would like to filter tasks by period (e.g day, week, month
     Then I should see only the tasks that are due within the selected time period.
 
     And tasks outside this time period should not be displayed.
-
     
+**Scenario 2:** View tasks in a custom date range
+      
+      Given I have tasks with various due dates
 
-  **Scenario 2:** View sub-task due dates
-  
-    Given I have sub-tasks (tasks within tasks) with various due dates
-    
-    When I select the "Day/Week/Month/Year" filter
-    
-    And choose a specific date as the period
-    
-    Then I should see only the sub-tasks that are due on that selected date.
+      When I select the "Custom Range" filter
 
-    And parent tasks not due on that date should be excluded unless they contain a matching sub-task.
-    
+      And specify a start and end date for the custom range
 
+      Then I should see only the tasks due in that specified range.
 
-**Scenario 3:** Clear filter
+      And tasks outside this range should not be displayed.
+
+**Scenario 3:** Show message when no tasks are due within the selected period
+      
+      Given I have tasks with various due dates
+
+      When I select a filter for a specific period (e.g., Day, Week, Month, Year)
+
+      And there are no tasks due within the selected period
+
+      Then I should see a message indicating that there are no tasks due in this time period.
+
+      And the task list should be empty.
+
+**Scenario 4:** Clear filter
 
     Given I have applied a filter to view tasks within a specific period
 
@@ -394,6 +402,9 @@ The Spiral model combines the waterfall and iterative techniques and includes ri
 
 The V-model, also known as the Verification and Validation model, is a model in which the process runs sequentially in a V shape. It essentially consists of a testing phase for each development stage, with the requirement to finish one phase before going on to the next. Although including a testing phase early in the development stage is beneficial in detecting problems and ensuring the quality and reliability of our project, we discovered that this model will be quite risky if our client's requirements change in the future because it uses a linear and sequential approach, making it difficult to adapt to changes. It would also be incredibly time-consuming because we would have to undertake testing at each stage, which is not required for our project.
 
-The DevOps model,
+The DevOps model combines **dev**elopment and **op**erations teams to improve the speed, efficiency and quality of software delivery. It involves breaking down the separate divisions between developers, who write and improve code, and operations, who manage the deployment and maintenance, which fosters continuous integration (CI) and continuous delivery (CD). This model is very useful to implement, although not in the early stages of development, where requirements are continuously evolving. It also mainly focuses on automating and stabilising delivery, rather than refining the project requirements and specifications. Since our project involves creating and refining a feature set (in this case, target tracking functionalities), an iterative approach would be much better to use.
+
+In summary, we have decided to choose the Agile Scrum methodology, as it enables each member of the team to have a specific task to focus on over a period of time, encourages frequent feedback from both the team members and client, which will allow us to gradually build, test and adjust features as insights are given and also ensures the final product is tailored to user needs and is feature-complete within the timeframe.
+
 
 ### Project Schedule
