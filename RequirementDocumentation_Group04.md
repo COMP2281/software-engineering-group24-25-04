@@ -414,7 +414,7 @@ Using the Agile Scrum methodology fosters and emphasises creativity and generati
 
 **5. Skill Acquisition/Building**
 
-Using the Agile Scrum methodology allows each member to gain a skill that will be very useful when working on future projects. Whether it is a programming skill, for example, in our case, being able to work on the structure for the frontend, backend, database, charts and automated reminder capabilities for our project, or a soft skill, like teamwork, time management, productivity, creativity and communication. This allows us to become more efficient for the client and ourselves in our future careers.
+Using the Agile Scrum methodology allows each member to gain a skill that will be very useful when working on future projects. Whether it is a programming skill, for example, in our case, being able to work on the structure for the frontend, backend, database, charts and automated reminder capabilities for our project, or a soft skill, like teamwork, time management, productivity, problem-solving and communication. This allows us to become more efficient for the client and ourselves in our future careers.
 
 
 
