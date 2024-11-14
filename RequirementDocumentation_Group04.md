@@ -86,7 +86,7 @@ _As a user, I want to be able to create an account so that I can securely log in
 
 **Scenario 1:** User tries to log in to system without an account
 
-      Given a user attempts to log in to system with no account details
+      Given a staff member attempts to log in to system with no account details
       
       When they try to log in
       
@@ -94,7 +94,7 @@ _As a user, I want to be able to create an account so that I can securely log in
       
 **Scenario 2:** User creates an account
 
-      Given a user wants to create an account to be able to log in
+      Given a staff member wants to create an account to be able to log in
       
       When they enter their email and secure password
       
@@ -102,7 +102,7 @@ _As a user, I want to be able to create an account so that I can securely log in
 
 **Scenario 3:** User logs in to system with the correct account details
 
-      Given a user, with an account, wants to log in to the system
+      Given a staff member, with an account, wants to log in to the system
       
       When they log in with the correct account details
       
@@ -110,7 +110,7 @@ _As a user, I want to be able to create an account so that I can securely log in
 
 **Scenario 4:** User logs in to the system with the incorrect account details and this attempt is less than three
 
-      Given a user attempts to log in to the system
+      Given a staff member attempts to log in to the system
       
       When they log in with the incorrect account details
       
@@ -120,7 +120,7 @@ _As a user, I want to be able to create an account so that I can securely log in
 
 **Scenario 5:** User logs in to the system with the incorrect account details and this is their third attempt
 
-      Given a user attempts to log in to the system
+      Given a staff member attempts to log in to the system
       
       When they log in with the incorrect account details
       
