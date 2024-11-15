@@ -469,7 +469,7 @@ Since Scrum is our preferred software development cycle approach, sprints are cr
 - Finish Project Management (Section 3 of the Requirement Documentation) - 20th November
 - Finish Requirement Documentation - 21st November
 - Finish test plan - 7th Feburary(Sprint #3)
-- Finsih CERP (Climate Emergency Response Plan) Target Tracking Project - 6th March(Sprint #5)
+- Finish CERP (Climate Emergency Response Plan) Target Tracking Project - 6th March(Sprint #5)
 ![Visio_00](https://github.com/user-attachments/assets/40832b5a-0486-4360-9f9f-2cd5c6b45b93)
 
 
