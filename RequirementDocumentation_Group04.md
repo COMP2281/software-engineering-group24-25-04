@@ -442,6 +442,34 @@ The DevOps model combines **dev**elopment and **op**erations teams to improve th
 We have decided to choose the Agile Scrum methodology, as it enables each member of the team to have a specific task to focus on over a period of time, encourages frequent feedback from both the team members and client, which will allow us to gradually build, test and adjust features as insights are given and also ensures the final product is tailored to user needs and is feature-complete within the timeframe.
 
 
+### Edited Version (Already shortened where I could) - Check First (Still requires shorterning) ###
+
+We have decided to employ the Agile Scrum methodology because it aligns with our project goals, the specifics of the project's scope, client requirements and our organisational capabilities.The Agile model emphasises on delivering high-quality products through teamwork and customer feedback. Scrum is an Agile framework that divides work into manageable tasks (sprints), allowing teams to deliver subtasks of work frequently. We used the sprint approach to finish our first assignment, which was writing the Requirement Documentation. This technique has worked quite well for us because it keeps us informed and ensures that everyone completes their tasks within the time range specified.
+
+This section discusses in more detail the advantages of using this methodology in relation to our project, and how it compares with some other models: the waterfall, Spiral, V and DevOps models.
+1. Adaptation and Flexibility
+Using the Agile Scrum methodology allows us as a group to gradually build, test and adjust features as insights are given from our client. As we are creating and refining a feature set (in this case, target tracking functionalities), this approach allows us to adjust easily to any changes in the project requirements.
+2. Increased Motivation and Team Satisfaction
+The Agile Scrum methodology encourages personal responsibility from each member of the group. The tasks for our project will be broken down based on capabilities and assigned to each member, with a particular deadline for completing each sub-task. This allows each member to feel more ownership of and pride in the project, leading to greater motivation and satisfaction.
+3. Increased Client-Team Collaboration
+Using the Agile Scrum methodology allows for continuous feedback from our client, in our case, via periodic meetings where we discuss how far we have gone with the project and ask questions about unclear parts of the specifications. This ensures that the final product is tailored to user needs and is feature-complete within the timeframe.
+4. Creativity and Innovation
+The Agile Scrum methodology fosters and emphasises creativity in generating new ideas. Due to the nature of our project and how closely we are working on its features, new solutions capable of improving quality can always come up in discussions, allowing continuous development.
+
+On the contrary, the Waterfall model follows a sequential approach, which means that one task must be finished before moving on to the next. We found this model to be a little tough to work with because it is rather rigid when it comes to determining which task to accomplish first. We discovered it was far easier to perform tasks that we were experienced doing and had the most information to work with first, therefore a tight sequential approach was not optimal for us.
+
+The Spiral model combines the Waterfall and iterative techniques and includes risk management capabilities. It is appropriate for large-scale and complex projects that require extensive risk management. However, our project is rather simple and short in scope, which involves tracking project progress for a team of DCC staff members. Since risk management is not our primary focus, we believe the spiral model is inappropriate for our project.
+
+The V-model, is a model in which the process runs sequentially in a V shape and consists of a testing phase for each development stage. Although including a testing phase early in the development stage is beneficial in detecting problems and ensuring the quality and reliability of our project, we discovered that this model will be quite risky if our client's requirements change in the future as it is difficult to adapt to changes. It would also be incredibly time-consuming to undertake testing at each stage, which is not required for our project.
+
+The DevOps model unites development and operations teams to enhance software delivery speed, efficiency, and quality. By fostering continuous integration (CI) and continuous delivery (CD), it bridges the gap between developers and operations. However, it is less suited for early development stages with evolving requirements, as its focus is on automating and stabilising delivery rather than refining project specifications, which is the focus of our project.
+
+In summary, we have chosen the Agile Scrum methodology, as it enables each member of the team to have a specific task to focus on over a period of time, encourages frequent feedback from both the team members and client, which will allow us to gradually build, test and adjust features as insights are given and also ensures the final product is tailored to user needs and is feature-complete within the timeframe.
+
+###End###
+
+
+
 ### Project Schedule
 The Gantt chart below shows the academic deadlines and the project's development schedule.
 We work on software engineering for five hours a week on average, plus any additional time that is voluntarily contributed. We also have weekly group meetings for an hour to review our progress. In order to make sure we are achieving our clients' expectations, we will also hold client meetings every three weeks.
