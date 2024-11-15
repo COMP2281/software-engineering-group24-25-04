@@ -447,13 +447,20 @@ We have decided to choose the Agile Scrum methodology, as it enables each member
 We have decided to employ the Agile Scrum methodology because it aligns with our project goals, the specifics of the project's scope, client requirements and our organisational capabilities.The Agile model emphasises on delivering high-quality products through teamwork and customer feedback. Scrum is an Agile framework that divides work into manageable tasks (sprints), allowing teams to deliver subtasks of work frequently. We used the sprint approach to finish our first assignment, which was writing the Requirement Documentation. This technique has worked quite well for us because it keeps us informed and ensures that everyone completes their tasks within the time range specified.
 
 This section discusses in more detail the advantages of using this methodology in relation to our project, and how it compares with some other models: the waterfall, Spiral, V and DevOps models.
-1. Adaptation and Flexibility
+
+**1. Adaptation and Flexibility**
+
 Using the Agile Scrum methodology allows us as a group to gradually build, test and adjust features as insights are given from our client. As we are creating and refining a feature set (in this case, target tracking functionalities), this approach allows us to adjust easily to any changes in the project requirements.
-2. Increased Motivation and Team Satisfaction
+
+**2. Increased Motivation and Team Satisfaction**
+
 The Agile Scrum methodology encourages personal responsibility from each member of the group. The tasks for our project will be broken down based on capabilities and assigned to each member, with a particular deadline for completing each sub-task. This allows each member to feel more ownership of and pride in the project, leading to greater motivation and satisfaction.
-3. Increased Client-Team Collaboration
+
+**3. Increased Client-Team Collaboration**
+
 Using the Agile Scrum methodology allows for continuous feedback from our client, in our case, via periodic meetings where we discuss how far we have gone with the project and ask questions about unclear parts of the specifications. This ensures that the final product is tailored to user needs and is feature-complete within the timeframe.
-4. Creativity and Innovation
+
+**4. Creativity and Innovation**
 The Agile Scrum methodology fosters and emphasises creativity in generating new ideas. Due to the nature of our project and how closely we are working on its features, new solutions capable of improving quality can always come up in discussions, allowing continuous development.
 
 On the contrary, the Waterfall model follows a sequential approach, which means that one task must be finished before moving on to the next. We found this model to be a little tough to work with because it is rather rigid when it comes to determining which task to accomplish first. We discovered it was far easier to perform tasks that we were experienced doing and had the most information to work with first, therefore a tight sequential approach was not optimal for us.
