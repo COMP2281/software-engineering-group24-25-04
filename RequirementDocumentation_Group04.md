@@ -132,7 +132,7 @@ Implementing a login system for our web application aligns with our client's nee
 
 **Feature:** Permission levels (**Priority**: **Must have**)
 
-_As a user, I want permission levels on project progress visibility so that my teams can’t view other teams' projects._
+_As a user, I want permission levels on the project so that my teams can’t view other teams' projects in order to improve data security issue._
 
 **Scenario 1:** View other teams' tasks
 
@@ -164,7 +164,7 @@ Implementing a "permission level" functionality aligns with the council's overal
 
 **Feature:** Responsive web design (**Priority**: **Must have**)
 
-   _As a user, I want the system to be accessible and responsive on various devices (why?)._
+   _As a user, I want the system to be accessible and responsive on various devices._
 
 **Scenario 1:** User experience across different devices
 
@@ -490,6 +490,6 @@ Waterfall, a sequential model, requires completing one task before starting the 
 The Gantt chart below shows the academic deadlines and the project's development schedule.
 We work on software engineering for five hours a week on average, plus any additional time that is voluntarily contributed. We also have weekly group meetings for an hour to review our progress. In order to make sure we are achieving our clients' expectations, we will also hold client meetings every three weeks.
 
-Subce Scrum is our preferred software development cycle approach, sprints are crucial for allowing teams to work in short cycles.Sprint will ensure quick adaptability to changes and ongoing improvement of the product.The sprint dates are only approximate and may be alter in the end.They have been partially determined depending on the dates of assignment submission.
+Since Scrum is our preferred software development cycle approach, sprints are crucial for allowing teams to work in short cycles.Sprint will ensure quick adaptability to changes and ongoing improvement of the product.The sprint dates are only approximate and may be alter in the end.
 ![image](https://github.com/user-attachments/assets/fbb7edd9-b9be-4c06-a418-babe88685522)
 
