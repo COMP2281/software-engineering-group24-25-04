@@ -491,5 +491,6 @@ The Gantt chart below shows the academic deadlines and the project's development
 We work on software engineering for five hours a week on average, plus any additional time that is voluntarily contributed. We also have weekly group meetings for an hour to review our progress. In order to make sure we are achieving our clients' expectations, we will also hold client meetings every three weeks.
 
 Since Scrum is our preferred software development cycle approach, sprints are crucial for allowing teams to work in short cycles.Sprint will ensure quick adaptability to changes and ongoing improvement of the product.The sprint dates are only approximate and may be alter in the end.
-![image](https://github.com/user-attachments/assets/fbb7edd9-b9be-4c06-a418-babe88685522)
+![image](https://github.com/user-attachments/assets/c87a54d0-3da5-4302-862e-390678f8e4bf)
+
 
