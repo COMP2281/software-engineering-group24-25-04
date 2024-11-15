@@ -465,7 +465,7 @@ Since Scrum is our preferred software development cycle approach, sprints are cr
 **Self-imposed deadline**
  
 - Finish Project Introduction (Section 1 of the Requirement Documentation) - 1st November
-- Finsh Requirements (Section 2 of the Requirement Documentation) - 12nd November
+- Finish Requirements (Section 2 of the Requirement Documentation) - 12nd November
 - Finish Project Management (Section 3 of the Requirement Documentation) - 20th November
 - Finish Requirement Documentation - 21st November
 - Finish test plan - 7th Feburary(Sprint #3)
