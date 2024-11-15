@@ -477,7 +477,12 @@ The Agile Scrum methodology fosters and emphasises creativity in generating new 
 
 In summary, we have chosen the Agile Scrum methodology, as it enables each member of the team to have a specific task to focus on over a period of time, encourages frequent feedback from both the team members and client, which will allow us to gradually build, test and adjust features as insights are given and also ensures the final product is tailored to user needs and is feature-complete within the timeframe.
 
-###End###
+####### Summarised paragraph for other models ###### // but if comparison part is actually important, then it should not be too short //
+
+Waterfall, a sequential model, requires completing one task before starting the next, but we find it quite rigid and challenging. It is easier for us to prioritise tasks we are experienced with and have more information about, making a strict sequential approach less suitable. The Spiral model combines waterfall and iterative techniques with risk management, ideal for large and complex projects. However, our simple, short-scoped project focuses on tracking team progress, making the spiral model unsuitable since risk management is not a priority. The V-shaped model includes a testing phase for each development stage, ensuring quality and reliability. However, it is difficult to adapt to changing client requirements and is too time-consuming for our project, where such extensive testing isn't necessary. The DevOps model enhances delivery speed and quality through continuous integration and delivery, uniting development and operations. However, it is less suited for early stages with evolving requirements, as our project focuses on refining specifications rather than automation.
+
+##### End #####
+
 
 
 
