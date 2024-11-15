@@ -492,4 +492,13 @@ We work on software engineering for five hours a week on average, plus any addit
 
 Since Scrum is our preferred software development cycle approach, sprints are crucial for allowing teams to work in short cycles.Sprint will ensure quick adaptability to changes and ongoing improvement of the product.The sprint dates are only approximate and may be alter in the end.
 
+**Self-imposed deadline**
+ 
+- Finish Project Introduction (Section 1 of the Requirement Documentation) - 1st November
+- Finsh Requirements (Section 2 of the Requirement Documentation) - 12nd November
+- Finish Project Management (Section 3 of the Requirement Documentation) - 20th November
+- Finish Requirement Documentation - 21st November
+- Finish test plan - 7th Feburary(Sprint #3)
+- Finsih CERP (Climate Emergency Response Plan) Target Tracking Project - 6th March(Sprint #5)
+
 
