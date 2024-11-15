@@ -461,6 +461,7 @@ The Agile Scrum methodology encourages personal responsibility from each member 
 Using the Agile Scrum methodology allows for continuous feedback from our client, in our case, via periodic meetings where we discuss how far we have gone with the project and ask questions about unclear parts of the specifications. This ensures that the final product is tailored to user needs and is feature-complete within the timeframe.
 
 **4. Creativity and Innovation**
+
 The Agile Scrum methodology fosters and emphasises creativity in generating new ideas. Due to the nature of our project and how closely we are working on its features, new solutions capable of improving quality can always come up in discussions, allowing continuous development.
 
 On the contrary, the Waterfall model follows a sequential approach, which means that one task must be finished before moving on to the next. We found this model to be a little tough to work with because it is rather rigid when it comes to determining which task to accomplish first. We discovered it was far easier to perform tasks that we were experienced doing and had the most information to work with first, therefore a tight sequential approach was not optimal for us.
