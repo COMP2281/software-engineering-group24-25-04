@@ -128,7 +128,7 @@ _As a user, I want to be able to create an account so that I can securely log in
       
       Then they are NOT taken to the home page, a message prompts the user to reset their password and a link is sent to their email to do so
 
-Implementing a login system for our web application aligns with our client's needs as it will enable administrator roles to grant specific permissions to each person based on the projects they are working on.
+Implementing a secure login system feature for the new system aligns with the council’s objective to enhance data security and enables the ability to achieve the high priority feature of permission levels.  The priority for the login system feature has been classed as “must have” because it is vital for keeping the target tracking system secure and tailored to each staff member, allowing increased data integrity and work productivity.
 
 **Feature:** Permission levels (**Priority**: **Must have**)
 
