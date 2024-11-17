@@ -365,7 +365,7 @@ _As an administrator, I hope that the system will automatically push the new tas
  
 **Feature:** Clear and intuitive user interface (**Priority**: **Must have**)
 
-_As an employee, I want each project to have its own subpage when displayed, avoiding stacking all content on one page._
+**User story:**_As a user, I hope the page is neat and aesthetically pleasing_
 
 **Scenario 1:** Subpage
         
