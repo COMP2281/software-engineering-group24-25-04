@@ -250,7 +250,7 @@ Implementing a "filter by period" functionality aligns with the council's overal
 
   **Scenario 2:** Ability to remove a goal
 
-    Given I have already have a task
+    Given I already have a task
     
     When the task has been terminated/finished
     
@@ -260,7 +260,7 @@ Implementing a "filter by period" functionality aligns with the council's overal
 
   **Scenario 3:** Ability to edit a goal
 
-    Given I have already have a task
+    Given I already have a task
     
     And the goal needs amending
     
@@ -274,7 +274,7 @@ Implementing a "filter by period" functionality aligns with the council's overal
     
     And I need to transfer the goal to another staff member
     
-    Then I, a manager need to transfer the goal to another staff member
+    Then I, a manager, need to transfer the goal to another staff member
     
     And remove the previous staff member from it.
 
