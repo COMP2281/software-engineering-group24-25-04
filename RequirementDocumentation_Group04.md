@@ -367,7 +367,7 @@ _As an administrator, I hope that the system will automatically push the new tas
 
 _As an employee, I want each project to have its own subpage when displayed, avoiding stacking all content on one page._
 
-**Scenario 1:** subpage
+**Scenario 1:** Subpage
         
     Given each project has a lot of detailed information and clear metrics
     
@@ -389,7 +389,7 @@ _As an employee, I want each project to have its own subpage when displayed, avo
     
     And the page remains clean and organized with minimal text clutter
     
-**Scenario 2:** Iconization function
+**Scenario 3:** Fold and expand function
 
     Given  a project has a large number of files
 
