@@ -363,11 +363,11 @@ _As an administrator, I hope that the system will automatically push the new tas
 
  Implementing the "automated monthly reminders" feature is essential for maintaining project transparency and accountability. It supports effective project management by prompting team members to provide regular updates snd avoiding project delays, aligning with the client’s objective to ensure an efficient progress tracking tool. This feature is prioritized as a "must have", given its importance to the overall system functionality and its direct contribution to the client’s goal of creating an effective task management system.
  
-**Feature:** Subpages (**Priority**: **Must have**)
+**Feature:** Clear and intuitive user interface (**Priority**: **Must have**)
 
 _As an employee, I want each project to have its own subpage when displayed, avoiding stacking all content on one page._
 
-**Scenario 1:** View project details
+**Scenario 1:** subpage
         
     Given each project has a lot of detailed information and clear metrics
     
@@ -376,7 +376,29 @@ _As an employee, I want each project to have its own subpage when displayed, avo
     Then I want this project to have a subpage to display the details and metrics
 
     And this keeps the main page simple, making it easier to classify, find and update, avoiding confusion caused by stacking all content together.
+
+  **Scenario 2:** Iconization function
   
+    Given a user is managing tasks in a task management system
+    
+    When the user interacts with the task list
+    
+    And uses icons to perform quick actions such as editing, completing, or deleting tasks
+    
+    Then the user can intuitively understand and execute actions without needing additional instructions
+    
+    And the page remains clean and organized with minimal text clutter
+    
+**Scenario 2:** Iconization function
+
+    Given  a project has a large number of files
+
+    When users need to view detailed information
+    
+    And the user clicks an "expand" button or icon to reveal more details
+    
+    Then the additional information is displayed below 
+    
 Page clarity is also one of the client's requirements, so the priority is must-have. The main information of each project will be concentrated on the main page, while detailed project information and specific details will be stored in related subpages. In this way, users can browse and manage each project more systematically, reducing confusion and unnecessary information stacking.
 
 
