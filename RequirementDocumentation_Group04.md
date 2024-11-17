@@ -254,11 +254,21 @@ Implementing a "filter by period" functionality aligns with the council's overal
     
     When the task has been terminated/finished
     
-    Then I need can delete the goal related to the task
+    Then I can delete the goal related to the task
     
     And only those on that task can remove this goal.
 
-  **Scenario 3:** Ability to transfer a goal
+  **Scenario 3:** Ability to edit a goal
+
+    Given I have already have a task
+    
+    And the goal needs amending
+    
+    Then I can edit the goal with the relevant updates
+    
+    And only those on that task can edit this goal.
+
+  **Scenario 4:** Ability to transfer a goal
 
     Given a staff member already has a goal
     
