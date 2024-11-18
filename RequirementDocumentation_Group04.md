@@ -75,7 +75,7 @@ We gathered from our elicitation that our requirements specification should focu
 
 ### Behavioural Requirements
 
-**Feature:** Login System (**Priority**: **Must have**)
+**Feature:** Login system (**Priority**: **Must have**)
 
 _As a user, I want to be able to create an account so that I can securely log in to the system that is tailored towards me._
 
