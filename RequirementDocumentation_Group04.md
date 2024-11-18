@@ -451,7 +451,7 @@ In summary, we have chosen the Agile Scrum methodology, as it enables each team 
 The Gantt chart below shows the academic deadlines and the project's development schedule.
 On average, we work on software engineering for five hours a week, plus any additional time that is voluntarily contributed. We also have weekly group meetings for an hour to review our progress. To ensure we are achieving our client's expectations, we will also hold client meetings every three weeks.
 
-Since Scrum is our preferred software development cycle approach, sprints are crucial for allowing teams to work in short cycles. Sprint will ensure quick adaptability to changes and ongoing improvement of the product.The sprint dates are only approximate and may be alter in the end.
+Since Scrum is our preferred software development cycle approach, sprints are crucial for allowing teams to work in short cycles. Sprints ensure quick adaptability to changes and ongoing improvement of the product.The sprint dates are only approximate and may be alter in the end.
 
 **Self-imposed deadlines**
  
