@@ -28,8 +28,6 @@ We aim to create a functional progress tracker website that is both user-friendl
 
 ### System Description
 
-(cut this down to a page)
-
 #### Current System
 
 As previously mentioned, the current target-tracking system is an Excel spreadsheet. As a platform, Excel is limited in its features for advanced multi-project management, deeming it insufficient for our client’s needs.
