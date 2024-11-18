@@ -3,7 +3,7 @@
 ### Overview and Justification
 
 This document is the Requirement Specification for our CERP (Climate Emergency Response Plan) Target Tracking Project.
-It has three parts. The first part is an overview, which includes the introduction, project scope, and technical description of the system. The second part is about how we collaborated with the client to gather requirements and list features that the user needed for our proposed solution. Finally, the last part will talk about the risks we may face during the project, the software development life cycle, and our plan to make it more organized.
+It has three parts. The first part is an overview, which includes the introduction, project scope, and technical description of the system. The second part is about how we collaborated with the client to gather requirements and list features that the user needed for our proposed solution. Finally, the last part will discuss the risks we may face during the project, the software development life cycle, and our plan to make it more organised.
 
 Durham County Council (DCC), our client, is committed to attaining net-zero carbon emissions by 2030 in response to Durham's climate crisis. To support this goal, we are collaborating with Louise Austin, the Senior Carbon and Energy Officer at DCC, to develop a tool that will efficiently manage and assess the progress of their climate initiatives, replacing their current, inefficient Excel-based system. The council aims to enhance usability, provide stakeholders with transparent visibility into project progress, and reduce reliance on manual reminders.
 
@@ -41,34 +41,34 @@ There are two non-commercial options: an app, or a website. Both allow specific 
 
 #### New System
 
-Following our analysis on the current system and research on alternative solutions, we concluded that the new system to be built shall be a React.js web application. Using React.js will allow for a customisable, dynamic and responsive user interface, allowing us to create components in order to display the targets in a user-friendly way. We shall take inspiration from the commercial solutions to help us design the features that will allow the users to visualise each goal, without the complexity the current system and other solutions hold.
+Following our analysis of the current system and research on alternative solutions, we concluded that the new system to be built should be a React.js web application. Using React.js will allow for a customisable, dynamic, and responsive user interface, allowing us to create components to display the targets in a user-friendly way. We shall take inspiration from commercial solutions to help us design the features that will allow the users to visualise each goal without the complexity the current system and other solutions hold.
 
-In the backend, we will make use of the REST API with Node.js to handle requests to the server, and store all changes made to each target data in a secure database. We will implement robust data management, ensuring data integrity is kept and data redundancy is minimised.
+In the backend, we will use the REST API with Node.js to handle requests to the server and store all changes made to each target data in a secure database. We will implement robust data management, ensuring data integrity is maintained and data redundancy is minimised.
 
-To incorporate user permissions, we plan to use an API that will allow workers to log in to the system with their work Outlook email, enabling us to tailor each target to each person. We will need to check with Durham City Council on whether we have permission to do so, and if not we shall incorporate a login system where each person must create an account, login details securely stored, and give administrative roles the ability to assign each person to their goal. In any case, we shall build the system so that each user’s view of all targets is specifically tailored to them.
+To incorporate user permissions, we plan to use an API allowing workers to log in to the system with their work Outlook email, enabling us to tailor each target to each person. We will need to check with Durham City Council on whether we have permission to do so, and if not, we shall incorporate a login system where each person must create an account, have login details securely stored, and give administrative roles the ability to assign each person to their goal. In any case, we shall build the system so that each user’s view of all targets is tailored to them.
 
-We shall use another API that will send monthly emails to each person about the targets they are working on. Again, we must liaise with Durham City Council to ensure we have the permission to do so.
+We shall use another API to send monthly emails to each person about the targets they are working on. Again, we must liaise with Durham City Council to ensure we have the permission to do so.
 
 ## Solution Requirements
 ### Requirements Elicitation
 
-To elicit the client’s requirements and ensure we streamlined our focus on the new system to best align with their needs, we carefully read the brief and conducted a number of meetings to coordinate the specific features they wanted.
+To elicit the client’s requirements and ensure we streamlined our focus on the new system to best align with their needs, we carefully read the brief and conducted several meetings to coordinate the specific features they wanted.
 
-As a team we decomposed the brief and devised a series of discussion points in order to clarify things addressed in the document, ensuring we understood fully what it was that they were asking of us. One challenge we faced upon receiving the project brief was related to “permission levels”. Originally, we were unsure about what our client meant by this and required further elaboration. Another challenge we faced was understanding the goals that they would be tracking, because there was no evidence given of what they currently track.
+As a team we decomposed the brief and devised a series of discussion points in order to clarify things addressed in the document, ensuring we understood fully what it was that they were asking of us. One challenge we faced upon receiving the project brief was related to “permission levels”. Initially, we were unsure what our client meant by this and required further elaboration. Another challenge we faced was understanding the goals that they would be tracking because there was no evidence given of what they currently track.
 
-We organised a meeting to help us clarify our confusion, and we now understand that the implementation of permission levels meant that each company would have the permission to see all targets, but only have the permission to edit their own targets. We were also given some examples of what they currently track to further our understanding the purpose of this new system to be built.
+We organised a meeting to help us clarify our confusion, and we now understand that the implementation of permission levels meant that each company would have the permission to see all targets, but only the permission to edit their own targets. We were also given some examples of what they currently track to further our understanding of the purpose of this new system to be built.
 
-In our internal meetings, we analysed the current spreadsheet tracking system, provided by our client following our last meeting with them, by breaking it down and going into detail on how their current system works. Upon reading their spreadsheet, we concluded that it was confusing: there were too many categories, missing data, confusing deadlines, and lacked consistency in measuring goals. 
+In our internal meetings, we analysed the current spreadsheet tracking system, provided by our client following our last meeting with them, by breaking it down and explaining in detail how their current system works. Upon reading their spreadsheet, we concluded that it was confusing: there were too many categories, missing data, confusing deadlines, and a lack of consistency in measuring goals. 
 
-We arranged another meeting where we asked our client to demonstrate how user’s would utilise the current system whilst encouraging her to explain any issues they had with it. This was incredibly helpful when designing the requirement specification, as we gained an insight as to how the current system was being used, and how the new system could improve their user experience.
+We arranged another meeting in which we asked our client to demonstrate how users would utilise the current system while encouraging her to explain any issues they had with it. This was incredibly helpful when designing the requirement specification, as we gained an insight into how the current system was being used, and how the new system could improve their user experience.
 
-Our client went through step by step and explained the headings in the spreadsheet, and we are now aware of which columns are essential, and which are optional as well as which column should be used for the goal tracking.
+Our client went through the spreadsheet step by step and explained the headings, so we are now aware of which columns are essential, and which are optional as well as which column should be used for the goal tracking.
 
-A specific feature our client requested was the implementation of progress bars because users struggled with the layout of the excel spreadsheet: the lack of visual representation of progress and focus on specific tasks decreased productivity and ease for the users. Another feature they asked for was automated reminders to prompt staff members to update their work.
+A specific feature our client requested was the implementation of progress bars because users struggled with the layout of the Excel spreadsheet: The lack of visual representation of progress and focus on specific tasks decreased productivity and ease for the users. Another feature they asked for was automated reminders to prompt staff members to update their work.
 
-We did some research on existing solutions to figure out other potential features that could be added to fulfil the requirements of our client. After brainstorming a few ideas together, we reached a mutual decision on which features were the most useful and required for our web application. We presented those features in our next meeting with our client to seek feedback.
+We researched existing solutions to identify other potential features that could be added to fulfil our client's requirements. After brainstorming a few ideas, we reached a mutual decision on which features were the most useful and required for our web application. We presented those features in our next meeting with our client to seek feedback.
 
-Following our own research, our client’s requests and needs in mind, we included a login system in our requirements specification in order to implement the permission levels. We proposed a feature to allow users to search for, filter, and sort tasks, to improve productivity and navigation of targets, and this was something that the client supported.
+Following our own research, and keeping our client’s requests and needs in mind, we included a login system in our requirements specification to implement the permission levels. We proposed a feature to allow users to search for, filter, and sort tasks, to improve productivity and navigation of targets, and the client supported this.
 
 We gathered from our elicitation that our requirements specification should focus on improving data integrity and security on tasks, and improving the user experience to help focus and boost productivity.
 
@@ -441,17 +441,17 @@ This section delves into the advantages of using this methodology for our projec
 **3. Increased Client-Team Collaboration:** This model emphasises continuous feedback through periodic meetings with our client, enabling the team to clarify specifications and align the final product with user needs within the timeframe. In contrast, the Waterfall model involves minimal client interaction after the initial requirements phase, increasing the risk of misaligned outcomes. Similarly, the V model prioritises testing over iterative feedback, making it less collaborative.
 
 
-**4. Creativity and Innovation:** Agile fosters creativity by encouraging idea generation and continuous development through collaboration, where new quality-improving solutions can always come up in discussions. Unlike DevOps, which emphasises automation and delivery speed, Agile is better suited for early stages where requirements are still evolving, aligning with our project's focus on refining specifications.
+**4. Creativity and Innovation:** Agile fosters creativity by encouraging idea generation and continuous development through collaboration, where new quality-improving solutions can always be discussed. Unlike DevOps, which emphasises automation and delivery speed, Agile is better suited for early stages where requirements are still evolving, aligning with our project's focus on refining specifications.
 
 
-In summary, we have chosen the Agile Scrum methodology, as it enables each member of the team to have a specific task to focus on over a period of time, encourages frequent feedback from both the team members and client, and ensures the final product is tailored to user needs and is feature-complete within the timeframe.
+In summary, we have chosen the Agile Scrum methodology, as it enables each team member to focus on a specific task over a period of time, encourages frequent feedback from both the team members and client, and ensures the final product is tailored to user needs and is feature-complete within the timeframe.
 
 
 ### Project Schedule
 The Gantt chart below shows the academic deadlines and the project's development schedule.
-We work on software engineering for five hours a week on average, plus any additional time that is voluntarily contributed. We also have weekly group meetings for an hour to review our progress. In order to make sure we are achieving our clients' expectations, we will also hold client meetings every three weeks.
+On average, we work on software engineering for five hours a week, plus any additional time that is voluntarily contributed. We also have weekly group meetings for an hour to review our progress. To ensure we are achieving our client's expectations, we will also hold client meetings every three weeks.
 
-Since Scrum is our preferred software development cycle approach, sprints are crucial for allowing teams to work in short cycles.Sprint will ensure quick adaptability to changes and ongoing improvement of the product.The sprint dates are only approximate and may be alter in the end.
+Since Scrum is our preferred software development cycle approach, sprints are crucial for allowing teams to work in short cycles. Sprint will ensure quick adaptability to changes and ongoing improvement of the product.The sprint dates are only approximate and may be alter in the end.
 
 **Self-imposed deadlines**
  
@@ -459,8 +459,8 @@ Since Scrum is our preferred software development cycle approach, sprints are cr
 - Finish Requirements (Section 2 of the Requirement Documentation) - 12nd November
 - Finish Project Management (Section 3 of the Requirement Documentation) - 20th November
 - Finish Requirement Documentation - 21st November
-- Finish test plan - 7th Feburary(Sprint #3)
-- Finish CERP (Climate Emergency Response Plan) Target Tracking Project - 6th March(Sprint #5)
+- Finish test plan - 7th Feburary (Sprint #3)
+- Finish CERP (Climate Emergency Response Plan) Target Tracking Project - 6th March (Sprint #5)
 ![Visio](<Visio_00.png>)
 
 
