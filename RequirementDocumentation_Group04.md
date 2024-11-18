@@ -305,7 +305,7 @@ Implementing a "filter by period" functionality aligns with the council's overal
 
 **Feature:** Automated reminders (**Priority**: **Must Have**)
   
-**User story:** _As a manager, I want the system to send automated monthly reminders to project stakeholders so they can update their progress on the project and complete overdue tasks, enabling me to keep track of the monthly status without needing manual reminders._
+ _As a manager, I want the system to send automated monthly reminders to project stakeholders so they can update their progress on the project and complete overdue tasks, enabling me to keep track of the monthly status without needing manual reminders._
 
 **Scenario 1:** Send automated reminders on project progress
 
@@ -344,7 +344,7 @@ Implementing a "filter by period" functionality aligns with the council's overal
     And the old user no longer has access to the project    
     
 
- Implementing the "automated monthly reminders" feature is essential for maintaining project transparency and accountability. It supports effective project management by prompting team members to provide regular updates snd avoiding project delays, aligning with the client’s objective to ensure an efficient progress tracking tool. This feature is prioritized as a "must have", given its importance to the overall system functionality and its direct contribution to the client’s goal of creating an effective task management system.
+ Implementing the "automated monthly reminders" feature is essential for maintaining project transparency and accountability. It supports effective project management by prompting team members to provide regular updates and avoiding project delays, aligning with the client’s objective to ensure an efficient progress tracking tool. This feature is prioritized as a "must have", given its importance to the overall system functionality and its direct contribution to the client’s goal of creating an effective task management system.
  
 **Feature:** Clear and intuitive user interface (**Priority**: **Must have**)
 
