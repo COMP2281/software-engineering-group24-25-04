@@ -35,7 +35,7 @@ The spreadsheet itself lacks clarity: the tabular format isn’t suitable for tr
 
 We conducted research into solutions that we could use:
 
-**1. Notion** is a commercial website that is user friendly, collaborative and cost-efficient. It provides free to use templates, which can be convinent for companies, and provides progress bars and status mode features, allowing efficient tracking of goals. We plan to take inspiration from this feature and implement the use of progress bars in our final solution. But, Notion can be overwhelming to use, due to an abundance of features, particularly ones that won’t be needed for our client, and certain templates that may be suited to our client have a fee. 
+**1. Notion** is a commercial website that is user friendly, collaborative and cost-efficient. It provides free to use templates, which can be convenient for companies, and provides progress bars and status mode features, allowing efficient tracking of goals. We plan to take inspiration from this feature and implement the use of progress bars in our final solution. However, Notion can be overwhelming to use, due to an abundance of features, particularly ones that won’t be needed for our client, and certain templates that may be suited to our client have a fee. 
 
 **2. Jira** is a project management and issue tracking tool, that is widely used in software development and IT projects. It allows the management of various aspects of a project, including task assignment and progress tracking, using different charts for tracking progress. However, the cost is relatively high and increases as the number of users grow. The interface is also complex, which our solution shouldn’t be. 
 
@@ -54,7 +54,7 @@ We shall use another API to send monthly emails to each person about the targets
 
 To elicit the client’s requirements and ensure we streamlined our focus on the new system to best align with their needs, we carefully read the brief and conducted several meetings to coordinate the specific features they wanted.
 
-As a team we decomposed the brief and devised a series of discussion points in order to clarify things addressed in the document, ensuring we understood fully what it was that they were asking of us. One challenge we faced upon receiving the project brief was related to “permission levels”. Initially, we were unsure what our client meant by this and required further elaboration. Another challenge we faced was understanding the goals that they would be tracking because there was no evidence given of what they currently track.
+As a team we decomposed the brief and devised a series of discussion points to clarify things addressed in the document, ensuring we understood fully what it was that they were asking of us. One challenge we faced upon receiving the project brief was related to “permission levels”. Initially, we were unsure what our client meant by this and required further elaboration. Another challenge we faced was understanding the goals that they would be tracking because there was no evidence given of what they currently track.
 
 We organised a meeting to help us clarify our confusion, and we now understand that the implementation of permission levels meant that each company would have the permission to see all targets, but only the permission to edit their own targets. We were also given some examples of what they currently track to further our understanding of the purpose of this new system to be built.
 
@@ -70,7 +70,7 @@ We researched existing solutions to identify other potential features that could
 
 Following our own research, and keeping our client’s requests and needs in mind, we included a login system in our requirements specification to implement the permission levels. We proposed a feature to allow users to search for, filter, and sort tasks, to improve productivity and navigation of targets, and the client supported this.
 
-We gathered from our elicitation that our requirements specification should focus on improving data integrity and security on tasks, and improving the user experience to help focus and boost productivity.
+We gathered from our elicitation that our requirements specification should focus on improving data integrity and security on tasks and improving the user experience to help focus and boost productivity.
 
 
 ### Behavioural Requirements
@@ -121,7 +121,7 @@ _As a user, I want to be able to create an account so that I can securely log in
       
       AND this is attempt 3
       
-      Then they are NOT taken to the home page, a message prompts the user to reset their password and a link is sent to their email to do so
+      Then they are NOT taken to the home page, a message prompts the user to reset their password, and a link is sent to their email to do so
 
 Implementing a secure login system feature for the new system aligns with the council’s objective to enhance data security and enables the ability to achieve the high priority feature of permission levels.  The priority for the login system feature has been classed as “must have” because it is vital for keeping the target tracking system secure and tailored to each staff member, allowing increased data integrity and work productivity.
 
@@ -153,7 +153,7 @@ _As a user, I want permission levels on the project so that my teams can’t vie
 
       And the manager wants to transfer tasks between staff members
 
-      Then the task will be transfered.
+      Then the task will be transferred.
 
 Implementing a "permission level" functionality aligns with the council's overall objectives to improve data security and access control. It allows managers to transfer task between staff members, edit permission level to users and user can only edit or view project progress across their own teams. The priority has been classed as "must have", as it is essential for the purpose of a goal tracking system, therefore it is crucial to the functionality of the application.
 
@@ -175,15 +175,15 @@ Implementing a "permission level" functionality aligns with the council's overal
    
       When they visit the website
    
-      Then they should have the option to adjust the font size and color to suit their requirement
+      Then they should have the option to adjust the font size and colour to suit their requirement
 
       
-Implementing a "Responsive web design" functionality aligns with the council's overall objectives to improve readibility. It allows user to customizable visual setting and change the layout based on different devices. The priority has been classed as "must have", as it is essential for the purpose of a goal tracking system, therefore it is crucial to the functionality of the application.
+Implementing a "Responsive web design" functionality aligns with the council's overall objectives to improve readability. It allows user to customizable visual setting and change the layout based on different devices. The priority has been classed as "must have", as it is essential for the purpose of a goal tracking system, therefore it is crucial to the functionality of the application.
 
 
 **Feature:** Filter tasks by period (**Priority**: **Should Have**)
 
-_As a staff member, I would like to filter tasks by period (e.g day, week, month, year) in order to know which tasks are due within a specific timeframe._
+_As a staff member, I would like to filter tasks by period (e.g. day, week, month, year) in order to know which tasks are due within a specific timeframe._
 
  **Scenario 1:** View tasks due today/this week/this month/this year
  
@@ -193,7 +193,7 @@ _As a staff member, I would like to filter tasks by period (e.g day, week, month
     
     And choose "Today/This week/This month/This year" as the period
     
-    Then I should see only the tasks that are due within the selected time period.
+    Then I should see only the tasks that are due within the selected period.
 
     And tasks outside this time period should not be displayed.
     
@@ -217,7 +217,7 @@ _As a staff member, I would like to filter tasks by period (e.g day, week, month
 
       And there are no tasks due within the selected period
 
-      Then I should see a message indicating that there are no tasks due in this time period.
+      Then I should see a message indicating that there are no tasks due in this period.
 
       And the task list should be empty.
 
@@ -276,7 +276,7 @@ Implementing a "filter by period" functionality aligns with the council's overal
     
     And remove the previous staff member from it.
 
-  Implementing the "ability to edit goals" functionality aligns with the council's overall objectives to improve the structure of the goal tracking software. This will enable better readability for the users, as it will be easier to read the goals and all the requirements once added. It should also improve efficiency when adding new goals, due to a clear structure. The priority has been classed as "must have", as it is essential for the purpose of a goal tracking system, therefore it is crucial to the functionality of the application.
+  Implementing the "ability to edit goals" functionality aligns with the council's overall objectives to improve the structure of the goal tracking software. This will enable better readability for the users, as it will be easier to read the goals, and all the requirements once added. It should also improve efficiency when adding new goals, due to a clear structure. The priority has been classed as "must have", as it is essential for the purpose of a goal tracking system, therefore it is crucial to the functionality of the application.
 
 **Feature:** Progress bar (**Priority**: **Must have**)
 
@@ -325,7 +325,7 @@ Implementing a "filter by period" functionality aligns with the council's overal
 
     And staff members may have forgotten about the due date of these tasks
 
-    When staff member receive an automated reminder for the overdue task
+    When staff member receives an automated reminder for the overdue task
 
     Then staff member is prompted to complete the task immediately
 
@@ -348,7 +348,7 @@ Implementing a "filter by period" functionality aligns with the council's overal
  
 **Feature:** Clear and intuitive user interface (**Priority**: **Must have**)
 
-**User story:**_As a user, I want the page to be concise and clear because a neat page can make the operation more intuitive and more visually comfortable, which can not only improve my work efficiency but also make me feel happy during use._
+_As a user, I want the page to be concise and clear because a neat page can make the operation more intuitive and more visually comfortable, which can not only improve my work efficiency but also make me feel happy during use._
 
 **Scenario 1:** Subpage
         
@@ -360,7 +360,7 @@ Implementing a "filter by period" functionality aligns with the council's overal
 
     And this keeps the main page simple, making it easier to classify, find and update, avoiding confusion caused by stacking all content together.
 
-  **Scenario 2:** Iconization function
+  **Scenario 2:** Icon function
   
     Given a user is managing tasks in a task management system
     
@@ -374,7 +374,7 @@ Implementing a "filter by period" functionality aligns with the council's overal
     
 **Scenario 3:** Fold and expand function
 
-    Given  a project has a large number of files
+    Given a project has a large number of files
 
     When users need to view detailed information
     
@@ -382,7 +382,7 @@ Implementing a "filter by period" functionality aligns with the council's overal
     
     Then the additional information is displayed below 
     
-Page clarity is also one of the client's requirements, so the priority is must-have. The main information of each project will be concentrated on the main page, while detailed project information and specific details will be stored in related subpages. In this way, users can browse and manage each project more systematically, reducing confusion and unnecessary information stacking.
+Page clarity is also one of the client's requirements, so the priority is "must have". The main information of each project will be concentrated on the main page, while specific details of project will be stored in related subpages. In this way, users can browse and manage each project more systematically, reducing confusion and unnecessary information stacking.
 
 
 
@@ -391,12 +391,12 @@ Page clarity is also one of the client's requirements, so the priority is must-h
 
 | Risk Type | Risk | Explanation | Probability | Impact | Risk Score | Mitigation |
 | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
-| Group | Someone won’t/can’t do project | If during the project a group member is refusing to do their work, is ignoring messages, or is unable to continue the project for legitimate reasons | Possible | Medium | 9 | We will remove single points of failure i.e. have multiple people (at least 2) on significant parts of the project. In the event this occurs, we would reduce project scope with the client and we would re-distribute group tasks. |
-| Group| Work lost/Out of sync updates | Collaborative project means multiple people working on same thing at the same time. If changes are not saved, people may work on same thing unknowingly, decreasing productivity and wasting time. Losing work would be harmful, pushing back the work flow and schedule. | Very Probable | Very High | 25 | Ensure that all work is saved and backed up iteratively. Commit all changes to the shared GitHub repository. |
+| Group | Someone won’t/can’t do project | If during the project a group member is refusing to do their work, is ignoring messages, or is unable to continue the project for legitimate reasons | Possible | Medium | 9 | We will remove single points of failure i.e. have multiple people (at least 2) on significant parts of the project. In the event this occurs, we would reduce project scope with the client, and we would re-distribute group tasks. |
+| Group| Work lost/Out of sync updates | Collaborative project means multiple people working on same thing at the same time. If changes are not saved, people may work on same thing unknowingly, decreasing productivity and wasting time. Losing work would be harmful, pushing back the workflow and schedule. | Very Probable | Very High | 25 | Ensure that all work is saved and backed up iteratively. Commit all changes to the shared GitHub repository. |
 | Client | No response from client | We are working with Durham City Council whom will be busy with other commitments and may not have the time to correspond with us. This may pose issues for us for example when we ultimately encounter a problem that requires the client’s input. | Rare | High | 4 | Continue efforts to communicate and contact the client. Worst case, speak to module leaders to address the issue. |
 | Client | Use a commercial option | If the client decides to use a different solution, one that has already been made and is available online. | Rare | Very Low | 1 | Try ensure that we communicate with the client and head in the direction they would like. |
-| Software Development | Data security breach | There are different companies that will be using this solution. Companies should only be able to edit their own goals. If another company edited/deleted another companies goals then it could result in a halt in development. | Unlikely |  High | 8 | Ensure permissions work so that unauthorised staff members don’t edit other companies goals (only managers have access to edit permissions). |
-| Software Development | New updates on frameworks used cause bugs | We plan to use React.js and other open source frameworks like APIs in our solution. These may be updated and our written solution may not be compatible with the new updates. | Probable | Medium | 12 | Make sure that from now we are using updated versions and iteratively check for new updates. |
+| Software Development | Data security breach | There are different companies that will be using this solution. Companies should only be able to edit their own goals. If another company edited/deleted other companies' goals, then it could result in a halt in development. | Unlikely | High | 8 | Ensure permissions work so that unauthorised staff members don’t edit other companies' goals (only managers have access to edit permissions). |
+| Software Development | New updates on frameworks used cause bugs | We plan to use React.js and other open-source frameworks like APIs in our solution. These may be updated, and our written solution may not be compatible with the new updates. | Probable | Medium | 12 | Make sure that from now we are using updated versions and iteratively check for new updates. |
 
 
 ### Development Approach
@@ -419,7 +419,7 @@ This section delves into the advantages of using this methodology for our projec
 **4. Creativity and Innovation:** Agile fosters creativity by encouraging idea generation and continuous development through collaboration, where new quality-improving solutions can always be discussed. Unlike DevOps, which emphasises automation and delivery speed, Agile is better suited for early stages where requirements are still evolving, aligning with our project's focus on refining specifications.
 
 
-In summary, we have chosen the Agile Scrum methodology, as it enables each team member to focus on a specific task over a period of time, encourages frequent feedback from both the team members and client, and ensures the final product is tailored to user needs and is feature-complete within the timeframe.
+In summary, we have chosen the Agile Scrum methodology, as it enables each team member to focus on a specific task over a period, encourages frequent feedback from both the team members and client, and ensures the final product is tailored to user needs and is feature-complete within the timeframe.
 
 
 ### Project Schedule
