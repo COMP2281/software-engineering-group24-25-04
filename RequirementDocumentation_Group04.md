@@ -428,23 +428,25 @@ Page clarity is also one of the client's requirements, so the priority is must-h
 
 ### Development Approach
 
-We have decided to employ the Agile Scrum methodology for our project. The model emphasises on delivering high-quality products through teamwork and customer feedback. It divides work into manageable tasks (sprints), allowing teams to deliver subtasks of work frequently. We used the sprint approach to finish writing the requirement documentation. This technique has worked quite well for us because it keeps us informed and ensures that everyone completes their tasks within the time range specified.
+We have decided to employ the Agile Scrum methodology for our project. This approach emphasises on delivering high-quality products through teamwork and customer feedback. It divides work into manageable tasks (sprints), allowing teams to deliver subtasks of work frequently. For example, we used the sprint approach to complete the requirement documentation, which has proven effective in keeping everyone informed and ensuring tasks are completed within the specified timeframe.
 
-This section discusses in more detail the advantages of using this methodology for our project and how it compares with some other models, including the waterfall, spiral, V, and DevOps models.
 
-**1. Adaptation and Flexibility:** This model allows us as a group to gradually build, test and adjust features as insights are given from our client. As we are creating and refining a feature set (target tracking functionalities), this approach allows us to adjust easily to any changes in the project requirements.
+This section delves into the advantages of using this methodology for our project and compares it with other models, including Waterfall, Spiral, V, and DevOps.
 
-**2. Increased Motivation and Team Satisfaction:** This model encourages personal responsibility from members of the group. The tasks for our project will be assigned to each member based on their capabilities, with a deadline for completing each sub-task. This allows members to feel more ownership in the project, leading to greater motivation and satisfaction.
 
-**3. Increased Client-Team Collaboration:** This model allows for continuous feedback from our client, via periodic meetings where we discuss our progress with the project and ask questions about unclear parts of the specifications. This ensures that the final product is tailored to user needs and is feature-complete within the timeframe.
+1. Adaptation and Flexibility: This model supports gradual development, testing, and adjustment of features based on client insights. It ensures that we can easily accommodate changes to project requirements while refining the target tracking functionalities. Unlike the rigid Waterfall model, which requires sequential task completion and limits adaptability, Agile is dynamic and enables us to prioritise tasks where we have expertise and clearer information. Compared to the V model, which incorporates testing at every stage but can be time-consuming and restrictive, Agile is better suited for projects where flexibility is key. 
 
-**4. Creativity and Innovation:** An agile approach fosters and emphasises creativity in generating new ideas. Due to the nature of our project and how closely we are working on its features, new solutions capable of improving quality can always come up in discussions, allowing continuous development.
 
-### Comparison with Alternative Methods
+2. Increased Motivation and Team Satisfaction: Agile encourages personal responsibility by assigning tasks based on individual capabilities with clear deadlines. This allows members to feel more ownership in the project, leading to greater motivation and satisfaction. In contrast, the Spiral model, suited for large, complex projects with extensive risk management needs, is unnecessary for our simple and short-scoped project focused on tracking progress for a team of DCC staff. Since risk management is not our primary focus, using the Spiral model could overcomplicate the process and reduce team motivation.
 
-Waterfall, a sequential model, requires completing one task before starting the next, but we find it quite rigid and challenging. It is easier for us to prioritise tasks we are experienced with and have more information about, making a strict sequential approach less suitable. The Spiral model combines waterfall and iterative techniques with risk management, ideal for large and complex projects. However, our simple, short-scoped project focuses on tracking team progress, making the spiral model unsuitable since risk management is not a priority. The V-shaped model includes a testing phase for each development stage, ensuring quality and reliability. However, it is difficult to adapt to changing client requirements and is too time-consuming for our project, where such extensive testing isn't necessary. The DevOps model enhances delivery speed and quality through continuous integration and delivery, uniting development and operations. However, it is less suited for early stages with evolving requirements, as our project focuses on refining specifications rather than automation.
 
-In summary, we have chosen the Agile Scrum methodology, as it enables each member of the team to have a specific task to focus on over a period of time, encourages frequent feedback from both the team members and client, which will allow us to gradually build, test and adjust features as insights are given and also ensures the final product is tailored to user needs and is feature-complete within the timeframe.
+3. Increased Client-Team Collaboration: This model emphasises continuous feedback through periodic meetings with our client, enabling the team to clarify specifications and align the final product with user needs within the timeframe. In contrast, the Waterfall model involves minimal client interaction after the initial requirements phase, increasing the risk of misaligned outcomes. Similarly, the V model prioritises testing over iterative feedback, making it less collaborative.
+
+
+4. Creativity and Innovation: Agile fosters creativity by encouraging idea generation and continuous development through collaboration, where new quality-improving solutions can always come up in discussions. Unlike DevOps, which emphasises automation and delivery speed, Agile is better suited for early stages where requirements are still evolving, aligning with our project's focus on refining specifications.
+
+
+In summary, we have chosen the Agile Scrum methodology, as it enables each member of the team to have a specific task to focus on over a period of time, encourages frequent feedback from both the team members and client, and ensures the final product is tailored to user needs and is feature-complete within the timeframe.
 
 
 ### Project Schedule
