@@ -348,7 +348,7 @@ Implementing a "filter by period" functionality aligns with the council's overal
  
 **Feature:** Clear and intuitive user interface (**Priority**: **Must have**)
 
-**User story:**_As a user, I hope the page is neat and aesthetically pleasing_
+**User story:**_As a user, I want the page to be concise and clear because a neat page can make the operation more intuitive and more visually comfortable, which can not only improve my work efficiency but also make me feel happy during use._
 
 **Scenario 1:** Subpage
         
