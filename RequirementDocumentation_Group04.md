@@ -184,47 +184,47 @@ _As a staff member, I would like to filter tasks by period (e.g. day, week, mont
 
  **Scenario 1:** View tasks due today/this week/this month/this year
  
-    Given I have tasks with various due dates
+    Given a staff member has tasks with various due dates
     
-    When I select the "Day/Week/Month/Year" filter
+    When they select the "Day/Week/Month/Year" filter
     
     And choose "Today/This week/This month/This year" as the period
     
-    Then I should see only the tasks that are due within the selected period.
+    Then they should see only the tasks that are due within the selected period.
 
     And tasks outside this time period should not be displayed.
     
 **Scenario 2:** View tasks in a custom date range
       
-      Given I have tasks with various due dates
+      Given a staff member has tasks with various due dates
 
-      When I select the "Custom Range" filter
+      When they select the "Custom Range" filter
 
       And specify a start and end date for the custom range
 
-      Then I should see only the tasks due in that specified range.
+      Then they should see only the tasks due in that specified range.
 
       And tasks outside this range should not be displayed.
 
 **Scenario 3:** Show message when no tasks are due within the selected period
       
-      Given I have tasks with various due dates
+      Given a staff member has tasks with various due dates
 
-      When I select a filter for a specific period (e.g., Day, Week, Month, Year)
+      When they select a filter for a specific period (e.g., Day, Week, Month, Year)
 
       And there are no tasks due within the selected period
 
-      Then I should see a message indicating that there are no tasks due in this period.
+      Then they should see a message indicating that there are no tasks due in this period.
 
       And the task list should be empty.
 
 **Scenario 4:** Clear filter
 
-    Given I have applied a filter to view tasks within a specific period
+    Given a staff member has applied a filter to view tasks within a specific period
 
-    When I choose to clear or reset the filter
+    When they choose to clear or reset the filter
 
-    Then I should see a list of all my tasks regardless of due date.
+    Then they should see a list of all their tasks regardless of due date.
 
 
 Implementing a "filter by period" functionality aligns with the council's overall objectives to improve task management efficiency. It allows users to assess upcoming tasks, helping them prioritise and plan effectively. The priority has been classed as "should have", as it supports user productivity but is not critical to the application's main functionality.
