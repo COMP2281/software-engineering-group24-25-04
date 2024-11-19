@@ -106,7 +106,7 @@ _As a user, I want to be able to create an account so that I can securely log in
       
       When they log in with the incorrect account details
       
-      AND this attempt is NOT less than 3
+      AND this attempt is less than 3
       
       Then they are NOT taken to the home page and a message prompts them to re-enter their details OR create an account if they don't already have one
 
