@@ -386,7 +386,7 @@ Page clarity is also one of the client's requirements, so the priority is "must 
 ## Project Management
 ### Risks and Issues
 
-Throughout our project there are many risks or issues that could occur.
+As a group we conducted a risk assessment to discern the many risks or issues that could occur throughout our project. We evaluated the probability of each occurring and the impact they would have on our project, scoring each with a risk score to help us prioritise mitigation methods.
 
 We identified two risks and issues that could occur within our group. The first is that a group member either cannot or will not contribute to the project. They may be refusing to do their work, ignoring messages, or is unable to continue the project for legitimate reasons. The probability of this happening is possible, and it would have a high impact on our project. For this reasoning we gave it a risk score of 9. To mitigate this risk, we have planned to remove single points of failure, i.e. have multiple people (at least 2) on significant parts of the project. Furthermore, if this were to occur, we would reduce the project scope with the client, and we would re-distribute group tasks. 
 
