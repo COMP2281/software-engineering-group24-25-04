@@ -463,17 +463,27 @@ Since Scrum is our preferred software development cycle approach, sprints are cr
 - Finish Project Management (Section 3 of the Requirement Documentation) - 20th November
 - Finish Requirement Documentation - 21st November
 - Pre-preparation stage (Sprint 1+ Sprint 2)
-   Learning React 
+  
+   Learn React
+  
    Design specifications of the website
+  
    Divide Frontend and Backend
+  
 - Coding stage (Sprint 3 to Sprint 6)
+  
    Code all functional prototypes
+  
    Finish Database for backend
+  
 - Finish test plan - 7th February 
 - Finish Technical Report - 14th March
 -  Final stage (Sprint 7)
+  
    Fix functionalities that do not work
+   
    Test all features on the web application
+   
 - Product Handover - 1st May
 
 
