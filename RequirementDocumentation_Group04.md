@@ -452,7 +452,7 @@ In summary, we have chosen the Agile Scrum methodology, as it enables each team 
 
 ### Project Schedule
 The Gantt chart below shows the academic deadlines and the project's development schedule.
-On average, we work on software engineering for five hours a week, plus any additional time that is voluntarily contributed. We also have weekly group meetings for an hour to review our progress. To ensure we are achieving our client's expectations, we will also hold client meetings every three weeks.
+On average, we work on software engineering for five hours a week during term date, plus any additional time that is voluntarily contributed. We also have weekly group meetings for an hour to review our progress. To ensure we are achieving our client's expectations, we will also hold client meetings every three weeks.
 
 Since Scrum is our preferred software development cycle approach, sprints are crucial for allowing teams to work in short cycles. Sprints ensure quick adaptability to changes and ongoing improvement of the product. The sprint dates are only approximate and may be altered in the end.
 
@@ -462,8 +462,23 @@ Since Scrum is our preferred software development cycle approach, sprints are cr
 - Finish Requirements (Section 2 of the Requirement Documentation) - 12nd November
 - Finish Project Management (Section 3 of the Requirement Documentation) - 20th November
 - Finish Requirement Documentation - 21st November
-- Finish test plan - 7th February (Sprint #2)
-- Finish CERP (Climate Emergency Response Plan) Target Tracking Project - 6th March (Sprint #4)
+- Pre-preparation stage (Sprint 1+ Sprint 2)
+   Learning React 
+   Design specifications of the website
+   Divide Frontend and Backend
+- Coding stage (Sprint 3 to Sprint 6)
+   Code all functional prototypes
+   Finish Database for backend
+- Finish test plan - 7th February 
+- Finish Technical Report - 14th March
+-  Final stage (Sprint 7)
+   Fix functionalities that do not work
+   Test all features on the web application
+- Product Handover - 1st May
+
+
+
+
 ![Visio](<Visio_00.png>)
 
 
