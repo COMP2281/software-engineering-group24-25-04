@@ -124,11 +124,11 @@ Implementing a secure login system feature for the new system aligns with the co
 
 **Feature:** Permission levels (**Priority**: **Must have**)
 
-_As a user, I want permission levels on the project so that my team cannot view other teams' projects in order to improve data security issue._
+_As a manager, I want permission levels on the project so that my team cannot view other teams' projects in order to improve data security issue._
 
 **Scenario 1:** View other teams' tasks
 
-      Given team members want to view another team’s project progress
+      Given a staff member want to view another team’s project progress
       
       When they try to access the project
 
@@ -152,11 +152,11 @@ _As a user, I want permission levels on the project so that my team cannot view 
 
       Then the task will be transferred.
 
-Implementing a "permission level" functionality aligns with the council's overall objectives to improve data security and access control. It allows managers to transfer task between staff members, edit permission level to users and user can only edit or view project progress across their own teams. The priority has been classed as "must have", as it is essential for the purpose of a goal tracking system, therefore it is crucial to the functionality of the application.
+Implementing a "permission level" functionality aligns with the council's overall objectives to improve data security and access control. It allows managers to transfer task between staff members, edit permission level to staff and staff can only edit or view project progress across their own teams. The priority has been classed as "must have", as it is essential for the purpose of a goal tracking system, therefore it is crucial to the functionality of the application.
 
 **Feature:** Responsive web design (**Priority**: **Must have**)
 
-   _As a user, I want the system to be accessible and responsive on various devices in order to prevent user need to do extra work to read the content._
+   _As a user, I want responsive web deisgn on the projectso the system to be accessible and responsive on various devices._
 
 **Scenario 1:** User experience across different devices
 
