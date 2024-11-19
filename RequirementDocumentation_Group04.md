@@ -302,7 +302,7 @@ Implementing a "filter by period" functionality aligns with the council's overal
 
 **Feature:** Automated reminders (**Priority**: **Must Have**)
   
- _As a manager, I want the system to send automated monthly reminders to project stakeholders so they can update their progress on the project and complete overdue tasks, enabling me to keep track of the monthly status without needing manual reminders._
+ _As a manager, I want the system to send automated monthly reminders to project stakeholders so they can update their progress on the project and complete overdue tasks._
 
 **Scenario 1:** Send automated reminders on project progress
 
@@ -328,17 +328,17 @@ Implementing a "filter by period" functionality aligns with the council's overal
 
     And staff member will resume working on the task.
 
-**Scenario 3:** Receive automated reminders when project is transferred to a new user
+**Scenario 3:** Receive automated reminders when project is transferred to a new staff member
 
-    Given a project is transferred from an old user to a new user
+    Given a project is transferred from an old staff member to a new staff member
 
-    When a project is assigned to the new user
+    When a project is assigned to the new staff member
 
-    And the new user starts receiving automated reminders for the project
+    And the new staff member starts receiving automated reminders for the project
 
-    Then the old user will stop receiving the reminders for the project    
+    Then the old staff member will stop receiving the reminders for the project    
     
-    And the old user no longer has access to the project    
+    And they will no longer has access to the project    
     
 
  Implementing the "automated monthly reminders" feature is essential for maintaining project transparency and accountability. It supports effective project management by prompting team members to provide regular updates and avoiding project delays, aligning with the client’s objective to ensure an efficient progress tracking tool. This feature is prioritized as a "must have", given its importance to the overall system functionality and its direct contribution to the client’s goal of creating an effective task management system.
