@@ -344,29 +344,30 @@ Implementing a "filter by period" functionality aligns with the council's overal
  
 **Feature:** Clear and intuitive user interface (**Priority**: **Must have**)
 
-_As a user, I want the page to be concise and clear because a neat page can make the operation more intuitive and more visually comfortable, which can not only improve my work efficiency but also make me feel happy during use._
+_As a user, I want the system design to be clear and intuitive so that it is easy to use and allows me to focus my full attention on my work._
 
-**Scenario 1:** Subpage
+**Scenario 1:** Viewing target details
         
-    Given each project has a lot of detailed information and clear metrics
+    Given a user wants to view details of a target
     
-    When as an employee, I want to view or update the details of a project
+    When they click on the header for the target
+    
+    Then a subpage pops up to display, in a clear and concise manner, the details of said target
 
-    Then I want this project to have a subpage to display the details and metrics
+    
+**Scenario 2:** User clicks bin icon to remove task
 
-    And this keeps the main page simple, making it easier to classify, find and update, avoiding confusion caused by stacking all content together.
+    Given a user is on the system
     
-**Scenario 2:** Fold and expand function
+    When the user is editing a task
+    
+    And the user wants to delete a task
+    
+    Then the user can click the bin icon to delete the goal
 
-    Given a project has a large number of files
 
-    When users need to view detailed information
-    
-    And the user clicks an "expand" button or icon to reveal more details
-    
-    Then the additional information is displayed below 
-    
-Page clarity is also one of the client's requirements, so the priority is "must have". The main information of each project will be concentrated on the main page, while specific details of project will be stored in related subpages. In this way, users can browse and manage each project more systematically, reducing confusion and unnecessary information stacking.
+Implementing a “clear and intuitive user interface” for the new system to be built, is a vital feature, and aligns with the client’s overall objective to increase productivity and ease when tracking targets. The priority has been classed as “must have” due to our elicitation of our client’s requirement for a more user-friendly system. The scenarios given, demonstrate that our system shall include features such as subpages and icons that will be clear and intuitive to use.
+
 
 
 
