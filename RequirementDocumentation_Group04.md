@@ -376,17 +376,55 @@ Implementing a “clear and intuitive user interface” for the new system to be
 
 As a group we conducted a risk assessment to discern the many risks or issues that could occur throughout our project. We evaluated the probability of each occurring and the impact they would have on our project, scoring each with a risk score to help us prioritise mitigation methods.
 
-We identified two risks and issues that could occur within our group. The first is that a group member either cannot or will not contribute to the project. They may be refusing to do their work, ignoring messages, or is unable to continue the project for legitimate reasons. The probability of this happening is possible, and it would have a high impact on our project. For this reasoning we gave it a risk score of 9. To mitigate this risk, we have planned to remove single points of failure, i.e. have multiple people (at least 2) on significant parts of the project. Furthermore, if this were to occur, we would reduce the project scope with the client, and we would re-distribute group tasks. 
+Risk: Lose our work, or work is lost from out of sync updates
+Explanation: As this is a collaborative project, this means multiple people will be working on same thing at the same time. If changes are not saved, people may work on same thing unknowingly, decreasing productivity and wasting time. Losing work would be harmful and would push the workflow and schedule back
+Probability: Very Probable
+Impact: Very High
+Risk Score: 25
+Risk Type: Group
+Mitigation: We will ensure that all work is saved and backed up iteratively. We will commit all changes to the shared GitHub repository.
 
-The second group issues identified is that we lose our work, or work is lost from out of sync updates. As this is a collaborative project, this means multiple people will be working on same thing at the same time. If changes are not saved, people may work on same thing unknowingly, decreasing productivity and wasting time. Losing work would be harmful and would push the workflow and schedule back. The probability of this is very probable and has a very high impact. Therefore, we gave this a risk score of 25. To mitigate this risk, we will ensure that all work is saved and backed up iteratively. We will commit all changes to the shared GitHub repository.
+Risk: Frameworks we use bring out updates that result in bugs in our code
+Explanation: We plan to use React.js and other open-source frameworks like APIs in our solution. These may be updated, and our written solution may not be compatible with the new updates.
+Probability: Probable
+Impact: Medium
+Risk Score: 12
+Risk Type: Software Development
+Mitigation: We will ensure that from now, we are using updated versions and iteratively check for new updates.
 
-We also identified two risks that could occur with our client. The first is that we suddenly get no response from our client. Our client, Durham City Council, will likely be busy with other commitments and may not have the time to correspond with us. This may pose issues for us, for example when we ultimately encounter a problem that requires the client’s input. It will be a rare probability that this happens, but if it does it would be of high impact to our project. For this reason, we have given it a risk score of 4. To mitigate this, we will continue efforts to communicate and contact the client, and in the worst case, we will speak to our module leaders to address the issue.
+Risk: Group member either cannot or will not contribute to the project
+Explanation: They may be refusing to do their work, ignoring messages, or is unable to continue the project for legitimate reasons.
+Probability: Possible
+Impact: High
+Risk Score: 9
+Risk Type: Group
+Mitigation: We have planned to remove single points of failure, i.e. have multiple people (at least 2) on significant parts of the project. Furthermore, if this were to occur, we would reduce the project scope with the client, and we would re-distribute group tasks
 
-Our second risk that could occur with the client is that they decide to use a commercial option, that has already been made and is available online, instead of our solution. This again is or rare probability but would only have a very low impact for us. Therefore, we have given it a risk score of 1. To reduce the likelihood of this occurring we will ensure that we communicate with the client and head in the direction they would like.
+Risk: Data Security Risk
+Explanation: There are different companies that will be using this solution. Companies should only be able to edit their own goals. If another company edited/deleted other companies' goals, then it could result in a halt in development.
+Probability: Unlikely
+Impact: High
+Risk Score: 8
+Risk Type: Software Development
+Mitigation: We will ensure that the permissions work so that unauthorised staff members do not edit other companies' goals (only managers will have access to edit the permissions).
 
-The final types of risks that could develop in our project are related to software development. One risk that we identified was the risk of a data security breach. The reason for this is because there are different companies that will be using this solution. Companies should only be able to edit their own goals. If another company edited/deleted other companies' goals, then it could result in a halt in development. Although the probability of this happening is unlikely, the impact would be high. This resulted in us giving it a risk score of 8. To mitigate the chance this occurs we will ensure that the permissions work so that unauthorised staff members do not edit other companies' goals (only managers will have access to edit the permissions).
+Risk: Get no response from our client
+Explanation: Our client, Durham City Council, will likely be busy with other commitments and may not have the time to correspond with us. This may pose issues for us, for example when we ultimately encounter a problem that requires the client’s input.
+Probability: Rare
+Impact: High
+Risk Score: 4
+Risk Type: Client
+Mitigation: We will continue efforts to communicate and contact the client, and in the worst case, we will speak to our module leaders to address the issue.
 
-The second software development risk that could arise is that the frameworks we plan to use may bring out updates that could result in bugs in our code. We plan to use React.js and other open-source frameworks like APIs in our solution. These may be updated, and our written solution may not be compatible with the new updates. The probability that this occurs is probable, and the impact would be medium. We gave this a risk score of 12. To mitigate this risk, we will ensure that from now, we are using updated versions and iteratively check for new updates.
+Risk: The client decides to use a commercial option
+Explanation: Our client uses a solution that is available online instead of our solution.
+Probability: Rare
+Impact: Very Low
+Risk Score: 1
+Risk Type: Client
+Mitigation: We will ensure that we communicate with the client and head in the direction they would like.
+
+
 
 
 ### Development Approach
