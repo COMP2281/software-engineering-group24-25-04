@@ -235,31 +235,31 @@ Implementing a "filter by period" functionality aligns with the council's overal
 
   **Scenario 1:** Ability to add a goal
 
-    Given I have been allocated a new task
+    Given a staff member has been allocated a new task
 
-    And I need to keep track of the task
+    And needs to keep track of the task
     
-    Then I can add a goal related to the task
+    Then the staff member can add a goal related to the task
     
-    And further expand it using the SMART details.
+    And further expand it using specific details to the task.
 
   **Scenario 2:** Ability to remove a goal
 
-    Given I already have a task
+    Given the staff member already has a task
     
     When the task has been terminated/finished
     
-    Then I can delete the goal related to the task
+    Then the staff member can delete the goal related to the task
     
     And only those on that task can remove this goal.
 
   **Scenario 3:** Ability to edit a goal
 
-    Given I already have a task
+    Given a staff member has already been assigned a task
     
     And the goal needs amending
     
-    Then I can edit the goal with the relevant updates
+    Then the staff member can edit the goal with the relevant updates
     
     And only those on that task can edit this goal.
 
@@ -267,9 +267,9 @@ Implementing a "filter by period" functionality aligns with the council's overal
 
     Given a staff member already has a goal
     
-    And I need to transfer the goal to another staff member
+    And the staff member needs to transfer the goal to another staff member
     
-    Then I, a manager, need to transfer the goal to another staff member
+    Then a manager can transfer the goal to another staff member
     
     And remove the previous staff member from it.
 
@@ -281,25 +281,24 @@ Implementing a "filter by period" functionality aligns with the council's overal
 
   **Scenario 1:** Staff members view their progress of their goal completeness visually
 
-    Given I have a goal that is currently being tracked
+    Given a staff member has a goal that is currently being tracked
 
-    And I need to see how far I have progressed in the task
+    And they need to see how far they have progressed in the task
     
-    Then I want to be able to see visually how far I have progressed.
+    Then they will be able to see visually how far I have progressed.
 
   **Scenario 2:** Managers view the progress of their staff visually
 
-    Given my staff all have tasks to complete
+    Given a managers team all have tasks to complete
 
-    When I want to see how far each staff member has progressed on their goals
+    When the manager wants to see how far each staff member has progressed on their goals
     
-    Then I need a progress bar to see said progress
+    Then the manager will see a progress bar to see the staff members progress
     
     And it should only be full if they have completed all set tasks.
 
   Implementing the "progress bar" feature aligns with the council's overall objectives to improve the user friendliness of the goal tracking software. This will enable better visual aids for the users, and will help them achieve efficient results, as they will be able to see the progression of their goals visually. The priority has been classed as "must have", as it is a requirement requested by the client.
-
-
+  
 **Feature:** Automated reminders (**Priority**: **Must Have**)
   
  _As a manager, I want the system to send automated monthly reminders to project stakeholders so they can update their progress on the project and complete overdue tasks._
