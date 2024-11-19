@@ -38,7 +38,7 @@ We conducted research into solutions that we could use:
 
 **2. Jira** is a project management and issue tracking tool, that is widely used in software development and IT projects. It allows the management of various aspects of a project, including task assignment and progress tracking, using different charts for tracking progress. However, the cost is relatively high and increases as the number of users grow. The interface is also complex, which opposes our objective to create a user-friendly solution for our client.
 
-**3. Non-commercial options: app or website**. These both allow tailored customisation towards our client. Having an app, uses a local database, which allows consistent, fast load times, and once downloaded, it can be used anywhere. Another feature apps offer is push notifications. But after discussions with our client, this is not required. Having a website, however, is favoured by our client, as per the brief. Websites can be loaded on any device, provided there is an internet connection and does not require downloading. It allows access from a range of platforms, again requested in the brief. However, non-commercial options take time to learn the specific skills required and take time to build the solution. 
+**3. Non-commercial options: app or website** These both allow tailored customisation towards our client. Having an app, uses a local database, which allows consistent, fast load times, and once downloaded, it can be used anywhere. Another feature apps offer is push notifications. But after discussions with our client, this is not required. Having a website, however, is favoured by our client, as per the brief. Websites can be loaded on any device, provided there is an internet connection and does not require downloading. It allows access from a range of platforms, again requested in the brief. However, non-commercial options take time to learn the specific skills required and take time to build the solution. 
 
 Following our analysis of the current system and research on alternative solutions, we concluded that the new system, to be built, should be a React.js web application. Using React.js will allow for a customisable, dynamic, and responsive user interface, allowing us to create components to display the targets in a user-friendly way. We shall take inspiration from commercial solutions to help us design the features that will allow the users to visualise each goal without the complexity the current system, and the other alternative solutions we researched, hold.
 
@@ -178,7 +178,7 @@ Implementing a "permission level" functionality aligns with the council's overal
 Implementing a "Responsive web design" functionality aligns with the council's overall objectives to improve readability. It allows user to customizable visual setting and change the layout based on different devices. The priority has been classed as "must have", as it is essential for the purpose of a goal tracking system, therefore it is crucial to the functionality of the application.
 
 
-**Feature:** Filter tasks by period (**Priority**: **Should Have**)
+**Feature:** Filter tasks by period (**Priority**: **Should have**)
 
 _As a staff member, I would like to filter tasks by period (e.g. day, week, month, year) in order to know which tasks are due within a specific timeframe._
 
@@ -299,7 +299,7 @@ Implementing a "filter by period" functionality aligns with the council's overal
 
   Implementing the "progress bar" feature aligns with the council's overall objectives to improve the user friendliness of the goal tracking software. This will enable better visual aids for the users, and will help them achieve efficient results, as they will be able to see the progression of their goals visually. The priority has been classed as "must have", as it is a requirement requested by the client.
   
-**Feature:** Automated reminders (**Priority**: **Must Have**)
+**Feature:** Automated reminders (**Priority**: **Must have**)
   
  _As a manager, I want the system to send automated monthly reminders to project stakeholders so they can update their progress on the project and complete overdue tasks._
 
