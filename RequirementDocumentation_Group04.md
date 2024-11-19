@@ -355,20 +355,8 @@ _As a user, I want the page to be concise and clear because a neat page can make
     Then I want this project to have a subpage to display the details and metrics
 
     And this keeps the main page simple, making it easier to classify, find and update, avoiding confusion caused by stacking all content together.
-
-  **Scenario 2:** Icon function
-  
-    Given a user is managing tasks in a task management system
     
-    When the user interacts with the task list
-    
-    And uses icons to perform quick actions such as editing, completing, or deleting tasks
-    
-    Then the user can intuitively understand and execute actions without needing additional instructions
-    
-    And the page remains clean and organized with minimal text clutter
-    
-**Scenario 3:** Fold and expand function
+**Scenario 2:** Fold and expand function
 
     Given a project has a large number of files
 
