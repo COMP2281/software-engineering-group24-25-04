@@ -156,7 +156,7 @@ Implementing a "permission level" functionality aligns with the council's overal
 
 **Feature:** Responsive web design (**Priority**: **Must have**)
 
-   _As a user, I want responsive web deisgn on the projectso the system to be accessible and responsive on various devices._
+   _As a user, I want responsive web deisgn on the project so the system is accessible and responsive on various devices._
 
 **Scenario 1:** User experience across different devices
 
