@@ -489,6 +489,6 @@ Since Scrum is our preferred software development cycle approach, sprints are cr
 
 
 
-![Visio](<Visio_00.png>)
+![Visio](<Visio1_00.png>)
 
 
