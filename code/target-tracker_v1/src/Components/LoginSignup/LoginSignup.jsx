@@ -6,10 +6,12 @@ import email_icon from '../Assets/email.png';
 import password_icon from '../Assets/password.png';
 
 
-const LoginSignup = () => {
+const LoginSignup = ({ goToDashboard }) => {
 
   const [action,setAction] = useState("Login");
-
+  const handleDashboardClick = () => {
+    goToDashboard();  
+  }
   return (
     <div className='container'>
         <div className='header'>
@@ -41,7 +43,6 @@ const LoginSignup = () => {
                 </div>
             )}
         </div>
-
             {action==="Login" && (
                 <div className="forgot-password">Forgot Password? <span onClick={() => setAction("Forgot Password")}>Click Here</span></div>
             )}
@@ -56,10 +57,13 @@ const LoginSignup = () => {
                     <div className="submit" onClick={() => setAction("Login")}>Submit</div>
                 )}
             </div>
+            <button className="go-to-dashboard" onClick={handleDashboardClick}>
+             Go to Dashboard
+             </button>
+
         </div>
     );
 }
 
 
 export default LoginSignup
-
