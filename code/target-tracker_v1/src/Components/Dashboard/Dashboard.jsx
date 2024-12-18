@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Dashboard.css';
-import icon from '../Assets/icon.jpg'; 
+import icon from '../Assets/icon.jpg';
 
 const Dashboard = ({ goToProfile }) => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -33,7 +33,7 @@ const Dashboard = ({ goToProfile }) => {
         <div className="split-container">
           <div className="my-target">
             <div className="my-target-left">
-              <h2>My Target</h2>
+              <h2>My Targets</h2>
               <div className="target-boxes">
                 <div className="target-box" onClick={() => handleBoxClick("Target 1")}>
                   Target 1
