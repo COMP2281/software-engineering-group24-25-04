@@ -3,12 +3,21 @@
     "id": "1",
     "name": "name",
     "email": "email1",
-    "password": "password2"
+    "password": "password2",
+    "role": "user"
   },
   {
     "id": "2",
     "name": "rachel",
     "email": "email",
-    "password": "newPasword"
+    "password": "newPasword",
+    "role": "user"
+  },
+  {
+    "id": "3",
+    "name": "manager",
+    "email": "manager_email",
+    "password": "password",
+    "role": "manager"
   }
 ]

@@ -7,6 +7,9 @@ const path = require('path');
 const usersFile = path.resolve(__dirname, '../database/user.json');
 const users = require(usersFile);
 
+const managerFile = path.resolve(__dirname, '../database/manager.json');
+const managers = require(managerFile);
+
 router.post('/login', (req, res) => {
     console.log(req.body);
     const correctLogin = users.find(user => user.email === req.body.email && user.password === req.body.password);
@@ -50,7 +53,11 @@ router.post('/signup', (req, res) => {
         }
     }
     const id = (users.length + 1).toString();
-    const mergedJSON = Object.assign({},{"id":id},req.body);
+    let role = "user";
+    if (managers.includes(req.body.email) === true){
+        role = "manager";
+    }
+    const mergedJSON = Object.assign({},{"id":id},req.body,{"role":role});
     users.push(mergedJSON);
     try {
         fs.writeFileSync(usersFile, JSON.stringify(users, null, 2), 'utf-8');
