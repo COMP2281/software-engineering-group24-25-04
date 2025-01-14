@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import './Dashboard.css';
 import icon from '../Assets/icon.jpg';
 
-const Dashboard = ({ goToProfile }) => {
+const Dashboard = ({ goToProfile, goToTarget }) => {
   const [searchTerm, setSearchTerm] = useState("");
 
-  const handleBoxClick = (target) => {
-    alert(`You clicked on ${target}`);
+  const handleBoxClick = () => {
+    goToTarget();
   };
 
   const handleIconClick = () => {
@@ -35,7 +35,7 @@ const Dashboard = ({ goToProfile }) => {
             <div className="my-target-left">
               <h2>My Targets</h2>
               <div className="target-boxes">
-                <div className="target-box" onClick={() => handleBoxClick("Target 1")}>
+                <div className="target-box" onClick={handleBoxClick}>
                   Target 1
                 </div>
                 <div className="target-box" onClick={() => handleBoxClick("Target 2")}>
