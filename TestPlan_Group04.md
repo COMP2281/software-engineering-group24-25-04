@@ -118,6 +118,47 @@ Overall these were our findings etc.
 **Test environment:** Node.js backend, React frontend, Chrome browser.
 
 
+**Integration test**: Does the user ID go to the backend and return the correct user target to the frontend?
+**Test case ID**: int_test_xx
+**Description of test**: Verify if the user ID is sent to the backend and whether the correct user target data is returned and displayed on the frontend.
+
+
+**Related requirement document details**: Login System( Priority: Must have)
+Ability to edit or delete goals (Priority: Must have)
+**Prerequisites for test**:
+User ID must be available in the database
+Target ID must be available in the database and is associated with the corresponding userID.
+
+**Test procedure**:
+       1.Log in to the website using a valid user account.
+       2.Validate if the correct target is retrieved and displayed on the frontend.
+**Test material used**:
+**Expected result (test oracle):** The frontend accurately displays all targets of the user.
+**Comments:**
+**Created by:** EK
+**Test environment:** Node.js backend, React frontend, Chrome browser.
+
+
+
+
+**Integration test:** Does the Profile show correct user data 
+**Test case ID:** int_test_xx
+**Description of test:** Verify the backend retrieves the correct user information, and the frontend displays the user profile information accurately.
+
+
+**Related requirement document details:** Login System( Priority: Must have)
+**Prerequisites for test:**
+User ID and user information such as name and profile picture must be available in the database.
+
+
+**Test procedure:**
+       1.Navigate to  the profile page by clicking on box
+       2.Validate if the correct user information is retrieved and displayed on the Profile page.
+**Test material used:**
+**Expected result (test oracle):** The user profile with correct user information is displayed on the Profile page.
+**Comments:**
+**Created by:** EK
+**Test environment:** Node.js backend, React frontend, Chrome browser.
 
 
 
