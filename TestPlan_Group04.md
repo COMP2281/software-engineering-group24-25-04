@@ -40,6 +40,57 @@ Overall these were our findings etc.
 **Test environment:** Node.js backend, React frontend, Chrome browser.
 
 
+**Unit test {number to be placed later}:** Changing between log in and sign up page
+
+**Test case ID:** unit-test_xx
+
+**Description of test:** Verify that when on the login page, and the sign up button is clicked, the page changes to the sign up page.
+
+**Related requirement document details:** Login system (Priority: Must have)
+
+**Prerequsites for test:** N/A
+
+**Test procedure:**  
+  1. When user loads up the web application                                                              							         
+  2. If user doesn't have a login, click the 'sign up' button.
+
+**Test material used:** N/A
+
+**Expected result (test oracle):** Page should change to sign up page
+
+**Comments:** N/A
+
+**Created by:** MC
+
+**Test environment:** Node.js backend, React frontend, Chrome browser.
+
+
+**Unit test {number to be placed later}:** Forgotten password page shows when link clicked
+
+**Test case ID:** unit-test_xx
+
+**Description of test:** Verify that when the forgotten password link is clicked, the forgotten password page shows up.
+
+**Related requirement document details:** Login system (Priority: Must have)
+
+**Prerequsites for test:** User has an account
+
+**Test procedure:**  
+  1. When user loads up the web application                                                              							         
+  2. If user doesn't remember their password, click the 'Forgotten Password' link.
+
+**Test material used:** N/A
+
+**Expected result (test oracle):** Page should change to forgotten password page
+
+**Comments:** N/A
+
+**Created by:** MC
+
+**Test environment:** Node.js backend, React frontend, Chrome browser.
+
+
+
 **Integration test:** Does the target ID go to the backend and return correct target information to the frontend?
 
 **Test case ID:** int_test_xx
@@ -64,6 +115,33 @@ Overall these were our findings etc.
 **Created by:** TO
 
 **Test environment:** Node.js backend, React frontend, Chrome browser.
+
+
+**Integration test:** Does the user ID go to the backend and return correct user information to the frontend?
+
+**Test case ID:** int_test_xx
+
+**Description of test:** Verify that the user ID is sent to the backend and correct user information data is returned to the front end.
+
+**Related requirement document details:** Feature: Login System (Priority: Must have)
+
+**Prerequsites for test:** User ID must already be present in the users database.
+
+**Test procedure:**  
+  1. Request user data by clicking on the user profile in the dashboard.
+
+  2. Validate if the correct user data is retrieved and displayed on the frontend, in the user profile section.
+
+**Test material used:** N/A
+
+**Expected result (test oracle):** Data corresponding to the user ID is displayed accurately on the frontend, in the user profile section.
+
+**Comments:** N/A
+
+**Created by:** MC
+
+**Test environment:** Node.js backend, React frontend, Chrome browser.
+
 
 
 **User acceptance test:** Progress bar exists
