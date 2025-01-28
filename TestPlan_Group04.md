@@ -89,6 +89,31 @@ Overall these were our findings etc.
 
 **Test environment:** Node.js backend, React frontend, Chrome browser.
 
+**Unit test {number to be placed later}:** Filtering a task by a valid timeframe
+
+**Test case ID:** unit-test_xx
+
+**Description of test:** Verify that router endpoints respond with the correct HTTP status code for each type of request
+
+**Related requirement document details:** N/A
+
+**Prerequsites for test:** Server is running and reachable and endpoints are defined and properly configured
+
+**Test procedure:**  
+1. Send requests to all router endpoints with appropriate methods (e.g. GET, POST, PUT, DELETE).
+2. Verify that the response contains a valid HTTP status code.
+3. Compare the received status code against the expected status code for each endpoint.
+4. Log any mismatches between expected and actual results.
+
+**Test material used:** Test.js containing automated test cases for endpoints.
+
+**Expected result (test oracle):** Each endpoint responds with the correct HTTP status code (200 for successful GET requests, 404 for not found, 401 for unauthorized access).
+
+**Comments:** Ensure all required headers and authentication tokens are provided for secured endpoints
+
+**Created by:** RDY
+
+**Test environment:**
 
 
 **Integration test:** Does the target ID go to the backend and return correct target information to the frontend?
@@ -142,6 +167,54 @@ Overall these were our findings etc.
 
 **Test environment:** Node.js backend, React frontend, Chrome browser.
 
+
+**Test case ID:** int_test_xx
+
+**Description of test:** Application successfully directs valid user to correct dashboard
+
+**Related requirement document details:** User story: "As a user, I want to be able to create an account so that I can securely log in to the system that is tailored towards me."
+
+**Prerequsites for test:** Database contains valid user credentials for both staff and manager roles and authentication services are operational.
+
+**Test procedure:**  
+1. Input valid login details for a staff member and submit the login request.
+2. Verify that the system logs in the staff member and redirects to the staff dashboard.
+3. Input valid login details for a manager and submit the login request.
+4. Verify that the system logs in the manager and redirects to the manager dashboard.
+
+**Test material used:** A set of valid login credentials for both staff and manager roles and Login page/API endpoint for authentication.
+
+**Expected result (test oracle):** Log in details are accepted and the user is successfully redirected to the correct dashboard based on their role.
+
+**Comments:** Test invalid login scenarios separately to ensure proper error handling.
+
+**Created by:** RDY
+
+
+**Test case ID:** sys_test_xx
+
+**Description of test:** Application successfully displays target details 
+
+**Related requirement document details:** User story: "As a user, I want the system design to be clear and intuitive so that it is easy to use and allows me to focus my full attention on my work."
+
+**Prerequsites for test:** System is operational, and the user is logged in and viewing their dashboard and dashboard contains clickable target cards.
+
+**Test procedure:**  
+1. Identify a target card on the dashboard.
+2. Click on the target card.
+3. Verify that the system responds by displaying the correct target details.
+4. Ensure the details match the expected content in the database or system configuration.
+4. Validate responsiveness and clarity of the interface displaying the details.
+
+**Test material used:** Dashboard and interactive target card.
+
+**Expected result (test oracle):** Correct target details are shown.
+
+**Comments:** Include test scenarios for users with no associated targets to verify proper handling of empty states.
+
+**Created by:** RDY
+
+**Test environment:**
 
 
 **User acceptance test:** Progress bar exists
@@ -215,6 +288,7 @@ Target ID must be available in the database and is associated with the correspon
 **Comments:**
 **Created by:** EK
 **Test environment:** Node.js backend, React frontend, Chrome browser.
+
 
 
 
