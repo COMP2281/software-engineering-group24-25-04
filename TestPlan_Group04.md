@@ -13,25 +13,25 @@ Overall these were our findings etc.
 
 ## Section 2: Test Cases
 
-**Unit test {number to be placed later}:** Filtering a task by a valid timeframe
+**Unit test {number to be placed later}:** 
 
 **Test case ID:** unit-test_xx
 
 **Description of test:** Verify that filtering tasks by a valid timeframe displays the correct results.
 
-**Equivalent classes:** Valid timeframes (Day/Week/Month/Year)
-
 **Related requirement document details:** Filter tasks by period (Priority: Should have)
 
 **Prerequsites for test:** Task dataset with tasks having due dates in various timeframes.
 
-**Test procedure:**  
-  1. Under the "My Targets" section, select the desired timeframe to filter tasks by.                                                              							         
-  2. Verify that only tasks due within the selected timeframe are displayed.
+**Test procedure:**
+  1. Log in to the system as an authenticated user.
+  
+  2. Under the "My Targets" section, select the desired timeframe to filter tasks by.                                                              							         
+  3. Verify that only tasks due within the selected timeframe are displayed.
 
-**Test material used:** 
+**Test material used:** A device with internet access and access to the web application.
 
-**Expected result (test oracle):** Only tasks due within the selected period are displayed.
+**Expected result (test oracle):** If a valid timeframe is selected, then only tasks within that timeframe are displayed.
 
 **Comments:**
 
@@ -216,66 +216,15 @@ Overall these were our findings etc.
 
 **Test environment:**
 
-
-**User acceptance test:** Progress bar exists
-
-**Test case ID:** uat_test_xx
-
-**Description of test:** Verify that a progress bar exists for tracking goal completion.
-
-**Related requirement document details:** Feature: Progress bar (Priority: Must have)
-
-**Prerequsites for test:** Tasks/targets with progress percentages assigned
-
-**Test procedure:**  
-  1. View targets in the application.
-
-  2. Verify that a progress bar is displayed in each target box.
-
-**Test material used:** 
-
-**Expected result (test oracle):** Each task box has a visible progress bar.
-
-**Comments:**
-
-**Created by:** TO
-
-**Test environment:** Node.js backend, React frontend, Chrome browser.
-
-
-**User acceptance test:** Progress bar updates dynamically
-
-**Test case ID:** uat_test_xx
-
-**Description of test:** Verify the progress bar updates dynamically as tasks progress.
-
-**Related requirement document details:** Feature: Progress bar (Priority: Must have)
-
-**Prerequsites for test:** Tasks/targets with progress percentages assigned
-
-**Test procedure:**  
-  1. Update task progress within the system.
-
-  2. Verify that the progress bar reflects the update (by an increased percentage)
-
-**Test material used:** 
-
-**Expected result (test oracle):** Progress bar updates accurately and immediately.
-
-**Comments:**
-
-**Created by:** TO
-
-**Test environment:** Node.js backend, React frontend, Chrome browser.
-
-
 **Integration test**: Does the user ID go to the backend and return the correct user target to the frontend?
-**Test case ID**: int_test_xx
-**Description of test**: Verify if the user ID is sent to the backend and whether the correct user target data is returned and displayed on the frontend.
 
+**Test case ID**: int_test_xx
+
+**Description of test**: Verify if the user ID is sent to the backend and whether the correct user target data is returned and displayed on the frontend.
 
 **Related requirement document details**: Login System( Priority: Must have)
 Ability to edit or delete goals (Priority: Must have)
+
 **Prerequisites for test**:
 User ID must be available in the database
 Target ID must be available in the database and is associated with the corresponding userID.
@@ -283,22 +232,26 @@ Target ID must be available in the database and is associated with the correspon
 **Test procedure**:
        1.Log in to the website using a valid user account.
        2.Validate if the correct target is retrieved and displayed on the frontend.
+       
 **Test material used**:
+
 **Expected result (test oracle):** The frontend accurately displays all targets of the user.
+
 **Comments:**
+
 **Created by:** EK
+
 **Test environment:** Node.js backend, React frontend, Chrome browser.
 
-
-
-
-
 **Integration test:** Does the Profile show correct user data 
+
 **Test case ID:** int_test_xx
+
 **Description of test:** Verify the backend retrieves the correct user information, and the frontend displays the user profile information accurately.
 
 
 **Related requirement document details:** Login System( Priority: Must have)
+
 **Prerequisites for test:**
 User ID and user information such as name and profile picture must be available in the database.
 
@@ -306,14 +259,109 @@ User ID and user information such as name and profile picture must be available 
 **Test procedure:**
        1.Navigate to  the profile page by clicking on box
        2.Validate if the correct user information is retrieved and displayed on the Profile page.
+       
 **Test material used:**
+
 **Expected result (test oracle):** The user profile with correct user information is displayed on the Profile page.
+
 **Comments:**
+
 **Created by:** EK
+
 **Test environment:** Node.js backend, React frontend, Chrome browser.
 
 
+**User acceptance test:** 
 
+**Test case ID:** uat_test_xx
+
+**Description of test:** Verify the progress bar is displayed and is updated dynamically as tasks progress.
+
+**Related requirement document details:** Feature: Progress bar (Priority: Must have)
+
+**Prerequsites for test:** 
+
+1. Targets with various progress percentages assigned.
+
+2. Update the target's progress within the system (e.g., by marking sub-tasks related to the target as complete).
+
+**Test procedure:**  
+  1. Log in to the system as an authenticated user.
+  
+  2. Locate a target with an existing progress percentage.
+
+  3. Update the target's progress (e.g., mark sub-tasks related to the target as complete).
+
+  4. Observe the progress bar to confirm it updates accordingly.
+
+  5. Repeat steps for increasing progress levels (e.g., 25% → 50% → 75% → 100%).
+
+  6. Verify that the progress bar reaches 100% when the target has been fully completed.
+
+**Test materials used:** 
+1. A pre-loaded task dataset with varying progress levels.
+
+2. Various devices with access to the web application.
+
+3. System logs (database updates, backend API repsonses and console logs)
+
+**Expected result (test oracle):** 
+1.  The progress bar is displayed on each task card.
+
+2.  The percentage updates dynamically and accuracy upon task progress changes.
+
+3.  The bar reaches 100% when all assigned sub-tasks have been completed.
+
+**Comments:** 
+
+**Created by:** TO
+
+**Test environment:** Node.js backend, React frontend, Chrome browser.
+
+
+**User acceptance test** 
+
+**Test case ID:** uat_test_xx
+
+**Description of test:** Verify that the date filter is intuitive and aligns with stakeholder expectations for task tracking.
+
+**Related requirement document details:** Feature: Filter tasks by period (Priority: Should have)
+
+**Prerequsites for test:** 
+1. Task dataset with tasks having due dates in various timeframes.
+
+2. Test environment with realistic task data.
+
+3. Users (staff members) with varying levels of digital literacy.
+
+**Test procedure:**  
+1. Demonstrate how users can filter tasks by date (Day, Week, Month, Year, etc.).
+  
+2. Ask the staff member to apply filters to find tasks due within specific periods.
+   
+3. Gather feedback on ease of use, expected behaviour, and usability of results.
+   
+4. Check if the staff member can successfully retrieve expected tasks without external help.
+
+**Test materials used:** 
+1. Various office computers and devices connected to the internet and with access to the test environment.
+
+2. A pre-loaded task dataset with various due dates (covering different user scenarios).
+
+3. A step-by-step guide for users explaining how to apply the filters.
+
+4. A feedback form for each staff member covering ease of use, accuracy of tasks displayed, system performance and any additional comments.
+
+**Expected result (test oracle):** 
+1. The staff members confirm that filtering is intuitive and meets expectations.
+
+2. The staff members can find specific tasks with ease.
+
+**Comments:** Adjust user interface if necessary based on feedback (e.g., if users struggle with selecting date ranges).
+
+**Created by:** TO
+
+**Test environment:** Deployed application on a variety of office computers and other devices used within the organisation.
 
 
 ## Section 3: Testing Context
