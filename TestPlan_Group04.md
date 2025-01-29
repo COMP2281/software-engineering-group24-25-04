@@ -283,7 +283,7 @@ User ID and user information such as name and profile picture must be available 
 
 1. Targets with various progress percentages assigned.
 
-2. Update the target's progress within the system (e.g., by marking sub-tasks related to the target as complete).
+2. At least one target where progress can be updated incrementally.
 
 **Test procedure:**  
   1. Log in to the system as an authenticated user.
