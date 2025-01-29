@@ -364,6 +364,8 @@ User ID and user information such as name and profile picture must be available 
 **Test environment:** Deployed application on a variety of office computers and other devices used within the organisation.
 
 
+
+
 **Test Case ID:** sys_test_xx
 
 **Description of test:** Testing that the automated reminder function correctly triggers monthly reminders to all registered staff members who have assigned projects
@@ -392,9 +394,45 @@ User ID and user information such as name and profile picture must be available 
 1. If the test passes, all staff members with assigned projects will receive an email reminder prompting them to update their progress. The system logs successful reminder dispatch for each valid user.
 2. If the test fails, no email is sent to staff members due to system failure. Emails are sent incorrectly such as duplicate reminders and incorrect users. The system crashes or takes too long to process reminders.
    
-Comments: None
-Created by: JJ
-Test environment(s): Windows 11, Google Chrome, Gmail
+**Comments:** None
+
+**Created by:** JJ
+
+**Test environment(s):** Windows 11, Google Chrome, Gmail
+
+
+
+
+**Test Case ID:** uat_test_xx
+
+**Description of test:** Testing if the dashboard retrieves and displays the correct list of targets from the database
+Related requirement document details: Clear and intuitive user interface user stories- Viewing target details
+
+**Prerequisites for test:**
+1. Create a target in the database for a specific user.
+2. The database is updated with new target details.
+3. Dashboard user interface is accessible for verification
+
+**Test procedure:**
+1. Log in to the system using the specific registered staff member’s credentials.
+2. Navigate to the MyTargets section on the dashboard.
+3. Verify the displayed target list is similar to the one in the database.
+4. Modify or add an assigned target on the manager dashboard manually and reload the staff member’s dashboard.
+5. Check if the staff member’s dashboard reflects the updated target in real time.
+
+**Test material used:** Frontend dashboard user interface, system database, manager dashboard for target modification
+
+**Expected result (test oracle):**
+1. If the test passes, the dashboard displays the correct list of targets with their respective details. When the database is updated, the lists of targets on the dashboard are also updated in real time.
+2. If the test fails, the dashboard does not show the expected list of targets. The dashboard does not show the modified targets from the database after refreshing. The user interface crashes or fails to load if database connectivity is lost. An error message is shown on the dashboard to try again later.
+   
+**Comments:** None
+
+**Created by:** JJ
+
+**Test environment(s):** Windows 11
+
+
 
 
 
