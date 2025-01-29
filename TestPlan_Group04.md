@@ -364,4 +364,38 @@ User ID and user information such as name and profile picture must be available 
 **Test environment:** Deployed application on a variety of office computers and other devices used within the organisation.
 
 
+**Test Case ID:** sys_test_xx
+
+**Description of test:** Testing that the automated reminder function correctly triggers monthly reminders to all registered staff members who have assigned projects
+
+**Related requirement document details:** Automated reminders user stories- Sending monthly automated reminders on project progress
+
+**Prerequisites for test:**
+1. Staff members must have registered email addresses in system
+2. At least one active project must be assigned to each staff member.
+3. The system’s scheduler for reminders should be enabled.
+4. Access to the system database.
+
+**Test procedure:**
+1. Set the system's date to the last day of the month.
+2. Trigger the automated reminder function via a POST API call.
+3. Verify that the system generates reminders for all staff members with assigned projects.
+4. Check the system database to confirm that an email reminder was queued for each assigned user.
+5. Validate that the email service function executes properly without errors.
+   
+**Test material used:**
+1. Database records with pre-registered staff and assigned projects
+2. API request to trigger reminders.
+3. System logs to check processed reminders.
+   
+**Expected result (test oracle):**
+1. If the test passes, all staff members with assigned projects will receive an email reminder prompting them to update their progress. The system logs successful reminder dispatch for each valid user.
+2. If the test fails, no email is sent to staff members due to system failure. Emails are sent incorrectly such as duplicate reminders and incorrect users. The system crashes or takes too long to process reminders.
+   
+Comments: None
+Created by: JJ
+Test environment(s): Windows 11, Google Chrome, Gmail
+
+
+
 ## Section 3: Testing Context
