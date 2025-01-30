@@ -436,4 +436,37 @@ Related requirement document details: Clear and intuitive user interface user st
 
 
 
+**Test Case ID:** sys_test_xx
+**Description of test:** Verify that different roles (employees, managers) are correctly redirected to their respective dedicated pages after logging in.
+**Related requirement document details:** Permission levels (Priority: Must have) - The system should automatically direct users to the appropriate dedicated page based on their role (employee, manager).
+
+**Prerequisites for test:**
+1. User accounts (employee, manager) have been created and activated in the system.
+2. Dedicated pages for each role have been developed and are accessible.
+3. The login system supports role recognition and page redirection.
+4. The test environment is configured, including network connections and access permissions.
+
+**Test procedure:**
+1. Log in as an administrator and verify that the system automatically directs to the administrator’s dedicated page.
+2. Log in as an employee and verify that the system automatically directs to the employee’s dedicated page.
+3. For each role, check that the correct user information and functional options are displayed on the page after login.
+4. Test incorrect inputs (such as wrong passwords or usernames) to confirm that the system handles errors properly and displays the correct error messages.
+5. Test permission boundaries, such as attempting to access the administrator’s page with an employee account, to ensure the system denies access.
+6. Enter the URL to the administrator’s page and check if it redirects to the 403 error page, verifying that the displayed message is "Access Denied."
+7. Test various incorrect URL formats (including illegal characters, overly long URLs, and structurally incorrect path entries) to see if the system redirects to the 404 error page and displays the message "Page Not Found."
+
+**Expected result (test oracle):**
+1. If the test passes, each role will be correctly redirected to their respective dedicated pages after login, and the pages will display user information and functional options that match the expected permissions of the role. Incorrect login attempts should be properly recognized, and the system should provide appropriate error messages.
+2. If the test fails, it will not route to the user interface corresponding to the user's role permissions.
+
+**Comments:**  None
+
+**Created by:** HB
+
+**Test environment(s):** Windows 11 / macOS, Google Chrome, Firefox, Edge; backend server configuration.
+
+
+
+
+
 ## Section 3: Testing Context
