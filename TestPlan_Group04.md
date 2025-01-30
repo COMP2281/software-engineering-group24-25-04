@@ -31,7 +31,10 @@ Overall these were our findings etc.
 
 **Test material used:** A device with internet access and access to the web application.
 
-**Expected result (test oracle):** If a valid timeframe is selected, then only tasks within that timeframe are displayed.
+**Expected result (test oracle):** 
+If a valid timeframe is selected, then only tasks within that timeframe are displayed.
+
+If an invalid timeframe is selected, then an error indicating that the selected timeframe is invalid should be displayed.
 
 **Comments:**
 
@@ -316,7 +319,7 @@ User ID and user information such as name and profile picture must be available 
 
 **Created by:** TO
 
-**Test environment:** Node.js backend, React frontend, Chrome browser.
+**Test environment:** Deployed application (Node.js backend, React.js frontend, various browsers) on a variety of office computers and other devices used within the organisation.
 
 
 **User acceptance test** 
@@ -346,7 +349,7 @@ User ID and user information such as name and profile picture must be available 
 **Test materials used:** 
 1. Various office computers and devices connected to the internet and with access to the test environment.
 
-2. A pre-loaded task dataset with various due dates (covering different user scenarios).
+2. A pre-loaded target dataset with various due dates (covering different user scenarios).
 
 3. A step-by-step guide for users explaining how to apply the filters.
 
@@ -361,7 +364,53 @@ User ID and user information such as name and profile picture must be available 
 
 **Created by:** TO
 
-**Test environment:** Deployed application on a variety of office computers and other devices used within the organisation.
+**Test environment:** Deployed application (Node.js backend, React.js frontend, various browsers) on a variety of office computers and other devices used within the organisation.
+
+
+**Test case ID:** int_test_07
+
+**Description of test:** Verify that when a valid target ID is received to edit a target, the updated details are correctly stored in the targets database and retrieved accurately.
+
+**Related requirement document details:** Feature: Ability to edit goals (Priority: Must have)
+
+**Prerequsites for test:** 
+1. A frontend user interface (to confirm data consistency).
+
+2. A pre-loaded dataset with sample targets.
+
+3. A valid target ID associated with an existing target.
+
+4. An endpoint for updating target details.
+
+
+**Test procedure:**  
+1. Retrieve an existing target ID from the database.
+
+2. Send an update request to the backend API with modified details (e.g., target name, description, progress percentage).
+
+3. Verify that the API response confirms a successful update (HTTP 200 OK).
+
+4. Retrieve the target from the database using the same target ID.
+
+5. Check that all updated details are correctly stored and match the request.
+
+6. Refresh the frontend and verify that the updated details are displayed accurately.
+
+7. Perform the test again by trying to update a non-existent target or not filling in the required fields.
+
+**Test materials used:** 
+
+
+**Expected result (test oracle):** 
+If the test passes, the database and frontend should reflect the updated target details, and the backend should provide a successful update response.
+
+If the test fails, the frontend should not reflect the updated target details and the database should be rolled back (returned ot a previous state).
+
+**Comments:**
+
+**Created by:** TO
+
+**Test environment:** Deployed application (Node.js backend, React.js frontend, various browsers) on a variety of office computers and other devices used within the organisation.
 
 
 
