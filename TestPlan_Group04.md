@@ -457,6 +457,8 @@ Related requirement document details: Clear and intuitive user interface user st
 6. Enter the URL to the administrator’s page and check if it redirects to the 403 error page, verifying that the displayed message is "Access Denied."
 7. Test various incorrect URL formats (including illegal characters, overly long URLs, and structurally incorrect path entries) to see if the system redirects to the 404 error page and displays the message "Page Not Found."
 
+**Test material used:**The user account information includes usernames and passwords for employees and managers.
+
 **Expected result (test oracle):**
 1. If the test passes, each role will be correctly redirected to their respective dedicated pages after login, and the pages will display user information and functional options that match the expected permissions of the role. Incorrect login attempts should be properly recognized, and the system should provide appropriate error messages.
 2. If the test fails, it will not route to the user interface corresponding to the user's role permissions.
