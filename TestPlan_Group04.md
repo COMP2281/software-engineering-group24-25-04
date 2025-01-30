@@ -437,7 +437,9 @@ Related requirement document details: Clear and intuitive user interface user st
 
 
 **Test Case ID:** sys_test_xx
+
 **Description of test:** Verify that different roles (employees, managers) are correctly redirected to their respective dedicated pages after logging in.
+
 **Related requirement document details:** Permission levels (Priority: Must have) - The system should automatically direct users to the appropriate dedicated page based on their role (employee, manager).
 
 **Prerequisites for test:**
@@ -467,6 +469,45 @@ Related requirement document details: Clear and intuitive user interface user st
 
 
 
+
+
+
+
+**Test Case ID:** uat_test_xx
+
+**Description of test:** Verify the website's responsive layout and functionality across various devices and screen sizes.
+
+**Related requirement document details:** Responsive Design User Story - The website should provide a consistent user experience across desktop, tablet, and mobile devices.
+
+**Prerequisites for test:**
+The website must already be deployed and accessible.
+Test devices include: desktop computers, tablets, and smartphones.
+All devices should have the latest version of mainstream browsers installed (such as Chrome, Firefox, Safari).
+
+
+**Test procedure:**
+1. Open the website on a desktop computer to observe the rationality of the layout and the completeness of functionalities.
+2. Adjust the browser window width to check for any misplacements or overflows of elements.
+3. Access the website on a tablet device in both landscape and portrait modes to ensure interface elements are correctly rearranged.
+4. Visit the website on a smartphone to verify if menus correctly fold and texts are readable.
+5. Perform interaction tests, such as clicking buttons and filling out forms, to ensure all functionalities are accessible.
+6. Record any layout disarray or functional anomalies.
+
+
+**Test material used:**
+1. Test devices (desktop computers, tablets, and smartphones) and their specifications.
+2. URL of the test website.
+3. Browser compatibility testing tools.
+
+**Expected result (test oracle):**
+1. If the test passes, the page will correctly adapt to different screen sizes without needing horizontal scrolling. Interactive components (buttons, menus, forms, etc.) will function normally on all devices without any content misalignment or overflow. The layout will be neat, with good readability and reasonable spacing.
+2. If the test fails, potential issues may include improper adaptation of the layout during viewport changes, interactive elements not functioning properly, or elements being truncated.
+
+**Comments:**  None
+
+**Created by:**  HB
+
+**Test environment(s):**Includes Windows 10, iOS, and Android devices, mobile iOS & Android using Chrome, Firefox, Safari browsers for testing.
 
 
 ## Section 3: Testing Context
