@@ -24,20 +24,22 @@ function App() {
   };
 
   return (
-    <div>
-    {currentPage === 'loginSignup' && (
-      <LoginSignup goToDashboard={goToDashboard} />
-    )}
-    {currentPage === 'dashboard' && (
-      <Dashboard goToProfile={goToProfile} goToTarget={goToTarget} />
-    )}
-    {currentPage === 'profile' && (
-      <Profile goToDashboard={goToDashboard} goToLogin={goToLogin} />
-    )}
-    {currentPage === 'target' && (
-      <Target goToDashboard={goToDashboard} />
-    )}
-  </div>
+      <div>
+          <div>
+              {currentPage === 'loginSignup' && (
+                  <LoginSignup goToDashboard={goToDashboard} />
+              )}
+              {currentPage === 'dashboard' && (
+                  <Dashboard goToProfile={goToProfile} goToTarget={goToTarget} />
+              )}
+              {currentPage === 'profile' && (
+                  <Profile goToDashboard={goToDashboard} goToLogin={goToLogin} />
+              )}
+              {currentPage === 'target' && (
+                  <Target goToDashboard={goToDashboard} />
+              )}
+          </div>
+      </div>
 );
 }
 
