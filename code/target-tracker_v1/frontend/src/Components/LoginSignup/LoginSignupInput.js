@@ -1,4 +1,20 @@
 import axios from "axios";
+import validator from "validator";
+
+function validateEmail(email) {
+    if (validator.isEmail(email)) {
+        return true;
+    } else {
+        return false;
+    }
+};
+function validatePassword(password) {
+    if (validator.isStrongPassword(password)) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
 export const handleInput = async (action) => {
     const nameInput = document.getElementById("name");
@@ -12,47 +28,67 @@ export const handleInput = async (action) => {
     const newPassword = newPasswordInput?.value?.trim() || "";
 
     const signUp = async(postData) => {
-        try{
-            const signUpResult = await axios.post('http://localhost:4000/signup', postData)
-            console.log(signUpResult.data);
-            if (signUpResult.data === "success"){
-                return true;
+        const validemail = validateEmail(postData.email);
+        const validpassword = validatePassword(postData.password);
+
+        if (validemail === false) {
+            alert("Please enter a valid email");
+        }
+        if (validpassword === false) {
+            alert("Password is not strong enough");
+        }
+        if (validemail === true && validpassword === true) {
+            try{
+                const signUpResult = await axios.post('http://localhost:4000/signup', postData)
+                if (signUpResult.data === "success"){
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            } catch (error) {
+                console.error(error);
             }
-            else {
-                return false;
-            }
-        } catch (error) {
-            console.error(error);
+        } else {
+            return false;
         }
     }
 
     const login = async(postData) => {
-        try{
-            const loginResult = await axios.post('http://localhost:4000/login', postData)
-            console.log(loginResult.data);
-            if (loginResult.data === "success"){
-                return true;
+        if (validateEmail === false) {
+            alert("Please enter a valid email");
+            return false;
+        } else {
+            try{
+                const loginResult = await axios.post('http://localhost:4000/login', postData)
+                if (loginResult.data === "success"){
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            } catch (error){
+                console.error(error);
             }
-            else {
-                return false;
-            }
-        } catch (error){
-            console.error(error);
         }
     }
 
     const reset = async(postData) => {
-        try{
-            const resetResult = await axios.post('http://localhost:4000/reset', postData)
-            console.log(resetResult.data);
-            if (resetResult.data === "success"){
-                return true;
+        if (validateEmail(postData.email) === false) {
+            alert("Please enter a valid email");
+            return false;
+        } else {
+            try{
+                const resetResult = await axios.post('http://localhost:4000/reset', postData)
+                if (resetResult.data === "success"){
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            } catch (error) {
+                console.error(error);
             }
-            else {
-                return false;
-            }
-        } catch (error) {
-            console.error(error);
         }
     }
 
@@ -69,7 +105,7 @@ export const handleInput = async (action) => {
         const signUpInput = { name, email, password };
         const result = await signUp(signUpInput);
         if (result === false){
-            alert("Sorry, email taken");
+            alert("Unsuccessful sign up");
         }
         else{
             alert("Successfully signed up");
@@ -80,7 +116,7 @@ export const handleInput = async (action) => {
         const loginInput = {email, password};
         const result = await login(loginInput);
         if (result === false){
-            alert("Sorry, incorrect login details")
+            alert("Unsuccessful login attempt")
         }
         else{
             alert("Successfully logged in!");
@@ -91,7 +127,7 @@ export const handleInput = async (action) => {
         const resetInput = {name, email, newPassword};
         const result = await reset(resetInput);
         if (result === false){
-            alert("Please fill in correct email and name");
+            alert("Password unchanged");
         }
         else{
             alert("Successfully changed password!");

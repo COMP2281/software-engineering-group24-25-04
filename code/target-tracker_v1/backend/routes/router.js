@@ -10,25 +10,58 @@ const users = require(usersFile);
 const managerFile = path.resolve(__dirname, '../database/manager.json');
 const managers = require(managerFile);
 
+function validateLogin(email, password) {
+    const check = users.find(user => user.email === email && user.password === password);
+    if (check) {
+        return true;
+    } else {
+        return false;
+    }
+};
+
+function userExists(name, email) {
+    const check = users.find(user => user.name === name && user.email === email);
+    if (check) {
+        return check;
+    } else {
+        return false;
+    }
+}
+
+function checkEmailUnique(email) {
+    for (let i = 0; i < users.length; i++) {
+        if (users[i].email === email) {
+            return false;
+        }
+    }
+}
+
+function checkIfManager(email) {
+    if (managers.includes(email) === true) {
+        return true;
+    }
+}
+
+
+
 router.post('/login', (req, res) => {
     console.log(req.body);
-    const correctLogin = users.find(user => user.email === req.body.email && user.password === req.body.password);
-    if (correctLogin){
+    if (validateLogin(req.body.email, req.body.password) == true) {
         res.send("success");
         return;
-    }
-    else{
+    } else {
         res.send("fail");
         return;
     }
 })
 
 router.post('/reset', (req, res) => {
-    console.log(req.body);
-    const userExists = users.find(user => user.name === req.body.name && user.email === req.body.email);
-    if (userExists){
-        userExists.password = req.body.newPassword
-        // console.log(users);
+    const user = userExists(req.body.name, req.body.email);
+    if (user === false) {
+        res.send("fail");
+        return;
+    } else {
+        user.password = req.body.newPassword
         try{
             fs.writeFileSync(usersFile, JSON.stringify(users, null, 2), 'utf-8');
             res.send("success");
@@ -36,11 +69,6 @@ router.post('/reset', (req, res) => {
         } catch (error){
             console.log(error);
         }
-        // console.log(userExists);
-    }
-    else{
-        res.send("fail");
-        return;
     }
 })
 
