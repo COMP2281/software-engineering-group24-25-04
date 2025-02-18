@@ -47,7 +47,7 @@ const handleSaveClick = () => {
                         <div className='target-edit'>
                             <input id = "target-heading" type='text' placeholder='Target'/>
                         </div>
-                    </div> 
+                    </div>
                     ): action === "View" ? (
                         <div>
                            <div className='target-edit'>
