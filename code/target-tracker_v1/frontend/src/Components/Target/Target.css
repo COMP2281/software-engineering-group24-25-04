@@ -1,14 +1,18 @@
-.target-container{
+/* Target customisation */
+
+.target-container {
     display: flex;
     flex-direction: column;
     margin: auto;
-    margin-top: 200px;
-    width: 1000px;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    max-width: 1000px;
+    width: 90%;
     background: #fff;
     padding-bottom: 30px;
 }
 
-.target-header{
+.target-header {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,57 +21,154 @@
     margin-top: 30px;
 }
 
-.target-text{
+.target-text {
     color: #1b3155;
     font-size: 48px;
     font-weight: 700;
+    text-align: center;
 }
 
-.target-underline{
+.target-text-2 {
+    color: #1b3155;
+    font-size: 20px;
+    font-weight: 500;
+    padding-left: 10%;
+}
+
+.target-text-3 {
+    color: #1b3155;
+    font-size: 20px;
+    font-weight: 500;
+    padding-left: 20%;
+}
+
+.target-underline {
     width: 61px;
     height: 6px;
     background: #1b3155;
     border-radius: 9px;
 }
 
-.target-inputs{
+.target-inputs {
     margin-top: 55px;
     display: flex;
     flex-direction: column;
     gap: 25px;
 }
 
-.target-edit{
+.target-edit {
     display: flex;
     align-items: center;
-    margin: auto;
-    width: 480px;
-    height: 80px;
+    margin: 0.1rem 0.1rem 0.1rem 10%;
+    width: 80%;
+    height: 60px;
     background: #eaeaea;
     border-radius: 6px;
 }
 
-.target-edit img{
+.target-edit img {
     margin: 0px 30px;
 }
 
-.target-edit input{
-    height: 50px;
-    width: 400px;
+.target-edit input {
+    margin: 0.1rem 0.1rem 0.1rem 1rem;
+    height: 80px;
+    width: 100%;
     background: transparent;
     border: none;
     outline: none;
-    color: #797979;
+    color: #1b3155;
+    font-size: 19px;
+    text-align: left;
+}
+
+/* Target Savings customisation */
+
+.target-edit-saving-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+
+.target-edit-saving-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+}
+
+.target-edit-saving {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 48%;
+}
+
+.target-edit-saving h2 {
+    margin-bottom: 0.5rem;
+    font-size: 19px;
+    color: #1b3155;
+}
+
+.target-edit-saving input,
+.target-edit-saving p {
+    padding: 0.5rem;
+    margin-left: 45%;
+    border-radius: 6px;
+    border: 2px solid #1b3155;
+    width: 100%;
+    background: #eaeaea;
+    outline: none;
+    color: #1b3155;
     font-size: 19px;
 }
 
-.target-submit-container{
+/* Target dropdown customisation */
+
+.target-edit-dropdown-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.target-edit-dropdown {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 54%;
+}
+
+.target-edit-dropdown h2 {
+    margin-bottom: 0.5rem;
+    margin-left: 10%;
+    font-size: 19px;
+    color: #1b3155;
+}
+
+.target-edit-dropdown select {
+    padding: 0.5rem;
+    margin-left: 20%;
+    border-radius: 6px;
+    border: 2px solid #1b3155;
+    color: #1b3155;
+    font-size: 19px;
+    width: 54%;
+    background: transparent;
+    outline: none;
+}
+
+/* Target submit customisation */
+
+.target-submit-container {
     display: flex;
     gap: 30px;
     margin: 60px auto;
 }
 
-.target-submit{
+.target-submit {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -81,9 +182,12 @@
     cursor: pointer;
 }
 
-.target-button-container{
+/* Target button customisation */
+
+.target-button-container {
     display: flex;
-    gap: 30px;
+    flex-direction: column;
+    gap: 1rem;
     margin: 60px auto;
 }
 
@@ -91,7 +195,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 220px;
+    width: 125%;
     height: 59px;
     color: #fff;
     background: #1b3155;
@@ -105,7 +209,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100px;
+    width: 75%;
     height: 59px;
     color: #fff;
     background: #1b3155;
@@ -119,7 +223,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100px;
+    width: 75%;
     height: 59px;
     color: #fff;
     background: #a1352b;
@@ -128,15 +232,44 @@
     font-weight: 700;
     cursor: pointer;
 }
-  
-  .dashboard-btn {
+
+.dashboard-btn {
     background-color: #4CAF50;
     color: white;
-  }
-  
-  .dashboard-btn:hover {
+}
+
+.dashboard-btn:hover {
     background-color: #45a049;
-  }
+}
+
+/* Target date customisation */
+
+.target-edit-date-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.target-edit-date {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.target-edit-date input {
+    margin-top: 0.5rem;
+    margin-left: 20%;
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: 2px solid #1b3155;
+    width: 40%;
+    background: transparent;
+    outline: none;
+    color: #1b3155;
+    font-size: 19px;
+}
 
 
 
