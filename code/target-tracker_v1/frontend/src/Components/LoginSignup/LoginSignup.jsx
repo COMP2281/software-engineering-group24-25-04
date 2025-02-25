@@ -30,10 +30,16 @@ const LoginSignup = ({ goToDashboard }) => {
     else {
         const signupResult = await handleInput("Sign Up");
         if (signupResult === true){
-            setAction("Log In")
+            setAction("Log In");
         }
     }
   };
+
+  const handleBackClick = async () => {
+    if (action === "Forgot Password"){
+        setAction("Log In");
+    }
+    }
   
   const handleResetClick = async () => {
     if (action === "Forgot Password"){
@@ -69,10 +75,18 @@ const LoginSignup = ({ goToDashboard }) => {
                     <input id = "newPassword" type='password' placeholder='New Password'/>
                 </div>
             ) : (
+                <div>
                 <div className='input'>
                     <img src={password_icon} alt='' />
                     <input id = "password" type='password' placeholder='Password'/>
                 </div>
+                <div className='input'>
+                    <img src={password_icon} alt='' />
+                    <input id = "password" type='password' placeholder='Password'/>
+                </div>
+                </div>
+
+                
             )}
         </div>
             {action==="Log In" && (
@@ -87,7 +101,10 @@ const LoginSignup = ({ goToDashboard }) => {
                     <div className={action === "Sign Up" ? "submit gray" : "submit"} onClick={handleLoginClick}>Login</div>
                 )}
                 {action === "Forgot Password" && (
-                    <div className="submit" onClick={handleResetClick}>Submit</div>
+                    <div>
+                        <div className="submit" onClick={handleResetClick}>Submit</div>
+                        <div className="back" onClick={handleBackClick}>Back</div>
+                    </div>
                 )}
             </div>
 
