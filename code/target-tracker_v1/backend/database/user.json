@@ -26,5 +26,12 @@
     "email": "millie@gmail.com",
     "password": "PasswordMillie",
     "role": "user"
+  },
+  {
+    "id": "5",
+    "name": "manager",
+    "email": "manager@gmail.com",
+    "password": "ManagerPassword123!",
+    "role": "user"
   }
 ]
