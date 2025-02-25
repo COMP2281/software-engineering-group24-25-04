@@ -30,7 +30,7 @@ const LoginSignup = ({ goToDashboard }) => {
     else {
         const signupResult = await handleInput("Sign Up");
         if (signupResult === true){
-            setAction("Log In");
+            setAction("Log In"); 
         }
     }
   };
@@ -70,21 +70,22 @@ const LoginSignup = ({ goToDashboard }) => {
             </div>
 
             {action === "Forgot Password" ? (
+                <div>
                 <div className='input'>
                     <img src={password_icon} alt='' />
                     <input id = "newPassword" type='password' placeholder='New Password'/>
                 </div>
+                <div className='input'>
+                    <img src={password_icon} alt='' />
+                    <input id = "newpassword" type='password' placeholder='New Password'/>
+                </div>
+                </div>
             ) : (
-                <div>
                 <div className='input'>
                     <img src={password_icon} alt='' />
                     <input id = "password" type='password' placeholder='Password'/>
                 </div>
-                <div className='input'>
-                    <img src={password_icon} alt='' />
-                    <input id = "password" type='password' placeholder='Password'/>
-                </div>
-                </div>
+                
 
                 
             )}
@@ -101,11 +102,12 @@ const LoginSignup = ({ goToDashboard }) => {
                     <div className={action === "Sign Up" ? "submit gray" : "submit"} onClick={handleLoginClick}>Login</div>
                 )}
                 {action === "Forgot Password" && (
-                    <div>
-                        <div className="submit" onClick={handleResetClick}>Submit</div>
-                        <div className="back" onClick={handleBackClick}>Back</div>
-                    </div>
+                    <div className="submit" onClick={handleResetClick}>Submit</div>
                 )}
+                {action === "Forgot Password" && (
+                    <div className="back" onClick={handleBackClick}>Back</div>
+                )}
+                
             </div>
 
             {/* <button className="go-to-dashboard" onClick={handleDashboardClick}>

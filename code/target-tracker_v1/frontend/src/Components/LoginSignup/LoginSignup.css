@@ -45,6 +45,7 @@
     height: 80px;
     background: #eaeaea;
     border-radius: 6px;
+    margin-top: 10px;
 }
 
 .input img{
@@ -79,7 +80,7 @@
     margin: 60px auto;
 }
 
-.submit{
+.submit, .back{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -93,19 +94,6 @@
     cursor: pointer;
 }
 
-.back{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 220px;
-    height: 59px;
-    color: #fff;
-    background: #1b3155;
-    border-radius: 50px;
-    font-size: 19px;
-    font-weight: 700;
-    cursor: pointer;
-}
 
 .gray{
     background: #eaeaea;
