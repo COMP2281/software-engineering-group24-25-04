@@ -43,7 +43,12 @@ function checkIfManager(email) {
     }
 }
 
-
+router.post('/userdata', (req, res) => {
+    const check = users.find(user => user.email === req.body.email);
+    const data = {"name":check.name,"role":check.role};
+    res.send(data);
+    return true;
+})
 
 router.post('/login', (req, res) => {
     console.log(req.body);
@@ -87,9 +92,9 @@ router.post('/signup', (req, res) => {
         res.send("fail");
     } else {
         const id = (users.length + 1).toString();
-        let role = "user";
+        let role = "Staff";
         if (checkIfManager(req.body.email) === true) {
-            role = "manager"
+            role = "Manager"
         }
         const mergedJSON = Object.assign({},{"id":id},req.body,{"role":role});
         users.push(mergedJSON);

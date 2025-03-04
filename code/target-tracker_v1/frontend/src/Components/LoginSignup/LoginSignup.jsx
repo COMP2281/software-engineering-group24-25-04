@@ -6,10 +6,10 @@ import user_icon from '../Assets/person.png';
 import email_icon from '../Assets/email.png';
 import password_icon from '../Assets/password.png';
 
-
 const LoginSignup = ({ goToDashboard }) => {
 
   const [action, setAction] = useState("Log In");
+//   const [email, setEmail] = useState("");
 
   const handleLoginClick = async () => {
     if (action !== "Log In"){
@@ -17,8 +17,9 @@ const LoginSignup = ({ goToDashboard }) => {
     }
     else {
         const loginResult = await handleInput("Log In");
-        if (loginResult === true){
-            goToDashboard();
+        if (loginResult.result === true){
+            // setEmail(loginResult.email);
+            goToDashboard(loginResult.email);
         }
     }
   };
@@ -117,6 +118,5 @@ const LoginSignup = ({ goToDashboard }) => {
         </div>
     );
 }
-
 
 export default LoginSignup

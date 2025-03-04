@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Dashboard.css';
 import icon from '../Assets/icon.jpg';
 
-const Dashboard = ({ goToProfile, goToTarget }) => {
+const Dashboard = ({ userEmail, goToProfile, goToTarget }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [filter, setFilter] = useState("All");
 
@@ -11,7 +11,7 @@ const Dashboard = ({ goToProfile, goToTarget }) => {
   };
 
   const handleIconClick = () => {
-    goToProfile();
+    goToProfile(userEmail);
   };
 
 

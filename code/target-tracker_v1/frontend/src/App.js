@@ -6,8 +6,10 @@ import Target from './Components/Target/Target';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('loginSignup');
+  const [userEmail, setUserEmail] = useState("");
 
-  const goToDashboard = () => {
+  const goToDashboard = (email) => {
+    setUserEmail(email);
     setCurrentPage('dashboard');
   };
 
@@ -15,7 +17,8 @@ function App() {
     setCurrentPage('loginSignup');
   };
 
-  const goToProfile = () => {
+  const goToProfile = (email) => {
+    setUserEmail(email);
     setCurrentPage('profile');
   };
 
@@ -30,13 +33,13 @@ function App() {
                   <LoginSignup goToDashboard={goToDashboard} />
               )}
               {currentPage === 'dashboard' && (
-                  <Dashboard goToProfile={goToProfile} goToTarget={goToTarget} />
+                  <Dashboard userEmail={userEmail} goToProfile={goToProfile} goToTarget={goToTarget} />
               )}
               {currentPage === 'profile' && (
-                  <Profile goToDashboard={goToDashboard} goToLogin={goToLogin} />
+                  <Profile userEmail={userEmail} goToDashboard={goToDashboard} goToLogin={goToLogin} />
               )}
               {currentPage === 'target' && (
-                  <Target goToDashboard={goToDashboard} />
+                  <Target userEmail={userEmail} goToDashboard={goToDashboard} />
               )}
           </div>
       </div>
