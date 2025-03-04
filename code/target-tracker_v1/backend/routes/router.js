@@ -92,9 +92,9 @@ router.post('/signup', (req, res) => {
         res.send("fail");
     } else {
         const id = (users.length + 1).toString();
-        let role = "Staff";
+        let role = "user";
         if (checkIfManager(req.body.email) === true) {
-            role = "Manager"
+            role = "manager"
         }
         const mergedJSON = Object.assign({},{"id":id},req.body,{"role":role});
         users.push(mergedJSON);
