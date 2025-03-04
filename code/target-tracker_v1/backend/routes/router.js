@@ -34,6 +34,7 @@ function checkEmailUnique(email) {
             return false;
         }
     }
+    return true;
 }
 
 function checkIfManager(email) {
@@ -73,29 +74,52 @@ router.post('/reset', (req, res) => {
 })
 
 router.post('/signup', (req, res) => {
-    console.log(req.body);
-    for (let i = 0; i < users.length; i++){
-        if (users[i].email === req.body.email){
-            res.send("fail");
-            return;
+    // console.log(req.body);
+    // for (let i = 0; i < users.length; i++){
+    //     if (users[i].email === req.body.email){
+    //         res.send("fail");
+    //         return;
+    //     }
+    // }
+
+    const emailUnique = checkEmailUnique(req.body.email);
+    if (emailUnique === false) {
+        res.send("fail");
+    } else {
+        const id = (users.length + 1).toString();
+        let role = "user";
+        if (checkIfManager(req.body.email) === true) {
+            role = "manager"
         }
-    }
-    const id = (users.length + 1).toString();
-    let role = "user";
-    if (managers.includes(req.body.email) === true){
-        role = "manager";
-    }
-    const mergedJSON = Object.assign({},{"id":id},req.body,{"role":role});
-    users.push(mergedJSON);
-    try {
-        fs.writeFileSync(usersFile, JSON.stringify(users, null, 2), 'utf-8');
-        res.send("success");
-        return;
-    } catch (error) {
+        const mergedJSON = Object.assign({},{"id":id},req.body,{"role":role});
+        users.push(mergedJSON);
+        try {
+            fs.writeFileSync(usersFile, JSON.stringify(users, null, 2), 'utf-8');
+            res.send("success");
+            return;
+        } catch (error) {
             console.log(error);
             res.send("fail");
             throw error;
         }
+    }
+
+    // const id = (users.length + 1).toString();
+    // let role = "user";
+    // if (managers.includes(req.body.email) === true){
+    //     role = "manager";
+    // }
+    // const mergedJSON = Object.assign({},{"id":id},req.body,{"role":role});
+    // users.push(mergedJSON);
+    // try {
+    //     fs.writeFileSync(usersFile, JSON.stringify(users, null, 2), 'utf-8');
+    //     res.send("success");
+    //     return;
+    // } catch (error) {
+    //     console.log(error);
+    //     res.send("fail");
+    //     throw error;
+    // }
 })
 
 

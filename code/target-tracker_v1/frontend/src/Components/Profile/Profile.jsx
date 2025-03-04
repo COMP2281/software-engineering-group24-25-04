@@ -1,4 +1,3 @@
-
 import React from 'react';
 import icon from '../Assets/icon.jpg'; 
 import './Profile.css';
@@ -7,6 +6,7 @@ const Profile = ({ goToLogin, goToDashboard }) => {
     
   const name = "Name ";
   const email = "email";
+  const userlevel = "staff"
   
   const handleLoginClick = () => {
     goToLogin();
@@ -38,6 +38,10 @@ const Profile = ({ goToLogin, goToDashboard }) => {
           <div className="profile-item">
             <strong>Email:</strong>
             <p>{email}</p>
+          </div>
+          <div className="profile-item">
+            <strong>User Level:</strong>
+            <p>{userlevel}</p>
           </div>
         </div>
 
