@@ -1,7 +1,8 @@
 import { StatisticCard } from '@ant-design/pro-components';
 import RcResizeObserver from 'rc-resize-observer';
-import { useState } from 'react';
-import {useNavigate} from "react-router-dom";
+import { useState, useEffect } from 'react';
+import { useNavigate } from "react-router-dom";
+import axios from 'axios';
 
 const imgStyle = {
     display: 'block',
@@ -11,15 +12,28 @@ const imgStyle = {
 
 const AdminDashboard = () => {
     const [responsive, setResponsive] = useState(false);
+    const [dashboardData, setDashboardData] = useState({
+        paymentAmount: 0,
+        visitorCount: 0,
+        successfulOrders: 0,
+        pageViews: 0
+    });
 
-    const currentDate = new Date().toLocaleDateString();
-    const currentTime = new Date().toLocaleTimeString();
+    const navigate = useNavigate();
 
-    const navigate = useNavigate()
+    useEffect(() => {
+        axios.get('http://localhost:4000/api/manager/dashboard')
+            .then(response => {
+                setDashboardData(response.data);
+            })
+            .catch(error => {
+                console.error("Error fetching manager dashboard data:", error);
+            });
+    }, []);
 
-    const onTargetManagementClick = () =>{
-        navigate('/admin/target')
-    }
+    const onTargetManagementClick = () => {
+        navigate('/admin/target');
+    };
 
     return (
         <div style={{ padding: '20px' }}>
@@ -33,7 +47,7 @@ const AdminDashboard = () => {
                     <StatisticCard
                         statistic={{
                             title: 'Payment Amount',
-                            value: 2176,
+                            value: dashboardData.paymentAmount, // Dynamic Data
                             icon: (
                                 <img
                                     style={imgStyle}
@@ -46,7 +60,7 @@ const AdminDashboard = () => {
                     <StatisticCard
                         statistic={{
                             title: 'Visitor Count',
-                            value: 475,
+                            value: dashboardData.visitorCount, // Dynamic Data
                             icon: (
                                 <img
                                     style={imgStyle}
@@ -59,7 +73,7 @@ const AdminDashboard = () => {
                     <StatisticCard
                         statistic={{
                             title: 'Successful Orders',
-                            value: 87,
+                            value: dashboardData.successfulOrders, // Dynamic Data
                             icon: (
                                 <img
                                     style={imgStyle}
@@ -72,7 +86,7 @@ const AdminDashboard = () => {
                     <StatisticCard
                         statistic={{
                             title: 'Page Views',
-                            value: 1754,
+                            value: dashboardData.pageViews, // Dynamic Data
                             icon: (
                                 <img
                                     style={imgStyle}
@@ -100,7 +114,7 @@ const AdminDashboard = () => {
             </div>
 
             <p style={{ textAlign: 'center', marginBottom: '20px' }}>
-                Today is {currentDate}, and the current time is {currentTime}
+                Today is {new Date().toLocaleDateString()}, and the current time is {new Date().toLocaleTimeString()}
             </p>
 
             <div style={{ display: 'flex', justifyContent: 'center', margin: '20px 0' }}>
