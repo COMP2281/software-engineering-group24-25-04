@@ -5,8 +5,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  height: 100vh;
+  min-height: 100vh; /* Ensure the gradient covers the full height */
   background: linear-gradient(#73a22d, #1b3155);
+  background-attachment: fixed; /* Fix the background to prevent it from restarting on scroll */
 }
 
 code {
