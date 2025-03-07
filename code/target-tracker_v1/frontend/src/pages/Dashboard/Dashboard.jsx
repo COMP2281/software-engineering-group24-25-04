@@ -17,7 +17,7 @@ const Dashboard = () => {
     <div className="dashboard">
       <header className="dashboard-header">
         <div className="dashboard-header-left">
-          <h1>Admin's Dashboard -- Target Management</h1>
+          <h1>Welcome to Admin's Dashboard -- Target Management</h1>
         </div>
         <div className="dashboard-header-right">
           <img 

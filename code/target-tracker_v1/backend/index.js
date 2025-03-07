@@ -2,6 +2,7 @@ const express = require('express')
 const cors = require('cors')
 const bodyParser = require('body-parser')
 const router = require('./routes/router.js')
+const managerDashboard = require('./routes/managerDashboard.js')
 
 const app = express()
 
@@ -16,8 +17,11 @@ const corsOptions = {
 
 app.use(cors(corsOptions))
 app.use('/', router)
+app.use('/managerDashboard', managerDashboard)
 
 const port = 4000
 const server = app.listen(port, () => {
     console.log(`Server is running on port ${port}`)
 })
+
+

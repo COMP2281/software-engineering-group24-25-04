@@ -1,154 +1,115 @@
-import React, {useState} from 'react';
-import './Target.css';
+import React, { useState } from "react";
+import { Container } from "react-bootstrap";
+import TargetField from "./TargetField";
+import TargetDropdown from "./TargetDropdown";
+import TargetDate from "./TargetDate";
+import "./Target.css";
+import targetData from "../../data/targetData.json";
 
 const Target = ({ goToDashboard }) => {
+    const [action, setAction] = useState("View");
+    const [showSaveButton, setShowSaveButton] = useState(false);
+    const [formData, setFormData] = useState({});
 
-    
-const [action, setAction] = useState("View");
-const [showSaveButton, setShowSaveButton] = useState(false); 
-const oppositeAction = action === "Edit" ? "View" : "Edit";
+    const oppositeAction = action === "Edit" ? "View" : "Edit";
 
-const handleDashboardClick = () => {
-    goToDashboard();  
-  }
+    const handleDashboardClick = () => {
+        goToDashboard();
+    };
 
-const handleToggleActionClick = () => {
-    if (action === "Edit") {
-        setAction("View");
+    const handleToggleActionClick = () => {
+        if (action === "Edit") {
+            setAction("View");
+            setShowSaveButton(false);
+        } else {
+            setAction("Edit");
+            setShowSaveButton(true);
+        }
+    };
+
+    const handleSaveClick = () => {
         setShowSaveButton(false);
-    } else {
-        setAction("Edit");
-        setShowSaveButton(true);
-    }
-};
+        setAction("View");
+    };
 
-const handleSaveClick = () => {
-    setShowSaveButton(false);
-    setAction("View")
-};
+    const handleChange = (id, value) => {
+        setFormData((prev) => ({ ...prev, [id]: value }));
+    };
 
-const fields = {
-    "target-cerp3_action_type": "CERP3 Action Type",
-    "target-smart_action_description": "Smart Action Description",
-    "target-related_work_programme": "Related Work Programme",
-    "target-action_type": "Action Type",
-    "target-project_lead": "Project Lead",
-    "target-progress_metric": "Progress Metric",
-    "target-targets_set": "Targets Set",
-    "target-kpi": "KPI",
-    "target-carbon_reduction": "Baseline",
-    "target-council_estimated_annual_saving": "Target",
-    "target-potential_obstacles_and_solutions": "Potential Obstacles and Solutions",
-    "target-governing_group": "Governing Group"
-};
-
-const costFields = {
-    "target-countywide_estimated_annual_saving": "Estimated Annual Saving",
-    "target-actual_annual_saving": "Actual Annual Saving",
-    "target-cost": "Cost"
-};
-
-  return (
-    <div className='target-container'>
-        <div className='target-header'>
-            <div className='target-text'>Target Heading</div> {/* Target heading Needed Here */}
-            <div className='target-underline'></div>
-        </div>
-        <div className='target-inputs'>
-                    {Object.entries(fields).map(([id, label]) => (
-                        <div key={id}>
-                            <h2 className='target-text-2'>{label}</h2>
-                            <div className='target-edit'>
-                                {action === "Edit" ? (
-                                    <input id={id} type='text'/>
-                                
-                            ) : (
-                                <p id={id}> {/* retrieve the information from the targets database here*/}</p>
-                            )}
-                            </div>
-                        </div>
-                    ))}
-                    
-                    {Object.entries(costFields).map(([id, label]) => (
-                        <div key={id}>
-                            <h2 className='target-text-2'>{label}</h2>
-                            <div className='target-edit-costs'>
-                                {action === "Edit" ? (
-                                    <input id={id} type='text' placeholder='£'/>
-                                
-                            ) : (
-                                <p id={id}> {/* retrieve the information from the targets database here*/}</p>
-                            )}
-                            </div>
-                        </div>
-                    ))}
-                    
-                        
-                    <div>
-                        <div className='target-edit-dropdown-container'>
-                            <div className='target-edit-dropdown'>
-                                <h2 className='target-text-2'>Funding Secured</h2>
-                                {action === "Edit" ? (
-                                    <select id='target-funding_secured'>
-                                        <option value='yes'>Yes</option>
-                                        <option value='no'>No</option>
-                                        <option value='invest_to_save'>Invest to save</option>
-                                    </select>
-                                ) : (
-                                    <p id='target-funding_secured'> {/* retrieve the information from the targets database here*/}</p>
-                                )}
-                            </div>
-                                
-                            <div className='target-edit-dropdown'>
-                                <h2 className='target-text-2'>Sufficient Staff</h2>
-                                {action === "Edit" ? (
-                                    <select id='target-sufficient_staff'>
-                                        <option value='yes'>Yes</option>
-                                        <option value='no'>No</option>
-                                        <option value='invest_to_save'>Uncertain</option>
-                                    </select>
-                                ) : (
-                                    <p id='target-sufficient_staff'> {/* retrieve the information from the targets database here*/}</p>
-                                )}
-                              </div>
-                        </div>
-
-                        <div className='target-edit-date-container'>
-                            <div className='target-edit-date'>
-                                <h2 className='target-text-3'>Start Date</h2>
-                                {action === "Edit" ? (
-                                    <input id='target-start_date' type='date'/>
-                                ) : (
-                                    <p id='target-start_date'> {/* retrieve the information from the targets database here*/}</p>
-                                )}
-                            </div>
-                            <div className='target-edit-date'>
-                                <h2 className='target-text-3'>Completion Date</h2>
-                                {action === "Edit" ? (
-                                    <input id='target-completion_date' type='date'/>
-                                ) : (
-                                    <p id='target-completion_date'> {/* retrieve the information from the targets database here*/}</p>
-                                )}
-                            </div>
-                        </div>
-                    </div>
-                    
-                    
-                </div>
-            <div className="target-button-container">
-                <div className="target-btn dashboard-btn" onClick={handleDashboardClick}>Return to Dashboard</div>
-                <div className="target-btn edit-btn" onClick={handleToggleActionClick}>{oppositeAction}</div>
-                {showSaveButton && (
-                <div className="target-btn save-btn" onClick={handleSaveClick}>
-                    Save
-                </div>
-            )}
+    return (
+        <Container className="target-container">
+            <div className="target-header">
+                <div className="target-text">Target Heading</div>
+                <div className="target-underline"></div>
             </div>
-    </div>
-    
+            <div className="target-inputs">
+                {targetData.fields.map(({ id, label }) => (
+                    <TargetField
+                        key={id}
+                        id={id}
+                        label={label}
+                        value={formData[id] || ""}
+                        onChange={handleChange}
+                        isEditing={action === "Edit"}
+                    />
+                ))}
+                {targetData.costFields.map(({ id, label }) => (
+                    <TargetField
+                        key={id}
+                        id={id}
+                        label={label}
+                        value={formData[id] || ""}
+                        onChange={handleChange}
+                        isEditing={action === "Edit"}
+                        isCurrency
+                    />
+                ))}
+                <TargetDropdown
+                    id="target-funding_secured"
+                    label="Funding Secured"
+                    options={["Yes", "No", "Invest to save"]}
+                    value={formData["target-funding_secured"] || ""}
+                    onChange={handleChange}
+                    isEditing={action === "Edit"}
+                />
+                <TargetDropdown
+                    id="target-sufficient_staff"
+                    label="Sufficient Staff"
+                    options={["Yes", "No", "Uncertain"]}
+                    value={formData["target-sufficient_staff"] || ""}
+                    onChange={handleChange}
+                    isEditing={action === "Edit"}
+                />
+                <TargetDate
+                    id="target-start_date"
+                    label="Start Date"
+                    value={formData["target-start_date"] || ""}
+                    onChange={handleChange}
+                    isEditing={action === "Edit"}
+                />
+                <TargetDate
+                    id="target-completion_date"
+                    label="Completion Date"
+                    value={formData["target-completion_date"] || ""}
+                    onChange={handleChange}
+                    isEditing={action === "Edit"}
+                />
+            </div>
+            <div className="target-button-container">
+                <div className="target-btn dashboard-btn" onClick={handleDashboardClick}>
+                    Return to Dashboard
+                </div>
+                <div className="target-btn edit-btn" onClick={handleToggleActionClick}>
+                    {oppositeAction}
+                </div>
+                {showSaveButton && (
+                    <div className="target-btn save-btn" onClick={handleSaveClick}>
+                        Save
+                    </div>
+                )}
+            </div>
+        </Container>
     );
-}
+};
 
 export default Target;
-
-

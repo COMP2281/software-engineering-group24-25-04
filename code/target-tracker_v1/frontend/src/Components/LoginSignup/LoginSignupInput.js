@@ -62,6 +62,7 @@ export const handleInput = async (action) => {
             try{
                 const loginResult = await axios.post('http://localhost:4000/login', postData)
                 if (loginResult.data === "success"){
+                    // console.log(postData.email);
                     return true;
                 }
                 else {
@@ -120,7 +121,7 @@ export const handleInput = async (action) => {
         }
         else{
             alert("Successfully logged in!");
-            return true;
+            return {"result": true, "email": email};
         }
     }
     else{

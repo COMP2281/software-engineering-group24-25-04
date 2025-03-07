@@ -1,1 +1,17 @@
-["manager_email", "manager_email2"]
+[
+    {
+      "id": "1",
+      "name": "Primary Manager",
+      "email": "manager_email1",
+      "password": "helloworld",
+      "role": "manager"
+    },
+
+    {
+      "id": "2",
+      "name": "Secondary Manager",
+      "email": "manager_email2",
+      "password": "iseetheworld",
+      "role": "manager"
+    }
+]
