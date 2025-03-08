@@ -47,5 +47,12 @@
     "email": "wendyhasredhair@gmail.com",
     "password": "Burgeritall@88",
     "role": "user"
+  },
+  {
+    "id": "8",
+    "name": "Gigi Hadid",
+    "email": "gigibakescookies@gmail.com",
+    "password": "GiveEmTheCroissants_4",
+    "role": "user"
   }
 ]
