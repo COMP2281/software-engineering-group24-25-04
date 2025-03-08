@@ -1,7 +1,8 @@
 # Technical Report
 ## Section 1: Introduction
 ### 1.1
-### 1.2
+### 1.2 
+To access the system locally, clone the GitHub repository in an interactive development environment such as Visual Studio Code (with git built-in) and install Node.js from their website. The code is split into two folders: frontend and backend. To get them to work together, you’ll need to npm install axios in the frontend folder and then npm install express cors body-parser in the backend folder. To start the website, split the terminal into two parts and navigate to the frontend in one and the backend in the other, and type npm start in both.
 ### 1.3
 ## Section 2: Technical Development
 
