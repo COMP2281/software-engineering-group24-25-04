@@ -11,6 +11,25 @@ const LoginSignup = ({ goToDashboard }) => {
   const [action, setAction] = useState("Log In");
 //   const [email, setEmail] = useState("");
 
+const handleLoginClick = async () => {
+    if (action !== "Log In") {
+        setAction("Log In");
+    } else {
+        const loginResult = await handleInput("Log In");
+
+        if (loginResult.success === true) {  // Checks if login was successful
+            if (loginResult.role === "manager") {
+                window.location.href = "/admin";  // Redirect managers to Admin Dashboard
+            } else {
+                window.location.href = "/user/dashboard";  // Redirect users to User Dashboard
+            }
+        } else {
+            alert("Login failed. Please check your credentials.");
+        }
+    }
+};
+
+/*
   const handleLoginClick = async () => {
     if (action !== "Log In"){
         setAction("Log In");
@@ -23,7 +42,7 @@ const LoginSignup = ({ goToDashboard }) => {
         }
     }
   };
-
+*/
   const handleSignupClick = async () => {
     if (action !== "Sign Up"){
         setAction("Sign Up");

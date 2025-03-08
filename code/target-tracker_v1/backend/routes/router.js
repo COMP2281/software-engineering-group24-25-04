@@ -1,15 +1,108 @@
-const express = require('express')
-const router = express.Router()
-
+const express = require('express');
+const router = express.Router();
 const fs = require('fs');
 const path = require('path');
 
 const usersFile = path.resolve(__dirname, '../database/user.json');
 const users = require(usersFile);
 
-const managerFile = path.resolve(__dirname, '../database/manager.json');
-const managers = require(managerFile);
+const managersFile = path.resolve(__dirname, '../database/manager.json');
+const managers = require(managersFile);
 
+// Function to validate login
+function validateLogin(email, password) {
+    return users.find(user => user.email === email && user.password === password) || null;
+}
+
+// Check if user is a manager (by ID)
+function checkIfManager(userId) {
+    console.log(`Checking manager.json for ID: ${userId}`);
+    console.log(`Manager Data:`, managers);
+    return managers.hasOwnProperty(String(userId)); 
+    //return managers.some(manager => manager.id === userId);
+}
+
+// Check if a user exists
+function userExists(name, email) {
+    return users.find(user => user.name === name && user.email === email) || false;
+}
+
+// Check if email is unique
+function checkEmailUnique(email) {
+    return !users.some(user => user.email === email);
+}
+
+// Login` route
+router.post('/login', (req, res) => {
+    console.log(`Received login request for email: ${req.body.email}`);
+
+    const user = validateLogin(req.body.email, req.body.password);
+
+    if (!user) {
+        console.log("Login failed: Invalid credentials.");
+        return res.json({ success: false, message: "Invalid credentials" });
+    }
+
+    console.log(`User found: ${JSON.stringify(user)}`);
+
+    // Check if user is a manager
+    const isManager = checkIfManager(user.id);
+    console.log(`User ID: ${user.id} | Is Manager: ${isManager}`);
+
+    // Send the correct response
+    return res.json({
+        success: true,
+        role: isManager ? "manager" : "user",
+        email: user.email
+    });
+});
+
+// Password Reset Route
+router.post('/reset', (req, res) => {
+    const user = userExists(req.body.name, req.body.email);
+    if (!user) {
+        return res.send("fail");
+    }
+
+    user.password = req.body.newPassword;
+    try {
+        fs.writeFileSync(usersFile, JSON.stringify(users, null, 2), 'utf-8');
+        return res.send("success");
+    } catch (error) {
+        console.error("Error updating password:", error);
+        return res.send("fail");
+    }
+});
+
+// Signup Route
+router.post('/signup', (req, res) => {
+    if (!checkEmailUnique(req.body.email)) {
+        return res.send("fail");
+    }
+
+    const id = (users.length + 1).toString();
+    const isManager = checkIfManager(id);
+    const role = isManager ? "manager" : "user";
+
+    const newUser = { id, ...req.body, role };
+    users.push(newUser);
+
+    try {
+        fs.writeFileSync(usersFile, JSON.stringify(users, null, 2), 'utf-8');
+        console.log("New user registered:", newUser);
+        return res.send("success");
+    } catch (error) {
+        console.error("Error saving user:", error);
+        return res.send("fail");
+    }
+});
+
+module.exports = router;
+
+
+
+
+/*
 function validateLogin(email, password) {
     const check = users.find(user => user.email === email && user.password === password);
     if (check) {
@@ -37,13 +130,11 @@ function checkEmailUnique(email) {
     return true;
 }
 
-function checkIfManager(email) {
-    if (managers.includes(email) === true) {
-        return true;
-    }
-}
+function checkIfManager(userId) {
+    return managers.hasOwnProperty(userId);
+}*/
 
-router.post('/userdata', (req, res) => {
+/*router.post('/userdata', (req, res) => {
     const check = users.find(user => user.email === req.body.email);
     const data = {"name":check.name,"role":check.role};
     res.send(data);
@@ -76,6 +167,13 @@ router.post('/reset', (req, res) => {
             console.log(error);
         }
     }
+
+    const isManager = checkIfManager(user.id);
+
+    res.json({
+        success: true,
+        role: isManager ? "manager" : "user"
+    });
 })
 
 router.post('/signup', (req, res) => {
@@ -109,6 +207,8 @@ router.post('/signup', (req, res) => {
         }
     }
 
+
+
     // const id = (users.length + 1).toString();
     // let role = "user";
     // if (managers.includes(req.body.email) === true){
@@ -129,4 +229,4 @@ router.post('/signup', (req, res) => {
 
 
 
-module.exports = router
+module.exports = router*/
