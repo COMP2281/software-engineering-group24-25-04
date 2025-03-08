@@ -7,7 +7,7 @@ const Dashboard = ({ userEmail, goToProfile, goToTarget }) => {
   const [filter, setFilter] = useState("All");
 
   const handleBoxClick = (target) => {
-    goToTarget(target);
+    goToTarget(userEmail, target);
   };
 
   const handleIconClick = () => {

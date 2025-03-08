@@ -7,6 +7,7 @@ import Target from './Components/Target/Target';
 function App() {
   const [currentPage, setCurrentPage] = useState('loginSignup');
   const [userEmail, setUserEmail] = useState("");
+  const [target, setTarget] = useState("");
 
   const goToDashboard = (email) => {
     setUserEmail(email);
@@ -22,7 +23,9 @@ function App() {
     setCurrentPage('profile');
   };
 
-  const goToTarget = () => {
+  const goToTarget = (email, target) => {
+    setUserEmail(email);
+    setTarget(target);
     setCurrentPage('target');
   };
 

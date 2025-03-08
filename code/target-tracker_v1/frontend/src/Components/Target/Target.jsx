@@ -6,7 +6,9 @@ import TargetDate from "./TargetDate";
 import "./Target.css";
 import targetData from "../../data/targetData.json";
 
-const Target = ({ goToDashboard }) => {
+const Target = ({ userEmail, target, goToDashboard }) => {
+    console.log(userEmail);
+    console.log(target);
     const [action, setAction] = useState("View");
     const [showSaveButton, setShowSaveButton] = useState(false);
     const [formData, setFormData] = useState({});
@@ -14,7 +16,7 @@ const Target = ({ goToDashboard }) => {
     const oppositeAction = action === "Edit" ? "View" : "Edit";
 
     const handleDashboardClick = () => {
-        goToDashboard();
+        goToDashboard(userEmail);
     };
 
     const handleToggleActionClick = () => {
