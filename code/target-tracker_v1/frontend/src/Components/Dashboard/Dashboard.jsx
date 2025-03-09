@@ -26,6 +26,19 @@ const Dashboard = ({ userEmail, goToProfile, goToTarget }) => {
     target.toLowerCase().includes(searchTerm.toLowerCase()) && (filter === "All" || target.includes(filter))
   );
 
+  const getProgressValue = (target) => {
+    switch(target) {
+      case "Target 1": return "30%";
+      case "Target 2": return "60%";
+      case "Target 3": return "80%";
+      case "Target 4": return "20%";
+      case "Target 5": return "50%";
+      case "Target 6": return "90%";
+      default: return "0%";
+    }
+  };
+
+
   return (
     <div className="dashboard">
       <header className="dashboard-header">
@@ -51,6 +64,11 @@ const Dashboard = ({ userEmail, goToProfile, goToTarget }) => {
                 {filteredMyTargets.map((target, index) => (
                   <div key={index} className="target-box" onClick={() => handleBoxClick(target)}>
                     {target}
+                    <div className="progress-bar">
+                      <div className="progress" style={{ width: getProgressValue(target) }}>
+                        <span className="progress-text">{getProgressValue(target)}</span>
+                      </div>
+                    </div>
                   </div>
                 ))}
                 <div className="target-box plus-box" onClick={() => handleBoxClick("Add Target")}>
@@ -90,6 +108,11 @@ const Dashboard = ({ userEmail, goToProfile, goToTarget }) => {
               {filteredAllTargets.map((target, index) => (
                 <div key={index} className="target-box" onClick={() => handleBoxClick(target)}>
                   {target}
+                  <div className="progress-bar">
+                    <div className="progress" style={{ width: getProgressValue(target) }}>
+                      <span className="progress-text">{getProgressValue(target)}</span>
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>

@@ -90,12 +90,12 @@
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  position: relative;
 }
 
 .target-box:hover {
   background-color: #e0e0e0;
 }
-
 
 .separator-line {
   height: 2px;
@@ -119,13 +119,11 @@
   gap: 20px;
 }
 
-
 .search-filter-container {
   display: flex;
   align-items: center;
   width: 100%;
 }
-
 
 .filter-dropdown {
   padding: 8px;
@@ -138,4 +136,30 @@
   padding: 8px;
   width: 70%;
   margin-top: 10px;
+}
+
+.progress-bar {
+  position: absolute;
+  bottom: 15px;
+  left: 10px;
+  width: 180px;
+  height: 15px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background-color: #73a22d;
+  position: relative;
+}
+
+.progress-text {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 15px;
+  color: white;
 }
