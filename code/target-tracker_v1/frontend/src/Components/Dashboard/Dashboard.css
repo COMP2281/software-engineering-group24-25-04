@@ -77,13 +77,11 @@
   margin-top: 20px;
 }
 
-/* Updated target-box to support the progress bar */
 .target-box {
   width: 200px;
-  height: 220px; /* Increased height to accommodate the progress bar */
+  height: 200px;
   background-color: #f8f8f8;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   border: 2px solid #ccc;
@@ -92,32 +90,12 @@
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  padding: 10px;
-  box-sizing: border-box;
 }
 
 .target-box:hover {
   background-color: #e0e0e0;
 }
 
-.target-title {
-  margin-bottom: 10px;
-}
-
-/* Styles for the progress bar */
-.progress-container {
-  width: 100%;
-  height: 10px;
-  background-color: #ddd;
-  border-radius: 5px;
-  overflow: hidden;
-}
-
-.progress-bar {
-  height: 100%;
-  background-color: #73a22d;
-  width: 0; /* This will be overridden inline via style */
-}
 
 .separator-line {
   height: 2px;
@@ -141,11 +119,13 @@
   gap: 20px;
 }
 
+
 .search-filter-container {
   display: flex;
   align-items: center;
   width: 100%;
 }
+
 
 .filter-dropdown {
   padding: 8px;

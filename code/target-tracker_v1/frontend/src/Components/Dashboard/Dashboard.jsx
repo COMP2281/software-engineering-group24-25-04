@@ -14,32 +14,17 @@ const Dashboard = ({ userEmail, goToProfile, goToTarget }) => {
     goToProfile(userEmail);
   };
 
+
   const myTargets = ["Target 1", "Target 2", "Target 3"];
   const allTargets = ["Target 4", "Target 5", "Target 6"];
   
   const filteredMyTargets = myTargets.filter(target => 
-    target.toLowerCase().includes(searchTerm.toLowerCase()) &&
-    (filter === "All" || target.includes(filter))
+    target.toLowerCase().includes(searchTerm.toLowerCase()) && (filter === "All" || target.includes(filter))
   );
 
   const filteredAllTargets = allTargets.filter(target => 
-    target.toLowerCase().includes(searchTerm.toLowerCase()) &&
-    (filter === "All" || target.includes(filter))
+    target.toLowerCase().includes(searchTerm.toLowerCase()) && (filter === "All" || target.includes(filter))
   );
-
-  // For demonstration purposes, assign a static progress value for each target.
-  // You can replace this logic with your own dynamic values.
-  const getProgressValue = (target) => {
-    switch(target) {
-      case "Target 1": return "30%";
-      case "Target 2": return "60%";
-      case "Target 3": return "80%";
-      case "Target 4": return "20%";
-      case "Target 5": return "50%";
-      case "Target 6": return "90%";
-      default: return "0%";
-    }
-  };
 
   return (
     <div className="dashboard">
@@ -65,10 +50,7 @@ const Dashboard = ({ userEmail, goToProfile, goToTarget }) => {
               <div className="target-boxes">
                 {filteredMyTargets.map((target, index) => (
                   <div key={index} className="target-box" onClick={() => handleBoxClick(target)}>
-                    <div className="target-title">{target}</div>
-                    <div className="progress-container">
-                      <div className="progress-bar" style={{ width: getProgressValue(target) }}></div>
-                    </div>
+                    {target}
                   </div>
                 ))}
                 <div className="target-box plus-box" onClick={() => handleBoxClick("Add Target")}>
@@ -107,10 +89,7 @@ const Dashboard = ({ userEmail, goToProfile, goToTarget }) => {
             <div className="target-boxes">
               {filteredAllTargets.map((target, index) => (
                 <div key={index} className="target-box" onClick={() => handleBoxClick(target)}>
-                  <div className="target-title">{target}</div>
-                  <div className="progress-container">
-                    <div className="progress-bar" style={{ width: getProgressValue(target) }}></div>
-                  </div>
+                  {target}
                 </div>
               ))}
             </div>
