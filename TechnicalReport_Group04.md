@@ -3,7 +3,36 @@
 ### 1.1
 ### 1.2 
 To access the system locally, clone the GitHub repository in an interactive development environment such as Visual Studio Code (with git built-in) and install Node.js from their website. The code is split into two folders: frontend and backend. To get them to work together, you’ll need to npm install axios in the frontend folder and then npm install express cors body-parser in the backend folder. To start the website, split the terminal into two parts and navigate to the frontend in one and the backend in the other, and type npm start in both.
-### 1.3
+### 1.3: Status of Behavioural Requirement
+
+| BR Code | Requirement Description                                             | Status | Justification |
+|---------|----------------------------------------------------------------------|--------|--------------|
+| BR 1.1  | Logging in without an account                                       | Met    |              |
+| BR 1.2  | Creating an account                                                 | Met    |              |
+| BR 1.3  | Logging in with correct credentials                                 | Met    |              |
+| BR 1.4  | Logging in with incorrect credentials and attempt is less than three |        |              |
+| BR 1.5  | Logging in with incorrect credentials on third attempt              |        |              |
+| BR 2.1  | Permission to view other team’s tasks                               |        |              |
+| BR 2.2  | Manager granting permissions to users                              |        |              |
+| BR 2.3  | Manager transferring tasks from one user to another                 |        |              |
+| BR 3.1  | Adaptive user layout on different devices                           |        |              |
+| BR 3.2  | Customisable visual settings                                        |        |              |
+| BR 4.1  | Filter tasks based on Day/Week/Month/Year                           |        |              |
+| BR 4.2  | Filter tasks based on custom date range                             |        |              |
+| BR 4.3  | Message when no tasks are due within selected period                |        |              |
+| BR 4.4  | Clear filter                                                        |        |              |
+| BR 5.1  | Add a goal                                                          |        |              |
+| BR 5.2  | Remove a goal                                                       |        |              |
+| BR 5.3  | Edit a goal                                                         |        |              |
+| BR 5.4  | Transfer a goal                                                     |        |              |
+| BR 6.1  | Staff viewing their own progress                                    |        |              |
+| BR 6.2  | Manager viewing staff’s progress                                   |        |              |
+| BR 7.1  | Automated reminders on project progress                            |        |              |
+| BR 7.2  | Automated reminders for overdue tasks                              |        |              |
+| BR 7.3  | Change in automated reminders when project is transferred          |        |              |
+| BR 8.1  | Viewing target details                                             | Met    |              |
+| BR 8.2  | Clicking on an icon to carry out a function                        |        |              |
+
 ## Section 2: Technical Development
 ### 2.1
 
