@@ -9,6 +9,9 @@ const users = require(usersFile);
 const managersFile = path.resolve(__dirname, '../database/manager.json');
 const managers = require(managersFile);
 
+const targetsFilePath = path.join(__dirname, '../database/targets.json');
+const userTargetsFilePath = path.join(__dirname, '../database/usertargets.json');
+
 // Function to validate login
 function validateLogin(email, password) {
     return users.find(user => user.email === email && user.password === password) || null;
@@ -32,7 +35,19 @@ function checkEmailUnique(email) {
     return !users.some(user => user.email === email);
 }
 
-// Login` route
+// Helper function to read targets from the JSON file
+const readTargets = () => {
+    const data = fs.readFileSync(targetsFilePath, 'utf8');
+    return JSON.parse(data);
+};
+
+// Helper function to read user targets
+const readUserTargets = () => {
+    const data = fs.readFileSync(userTargetsFilePath, 'utf8');
+    return JSON.parse(data);
+};
+
+// Login route
 router.post('/login', (req, res) => {
     console.log(`Received login request for email: ${req.body.email}`);
 
@@ -97,8 +112,52 @@ router.post('/signup', (req, res) => {
     }
 });
 
-module.exports = router;
+// GET request to retrieve all targets
+router.get('/targets', (req, res) => {
+    const targets = readTargets();
+    res.json(targets);
+});
 
+// GET request to retrieve target information based on target-id
+router.get('/target/:id', (req, res) => {
+    const targets = readTargets();
+    const target = targets.find(t => t['target-id'] === parseInt(req.params.id));
+
+    if (target) {
+        res.json(target);
+    } else {
+        res.status(404).json({ message: 'Target not found' });
+    }
+});
+
+
+// GET request to retrieve user targets
+router.get('/usertargets', (req, res) => {
+    try {
+        const userTargets = readUserTargets();
+        res.json(userTargets);
+    } catch (error) {
+        console.error("Error reading user targets:", error);
+        res.status(500).json({ message: "Failed to load user targets" });
+    }
+});
+
+// POST request to add a new target
+router.post('/target', (req, res) => {
+    const targets = readTargets();
+    const newTarget = req.body;
+
+    if (!newTarget['target-id']) {
+        return res.status(400).json({ message: 'target-id is required' });
+    }
+
+    targets.push(newTarget);
+    fs.writeFileSync(targetsFilePath, JSON.stringify(targets, null, 2));
+
+    res.status(201).json(newTarget);
+});
+
+module.exports = router;
 
 
 

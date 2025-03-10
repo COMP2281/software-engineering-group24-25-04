@@ -96,6 +96,7 @@ export const handleInput = async (action) => {
                 alert("Successfully logged in!");
                 return {
                     success: true, 
+                    id: loginResult.data.id,
                     role: loginResult.data.role,
                     email: postData.email
                 };

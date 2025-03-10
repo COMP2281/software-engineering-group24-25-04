@@ -54,5 +54,12 @@
     "email": "gigibakescookies@gmail.com",
     "password": "GiveEmTheCroissants_4",
     "role": "user"
+  },
+  {
+    "id": "9",
+    "name": "newUser",
+    "email": "newUser@example.com",
+    "password": "NewPassword1!",
+    "role": "user"
   }
 ]

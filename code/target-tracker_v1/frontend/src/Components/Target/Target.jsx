@@ -1,17 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
 import TargetField from "./TargetField";
 import TargetDropdown from "./TargetDropdown";
 import TargetDate from "./TargetDate";
 import "./Target.css";
-import targetData from "../../data/targetData.json";
 
-const Target = ({ userEmail, target, goToDashboard }) => {
-    console.log(userEmail);
-    console.log(target);
+const Target = ({ userEmail, target, goToDashboard, goToTarget }) => {
     const [action, setAction] = useState("View");
     const [showSaveButton, setShowSaveButton] = useState(false);
     const [formData, setFormData] = useState({});
+
+    useEffect(() => {
+        if (target) {
+            const initialFormData = {};
+            target.fields.forEach(field => {
+                initialFormData[field.id] = field.value;
+            });
+            target.costFields.forEach(field => {
+                initialFormData[field.id] = field.value;
+            });
+            setFormData(initialFormData);
+        }
+    }, [target]);
 
     const oppositeAction = action === "Edit" ? "View" : "Edit";
 
@@ -45,7 +55,7 @@ const Target = ({ userEmail, target, goToDashboard }) => {
                 <div className="target-underline"></div>
             </div>
             <div className="target-inputs">
-                {targetData.fields.map(({ id, label }) => (
+                {target.fields.map(({ id, label }) => (
                     <TargetField
                         key={id}
                         id={id}
@@ -53,9 +63,10 @@ const Target = ({ userEmail, target, goToDashboard }) => {
                         value={formData[id] || ""}
                         onChange={handleChange}
                         isEditing={action === "Edit"}
+                        goToTarget={goToTarget}
                     />
                 ))}
-                {targetData.costFields.map(({ id, label }) => (
+                {target.costFields.map(({ id, label }) => (
                     <TargetField
                         key={id}
                         id={id}
@@ -64,6 +75,7 @@ const Target = ({ userEmail, target, goToDashboard }) => {
                         onChange={handleChange}
                         isEditing={action === "Edit"}
                         isCurrency
+                        goToTarget={goToTarget}
                     />
                 ))}
                 <TargetDropdown

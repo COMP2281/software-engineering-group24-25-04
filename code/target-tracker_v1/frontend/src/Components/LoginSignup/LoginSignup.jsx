@@ -6,7 +6,7 @@ import user_icon from '../Assets/person.png';
 import email_icon from '../Assets/email.png';
 import password_icon from '../Assets/password.png';
 
-const LoginSignup = ({ goToDashboard }) => {
+const LoginSignup = ({ goToDashboard, goToManagerDashboard }) => {
   const [action, setAction] = useState("Log In");
 
   const handleLoginClick = async () => {
@@ -17,9 +17,9 @@ const LoginSignup = ({ goToDashboard }) => {
 
       if (loginResult.success === true) {
         if (loginResult.role === "manager") {
-          window.location.href = "/admin"; // Redirect managers to Admin Dashboard
+          goToManagerDashboard(loginResult.email); // Redirect managers to Admin Dashboard
         } else {
-          window.location.href = "/user/dashboard"; // Redirect users to User Dashboard
+          goToDashboard(loginResult.email); // Redirect users to User Dashboard
         }
       } else {
         alert("Login failed. Please check your credentials.");
