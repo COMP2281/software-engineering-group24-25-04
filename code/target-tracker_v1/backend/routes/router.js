@@ -47,6 +47,11 @@ const readUserTargets = () => {
     return JSON.parse(data);
 };
 
+const readUsers = () => {
+    const data = fs.readFileSync(usersFile, 'utf8');
+    return JSON.parse(data);
+}
+
 // Login route
 router.post('/login', (req, res) => {
     console.log(`Received login request for email: ${req.body.email}`);
@@ -141,6 +146,26 @@ router.get('/usertargets', (req, res) => {
         res.status(500).json({ message: "Failed to load user targets" });
     }
 });
+
+router.get('/user', (req, res) => {
+    try {
+        res.json(readUsers());
+    } catch (error) {
+        console.error("Error reading users:", error);
+        res.status(500).json({ message: "Failed to load users" });
+    }
+  });
+
+router.get('/user/:email', (req, res) => {
+    const users = readUsers();
+
+    const user = users.find(user => user.email === req.params.email);
+    if (user) {
+        res.json({ id: user.id });
+    } else {
+        res.status(404).json({ error: "User not found" });
+    }
+  });
 
 // POST request to add a new target
 router.post('/target', (req, res) => {
