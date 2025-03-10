@@ -182,6 +182,13 @@ router.post('/target', (req, res) => {
     res.status(201).json(newTarget);
 });
 
+router.post('/userdata', (req, res) => {
+    const check = users.find(user => user.email === req.body.email);
+    const data = {"name":check.name,"role":check.role};
+    res.send(data);
+    return true;
+})
+
 module.exports = router;
 
 
