@@ -1,17 +1,43 @@
 import React, { useState } from 'react';
 import './AdminDashboard.css';
-import icon from '../../Components/Assets/icon.jpg'
+import icon from '../../Components/Assets/icon.jpg';
 
-const Dashboard = () => {
+const Dashboard = ({ userEmail, goToProfile, goToTarget }) => {
   const [searchTerm, setSearchTerm] = useState("");
+  const [filter, setFilter] = useState("All");
 
-  const handleBoxClick = () => {
-    console.log('Box Click')
+  const handleBoxClick = (target) => {
+    goToTarget(userEmail, target);
   };
 
   const handleIconClick = () => {
-    console.log('Icon Click')
+    goToProfile(userEmail);
   };
+
+
+  const myTargets = ["Target 1", "Target 2", "Target 3"];
+  const allTargets = ["Target 4", "Target 5", "Target 6"];
+  
+  const filteredMyTargets = myTargets.filter(target => 
+    target.toLowerCase().includes(searchTerm.toLowerCase()) && (filter === "All" || target.includes(filter))
+  );
+
+  const filteredAllTargets = allTargets.filter(target => 
+    target.toLowerCase().includes(searchTerm.toLowerCase()) && (filter === "All" || target.includes(filter))
+  );
+
+  const getProgressValue = (target) => {
+    switch(target) {
+      case "Target 1": return "30%";
+      case "Target 2": return "60%";
+      case "Target 3": return "80%";
+      case "Target 4": return "20%";
+      case "Target 5": return "50%";
+      case "Target 6": return "90%";
+      default: return "0%";
+    }
+  };
+
 
   return (
     <div className="dashboard">
@@ -35,44 +61,60 @@ const Dashboard = () => {
             <div className="my-target-left">
               <h2>My Targets</h2>
               <div className="target-boxes">
-                <div className="target-box" onClick={handleBoxClick}>
-                  Target 1
-                </div>
-                <div className="target-box" onClick={() => handleBoxClick("Target 2")}>
-                  Target 2
-                </div>
-                <div className="target-box" onClick={() => handleBoxClick("Target 3")}>
-                  Target 3
-                </div>
+                {filteredMyTargets.map((target, index) => (
+                  <div key={index} className="target-box" onClick={() => handleBoxClick(target)}>
+                    {target}
+                    <div className="progress-bar">
+                      <div className="progress" style={{ width: getProgressValue(target) }}>
+                        <span className="progress-text">{getProgressValue(target)}</span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
                 <div className="target-box plus-box" onClick={() => handleBoxClick("Add Target")}>
                   +
                 </div>
               </div>
             </div>
             <div className="my-target-right">
-              <input 
-                type="text" 
-                placeholder="Search..." 
-                value={searchTerm} 
-                onChange={(e) => setSearchTerm(e.target.value)} 
-                className="search-box"
-              />
+              <div className="search-filter-container">
+                <input 
+                  type="text" 
+                  placeholder="Search..." 
+                  value={searchTerm} 
+                  onChange={(e) => setSearchTerm(e.target.value)} 
+                  className="search-box"
+                />
+                <select 
+                  className="filter-dropdown"
+                  value={filter}
+                  onChange={(e) => setFilter(e.target.value)}
+                >
+                  <option value="All">All</option>
+                  <option value="Target 1">Target 1</option>
+                  <option value="Target 2">Target 2</option>
+                  <option value="Target 3">Target 3</option>
+                  <option value="Target 4">Target 4</option>
+                  <option value="Target 5">Target 5</option>
+                  <option value="Target 6">Target 6</option>
+                </select>
+              </div>
             </div>
           </div>
-
           <div className="separator-line"></div>
           <div className="all-targets">
             <h2>All Targets</h2>
             <div className="target-boxes">
-              <div className="target-box" onClick={() => handleBoxClick("Target 4")}>
-                Target 4
-              </div>
-              <div className="target-box" onClick={() => handleBoxClick("Target 5")}>
-                Target 5
-              </div>
-              <div className="target-box" onClick={() => handleBoxClick("Target 6")}>
-                Target 6
-              </div>
+              {filteredAllTargets.map((target, index) => (
+                <div key={index} className="target-box" onClick={() => handleBoxClick(target)}>
+                  {target}
+                  <div className="progress-bar">
+                    <div className="progress" style={{ width: getProgressValue(target) }}>
+                      <span className="progress-text">{getProgressValue(target)}</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
