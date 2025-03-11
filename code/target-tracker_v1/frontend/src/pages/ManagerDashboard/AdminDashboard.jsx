@@ -7,6 +7,10 @@ const AdminDashboard = ({ userEmail, goToProfile, goToTarget }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [filter, setFilter] = useState("All");
   const [allTargets, setAllTargets] = useState([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedTarget, setSelectedTarget] = useState("");
+  const [selectedStaff, setSelectedStaff] = useState("");
+  const [message, setMessage] = useState("");
 
   useEffect(() => {
     const fetchTargets = async () => {
@@ -34,6 +38,16 @@ const AdminDashboard = ({ userEmail, goToProfile, goToTarget }) => {
 
   const handleIconClick = () => {
     goToProfile(userEmail);
+  };
+
+  const handleConfirmSelection = () => {
+    if (selectedTarget && selectedStaff) {
+      setMessage("Assigned successfully");
+      setTimeout(() => setMessage(""), 3000);
+    } else {
+      setMessage("Please select both a target and a staff member.");
+      setTimeout(() => setMessage(""), 3000);
+    }
   };
 
   const filteredAllTargets = allTargets.filter(target => {
@@ -102,6 +116,7 @@ const AdminDashboard = ({ userEmail, goToProfile, goToTarget }) => {
                 ))}
               </select>
             </div>
+            <button className="open-modal-button" onClick={() => setIsModalOpen(true)}>Open Window</button>
             <div className="target-boxes">
               {filteredAllTargets.map((target, index) => (
                 <div key={index} className="target-box" onClick={() => handleBoxClick(target['target-id'])}>
@@ -117,6 +132,54 @@ const AdminDashboard = ({ userEmail, goToProfile, goToTarget }) => {
           </div>
         </div>
       </div>
+      {isModalOpen && (
+  <div className="modal-overlay" onClick={() => setIsModalOpen(false)}>
+    <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+      <h2>Assign Target</h2>
+      
+      <div className="modal-sections">
+        <div className="modal-section">
+          <h3>Targets</h3>
+          <select 
+            className="dropdown"
+            value={selectedTarget}
+            onChange={(e) => setSelectedTarget(e.target.value)}
+          >
+            <option value="">Select a target</option>
+            {['Target 1', 'Target 2', 'Target 3'].map(item => (
+              <option key={item} value={item}>{item}</option>
+            ))}
+          </select>
+        </div>
+
+        <div className="modal-section">
+          <h3>Staff</h3>
+          <select 
+            className="dropdown"
+            value={selectedStaff}
+            onChange={(e) => setSelectedStaff(e.target.value)}
+          >
+            <option value="">Select a staff member</option>
+            {['Staff A', 'Staff B', 'Staff C'].map(item => (
+              <option key={item} value={item}>{item}</option>
+            ))}
+          </select>
+        </div>
+      </div>
+      
+      <div className="modal-buttons">
+        <button className="modal-action-button" onClick={handleConfirmSelection}>
+          Confirm Selection
+        </button>
+        <button onClick={() => setIsModalOpen(false)}>Close</button>
+      </div>
+      {message && <p className="success-message">{message}</p>}
+    </div>
+  </div>
+)}
+
+
+
     </div>
   );
 };
