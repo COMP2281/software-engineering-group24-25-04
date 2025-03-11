@@ -71,9 +71,9 @@ const Dashboard = ({ userEmail, goToProfile, goToTarget }) => {
 
   // Helper to extract the total number from the "Targets Set" string.
   const extractTotal = (str) => {
-    if (!str) return 0;
+    if (!str) return 1; // Default to 1 if the string is empty or undefined
     const match = str.match(/\d+/);
-    return match ? parseInt(match[0], 10) : 0;
+    return match ? parseInt(match[0], 10) : 1; // Default to 1 if no numbers are found
   };
 
   // Handle change of progress input for a specific target.
