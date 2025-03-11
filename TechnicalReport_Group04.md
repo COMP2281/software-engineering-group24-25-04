@@ -327,6 +327,72 @@ Getting the targets to load onto the frontend at the start was quite complicated
 
 **Code Snippets**
 
+***The Software Development Process Followed by the Team***
+
+We adopted the Agile Scrum methodology for the development process. This approach was chosen due to its flexibility, iterative development cycles, and focus on continuous client feedback. The methodology allowed us to manage tasks efficiently, adjust to changing requirements, and ensure that the final product met the client's expectations.
+
+The key aspects of the development process were:
+
+1. **Sprint-based development:**
+
+- We divided the project into multiple sprints, each focusing on a specific set of tasks.
+- Early sprints involved requirement gathering and initial documentation, system design, and learning relevant technologies.
+- Later sprints focused on further documentation, coding, testing, and refining application features.
+
+2. **Task assignment and collaboration:**
+
+- Tasks were distributed among ourselves based on individual workload and expertise.
+- Weekly meetings helped track progress, address roadblocks, and adjust priorities.
+
+3. **Periodic client interaction:**
+
+- We maintained periodic meetings with our client to gather feedback and ask requirements-related questions.
+- This ensured the solution aligned with the client's needs and expectations.
+
+4. **Technology stack selection:**
+
+- **Frontend:** To develop the frontend, React.js was chosen for its efficiency and dynamic UI capabilities.
+- **Backend:** To develop the backend, Node.js with Express was chosen for its ability to handle routing and API requests effectively, and for its ease of setup and maintenance.
+- **Database:** Instead of a traditional database, JSON files were used to store data, providing a lightweight, file-based approach that simplified data access and reduced setup complexity.
+
+5. **Version control and risk management:**
+
+- GitHub was used for code-wise collaboration, tracking changes, and preventing code loss, while Google Docs facilitated collaboration on documentation.
+- Risks, such as framework updates and security concerns, were proactively mitigated.
+  
+6. **Final testing and deployment:**
+
+- The last sprint involved testing all features, fixing bugs, and ensuring smooth operation and adherence to client requirements before deployment.
+
+By following the Agile scrum methodology, we maximised adaptability and developed a solution that effectively replaced the inefficient Excel-based tracking system.
+
+
+***The Role of Behaviour-Driven Development in Implementation**
+
+Behaviour-driven development played a crucial role in the implementation phase by ensuring that development was guided by clear, user-centric requirements.
+
+It was applied in our project through:
+
+1. **User stories and scenarios:**
+
+- Features were defined using user stories and Gherkin pseudocode (for expressing the user story as a feature with scenarios) written in a structured format.
+- (Example can be put here)
+
+2. **Feature prioritisation:**
+
+- We classified features using the MoSCoW system, ensuring that critical functionalities like login, permission levels and progress tracking were developed promptly.
+
+3. **Test-driven development integration:**
+
+- The user stories and scenarios developed were converted into test cases to validate expected system behaviour, enabling early capturing of errors and aligning development to user expectations.
+
+4. **Enhanced collaboration:**
+
+- Behavioural-driven development facilitated clear communication between group members, enabling effective contributions and overall efficiency.
+
+By leveraging behaviour-driven development, the implementation phase was structured around real-world user interactions, leading to a more intuitive and functional system.
+
+
 ### 2.3
 
 From our discussions with our client, we gathered that the solution should be simple and intuitive to use, due to the variying technical abilities of the users. We set out a clear design that would allow users to easily navigate our site. 
