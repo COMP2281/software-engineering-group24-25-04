@@ -3,7 +3,7 @@ import icon from '../Assets/icon.jpg';
 import './Profile.css';
 import { getUserInfo } from './ProfileInfo';
 
-const Profile = ({ userEmail, goToLogin, goToDashboard }) => {
+const Profile = ({ userEmail, userRole, goToLogin, goToDashboard, goToManagerDashboard }) => {
   const [info, setInfo] = useState(null); // State to store user info
   const [loading, setLoading] = useState(true); // State for loading indicator
   const [error, setError] = useState(null); // State for error handling
@@ -30,7 +30,11 @@ const Profile = ({ userEmail, goToLogin, goToDashboard }) => {
   };
 
   const handleDashboardClick = () => {
-    goToDashboard(userEmail);
+    if (userRole === 'manager') {
+      goToManagerDashboard(userEmail);
+    } else {
+      goToDashboard(userEmail);
+    }
   };
 
   return (

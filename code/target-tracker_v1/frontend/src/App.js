@@ -38,8 +38,9 @@ function App() {
     setCurrentPage('loginSignup');
   };
 
-  const goToProfile = (email) => {
+  const goToProfile = (email, id) => {
     setUserEmail(email);
+    setUserId(id);
     setCurrentPage('profile');
   };
 
@@ -62,7 +63,7 @@ function App() {
                   <AdminDashboard userEmail={userEmail} userId={userId} goToProfile={goToProfile} goToTarget={goToTarget} />
               )}
               {currentPage === 'profile' && (
-                  <Profile userEmail={userEmail} goToDashboard={goToDashboard} goToManagerDashboard={goToManagerDashboard} goToLogin={goToLogin} />
+                  <Profile userEmail={userEmail} userRole={userRole} goToDashboard={goToDashboard} goToManagerDashboard={goToManagerDashboard} goToLogin={goToLogin} />
               )}
               {currentPage === 'target' && (
                   <Target userEmail={userEmail} userRole={userRole} target={target} goToDashboard={goToDashboard} goToManagerDashboard={goToManagerDashboard} />
