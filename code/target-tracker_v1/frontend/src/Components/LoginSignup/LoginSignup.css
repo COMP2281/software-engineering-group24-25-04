@@ -100,6 +100,9 @@
     color: #676767;
 }
 
+.requirements {
+    padding-left: 60px;
+}
 
 .password-requirements {
     font-size: 14px;
