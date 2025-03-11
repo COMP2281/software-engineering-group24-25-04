@@ -65,7 +65,7 @@ function App() {
                   <Profile userEmail={userEmail} goToDashboard={goToDashboard} goToManagerDashboard={goToManagerDashboard} goToLogin={goToLogin} />
               )}
               {currentPage === 'target' && (
-                  <Target userEmail={userEmail} target={target} goToDashboard={goToDashboard} goToManagerDashboard={goToManagerDashboard} />
+                  <Target userEmail={userEmail} userRole={userRole} target={target} goToDashboard={goToDashboard} goToManagerDashboard={goToManagerDashboard} />
               )}
           </div>
       </div>

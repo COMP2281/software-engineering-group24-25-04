@@ -12,10 +12,10 @@ To access the system locally, clone the GitHub repository in an interactive deve
 | BR 1.3  | Logging in with correct credentials                                 | Met    |              |
 | BR 1.4  | Logging in with incorrect credentials and attempt is less than three |        |              |
 | BR 1.5  | Logging in with incorrect credentials on third attempt              |        |              |
-| BR 2.1  | Permission to view other team’s tasks                               |        |              |
+| BR 2.1  | Permission to view other team’s tasks                               | Met    |              |
 | BR 2.2  | Manager granting permissions to users                              |        |              |
 | BR 2.3  | Manager transferring tasks from one user to another                 |        |              |
-| BR 3.1  | Adaptive user layout on different devices                           |        |              |
+| BR 3.1  | Adaptive user layout on different devices                           | Met    |              |
 | BR 3.2  | Customisable visual settings                                        |        |              |
 | BR 4.1  | Filter tasks based on Day/Week/Month/Year                           |        |              |
 | BR 4.2  | Filter tasks based on custom date range                             |        |              |
@@ -68,7 +68,7 @@ On the Login page there is a 'Forgotton Password' link that allows the user to r
 
 **Technical Implementation - Login**
 
-<u>Frontend</u>
+*Frontend*
 
 The user enters their email and password into the input boxes.
 
@@ -76,7 +76,7 @@ When the user clicks the 'Login' button, an onClick is triggered, which calls th
 
 The frontend sends an axios post request to send the postdata (email and password) to the backend. On success, the user is directed to the correct dashboard.
 
-<u>Backend</u>
+*Backend*
 
 Endpoint: `POST /login`
 
@@ -100,7 +100,7 @@ Response on Failure:
     
 **Technical Implementation - Sign Up**
 
-<u>Frontend</u>
+*Frontend*
 
 The user enters their name, email and password into the input boxes.
 
@@ -108,7 +108,7 @@ When the user clicks the 'Sign Up' button, an onClick is triggered, which calls 
 
 The frontend sends an axios post request to send the postdata (name, email and password) to the backend. On success, the user is added to the user.json file and is directed to the login page for the user to login.
 
-<u>Backend</u>
+*Backend*
 
 Endpoint: `POST /signup`
 
@@ -137,7 +137,7 @@ Response on Failure:
 
 **Technical Implementation - Forgotten Password**
 
-<u>Frontend</u>
+*Frontend*
 
 The user enters their name, email and new password twice into the input boxes.
 
@@ -145,7 +145,7 @@ When the user clicks the 'Submit' button, an onClick is triggered, which calls t
 
 The frontend sends an axios post request to send the postdata (name, email and new password) to the backend. On success, the user's password is updated in the user.json file and is directed to the login page for the user to login.
 
-<u>Backend</u>
+*Backend*
 
 Endpoint: `POST /reset`
 
@@ -180,17 +180,17 @@ Response on Failure:
 
 When the user is on their dashboard, in the top right corner there is a porfile icon. When the user clicks on this icon, the handleIconClick function is called. This then calls the goToProfile function and passes in the users email. The fetchUserInfo function is triggered, sending a post request to the backend. The backend then checks the user.json file to retrieve the the users information, based on the email given. The name and role (user or manager) is retrieved and all 3 are sent back to the frontend. This information is then displayed on the frontend.
 
-There is a 'Logout' button that when clicked calls the handleLoginClick fucntion, logging the user out and returning them to the Login page. There is also a 'Return to Dashboard' page, that calls the handleDashboardClick function, taking the user back to their dashboard.
+There is a 'Logout' button that when clicked calls the handleLoginClick fucntion, logging the user out and returning them to the Login page. There is also a 'Return to Dashboard' button, that calls the handleDashboardClick function, taking the user back to their dashboard.
 
 **Technical Implementation**
 
-<u>Frontend</u>
+*Frontend*
 
 When the user clicks the profile icon on the dashboard page, an onClick is triggered, which calls the handleIconClick. This calls the goToProfile function, passing in the users email.
 
 The frontend sends an axios post request to send the postdata (email) to the backend. On success, the user's information (name, email, role (user or manager)) is displayed on the frontend profile page.
 
-<u>Backend</u>
+*Backend*
 
 Endpoint: `POST /userData`
 
@@ -222,9 +222,56 @@ During development, when we first had this loading we noticed an error that woul
 
 **How It Works**
 
+When the user is directed to the staff dashboard, the fetchTargets function is called. This sends multiple axios get requests to the backend for the targets, the userID, and the users targets, from the usertargets.json file. The backend then retrieves all the targets from targets.json, retrieves the userID using the userEmail from user.json, and then uses that to find out which user has which targets, based on what is stored in usertargets.json. This information is then sent back to the frontend. On the frontend All the targets in the targets.json file are displayed under the heading 'All Targets', the targets that relate to a specific user, based on the data retrieved from usertargets.json, is displayed under the heading 'My Targets'. 
+
+There are also filters and a search box present on the dashboard. The filter is a dropdown list of all the targets, and ther search allows the user to type into the box. What the user types/selects is converted to lower case, and compares that to the values stored in the targets.fields.
+
+Each target also displays a progress bar. {...}
+
 When the Staff dashboard is loaded the staff members targets will be displayed under the 'My Targets' section
 
 **Technical Implementation**
+
+*Frontend*
+
+When a user is directed to the staff dashboard, the useEffect function is triggered. This fetches the targets, by sending multiple axios get requests. The first one gets the userid by sending the userEmail and the second gets the user specific targets. The user's targets are then set to myTargets. Each target card is then populated with the information and displayed on the frontend.
+
+*Backend*
+
+Endpoint: `GET /user/:email`
+
+Request: 
+    {
+        "email": "example1@example.com"
+    }
+
+Response on Success:
+    {
+        {"id":"1"}
+    }
+
+Response on Failure:
+    {
+        error: User not found
+    }
+
+
+Endpoint: `POST /target`
+
+Request: 
+    {
+        "target-id": "1"
+    }
+
+Response on Success:
+    {
+        {"target-id":1,"fields":[{"id":"target-cerp3_action_type","label":"CERP3 Action Type","value":"Building Decarbonisation"},{"id":"target-smart_action_description","label":"Smart Action Description","value":"Retrofit ASHP into current DCC buildings"},{"id":"target-related_work_programme","label":"Related Work Programme","value":null},{"id":"target-action_type","label":"Action Type","value":"Business as Usual"},{"id":"target-project_lead","label":"Project Lead","value":"TBC"},{"id":"target-progress_metric","label":"Progress Metric","value":"Number of upgrades/installs per year"},{"id":"target-targets_set","label":"Targets Set","value":"6 per year"},{"id":"target-kpi","label":"KPI","value":null},{"id":"target-carbon_reduction","label":"Carbon Reduction","value":"Council"},{"id":"target-council_estimated_annual_saving","label":"Council Estimated Annual Saving","value":"Med (>50-200t)"},{"id":"target-funding_secured","label":"Funding Secured","value":"No"},{"id":"target-sufficient_staff","label":"Sufficient Staff","value":"Uncertain"},{"id":"target-potential_obstacles_and_solutions","label":"Potential Obstacles and Solutions","value":"Funding, capacity (internal/external)"},{"id":"target-start_date","label":"Start Date","value":"Ongoing"},{"id":"target-completion_date","label":"Completion Date","value":"01-01-2030"},{"id":"target-governing_group","label":"Governing Group","value":"Carbon Capital Group"}],"costFields":[{"id":"target-countywide_estimated_annual_saving","label":"Countywide Estimated Annual Saving","value":null},{"id":"target-actual_annual_saving","label":"Actual Annual Saving","value":null},{"id":"target-cost","label":"Cost","value":null}]}
+    }
+
+Response on Failure:
+    {
+        message: target-id is required
+    }
 
 **Challenges and Solutions**
 
@@ -235,7 +282,29 @@ When the Staff dashboard is loaded the staff members targets will be displayed u
 
 **How It Works**
 
+When a manager is directed to the manager dashboard, the fetchTargets function is called. This sends 1 axios get request, to retrieve all the targets from the backend. The backend then retrieves the targets from targets.json, and returns this to the frontend. These targets are then displayed in individual target cards under the heading 'All Targets'. 
+
+Again, there are filters on this page. However, the filters are only for 'All Targets' as there is no 'My Targets' section.
+
+
 **Technical Implementation**
+
+*Frontend*
+
+When a manager is directed to the manager dashboard, the useEffect function is triggered. This fetches the targets, by sending 1 axios get request. This gets all the targets fromt the targets.json file. Each target card is then populated with the information and displayed on the frontend.
+
+*Backend*
+
+Endpoint: `POST /targets`
+
+There is no additional request fields for this.
+
+The response on success is the same as `POST /target` in Staff dashboard, but instead of displaying 1 target, it displays all the targets.
+
+Response on Failure:
+    {
+        Error fetching targets: {error}
+    }
 
 **Challenges and Solutions**
 
@@ -246,9 +315,15 @@ When the Staff dashboard is loaded the staff members targets will be displayed u
 
 **How It Works**
 
+When a user is directed from the dashboard to the target page, by clicking on a target box, the frontend uses the useEffect function from React. This then sets the form data for the target that is passed through (the target that has been clicked). On the targets page, the user is loaded into view mode, where each field has its own heading and display box. The front end calls each component, TargetField, TargetDropdown, and TargetData. These are separate as they relate to different frontend components (input, dropdown, date). The id is set based on the id's stored in the targets.json file.
+
+At the bottom of the page there is 2 buttons, 'Return to Dashboard' calls the handleDashboardClick function, taking the user back to their dashboard. 'Edit' changes the users mode to 'Edit' from 'View'. This changes the action to 'Edit', if isEditing is True, then the fields are changed from a paragraph tag to either an input tag, dropdown, or date. These can then be editted by the user. A 'Save' button then displays at the bottom of the page. When the user changes an input field, and clicks the 'Save' button, the frontend {...}. The backend {...}. Then the changes are saved into the targets.json file, and the changes are reflected in the frontend.
+
 **Technical Implementation**
 
 **Challenges and Solutions**
+
+Getting the targets to load onto the frontend at the start was quite complicated. 
 
 **Code Snippets**
 
@@ -262,7 +337,7 @@ When the user logs in they are directed to their dashboard. Their targets are di
 
 The target page and profile page both contain a 'Return To Dashboard' button. This is for ease of understanding, as opposed to having a 'Back' button.
 
-Our colour schemes were selected based on the clients colour scheme, green and navy. The specific colour values were obtained from their logo. This is to ensure consistency between their systems.
+Our colour schemes were selected based on the clients colour scheme, green and navy. The specific colour values were obtained from their logo. This is to ensure consistency between their systems. 
 
 ## Section 3: Use Instructions
 ### 3.1
