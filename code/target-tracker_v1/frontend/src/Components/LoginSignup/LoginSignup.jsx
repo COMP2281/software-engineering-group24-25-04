@@ -90,12 +90,14 @@ const LoginSignup = ({ goToDashboard, goToManagerDashboard }) => {
               <img src={password_icon} alt='' />
               <input id="password" type='password' placeholder='Password' />
             </div>
+            <div className='requirements'>
             {action === "Sign Up" && (
               <p className="password-requirements">
                 Password must be at least <b>8 characters</b> long and include:
                 <b> 1 uppercase</b>, <b>1 lowercase</b>, <b>1 number</b>, and <b>1 special character</b>.
               </p>
             )}
+            </div>
           </div>
         )}
       </div>
