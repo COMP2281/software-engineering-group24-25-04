@@ -152,6 +152,37 @@ router.get('/usertargets', (req, res) => {
     }
 });
 
+router.get('/usertargets/:userEmail', (req, res) => {
+    const { userEmail } = req.params;
+
+    try {
+        const userTargets = readUserTargets();
+        const users = readUsers();
+        const targets = readTargets();
+
+        // Find user by email to get their ID
+        const user = users.find(user => user.email === userEmail);
+        if (!user) {
+            return res.status(404).json({ message: 'User not found' });
+        }
+
+        // Get assigned target IDs for this user
+        const assignedTargetIds = userTargets[user.id] || [];
+
+        // Ensure target IDs are compared as numbers and extract only the titles
+        const assignedTargetTitles = targets
+            .filter(target => assignedTargetIds.includes(target["target-id"]))
+            .map(target => target.title); // Extract only titles
+
+        res.json(assignedTargetTitles);
+    } catch (error) {
+        console.error("Error fetching user targets:", error);
+        res.status(500).json({ message: "Internal Server Error" });
+    }
+});
+
+
+
 router.get('/user', (req, res) => {
     try {
         res.json(readUsers());
@@ -219,6 +250,25 @@ router.post('/assign-target', (req, res) => {
   }
 
   res.status(200).json({ message: 'Target assigned successfully' });
+});
+
+// Route to remove target from user
+router.post('/remove-target', (req, res) => {
+    const { targetId, userEmail } = req.body;
+    const users = readUsers();
+    const user = users.find(user => user.email === userEmail);
+    if (!user) {
+        return res.status(404).json({ message: 'User not found' });
+    }
+    const userTargets = readUserTargets();
+    const userId = user.id;
+    if (!userTargets[userId]) {
+        return res.status(400).json({ message: "No targets assigned to this user" });
+    }
+    const parsedTargetId = parseInt(targetId);
+    userTargets[userId] = userTargets[userId].filter(id => id !== parsedTargetId);
+    writeUserTargets(userTargets);
+    res.status(200).json({ message: 'Target removed successfully' });
 });
 
 module.exports = router;

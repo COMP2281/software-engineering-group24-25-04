@@ -12,6 +12,7 @@ const AdminDashboard = ({ userEmail, goToProfile, goToTarget }) => {
   const [selectedTarget, setSelectedTarget] = useState("");
   const [selectedStaff, setSelectedStaff] = useState("");
   const [message, setMessage] = useState("");
+  const [assignedTargets, setAssignedTargets] = useState([]);
 
   useEffect(() => {
     const fetchTargets = async () => {
@@ -33,7 +34,8 @@ const AdminDashboard = ({ userEmail, goToProfile, goToTarget }) => {
         console.error("Error fetching users:", error);
       }
     };
-
+    
+    
     fetchTargets();
     fetchUsers();
   }, []);
@@ -52,6 +54,26 @@ const AdminDashboard = ({ userEmail, goToProfile, goToTarget }) => {
     goToProfile(userEmail);
   };
 
+  const fetchAssignedTargets = async (userEmail) => {
+    
+    try {
+      const response = await axios.get(`http://localhost:4000/usertargets/${userEmail}`);
+      setAssignedTargets(response.data);
+    } catch (error) {
+      console.error("Error fetching assigned targets:", error);
+      setAssignedTargets([]);
+  };
+};
+
+  const handleStaffChange = async (e) => {
+    const userEmail = e.target.value;
+    console.log(userEmail); 
+    setSelectedStaff(userEmail);
+    if (userEmail) {
+      await fetchAssignedTargets(userEmail);
+    }
+  };
+
   const handleConfirmSelection = async () => {
     if (selectedTarget && selectedStaff) {
       try {
@@ -61,6 +83,7 @@ const AdminDashboard = ({ userEmail, goToProfile, goToTarget }) => {
         });
         setMessage("Assigned successfully");
         setTimeout(() => setMessage(""), 3000);
+        await fetchAssignedTargets(selectedStaff);
       } catch (error) {
         console.error("Error assigning target:", error);
         setMessage("Failed to assign target.");
@@ -68,6 +91,22 @@ const AdminDashboard = ({ userEmail, goToProfile, goToTarget }) => {
       }
     } else {
       setMessage("Please select both a target and a staff member.");
+      setTimeout(() => setMessage(""), 3000);
+    }
+  };
+
+  const handleRemoveTarget = async () => {
+    try {
+      await axios.post('http://localhost:4000/remove-target', {
+        targetId: selectedTarget,
+        userEmail: selectedStaff
+      });
+      setMessage("Target removed successfully");
+      setTimeout(() => setMessage(""), 3000);
+      await fetchAssignedTargets(selectedStaff);
+    } catch (error) {
+      console.error("Error removing target:", error);
+      setMessage("Failed to remove target.");
       setTimeout(() => setMessage(""), 3000);
     }
   };
@@ -132,7 +171,7 @@ const AdminDashboard = ({ userEmail, goToProfile, goToTarget }) => {
               >
                 <option value="All">All</option>
                 {allTargets.map(target => (
-                  <option key={target['target-id']} value={target.fields.find(field => field.id === 'target-smart_action_description').value}>
+                  <option key={target['target-id']} value={target.title}>
                     {target.title}
                   </option>
                 ))}
@@ -181,7 +220,7 @@ const AdminDashboard = ({ userEmail, goToProfile, goToTarget }) => {
           <select 
             className="dropdown"
             value={selectedStaff}
-            onChange={(e) => setSelectedStaff(e.target.value)}
+            onChange={handleStaffChange}
           >
             <option value="">Select a staff member</option>
             {allUsers.map(user => (
@@ -192,11 +231,30 @@ const AdminDashboard = ({ userEmail, goToProfile, goToTarget }) => {
           </select>
         </div>
       </div>
+
+      <div className="modal-usertarget-display">
+        <h3>Assigned Targets for {selectedStaff}</h3>
+        {assignedTargets.length > 0 ? (
+          <ul>
+            {assignedTargets.map((title, index) => (
+              <li key={index}>{title}</li>
+            ))}
+          </ul>
+        ) : (
+           <p>No targets assigned.</p>
+        )}
+      </div>  
       
       <div className="modal-buttons">
         <button className="modal-action-button" onClick={handleConfirmSelection}>
           Confirm Selection
         </button>
+        <button 
+            className="remove-button" 
+            onClick={handleRemoveTarget}
+          >
+            Remove Target
+          </button>
         <button onClick={() => setIsModalOpen(false)}>Close</button>
       </div>
       {message && <p className="success-message">{message}</p>}
