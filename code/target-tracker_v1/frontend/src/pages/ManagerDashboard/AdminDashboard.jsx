@@ -133,7 +133,7 @@ const AdminDashboard = ({ userEmail, goToProfile, goToTarget }) => {
                 <option value="All">All</option>
                 {allTargets.map(target => (
                   <option key={target['target-id']} value={target.fields.find(field => field.id === 'target-smart_action_description').value}>
-                    {target.fields.find(field => field.id === 'target-smart_action_description').value}
+                    {target.title}
                   </option>
                 ))}
               </select>
@@ -142,7 +142,7 @@ const AdminDashboard = ({ userEmail, goToProfile, goToTarget }) => {
             <div className="target-boxes">
               {filteredAllTargets.map((target, index) => (
                 <div key={index} className="target-box" onClick={() => handleBoxClick(target['target-id'])}>
-                  {target.fields.find(field => field.id === 'target-smart_action_description').value}
+                  {target.title}
                   <div className="progress-bar">
                     <div className="progress" style={{ width: getProgressValue(target) }}>
                       <span className="progress-text">{getProgressValue(target)}</span>
@@ -170,7 +170,7 @@ const AdminDashboard = ({ userEmail, goToProfile, goToTarget }) => {
             <option value="">Select a target</option>
             {allTargets.map(target => (
                   <option key={target['target-id']} value={target['target-id']}>
-                    {target.fields.find(field => field.id === 'target-smart_action_description').value}
+                    {target.title}
                   </option>
                 ))}
           </select>

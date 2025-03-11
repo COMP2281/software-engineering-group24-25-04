@@ -57,7 +57,7 @@ const Target = ({ userEmail, userRole, target, goToDashboard, goToManagerDashboa
     return (
         <Container className="target-container">
             <div className="target-header">
-                <div className="target-text">Target Heading</div>
+                <h1 className="target-text">{target.title}</h1>
                 <div className="target-underline"></div>
             </div>
             <div className="target-inputs">

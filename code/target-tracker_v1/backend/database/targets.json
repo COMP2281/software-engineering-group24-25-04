@@ -1,6 +1,7 @@
 [
     {
         "target-id": 1,
+        "title": "Retrofit ASHP into current DCC buildings",
         "fields": [
             { "id": "target-cerp3_action_type", "label": "CERP3 Action Type", "value": "Building Decarbonisation" },
             { "id": "target-smart_action_description", "label": "Smart Action Description", "value": "Retrofit ASHP into current DCC buildings" },
@@ -27,6 +28,7 @@
     },
     {
         "target-id": 2,
+        "title":"Install energy efficiency and building fabric improvements",
         "fields": [
             { "id": "target-cerp3_action_type", "label": "CERP3 Action Type", "value": "Building Decarbonisation" },
             { "id": "target-smart_action_description", "label": "Smart Action Description", "value": "Install energy efficiency and building fabric improvements at 10 sites per year." },
@@ -53,6 +55,7 @@
     },
     {
         "target-id": 3,
+        "title":"Decarbonising Leisure Centres",
         "fields": [
             { "id": "target-cerp3_action_type", "label": "CERP3 Action Type", "value": "Building Decarbonisation" },
             { "id": "target-smart_action_description", "label": "Smart Action Description", "value": "Continue with decarbonising Leisure Centres with target to achieve over 50% fossil fuel free including; Peterlee LC - Additional solar PV Newton Aycliffe - Ph2 (heat recovery)" },
@@ -79,6 +82,7 @@
     },
     {
         "target-id": 4,
+        "title":"First Stage Decarbonisation Plans",
         "fields": [
             { "id": "target-cerp3_action_type", "label": "CERP3 Action Type", "value": "Building Decarbonisation" },
             { "id": "target-smart_action_description", "label": "Smart Action Description", "value": "Take forward the following first stage decarbonisation plans: Spennymoor EDC Bishop Auckland TH Durham Pathways Chester - le - Street LC Louisa Centre" },
@@ -105,6 +109,7 @@
     },
     {
         "target-id": 5,
+        "title":"Surveys and Heating Decarbonisation Plans",
         "fields": [
             { "id": "target-cerp3_action_type", "label": "CERP3 Action Type", "value": "Building Decarbonisation" },
             { "id": "target-smart_action_description", "label": "Smart Action Description", "value": "Carry out surveys and heating decarbonisation plans at the remaining significant carbon emitting facilities: Freemans Quay LC, Spennymoor LC, Green Lane Offices, Hackworth Road Depot, Chilton Depot" },
@@ -131,6 +136,7 @@
     },
     {
         "target-id": 6,
+        "title":"Install LED Lighting - DCC",
         "fields": [
             { "id": "target-cerp3_action_type", "label": "CERP3 Action Type", "value": "Building Decarbonisation" },
             { "id": "target-smart_action_description", "label": "Smart Action Description", "value": "Install LED lighting across 60 DCC owned sites" },
@@ -157,6 +163,7 @@
     },
     {
         "target-id": 7,
+        "title":"Increase Proportion - BEMS",
         "fields": [
             { "id": "target-cerp3_action_type", "label": "CERP3 Action Type", "value": "Building Decarbonisation" },
             { "id": "target-smart_action_description", "label": "Smart Action Description", "value": "Increase proportion of top 30 sites covered by BEMS" },
@@ -183,6 +190,7 @@
     },
     {
         "target-id": 8,
+        "title":"BMS - DCC Portfolio",
         "fields": [
             { "id": "target-cerp3_action_type", "label": "CERP3 Action Type", "value": "Building Decarbonisation" },
             { "id": "target-smart_action_description", "label": "Smart Action Description", "value": "Develop integrated BMS system across DCC portfolio" },
@@ -209,6 +217,7 @@
     },
     {
         "target-id": 9,
+        "title":"Energy Management Responsibilities",
         "fields": [
             { "id": "target-cerp3_action_type", "label": "CERP3 Action Type", "value": "Building Decarbonisation" },
             { "id": "target-smart_action_description", "label": "Smart Action Description", "value": "Improve understanding of energy management responsibilities with building managers" },
@@ -235,6 +244,7 @@
     },
     {
         "target-id": 10,
+        "title":"Insulation Maximisation",
         "fields": [
             { "id": "target-cerp3_action_type", "label": "CERP3 Action Type", "value": "Building Decarbonisation" },
             { "id": "target-smart_action_description", "label": "Smart Action Description", "value": "Work with DCC teams to ensure Insulation is maximised during refurbishments" },
@@ -261,6 +271,7 @@
     },
     {
         "target-id": 11,
+        "title":"PV Generation Increase - DCC Estate",
         "fields": [
             { "id": "target-cerp3_action_type", "label": "CERP3 Action Type", "value": "Renewable Energy" },
             { "id": "target-smart_action_description", "label": "Smart Action Description", "value": "Increase PV generation across DCC estate by 3MW. This will include a mixture of roof mounted, ground mounted, and vertical mounted, to best suit the site." },
@@ -287,6 +298,7 @@
     },
     {
         "target-id": 12,
+        "title":"Solar Array Development - Jade Business Park",
         "fields": [
             { "id": "target-cerp3_action_type", "label": "CERP3 Action Type", "value": "Renewable Energy" },
             { "id": "target-smart_action_description", "label": "Smart Action Description", "value": "Develop 1MW solar array at Jade Business Park (following SEGL1 construction when field is back with DCC)" },
@@ -313,6 +325,7 @@
     },
     {
         "target-id": 13,
+        "title":"Small wind turbines - Hackworth Road Depot",
         "fields": [
             { "id": "target-cerp3_action_type", "label": "CERP3 Action Type", "value": "Renewable Energy" },
             { "id": "target-smart_action_description", "label": "Smart Action Description", "value": "Development of 4 Small wind turbines at Hackworth Road Depot" },
@@ -339,6 +352,7 @@
     },
     {
         "target-id": 14,
+        "title": "Learnings From Hackworth Road Project",
         "fields": [
             { "id": "target-cerp3_action_type", "label": "CERP3 Action Type", "value": "Renewable Energy" },
             { "id": "target-smart_action_description", "label": "Smart Action Description", "value": "Following learnings from Hackworth Road project take forward additional sites." },
@@ -365,6 +379,7 @@
     },
     {
         "target-id": 15,
+        "title": "Solar and Wind Hybrid - Joint Stocks Quarry",
         "fields": [
             { "id": "target-cerp3_action_type", "label": "CERP3 Action Type", "value": "Renewable Energy" },
             { "id": "target-smart_action_description", "label": "Smart Action Description", "value": "Development of Solar and Wind Hybrid at Joint Stocks Quarry/former landfill" },
@@ -391,6 +406,7 @@
     },
     {
         "target-id": 16,
+        "title":"Solar Car Ports",
         "fields": [
             { "id": "target-cerp3_action_type", "label": "CERP3 Action Type", "value": "Renewable Energy" },
             { "id": "target-smart_action_description", "label": "Smart Action Description", "value": "Develop and implement phased solar car ports implementation plan across 5 sites." },
@@ -417,6 +433,7 @@
     },
     {
         "target-id": 17,
+        "title":"Upscale Solar Farm - Tanfield",
         "fields": [
             { "id": "target-cerp3_action_type", "label": "CERP3 Action Type", "value": "Renewable Energy" },
             { "id": "target-smart_action_description", "label": "Smart Action Description", "value": "Review and upscale solar farm at Tanfield to match demand from nearby building by 2025. Explore commercial potential of project" },

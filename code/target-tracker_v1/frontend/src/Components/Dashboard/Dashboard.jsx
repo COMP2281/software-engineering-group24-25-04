@@ -130,7 +130,7 @@ const Dashboard = ({ userEmail, goToProfile, goToTarget }) => {
                       className="target-box" 
                       onClick={() => handleBoxClick(target['target-id'])}
                     >
-                      {target.fields.find(field => field.id === 'target-smart_action_description').value}
+                      {target.title}
                       <div className="progress-bar">
                         <div className="progress" style={{ width: getProgressPercentage(target) }}>
                           <span className="progress-text">{getProgressPercentage(target)}</span>
@@ -172,9 +172,9 @@ const Dashboard = ({ userEmail, goToProfile, goToTarget }) => {
                   {allTargets.map(target => (
                     <option 
                       key={target['target-id']} 
-                      value={target.fields.find(field => field.id === 'target-smart_action_description').value}
+                      value={target.title}
                     >
-                      {target.fields.find(field => field.id === 'target-smart_action_description').value}
+                      {target.title}
                     </option>
                   ))}
                 </select>
@@ -194,7 +194,7 @@ const Dashboard = ({ userEmail, goToProfile, goToTarget }) => {
                       className="target-box" 
                       onClick={() => handleBoxClick(target['target-id'])}
                     >
-                      {target.fields.find(field => field.id === 'target-smart_action_description').value}
+                      {target.title}
                       <div className="progress-bar">
                         <div className="progress" style={{ width: getProgressPercentage(target) }}>
                           <span className="progress-text">{getProgressPercentage(target)}</span>
