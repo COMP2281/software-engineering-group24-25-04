@@ -112,17 +112,17 @@ const AdminDashboard = ({ userEmail, goToProfile, goToTarget }) => {
   };
 
   const filteredAllTargets = allTargets.filter(target => {
-    if (!target.fields) return false; // Ensure fields exist
-  
-    const fieldValues = target.fields.map(field => field?.value?.toLowerCase() || ""); // Extract values safely
-    const matchesSearch = fieldValues.some(value => value.includes(searchTerm.toLowerCase()));
-  
-    // Fix: Match exact filter instead of `includes`
+    const fieldValues = target.fields ? target.fields.map(field => field?.value?.toLowerCase() || "") : [];
+    const matchesSearch = searchTerm === "" || 
+                          target.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
+                          fieldValues.some(value => value.includes(searchTerm.toLowerCase()));
     const matchesFilter = filter === "All" || 
-      fieldValues.some(value => value.toLowerCase() === filter.toLowerCase());
-  
+                          target.title.toLowerCase() === filter.toLowerCase() || 
+                          fieldValues.includes(filter.toLowerCase());
+
     return matchesSearch && matchesFilter;
-  });
+});
+
 
   const getProgressValue = (target) => {
     switch(target['target-id']) {

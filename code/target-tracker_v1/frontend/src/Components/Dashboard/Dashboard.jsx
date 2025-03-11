@@ -62,12 +62,16 @@ const Dashboard = ({ userEmail, goToProfile, goToTarget }) => {
   });
   
   const filteredAllTargets = allTargets.filter(target => {
-    if (!target.fields) return false;
-    const fieldValues = target.fields.map(field => field?.value?.toLowerCase() || "");
-    const matchesSearch = fieldValues.some(value => value.includes(searchTerm.toLowerCase()));
-    const matchesFilter = filter === "All" || fieldValues.some(value => value.toLowerCase() === filter.toLowerCase());
+    const fieldValues = target.fields ? target.fields.map(field => field?.value?.toLowerCase() || "") : [];
+    const matchesSearch = searchTerm === "" || 
+                          target.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
+                          fieldValues.some(value => value.includes(searchTerm.toLowerCase()));
+    const matchesFilter = filter === "All" || 
+                          target.title.toLowerCase() === filter.toLowerCase() || 
+                          fieldValues.includes(filter.toLowerCase());
+
     return matchesSearch && matchesFilter;
-  });
+});
 
   // Helper to extract the total number from the "Targets Set" string.
   const extractTotal = (str) => {
