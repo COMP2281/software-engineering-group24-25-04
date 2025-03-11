@@ -107,7 +107,7 @@
         "target-id": 5,
         "fields": [
             { "id": "target-cerp3_action_type", "label": "CERP3 Action Type", "value": "Building Decarbonisation" },
-            { "id": "target-smart_action_description", "label": "Smart Action Description", "value": "Carry out surveys and heating decarbonisation plans at the remaining significant carbon emitting facilities: Freemans Quay LC Spennymoor LC Green Lane Offices Hackworth Road Depot Chilton Depot" },
+            { "id": "target-smart_action_description", "label": "Smart Action Description", "value": "Carry out surveys and heating decarbonisation plans at the remaining significant carbon emitting facilities: Freemans Quay LC, Spennymoor LC, Green Lane Offices, Hackworth Road Depot, Chilton Depot" },
             { "id": "target-related_work_programme", "label": "Related Work Programme", "value": null },
             { "id": "target-action_type", "label": "Action Type", "value": "Additional" },
             { "id": "target-project_lead", "label": "Project Lead", "value": "Tracy Millmore" },

@@ -8,7 +8,9 @@ const Dashboard = ({ userEmail, goToProfile, goToTarget }) => {
   const [filter, setFilter] = useState("All");
   const [myTargets, setMyTargets] = useState([]);
   const [allTargets, setAllTargets] = useState([]);
-  
+  // New state for tracking progress input per target:
+  const [progressValues, setProgressValues] = useState({});
+
   useEffect(() => {
     const fetchTargets = async () => {
       try {
@@ -52,43 +54,48 @@ const Dashboard = ({ userEmail, goToProfile, goToTarget }) => {
   };
 
   const filteredMyTargets = myTargets.filter(target => {
-    if (!target.fields) return false; // Ensure fields exist
-  
-    const fieldValues = target.fields.map(field => field?.value?.toLowerCase() || ""); // Extract values safely
+    if (!target.fields) return false;
+    const fieldValues = target.fields.map(field => field?.value?.toLowerCase() || "");
     const matchesSearch = fieldValues.some(value => value.includes(searchTerm.toLowerCase()));
-  
-    // Fix: Match exact filter instead of `includes`
-    const matchesFilter = filter === "All" || 
-      fieldValues.some(value => value.toLowerCase() === filter.toLowerCase()); 
-  
+    const matchesFilter = filter === "All" || fieldValues.some(value => value.toLowerCase() === filter.toLowerCase());
     return matchesSearch && matchesFilter;
   });
   
   const filteredAllTargets = allTargets.filter(target => {
-    if (!target.fields) return false; // Ensure fields exist
-  
-    const fieldValues = target.fields.map(field => field?.value?.toLowerCase() || ""); // Extract values safely
+    if (!target.fields) return false;
+    const fieldValues = target.fields.map(field => field?.value?.toLowerCase() || "");
     const matchesSearch = fieldValues.some(value => value.includes(searchTerm.toLowerCase()));
-  
-    // Fix: Match exact filter instead of `includes`
-    const matchesFilter = filter === "All" || 
-      fieldValues.some(value => value.toLowerCase() === filter.toLowerCase());
-  
+    const matchesFilter = filter === "All" || fieldValues.some(value => value.toLowerCase() === filter.toLowerCase());
     return matchesSearch && matchesFilter;
   });
-  
-  
 
-  const getProgressValue = (target) => {
-    switch(target['target-id']) {
-      case 1: return "30%";
-      case 2: return "60%";
-      case 3: return "80%";
-      case 4: return "20%";
-      case 5: return "50%";
-      case 6: return "90%";
-      default: return "0%";
+  // Helper to extract the total number from the "Targets Set" string.
+  const extractTotal = (str) => {
+    if (!str) return 0;
+    const match = str.match(/\d+/);
+    return match ? parseInt(match[0], 10) : 0;
+  };
+
+  // Handle change of progress input for a specific target.
+  const handleProgressChange = (targetId, value, total) => {
+    if (value === "") {
+      setProgressValues(prev => ({ ...prev, [targetId]: "" })); // Allow empty input
+    } else {
+      const parsedValue = parseInt(value, 10);
+      if (!isNaN(parsedValue)) {
+        const newVal = parsedValue > total ? total : parsedValue;
+        setProgressValues(prev => ({ ...prev, [targetId]: newVal.toString() }));
+      }
     }
+  };
+
+  // Calculate the progress percentage for a target.
+  const getProgressPercentage = (target) => {
+    const targetsSetField = target.fields.find(field => field.id === 'target-targets_set');
+    const total = extractTotal(targetsSetField?.value);
+    // Parse the stored string; if empty or NaN, default to 0.
+    const completed = parseFloat(progressValues[target['target-id']] ?? "") || 0;
+    return total > 0 ? `${Math.min((completed / total) * 100, 100).toFixed(2)}%` : "0.00%";
   };
 
   return (
@@ -113,16 +120,35 @@ const Dashboard = ({ userEmail, goToProfile, goToTarget }) => {
             <div className="my-target-left">
               <h2>My Targets</h2>
               <div className="target-boxes">
-                {filteredMyTargets.map((target, index) => (
-                  <div key={index} className="target-box" onClick={() => handleBoxClick(target['target-id'])}>
-                    {target.fields.find(field => field.id === 'target-smart_action_description').value}
-                    <div className="progress-bar">
-                      <div className="progress" style={{ width: getProgressValue(target) }}>
-                        <span className="progress-text">{getProgressValue(target)}</span>
+                {filteredMyTargets.map((target, index) => {
+                  // Get the total from the "Targets Set" field.
+                  const targetsSetField = target.fields.find(field => field.id === 'target-targets_set');
+                  const total = extractTotal(targetsSetField?.value);
+                  return (
+                    <div 
+                      key={index} 
+                      className="target-box" 
+                      onClick={() => handleBoxClick(target['target-id'])}
+                    >
+                      {target.fields.find(field => field.id === 'target-smart_action_description').value}
+                      <div className="progress-bar">
+                        <div className="progress" style={{ width: getProgressPercentage(target) }}>
+                          <span className="progress-text">{getProgressPercentage(target)}</span>
+                        </div>
                       </div>
+                      {/* Input for user to set completed amount */}
+                      <input 
+                        type="number" 
+                        min="0" 
+                        max={total} 
+                        value={progressValues[target['target-id']] ?? ""} 
+                        onChange={(e) => handleProgressChange(target['target-id'], e.target.value, total)}
+                        onClick={(e) => e.stopPropagation()}  // Prevent triggering the box click
+                        style={{ marginTop: "10px", width: "60px" }}
+                      />
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
                 <div className="target-box plus-box" onClick={() => handleBoxClick("Add Target")}>
                   +
                 </div>
@@ -144,7 +170,10 @@ const Dashboard = ({ userEmail, goToProfile, goToTarget }) => {
                 >
                   <option value="All">All</option>
                   {allTargets.map(target => (
-                    <option key={target['target-id']} value={target.fields.find(field => field.id === 'target-smart_action_description').value}>
+                    <option 
+                      key={target['target-id']} 
+                      value={target.fields.find(field => field.id === 'target-smart_action_description').value}
+                    >
                       {target.fields.find(field => field.id === 'target-smart_action_description').value}
                     </option>
                   ))}
@@ -156,16 +185,33 @@ const Dashboard = ({ userEmail, goToProfile, goToTarget }) => {
           <div className="all-targets">
             <h2>All Targets</h2>
             <div className="target-boxes">
-              {filteredAllTargets.map((target, index) => (
-                <div key={index} className="target-box" onClick={() => handleBoxClick(target['target-id'])}>
-                  {target.fields.find(field => field.id === 'target-smart_action_description').value}
-                  <div className="progress-bar">
-                    <div className="progress" style={{ width: getProgressValue(target) }}>
-                      <span className="progress-text">{getProgressValue(target)}</span>
+              {filteredAllTargets.map((target, index) => {
+                  const targetsSetField = target.fields.find(field => field.id === 'target-targets_set');
+                  const total = extractTotal(targetsSetField?.value);
+                  return (
+                    <div 
+                      key={index} 
+                      className="target-box" 
+                      onClick={() => handleBoxClick(target['target-id'])}
+                    >
+                      {target.fields.find(field => field.id === 'target-smart_action_description').value}
+                      <div className="progress-bar">
+                        <div className="progress" style={{ width: getProgressPercentage(target) }}>
+                          <span className="progress-text">{getProgressPercentage(target)}</span>
+                        </div>
+                      </div>
+                      <input 
+                        type="number" 
+                        min="0" 
+                        max={total} 
+                        value={progressValues[target['target-id']] ?? ""} 
+                        onChange={(e) => handleProgressChange(target['target-id'], e.target.value, total)}
+                        onClick={(e) => e.stopPropagation()}
+                        style={{ marginTop: "10px", width: "60px" }}
+                      />
                     </div>
-                  </div>
-                </div>
-              ))}
+                  );
+              })}
             </div>
           </div>
         </div>
