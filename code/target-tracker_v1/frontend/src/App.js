@@ -1,17 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import LoginSignup from './Components/LoginSignup/LoginSignup';
 import Dashboard from './Components/Dashboard/Dashboard';
 import Profile from './Components/Profile/Profile';
 import Target from './Components/Target/Target';
 import AdminDashboard from './pages/ManagerDashboard/AdminDashboard';
 
-
 function App() {
-  const [currentPage, setCurrentPage] = useState('loginSignup');
-  const [userEmail, setUserEmail] = useState("");
-  const [userId, setUserId] = useState("");
-  const [userRole, setUserRole] = useState("");
-  const [target, setTarget] = useState("");
+  const [currentPage, setCurrentPage] = useState(localStorage.getItem('currentPage') || 'loginSignup');
+  const [userEmail, setUserEmail] = useState(localStorage.getItem('userEmail') || "");
+  const [userId, setUserId] = useState(localStorage.getItem('userId') || "");
+  const [userRole, setUserRole] = useState(localStorage.getItem('userRole') || "");
+  const [target, setTarget] = useState(localStorage.getItem('target') ? JSON.parse(localStorage.getItem('target')) : "");
+
+  useEffect(() => {
+    localStorage.setItem('currentPage', currentPage);
+    localStorage.setItem('userEmail', userEmail);
+    localStorage.setItem('userId', userId);
+    localStorage.setItem('userRole', userRole);
+    localStorage.setItem('target', JSON.stringify(target));
+  }, [currentPage, userEmail, userId, userRole, target]);
 
   const goToDashboard = (email, id) => {
     setUserEmail(email);
