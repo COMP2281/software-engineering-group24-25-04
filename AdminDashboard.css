@@ -136,16 +136,35 @@
   align-items: center;
   z-index: 999;
 }
-
 .modal-content {
   background-color: white;
   width: 50%;
-  height: 50%;
+  /* Remove fixed height to allow dynamic content sizing */
+  /* height: 50%; */
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
+}
+
+/* New container to hold the two sections side by side */
+.modal-sections {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 20px; /* space between sections and buttons */
+}
+
+.modal-section {
+  flex: 1;
+  padding: 0 10px;
+}
+
+/* Style for the button container to add separation */
+.modal-buttons {
+  display: flex;
+  gap: 20px; /* Adjust gap as needed */
+  margin-top: 20px;
 }
