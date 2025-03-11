@@ -5,7 +5,7 @@ import TargetDropdown from "./TargetDropdown";
 import TargetDate from "./TargetDate";
 import "./Target.css";
 
-const Target = ({ userEmail, target, goToDashboard, goToTarget }) => {
+const Target = ({ userEmail, userRole, target, goToDashboard, goToManagerDashboard, goToTarget }) => {
     const [action, setAction] = useState("View");
     const [showSaveButton, setShowSaveButton] = useState(false);
     const [formData, setFormData] = useState({});
@@ -26,7 +26,11 @@ const Target = ({ userEmail, target, goToDashboard, goToTarget }) => {
     const oppositeAction = action === "Edit" ? "View" : "Edit";
 
     const handleDashboardClick = () => {
-        goToDashboard(userEmail);
+        if (userRole === "manager") {
+            goToManagerDashboard(userEmail);
+        } else {
+            goToDashboard(userEmail);
+        }
     };
 
     const handleToggleActionClick = () => {
