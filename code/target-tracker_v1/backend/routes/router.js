@@ -52,6 +52,11 @@ const readUsers = () => {
     return JSON.parse(data);
 }
 
+// Helper function to write user targets
+const writeUserTargets = (userTargets) => {
+  fs.writeFileSync(userTargetsFilePath, JSON.stringify(userTargets, null, 2), 'utf8');
+};
+
 // Login route
 router.post('/login', (req, res) => {
     console.log(`Received login request for email: ${req.body.email}`);
@@ -188,6 +193,33 @@ router.post('/userdata', (req, res) => {
     res.send(data);
     return true;
 })
+
+// Route to assign target to user
+router.post('/assign-target', (req, res) => {
+  const { targetId, userEmail } = req.body;
+  const users = readUsers();
+  const user = users.find(user => user.email === userEmail);
+
+  if (!user) {
+    return res.status(404).json({ message: 'User not found' });
+  }
+
+  const userTargets = readUserTargets();
+  const userId = user.id;
+
+  if (!userTargets[userId]) {
+    userTargets[userId] = [];
+  }
+
+  const parsedTargetId = parseInt(targetId);
+
+  if (!userTargets[userId].includes(parsedTargetId)) {
+    userTargets[userId].push(parsedTargetId);
+    writeUserTargets(userTargets);
+  }
+
+  res.status(200).json({ message: 'Target assigned successfully' });
+});
 
 module.exports = router;
 

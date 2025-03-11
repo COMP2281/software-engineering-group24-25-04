@@ -7,6 +7,7 @@ const AdminDashboard = ({ userEmail, goToProfile, goToTarget }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [filter, setFilter] = useState("All");
   const [allTargets, setAllTargets] = useState([]);
+  const [allUsers, setAllUsers] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedTarget, setSelectedTarget] = useState("");
   const [selectedStaff, setSelectedStaff] = useState("");
@@ -23,7 +24,18 @@ const AdminDashboard = ({ userEmail, goToProfile, goToTarget }) => {
       }
     };
 
+    const fetchUsers = async () => {
+      try {
+        const response = await axios.get('http://localhost:4000/user');
+        const users = response.data;
+        setAllUsers(users);
+      } catch (error) {
+        console.error("Error fetching users:", error);
+      }
+    };
+
     fetchTargets();
+    fetchUsers();
   }, []);
 
   const handleBoxClick = async (targetId) => {
@@ -40,10 +52,20 @@ const AdminDashboard = ({ userEmail, goToProfile, goToTarget }) => {
     goToProfile(userEmail);
   };
 
-  const handleConfirmSelection = () => {
+  const handleConfirmSelection = async () => {
     if (selectedTarget && selectedStaff) {
-      setMessage("Assigned successfully");
-      setTimeout(() => setMessage(""), 3000);
+      try {
+        await axios.post('http://localhost:4000/assign-target', {
+          targetId: selectedTarget,
+          userEmail: selectedStaff
+        });
+        setMessage("Assigned successfully");
+        setTimeout(() => setMessage(""), 3000);
+      } catch (error) {
+        console.error("Error assigning target:", error);
+        setMessage("Failed to assign target.");
+        setTimeout(() => setMessage(""), 3000);
+      }
     } else {
       setMessage("Please select both a target and a staff member.");
       setTimeout(() => setMessage(""), 3000);
@@ -146,9 +168,11 @@ const AdminDashboard = ({ userEmail, goToProfile, goToTarget }) => {
             onChange={(e) => setSelectedTarget(e.target.value)}
           >
             <option value="">Select a target</option>
-            {['Target 1', 'Target 2', 'Target 3'].map(item => (
-              <option key={item} value={item}>{item}</option>
-            ))}
+            {allTargets.map(target => (
+                  <option key={target['target-id']} value={target['target-id']}>
+                    {target.fields.find(field => field.id === 'target-smart_action_description').value}
+                  </option>
+                ))}
           </select>
         </div>
 
@@ -160,8 +184,10 @@ const AdminDashboard = ({ userEmail, goToProfile, goToTarget }) => {
             onChange={(e) => setSelectedStaff(e.target.value)}
           >
             <option value="">Select a staff member</option>
-            {['Staff A', 'Staff B', 'Staff C'].map(item => (
-              <option key={item} value={item}>{item}</option>
+            {allUsers.map(user => (
+              <option key={user.email} value={user.email}>
+                {user.email}
+              </option>
             ))}
           </select>
         </div>
