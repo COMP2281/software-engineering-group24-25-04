@@ -48,6 +48,8 @@ const Target = ({ userEmail, target, goToDashboard, goToTarget }) => {
         setFormData((prev) => ({ ...prev, [id]: value }));
     };
 
+    const excludedFields = ["target-funding_secured", "target-sufficient_staff", "target-start_date", "target-completion_date"];
+
     return (
         <Container className="target-container">
             <div className="target-header">
@@ -55,17 +57,19 @@ const Target = ({ userEmail, target, goToDashboard, goToTarget }) => {
                 <div className="target-underline"></div>
             </div>
             <div className="target-inputs">
-                {target.fields.map(({ id, label }) => (
-                    <TargetField
-                        key={id}
-                        id={id}
-                        label={label}
-                        value={formData[id] || ""}
-                        onChange={handleChange}
-                        isEditing={action === "Edit"}
-                        goToTarget={goToTarget}
-                    />
-                ))}
+                {target.fields
+                    .filter(({ id }) => !excludedFields.includes(id))
+                    .map(({ id, label }) => (
+                        <TargetField
+                            key={id}
+                            id={id}
+                            label={label}
+                            value={formData[id] || ""}
+                            onChange={handleChange}
+                            isEditing={action === "Edit"}
+                            goToTarget={goToTarget}
+                        />
+                    ))}
                 {target.costFields.map(({ id, label }) => (
                     <TargetField
                         key={id}

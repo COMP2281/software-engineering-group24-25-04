@@ -36,9 +36,18 @@ const AdminDashboard = ({ userEmail, goToProfile, goToTarget }) => {
     goToProfile(userEmail);
   };
 
-  const filteredAllTargets = allTargets.filter(target => 
-    target.fields.some(field => field.value.toLowerCase().includes(searchTerm.toLowerCase())) && (filter === "All" || target.fields.some(field => field.value.includes(filter)))
-  );
+  const filteredAllTargets = allTargets.filter(target => {
+    if (!target.fields) return false; // Ensure fields exist
+  
+    const fieldValues = target.fields.map(field => field?.value?.toLowerCase() || ""); // Extract values safely
+    const matchesSearch = fieldValues.some(value => value.includes(searchTerm.toLowerCase()));
+  
+    // Fix: Match exact filter instead of `includes`
+    const matchesFilter = filter === "All" || 
+      fieldValues.some(value => value.toLowerCase() === filter.toLowerCase());
+  
+    return matchesSearch && matchesFilter;
+  });
 
   const getProgressValue = (target) => {
     switch(target['target-id']) {
