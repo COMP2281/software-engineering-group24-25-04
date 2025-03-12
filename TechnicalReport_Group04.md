@@ -453,10 +453,10 @@ Visit the [Chrome official website](https://www.google.com/chrome/) to download 
 
 ###### Firefox
 
-####### Download
+###### Download
 Visit the [Firefox official website](https://www.mozilla.org/firefox/) to download the appropriate version.
 
-####### Installation
+###### Installation
 - **Windows/macOS Users**: Run the installation program directly.
 - **Linux Users**: Install using the following command:
   ```bash
