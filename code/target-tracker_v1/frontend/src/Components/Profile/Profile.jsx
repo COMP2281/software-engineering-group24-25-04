@@ -13,6 +13,7 @@ const Profile = ({ userEmail, userRole, goToLogin, goToDashboard, goToManagerDas
       try {
         setLoading(true); // Start loading
         const userInfo = await getUserInfo(userEmail); // Fetch user info
+        console.log('User Info:', userInfo);
         setInfo(userInfo); // Update state with user info
       } catch (err) {
         console.error('Error fetching user info:', err);

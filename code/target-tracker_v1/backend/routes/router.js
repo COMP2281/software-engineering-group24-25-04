@@ -351,6 +351,14 @@ router.post('/remove-target', (req, res) => {
     res.status(200).json({ message: 'Target removed successfully' });
 });
 
+// Route for the profile page (Don't remove this route)
+router.post('/userdata', (req, res) => {
+    const check = users.find(user => user.email === req.body.email);
+    const data = {"name":check.name,"role":check.role};
+    res.send(data);
+    return true;
+})
+
 module.exports = router;
 
 
