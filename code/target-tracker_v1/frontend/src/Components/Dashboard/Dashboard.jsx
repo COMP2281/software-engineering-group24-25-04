@@ -106,12 +106,16 @@ const Dashboard = ({ userEmail, goToProfile, goToTarget }) => {
   };
 
   const filteredMyTargets = myTargets.filter(target => {
-    if (!target.fields) return false;
+    if (!target?.fields) return false;
     const fieldValues = target.fields.map(field => field?.value?.toLowerCase() || "");
-    const matchesSearch = fieldValues.some(value => value.includes(searchTerm.toLowerCase()));
-    const matchesFilter = filter === "All" || fieldValues.some(value => value.toLowerCase() === filter.toLowerCase());
+    const titleMatch = target?.title?.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesSearch = searchTerm === "" || titleMatch || 
+                          fieldValues.some(value => value.includes(searchTerm.toLowerCase()));
+    const matchesFilter = filter === "All" || 
+                          target?.title?.toLowerCase() === filter.toLowerCase() || 
+                          fieldValues.includes(filter.toLowerCase());
     return matchesSearch && matchesFilter;
-  });
+});
   
   const filteredAllTargets = allTargets.filter(target => {
     const fieldValues = target.fields ? target.fields.map(field => field?.value?.toLowerCase() || "") : [];

@@ -31,6 +31,16 @@ const Target = ({ userEmail, userRole, target, goToDashboard, goToManagerDashboa
             const targetsSetField = target.fields?.find(field => field.id === 'target-targets_set');
             const total = extractTotal(targetsSetField?.value);
             setMaxProgress(total);
+
+            if (isMyTarget) {
+                setAction("Edit");
+                setShowSaveButton(true);
+                setShowDeleteButton(true);
+            } else {
+                setAction("View");
+                setShowSaveButton(false);
+                setShowDeleteButton(false);
+            }
         }
     }, [target]);
 

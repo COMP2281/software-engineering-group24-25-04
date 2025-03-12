@@ -572,7 +572,7 @@
       {
         "id": "target-kpi",
         "label": "KPI",
-        "value": null
+        "value": ""
       },
       {
         "id": "target-carbon_reduction",
@@ -599,17 +599,17 @@
       {
         "id": "target-countywide_estimated_annual_saving",
         "label": "Countywide Estimated Annual Saving",
-        "value": null
+        "value": "50000"
       },
       {
         "id": "target-actual_annual_saving",
         "label": "Actual Annual Saving",
-        "value": null
+        "value": "32000"
       },
       {
         "id": "target-cost",
         "label": "Cost",
-        "value": null
+        "value": "1500"
       }
     ],
     "otherFields": [
@@ -633,7 +633,8 @@
         "label": "Completion Date",
         "value": "31-03-2027"
       }
-    ]
+    ],
+    "progress": 2
   },
   {
     "target-id": 7,
