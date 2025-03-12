@@ -9,6 +9,7 @@ import "./Target.css";
 const Target = ({ userEmail, userRole, target, goToDashboard, goToManagerDashboard, goToTarget }) => {
     const [action, setAction] = useState("View");
     const [showSaveButton, setShowSaveButton] = useState(false);
+    const [showDeleteButton, setShowDeleteButton] = useState(false);
     const [formData, setFormData] = useState({});
     const [maxProgress, setMaxProgress] = useState(100);
 
@@ -47,9 +48,11 @@ const Target = ({ userEmail, userRole, target, goToDashboard, goToManagerDashboa
         if (action === "Edit") {
             setAction("View");
             setShowSaveButton(false);
+            setShowDeleteButton(false);
         } else {
             setAction("Edit");
             setShowSaveButton(true);
+            setShowDeleteButton(true);
         }
     };
 
@@ -90,6 +93,7 @@ const Target = ({ userEmail, userRole, target, goToDashboard, goToManagerDashboa
     
             alert("Target saved successfully!");
             setShowSaveButton(false);
+            setShowDeleteButton(false);
             setAction("View");
     
             // Redirect back to dashboard
@@ -97,6 +101,40 @@ const Target = ({ userEmail, userRole, target, goToDashboard, goToManagerDashboa
         } catch (error) {
             console.error("Error saving target:", error);
             alert("Failed to save target.");
+        }
+    };
+
+    const handleDeleteClick = async () => {
+        try {
+            if (!target["target-id"]) {
+                alert("Invalid target ID.");
+                return;
+            }
+    
+            const targetId = target["target-id"];
+
+            if (!userEmail) {
+                alert("User Email Missing");
+                return;
+            }
+    
+            // Confirm before deleting
+            const confirmDelete = window.confirm("Are you sure you want to delete this target?");
+            if (!confirmDelete) return;
+    
+            // Delete target from targets.json
+            await axios.delete(`http://localhost:4000/target/${targetId}`);
+    
+            // Remove target from usertargets.json
+            await axios.post("http://localhost:4000/remove-target", { targetId, userEmail });
+    
+            alert("Target deleted successfully!");
+            
+            // Redirect back to dashboard
+            handleDashboardClick();
+        } catch (error) {
+            console.error("Error deleting target:", error);
+            alert("Failed to delete target.");
         }
     };
 
@@ -221,7 +259,7 @@ const Target = ({ userEmail, userRole, target, goToDashboard, goToManagerDashboa
                     isEditing={action === "Edit"}
                 />
                 <div className="target-field target-progress">
-                    <label htmlFor="progress" className="target-text-2">Amount Completed</label>
+                    <label htmlFor="progress" className="target-text-2">Progress Completed</label>
                     <div style={{ marginBottom: '15px' }}></div> 
                     {action === "Edit" ? (
                         <input
@@ -245,6 +283,11 @@ const Target = ({ userEmail, userRole, target, goToDashboard, goToManagerDashboa
                 <div className="target-btn edit-btn" onClick={handleToggleActionClick}>
                     {oppositeAction}
                 </div>
+                {showDeleteButton && (
+                    <div className="target-btn delete-btn" onClick={handleDeleteClick}>
+                        Delete
+                    </div>
+                )}
                 {showSaveButton && (
                     <div className="target-btn save-btn" onClick={handleSaveClick}>
                         Save

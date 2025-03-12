@@ -305,6 +305,38 @@ router.post('/userdata', (req, res) => {
     return true;
 })*/
 
+// DELETE request to remove a target
+router.delete('/target/:id', (req, res) => {
+    const targetId = parseInt(req.params.id);
+    
+    if (isNaN(targetId)) {
+        return res.status(400).json({ message: "Invalid target ID" });
+    }
+
+    // Read targets from file
+    let targets = readTargets();
+    let userTargets = readUserTargets();
+
+    // Check if the target exists
+    const targetIndex = targets.findIndex(target => target["target-id"] === targetId);
+    if (targetIndex === -1) {
+        return res.status(404).json({ message: "Target not found" });
+    }
+
+    // Remove target from targets.json
+    targets = targets.filter(target => target["target-id"] !== targetId);
+    fs.writeFileSync(targetsFilePath, JSON.stringify(targets, null, 2), 'utf8');
+
+    // Remove target from all users in usertargets.json
+    Object.keys(userTargets).forEach(userId => {
+        userTargets[userId] = userTargets[userId].filter(id => id !== targetId);
+    });
+
+    fs.writeFileSync(userTargetsFilePath, JSON.stringify(userTargets, null, 2), 'utf8');
+
+    res.status(200).json({ message: "Target deleted successfully" });
+});
+
 // Route to assign target to user
 router.post('/assign-target', (req, res) => {
   const { targetId, userEmail } = req.body;
