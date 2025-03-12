@@ -1159,7 +1159,7 @@
         "value": "31-03-2027"
       }
     ],
-    "progress": 0
+    "progress": 3
   },
   {
     "target-id": 12,
@@ -1178,7 +1178,7 @@
       {
         "id": "target-related_work_programme",
         "label": "Related Work Programme",
-        "value": null
+        "value": ""
       },
       {
         "id": "target-action_type",
@@ -1203,7 +1203,7 @@
       {
         "id": "target-kpi",
         "label": "KPI",
-        "value": null
+        "value": ""
       },
       {
         "id": "target-carbon_reduction",
@@ -1230,17 +1230,17 @@
       {
         "id": "target-countywide_estimated_annual_saving",
         "label": "Countywide Estimated Annual Saving",
-        "value": null
+        "value": ""
       },
       {
         "id": "target-actual_annual_saving",
         "label": "Actual Annual Saving",
-        "value": null
+        "value": ""
       },
       {
         "id": "target-cost",
         "label": "Cost",
-        "value": null
+        "value": ""
       }
     ],
     "otherFields": [
@@ -1252,7 +1252,7 @@
       {
         "id": "target-sufficient_staff",
         "label": "Sufficient Staff",
-        "value": null
+        "value": ""
       },
       {
         "id": "target-start_date",
@@ -1264,7 +1264,8 @@
         "label": "Completion Date",
         "value": "31-03-2029"
       }
-    ]
+    ],
+    "progress": 1
   },
   {
     "target-id": 13,
