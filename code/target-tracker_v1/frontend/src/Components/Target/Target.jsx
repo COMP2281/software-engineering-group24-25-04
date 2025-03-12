@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { Container } from "react-bootstrap";
 import TargetField from "./TargetField";
 import TargetDropdown from "./TargetDropdown";
@@ -43,10 +44,46 @@ const Target = ({ userEmail, userRole, target, goToDashboard, goToManagerDashboa
         }
     };
 
-    const handleSaveClick = () => {
+    const handleSaveClick = async () => {
+        if (!target["target-id"]) {
+          console.error("Error: No target ID provided.");
+          return;
+        }
+      
+        try {
+          const newTargetData = {
+            "target-id": target["target-id"],
+            "fields": target.fields.map(field => ({
+              id: field.id,
+              label: field.label,
+              value: formData[field.id] || ""
+            })),
+            "costFields": target.costFields.map(field => ({
+              id: field.id,
+              label: field.label,
+              value: formData[field.id] || ""
+            }))
+          };
+      
+          // If it's a new target, send a POST request to add it to the database
+          await axios.post("http://localhost:4000/target", newTargetData);
+      
+          alert("Target saved successfully!");
+          setShowSaveButton(false);
+          setAction("View");
+      
+          // Redirect user back to dashboard
+          handleDashboardClick();
+        } catch (error) {
+          console.error("Error saving target:", error);
+          alert("Failed to save target.");
+        }
+    };   
+
+    /*const handleSaveClick = () => {
         setShowSaveButton(false);
         setAction("View");
-    };
+    };*/
 
     const handleChange = (id, value) => {
         setFormData((prev) => ({ ...prev, [id]: value }));

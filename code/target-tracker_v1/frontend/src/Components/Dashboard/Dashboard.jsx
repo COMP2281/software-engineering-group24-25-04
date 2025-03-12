@@ -18,7 +18,7 @@ const Dashboard = ({ userEmail, goToProfile, goToTarget }) => {
         const response = await axios.get('http://localhost:4000/targets');
         const targets = response.data;
         setAllTargets(targets);
-  
+
         // Fetch user ID based on email
         const userResponse = await axios.get(`http://localhost:4000/user/${userEmail}`);
         const userId = userResponse.data.id; 
@@ -37,8 +37,73 @@ const Dashboard = ({ userEmail, goToProfile, goToTarget }) => {
     };
   
     fetchTargets();
-  }, [userEmail]);
+  }, [userEmail], allTargets);
 
+  // Function to fetch the highest existing target ID
+  const fetchExistingTargets = async () => {
+    try {
+      const response = await axios.get("http://localhost:4000/targets"); // Fetch all targets
+      const targets = response.data;
+
+      // Find the highest existing ID
+      const maxId = targets.length > 0 ? Math.max(...targets.map(target => target["target-id"])) : 0;
+
+      return maxId + 1; // Return the next available ID
+    } catch (error) {
+      console.error("Error fetching existing targets:", error);
+      return 1; // Default to 1 if there's an error
+    }
+  };
+
+  const handleBoxClick = async (targetId) => {
+    if (targetId === "Add Target") {
+      const newId = await fetchExistingTargets(); // Get the next sequential ID
+      // Creating a new target with default empty values
+      const newTarget = {
+        "target-id": newId, // Generate a temporary unique ID
+        "title": "",
+        "fields": [
+          { "id": "target-cerp3_action_type", "label": "CERP3 Action Type", "value": "" },
+          { "id": "target-smart_action_description", "label": "Smart Action Description", "value": "" },
+          { "id": "target-related_work_programme", "label": "Related Work Programme", "value": "" },
+          { "id": "target-action_type", "label": "Action Type", "value": "" },
+          { "id": "target-project_lead", "label": "Project Lead", "value": "" },
+          { "id": "target-progress_metric", "label": "Progress Metric", "value": "" },
+          { "id": "target-targets_set", "label": "Targets Set", "value": "", "numericValue": 0 },
+          { "id": "target-kpi", "label": "KPI", "value": "" },
+          { "id": "target-carbon_reduction", "label": "Carbon Reduction", "value": "" },
+          { "id": "target-council_estimated_annual_saving", "label": "Council Estimated Annual Saving", "value": "" },
+          { "id": "target-funding_secured", "label": "Funding Secured", "value": "No" },
+          { "id": "target-sufficient_staff", "label": "Sufficient Staff", "value": "No" },
+          { "id": "target-potential_obstacles_and_solutions", "label": "Potential Obstacles and Solutions", "value": "" },
+          { "id": "target-start_date", "label": "Start Date", "value": "" },
+          { "id": "target-completion_date", "label": "Completion Date", "value": "" },
+          { "id": "target-governing_group", "label": "Governing Group", "value": "" }
+        ],
+        "costFields": [
+          { "id": "target-countywide_estimated_annual_saving", "label": "Countywide Estimated Annual Saving", "value": "" },
+          { "id": "target-actual_annual_saving", "label": "Actual Annual Saving", "value": "" },
+          { "id": "target-cost", "label": "Cost", "value": "" }
+        ]
+      };
+  
+      goToTarget(userEmail, newTarget); // Redirect user to Target.jsx with new target
+    } else {
+      // Fetch the target as usual
+      try {
+        const response = await axios.get(`http://localhost:4000/target/${targetId}`);
+        const targetData = response.data;
+
+        goToTarget(userEmail, targetData);
+      } catch (error) {
+        console.error("Error fetching target data:", error);
+      }
+    }
+  };
+  
+
+
+/*
   const handleBoxClick = async (targetId) => {
     try {
       const response = await axios.get(`http://localhost:4000/target/${targetId}`);
@@ -48,7 +113,7 @@ const Dashboard = ({ userEmail, goToProfile, goToTarget }) => {
       console.error("Error fetching target data:", error);
     }
   };
-
+*/
   const handleIconClick = () => {
     goToProfile(userEmail);
   };

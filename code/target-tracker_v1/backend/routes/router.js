@@ -206,6 +206,34 @@ router.get('/user/:email', (req, res) => {
 // POST request to add a new target
 router.post('/target', (req, res) => {
     const targets = readTargets();
+    const userTargets = readUserTargets();
+
+    const newTarget = req.body;
+    if (!newTarget['target-id']) {
+        return res.status(400).json({ message: 'target-id is required' });
+    }
+
+    // Add to targets.json
+    targets.push(newTarget);
+    fs.writeFileSync(targetsFilePath, JSON.stringify(targets, null, 2));
+
+    // Add to usertargets.json (link the target to the user)
+    const userId = req.body.userId;
+    if (!userTargets[userId]) {
+        userTargets[userId] = [];
+    }
+    userTargets[userId].push(newTarget["target-id"]);
+    fs.writeFileSync(userTargetsFilePath, JSON.stringify(userTargets, null, 2));
+
+    res.status(201).json(newTarget);
+});
+
+
+  /*
+
+// POST request to add a new target
+router.post('/target', (req, res) => {
+    const targets = readTargets();
     const newTarget = req.body;
 
     if (!newTarget['target-id']) {
@@ -223,7 +251,7 @@ router.post('/userdata', (req, res) => {
     const data = {"name":check.name,"role":check.role};
     res.send(data);
     return true;
-})
+})*/
 
 // Route to assign target to user
 router.post('/assign-target', (req, res) => {
