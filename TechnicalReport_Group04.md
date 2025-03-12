@@ -1,6 +1,14 @@
 # Technical Report
 ## Section 1: Introduction
-### 1.1
+### 1.1 Project Summary
+Durham County Council (DCC) aims to achieve net-zero carbon emissions by 2030, requiring an effective method to track the progress of its climate initiatives. Their current Excel-based tracking system is inefficient due to difficulties in data navigation, frequent manual reminders, limited security, and poor visual representation. To resolve these issues, we need to develop a scalable, user-friendly platform to replace Excel and enhance productivity.
+The main goals of this project include:
+1. Improve usability and design a more intuitive user interface so that users at different levels (such as project managers, partners and related personnel) can easily enter, update and query progress information.
+2. Integrate automatic reminders to ensure that users update task progress on time and reduce manual intervention by managers.
+3. Introduce role-based permission control to ensure that different users can only access and manage target data related to them to prevent misoperation or unauthorised changes.
+4. Support real-time progress bar, task filtering and multiple data visualization methods to help managers understand the progress of targets more intuitively.
+5. Ensure that the system can run smoothly on different devices (PC, tablet, mobile phone) to meet modern office needs.
+In conclusion, we hope to reduce manual management costs while improving data accuracy and transparency, so that DCC and its stakeholders can manage carbon emission targets more efficiently and promote sustainable development.
 ### 1.2 
 To access the system locally, clone the GitHub repository in an interactive development environment such as Visual Studio Code (with git built-in) and install Node.js from their website. The code is split into two folders: frontend and backend. To get them to work together, you’ll need to npm install axios in the frontend folder and then npm install express cors body-parser in the backend folder. To start the website, split the terminal into two parts and navigate to the frontend in one and the backend in the other, and type npm start in both.
 ### 1.3: Status of Behavioural Requirement
