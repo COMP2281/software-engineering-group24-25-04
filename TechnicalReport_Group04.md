@@ -4,10 +4,10 @@
 Durham County Council (DCC) aims to achieve net-zero carbon emissions by 2030, requiring an effective method to track the progress of its climate initiatives. Their current Excel-based tracking system is inefficient due to difficulties in data navigation, frequent manual reminders, limited security, and poor visual representation. To resolve these issues, we need to develop a scalable, user-friendly platform to replace Excel and enhance productivity.
 The main goals of this project include:
 - Improve usability and design a more intuitive user interface so that users at different levels (such as project managers, partners and related personnel) can easily enter, update and query progress information.
-2. Integrate automatic reminders to ensure that users update task progress on time and reduce manual intervention by managers.
-3. Introduce role-based permission control to ensure that different users can only access and manage target data related to them to prevent misoperation or unauthorised changes.
-4. Support real-time progress bar, task filtering and multiple data visualization methods to help managers understand the progress of targets more intuitively.
-5. Ensure that the system can run smoothly on different devices (PC, tablet, mobile phone) to meet modern office needs.
+- Integrate automatic reminders to ensure that users update task progress on time and reduce manual intervention by managers.
+- Introduce role-based permission control to ensure that different users can only access and manage target data related to them to prevent misoperation or unauthorised changes.
+- Support real-time progress bar, task filtering and multiple data visualization methods to help managers understand the progress of targets more intuitively.
+- Ensure that the system can run smoothly on different devices (PC, tablet, mobile phone) to meet modern office needs.
 
 In conclusion, we hope to reduce manual management costs while improving data accuracy and transparency, so that DCC and its stakeholders can manage carbon emission targets more efficiently and promote sustainable development.
 ### 1.2 
@@ -437,15 +437,15 @@ The software is finally presented in the form of a website. Compared to using an
 
 ##### Microsoft Edge
 
-###### Download
+**Download:**
 Visit the [Chrome official website](https://www.google.com/chrome/) to download the installation package suitable for your operating system.
 
-###### Installation
+**Installation:**
 - **Windows Users**: Run the downloaded `.exe` file and follow the prompts to complete the installation.
 - **macOS Users**: Open the `.dmg` file and drag Chrome to the Applications folder.
 - **Linux Users**: Use the `.deb` or `.rpm` package for installation.
 
-###### Configuration
+**Configuration:**
 - Go to **Settings → Privacy and Security** to adjust cookie, cache, and script execution permissions.
 - Install **Developer Tools** for debugging. Use shortcut keys `F12` or `Ctrl + Shift + I` to open.
 
@@ -453,17 +453,24 @@ Visit the [Chrome official website](https://www.google.com/chrome/) to download 
 
 ###### Firefox
 
-###### Download
+**Download:**
 Visit the [Firefox official website](https://www.mozilla.org/firefox/) to download the appropriate version.
 
-###### Installation
+**Installation:**
 - **Windows/macOS Users**: Run the installation program directly.
 - **Linux Users**: Install using the following command:
   ```bash
   sudo apt install firefox
 
-###### Configuration
+**Configuration:**
 Go to Settings → General to adjust cache, JavaScript, and privacy settings.
+
+| **Environment** | **Runtime Environment** |   |
+|---------------|----------------------|-------------------------------|
+|              | **Browser Environment** | Chrome, Firefox and other commonly used browsers |
+|              | **Node.js** | Provides a server-side JavaScript execution environment (use with npm) |
+|              | **Database Management System** | MySQL |
+
 
 ### 3.2
 ### 3.3
