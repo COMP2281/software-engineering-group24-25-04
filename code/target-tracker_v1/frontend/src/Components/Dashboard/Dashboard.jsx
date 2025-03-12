@@ -8,7 +8,6 @@ const Dashboard = ({ userEmail, goToProfile, goToTarget }) => {
   const [filter, setFilter] = useState("All");
   const [myTargets, setMyTargets] = useState([]);
   const [allTargets, setAllTargets] = useState([]);
-  const [progressValues, setProgressValues] = useState({});
 
   useEffect(() => {
     const fetchTargets = async () => {
@@ -97,69 +96,8 @@ const Dashboard = ({ userEmail, goToProfile, goToTarget }) => {
             console.error("Error fetching target data:", error);
         }
     }
-};
-
-
-  /*
-  const handleBoxClick = async (targetId) => {
-    if (targetId === "Add Target") {
-      const newTarget = {
-        "target-id": null,
-        "title": "New Target",
-        "fields": [
-          { "id": "target-cerp3_action_type", "label": "CERP3 Action Type", "value": "" },
-          { "id": "target-smart_action_description", "label": "Smart Action Description", "value": "" },
-          { "id": "target-related_work_programme", "label": "Related Work Programme", "value": "" },
-          { "id": "target-action_type", "label": "Action Type", "value": "" },
-          { "id": "target-project_lead", "label": "Project Lead", "value": "" },
-          { "id": "target-progress_metric", "label": "Progress Metric", "value": "" },
-          { "id": "target-targets_set", "label": "Targets Set", "value": "", "numericValue": 0 },
-          { "id": "target-kpi", "label": "KPI", "value": "" },
-          { "id": "target-carbon_reduction", "label": "Carbon Reduction", "value": "" },
-          { "id": "target-council_estimated_annual_saving", "label": "Council Estimated Annual Saving", "value": "" },
-          { "id": "target-funding_secured", "label": "Funding Secured", "value": "No" },
-          { "id": "target-sufficient_staff", "label": "Sufficient Staff", "value": "No" },
-          { "id": "target-potential_obstacles_and_solutions", "label": "Potential Obstacles and Solutions", "value": "" },
-          { "id": "target-start_date", "label": "Start Date", "value": "" },
-          { "id": "target-completion_date", "label": "Completion Date", "value": "" },
-          { "id": "target-governing_group", "label": "Governing Group", "value": "" }
-        ],
-        "costFields": [
-          { "id": "target-countywide_estimated_annual_saving", "label": "Countywide Estimated Annual Saving", "value": "" },
-          { "id": "target-actual_annual_saving", "label": "Actual Annual Saving", "value": "" },
-          { "id": "target-cost", "label": "Cost", "value": "" }
-        ]
-      };
-  
-      goToTarget(userEmail, newTarget); // Redirect user to Target.jsx with new target
-    } else {
-      // Fetch the target as usual
-      try {
-        const response = await axios.get(`http://localhost:4000/target/${targetId}`);
-        const targetData = response.data;
-
-        goToTarget(userEmail, targetData);
-      } catch (error) {
-        console.error("Error fetching target data:", error);
-      }
-    }
   };
-  */
 
-
-/*
-  const handleBoxClick = async (targetId) => {
-    try {
-      const response = await axios.get(`http://localhost:4000/target/${targetId}`);
-      const targetData = response.data;
-      goToTarget(userEmail, targetData);
-    } catch (error) {
-      console.error("Error fetching target data:", error);
-    }
-
-    
-  };
-*/
   const handleIconClick = () => {
     goToProfile(userEmail);
   };
@@ -191,26 +129,12 @@ const Dashboard = ({ userEmail, goToProfile, goToTarget }) => {
     return match ? parseInt(match[0], 10) : 1; // Default to 1 if no numbers are found
   };
 
-  // Handle change of progress input for a specific target.
-  const handleProgressChange = (targetId, value, total) => {
-    if (value === "") {
-      setProgressValues(prev => ({ ...prev, [targetId]: "" })); // Allow empty input
-    } else {
-      const parsedValue = parseInt(value, 10);
-      if (!isNaN(parsedValue)) {
-        const newVal = parsedValue > total ? total : parsedValue;
-        setProgressValues(prev => ({ ...prev, [targetId]: newVal.toString() }));
-      }
-    }
-  };
-
   // Calculate the progress percentage for a target.
   const getProgressPercentage = (target) => {
     const targetsSetField = target.fields.find(field => field.id === 'target-targets_set');
     const total = extractTotal(targetsSetField?.value);
-    // Parse the stored string; if empty or NaN, default to 0.
-    const completed = parseFloat(progressValues[target['target-id']] ?? "") || 0;
-    return total > 0 ? `${Math.min((completed / total) * 100, 100).toFixed(2)}%` : "0.00%";
+    const progress = target.progress || 0;
+    return total > 0 ? `${Math.min((progress / total) * 100, 100).toFixed(2)}%` : "0.00%";
   };
 
   return (
@@ -236,9 +160,6 @@ const Dashboard = ({ userEmail, goToProfile, goToTarget }) => {
               <h2>My Targets</h2>
               <div className="target-boxes">
                 {filteredMyTargets.map((target, index) => {
-                  // Get the total from the "Targets Set" field.
-                  const targetsSetField = target.fields.find(field => field.id === 'target-targets_set');
-                  const total = extractTotal(targetsSetField?.value);
                   return (
                     <div 
                       key={index} 
@@ -251,16 +172,6 @@ const Dashboard = ({ userEmail, goToProfile, goToTarget }) => {
                           <span className="progress-text">{getProgressPercentage(target)}</span>
                         </div>
                       </div>
-                      {/* Input for user to set completed amount */}
-                      <input 
-                        type="number" 
-                        min="0" 
-                        max={total} 
-                        value={progressValues[target['target-id']] ?? ""} 
-                        onChange={(e) => handleProgressChange(target['target-id'], e.target.value, total)}
-                        onClick={(e) => e.stopPropagation()}  // Prevent triggering the box click
-                        style={{ marginTop: "10px", width: "60px" }}
-                      />
                     </div>
                   );
                 })}
@@ -301,8 +212,6 @@ const Dashboard = ({ userEmail, goToProfile, goToTarget }) => {
             <h2>All Targets</h2>
             <div className="target-boxes">
               {filteredAllTargets.map((target, index) => {
-                  const targetsSetField = target.fields.find(field => field.id === 'target-targets_set');
-                  const total = extractTotal(targetsSetField?.value);
                   return (
                     <div 
                       key={index} 
@@ -315,15 +224,6 @@ const Dashboard = ({ userEmail, goToProfile, goToTarget }) => {
                           <span className="progress-text">{getProgressPercentage(target)}</span>
                         </div>
                       </div>
-                      <input 
-                        type="number" 
-                        min="0" 
-                        max={total} 
-                        value={progressValues[target['target-id']] ?? ""} 
-                        onChange={(e) => handleProgressChange(target['target-id'], e.target.value, total)}
-                        onClick={(e) => e.stopPropagation()}
-                        style={{ marginTop: "10px", width: "60px" }}
-                      />
                     </div>
                   );
               })}

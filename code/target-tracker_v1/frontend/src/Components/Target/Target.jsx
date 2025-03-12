@@ -10,10 +10,11 @@ const Target = ({ userEmail, userRole, target, goToDashboard, goToManagerDashboa
     const [action, setAction] = useState("View");
     const [showSaveButton, setShowSaveButton] = useState(false);
     const [formData, setFormData] = useState({});
+    const [maxProgress, setMaxProgress] = useState(100);
 
     useEffect(() => {
         if (target) {
-            const initialFormData = { title: target.title || "" };
+            const initialFormData = { title: target.title || "", progress: target.progress || 0 };
             (target.fields ?? []).forEach(field => {
                 initialFormData[field.id] = field.value;
             });
@@ -24,6 +25,11 @@ const Target = ({ userEmail, userRole, target, goToDashboard, goToManagerDashboa
                 initialFormData[field.id] = field.value;
             });
             setFormData(initialFormData);
+
+            // Extract max progress from "Targets Set"
+            const targetsSetField = target.fields?.find(field => field.id === 'target-targets_set');
+            const total = extractTotal(targetsSetField?.value);
+            setMaxProgress(total);
         }
     }, [target]);
 
@@ -67,6 +73,7 @@ const Target = ({ userEmail, userRole, target, goToDashboard, goToManagerDashboa
                     label: field.label,
                     value: formData[field.id] || ""
                 })),
+                "progress": formData.progress || 0,
                 "userEmail": userEmail
             };
     
@@ -93,52 +100,6 @@ const Target = ({ userEmail, userRole, target, goToDashboard, goToManagerDashboa
         }
     };
 
-/*
-    const handleSaveClick = async () => {
-        try {
-            const newTargetData = {
-                "target-id": target["target-id"] || null,
-                "title": formData.title || "Target Heading",
-                "fields": target.fields.map(field => ({
-                    id: field.id,
-                    label: field.label,
-                    value: formData[field.id] || ""
-                })),
-                "costFields": target.costFields.map(field => ({
-                    id: field.id,
-                    label: field.label,
-                    value: formData[field.id] || ""
-                })),
-                "otherFields": target.otherFields.map(field => ({
-                    id: field.id,
-                    label: field.label,
-                    value: formData[field.id] || ""
-                }))
-            };
-
-            if (!newTargetData["target-id"]) {
-                // Fetch all targets to determine the new target ID
-                const response = await axios.get("http://localhost:4000/targets");
-                const targets = response.data;
-                const highestId = targets.reduce((maxId, target) => Math.max(maxId, target["target-id"]), 0);
-                newTargetData["target-id"] = highestId + 1;
-            }
-
-            // If it's a new target, send a POST request to add it to the database
-            await axios.post("http://localhost:4000/target", newTargetData);
-
-            alert("Target saved successfully!");
-            setShowSaveButton(false);
-            setAction("View");
-
-            // Redirect user back to dashboard
-            handleDashboardClick();
-        } catch (error) {
-            console.error("Error saving target:", error);
-            alert("Failed to save target.");
-        }
-    };
-*/
     const handleChange = (id, value) => {
         setFormData((prev) => ({ ...prev, [id]: value }));
     };
@@ -150,6 +111,44 @@ const Target = ({ userEmail, userRole, target, goToDashboard, goToManagerDashboa
             title: event.target.value
         }));
     }
+
+    // For when the user changes the progress
+    const handleProgressChange = (event) => {
+        const value = event.target.value; // Get the raw input value
+        let parsedValue = parseInt(value, 10); // Try to parse it as an integer
+
+        if (isNaN(parsedValue)) {
+            // If parsing fails, it means the input is not a number
+            if (value === "") {
+                // Allow empty input
+                setFormData(prev => ({
+                    ...prev,
+                    progress: value
+                }));
+            }
+            return; // Exit the function, don't update the state
+        }
+
+        // If parsing succeeds, ensure the value is within the allowed range
+        if (parsedValue > maxProgress) {
+            parsedValue = maxProgress;
+        }
+        if (parsedValue < 0) {
+            parsedValue = 0;
+        }
+
+        // Update the state with the parsed value
+        setFormData(prev => ({
+            ...prev,
+            progress: parsedValue
+        }));
+    }
+
+    const extractTotal = (str) => {
+        if (!str) return 1; // Default to 1 if the string is empty or undefined
+        const match = str.match(/\d+/);
+        return match ? parseInt(match[0], 10) : 1; // Default to 1 if no numbers are found
+    };
 
     return (
         <Container className="target-container">
@@ -191,38 +190,53 @@ const Target = ({ userEmail, userRole, target, goToDashboard, goToManagerDashboa
                         goToTarget={goToTarget}
                     />
                 ))}
-                        <TargetDropdown
-                            id="target-funding_secured"
-                            label="Funding Secured"
-                            options={["Yes", "No", "Invest to save"]}
-                            value={formData["target-funding_secured"] || ""}
-                            onChange={handleChange}
-                            isEditing={action === "Edit"}
+                <TargetDropdown
+                    id="target-funding_secured"
+                    label="Funding Secured"
+                    options={["Yes", "No", "Invest to save"]}
+                    value={formData["target-funding_secured"] || ""}
+                    onChange={handleChange}
+                    isEditing={action === "Edit"}
+                />
+                <TargetDropdown
+                    id="target-sufficient_staff"
+                    label="Sufficient Staff"
+                    options={["Yes", "No", "Uncertain"]}
+                    value={formData["target-sufficient_staff"] || ""}
+                    onChange={handleChange}
+                    isEditing={action === "Edit"}
+                />
+                <TargetDate
+                    id="target-start_date"
+                    label="Start Date"
+                    value={formData["target-start_date"] || ""}
+                    onChange={handleChange}
+                    isEditing={action === "Edit"}
+                />
+                <TargetDate
+                    id="target-completion_date"
+                    label="Completion Date"
+                    value={formData["target-completion_date"] || ""}
+                    onChange={handleChange}
+                    isEditing={action === "Edit"}
+                />
+                <div className="target-field target-progress">
+                    <label htmlFor="progress" className="target-text-2">Amount Completed</label>
+                    <div style={{ marginBottom: '15px' }}></div> 
+                    {action === "Edit" ? (
+                        <input
+                            type="number"
+                            id="progress"
+                            value={formData.progress}
+                            onChange={handleProgressChange}
+                            className="stylish-input"
+                            min="0"
+                            max={maxProgress}
                         />
-                        <TargetDropdown
-                            id="target-sufficient_staff"
-                            label="Sufficient Staff"
-                            options={["Yes", "No", "Uncertain"]}
-                            value={formData["target-sufficient_staff"] || ""}
-                            onChange={handleChange}
-                            isEditing={action === "Edit"}
-                        />
-                        <TargetDate
-                            id="target-start_date"
-                            label="Start Date"
-                            value={formData["target-start_date"] || ""}
-                            onChange={handleChange}
-                            isEditing={action === "Edit"}
-                        /><TargetDate
-                            id="target-completion_date"
-                            label="Completion Date"
-                            value={formData["target-completion_date"] || ""}
-                            onChange={handleChange}
-                            isEditing={action === "Edit"}
-                        />
-                    
-                
-                
+                    ) : (
+                        <div className="target-view-text">{formData.progress}</div>
+                    )}
+                </div>
             </div>
             <div className="target-button-container">
                 <div className="target-btn dashboard-btn" onClick={handleDashboardClick}>

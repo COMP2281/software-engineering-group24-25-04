@@ -1097,7 +1097,7 @@
       {
         "id": "target-kpi",
         "label": "KPI",
-        "value": null
+        "value": ""
       },
       {
         "id": "target-carbon_reduction",
@@ -1124,17 +1124,17 @@
       {
         "id": "target-countywide_estimated_annual_saving",
         "label": "Countywide Estimated Annual Saving",
-        "value": null
+        "value": ""
       },
       {
         "id": "target-actual_annual_saving",
         "label": "Actual Annual Saving",
-        "value": null
+        "value": ""
       },
       {
         "id": "target-cost",
         "label": "Cost",
-        "value": null
+        "value": ""
       }
     ],
     "otherFields": [
@@ -1158,7 +1158,8 @@
         "label": "Completion Date",
         "value": "31-03-2027"
       }
-    ]
+    ],
+    "progress": 0
   },
   {
     "target-id": 12,
@@ -1387,7 +1388,7 @@
       {
         "id": "target-related_work_programme",
         "label": "Related Work Programme",
-        "value": null
+        "value": ""
       },
       {
         "id": "target-action_type",
@@ -1407,12 +1408,12 @@
       {
         "id": "target-targets_set",
         "label": "Targets Set",
-        "value": null
+        "value": ""
       },
       {
         "id": "target-kpi",
         "label": "KPI",
-        "value": null
+        "value": ""
       },
       {
         "id": "target-carbon_reduction",
@@ -1422,7 +1423,7 @@
       {
         "id": "target-council_estimated_annual_saving",
         "label": "Council Estimated Annual Saving",
-        "value": "0 Enabling or Adaptation Action"
+        "value": "Enabling or Adaptation Action"
       },
       {
         "id": "target-potential_obstacles_and_solutions",
@@ -1439,17 +1440,17 @@
       {
         "id": "target-countywide_estimated_annual_saving",
         "label": "Countywide Estimated Annual Saving",
-        "value": null
+        "value": ""
       },
       {
         "id": "target-actual_annual_saving",
         "label": "Actual Annual Saving",
-        "value": null
+        "value": ""
       },
       {
         "id": "target-cost",
         "label": "Cost",
-        "value": null
+        "value": ""
       }
     ],
     "otherFields": [
@@ -1473,7 +1474,8 @@
         "label": "Completion Date",
         "value": "01-04-2027"
       }
-    ]
+    ],
+    "progress": 0
   },
   {
     "target-id": 15,
@@ -1607,7 +1609,7 @@
       {
         "id": "target-related_work_programme",
         "label": "Related Work Programme",
-        "value": null
+        "value": ""
       },
       {
         "id": "target-action_type",
@@ -1632,7 +1634,7 @@
       {
         "id": "target-kpi",
         "label": "KPI",
-        "value": null
+        "value": ""
       },
       {
         "id": "target-carbon_reduction",
@@ -1669,17 +1671,17 @@
       {
         "id": "target-countywide_estimated_annual_saving",
         "label": "Countywide Estimated Annual Saving",
-        "value": null
+        "value": ""
       },
       {
         "id": "target-actual_annual_saving",
         "label": "Actual Annual Saving",
-        "value": null
+        "value": ""
       },
       {
         "id": "target-cost",
         "label": "Cost",
-        "value": null
+        "value": ""
       }
     ],
     "otherFields": [
@@ -1703,7 +1705,8 @@
         "label": "Completion Date",
         "value": "31-03-2027"
       }
-    ]
+    ],
+    "progress": 0
   },
   {
     "target-id": 17,
