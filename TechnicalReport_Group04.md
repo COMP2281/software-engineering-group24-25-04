@@ -415,7 +415,26 @@ The target page and profile page both contain a 'Return To Dashboard' button. Th
 Our colour schemes were selected based on the clients colour scheme, green and navy. The specific colour values were obtained from their logo. This is to ensure consistency between their systems. 
 
 ## Section 3: Use Instructions
-### 3.1
+### 3.1：Software Installation Guide: System Requirements and Installation Configuration Steps
+#### 3.1.1 Hardware Requirements (Table Comparison)
+
+| Component      | Minimum Requirement  | Recommended Configuration |
+|--------------|----------------------|---------------------------|
+| **CPU**      | Dual-core 2.0GHz     | Quad-core 3.0GHz+        |
+| **Memory**   | 4GB                  | 8GB                      |
+| **Storage**  | 10GB HDD             | 20GB SSD                 |
+
+#### 3.1.2 Operating System Requirements
+
+| Operating Systems | Minimum Requirement                         | Recommended Configuration                   |
+|------------------|--------------------------------|--------------------------------|
+| **Windows**      | Windows 10 or later           | Windows 10 Pro or later       |
+| **Linux**        | Ubuntu 20.04 LTS or equivalent distribution | Latest Long Term Support (LTS) distribution (e.g., Ubuntu 22.04 LTS) |
+| **macOS**        | macOS 10.15 (Catalina) or later | macOS 11 (Big Sur) or later   |
+
+####3.1.3 Software Installation and Configuration Guide
+The software is finally presented in the form of a website. Compared to using an app, presenting the software as a website offers several advantages, such as cross-platform compatibility, no need for users to download and install applications (which reduces storage space usage), and easier updates and maintenance. It is recommended to use a web browser for accessing the website, with Google Chrome and Firefox being the preferred options. Below are the installation steps for these browsers.
+
 ### 3.2
 ### 3.3
 ### 3.4
