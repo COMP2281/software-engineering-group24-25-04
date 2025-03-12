@@ -435,6 +435,36 @@ Our colour schemes were selected based on the clients colour scheme, green and n
 #### 3.1.3 Software Installation and Configuration Guide
 The software is finally presented in the form of a website. Compared to using an app, presenting the software as a website offers several advantages, such as cross-platform compatibility, no need for users to download and install applications (which reduces storage space usage), and easier updates and maintenance. It is recommended to use a web browser for accessing the website, with Google Chrome and Firefox being the preferred options. Below are the installation steps for these browsers.
 
+##### Microsoft Edge
+
+###### Download
+Visit the [Chrome official website](https://www.google.com/chrome/) to download the installation package suitable for your operating system.
+
+###### Installation
+- **Windows Users**: Run the downloaded `.exe` file and follow the prompts to complete the installation.
+- **macOS Users**: Open the `.dmg` file and drag Chrome to the Applications folder.
+- **Linux Users**: Use the `.deb` or `.rpm` package for installation.
+
+###### Configuration
+- Go to **Settings → Privacy and Security** to adjust cookie, cache, and script execution permissions.
+- Install **Developer Tools** for debugging. Use shortcut keys `F12` or `Ctrl + Shift + I` to open.
+
+---
+
+###### Firefox
+
+####### Download
+Visit the [Firefox official website](https://www.mozilla.org/firefox/) to download the appropriate version.
+
+####### Installation
+- **Windows/macOS Users**: Run the installation program directly.
+- **Linux Users**: Install using the following command:
+  ```bash
+  sudo apt install firefox
+
+###### Configuration
+Go to Settings → General to adjust cache, JavaScript, and privacy settings.
+
 ### 3.2
 ### 3.3
 ### 3.4
