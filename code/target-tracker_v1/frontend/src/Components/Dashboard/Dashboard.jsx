@@ -8,7 +8,6 @@ const Dashboard = ({ userEmail, goToProfile, goToTarget }) => {
   const [filter, setFilter] = useState("All");
   const [myTargets, setMyTargets] = useState([]);
   const [allTargets, setAllTargets] = useState([]);
-  // New state for tracking progress input per target:
   const [progressValues, setProgressValues] = useState({});
 
   useEffect(() => {
@@ -39,29 +38,11 @@ const Dashboard = ({ userEmail, goToProfile, goToTarget }) => {
     fetchTargets();
   }, [userEmail], allTargets);
 
-  // Function to fetch the highest existing target ID
-  const fetchExistingTargets = async () => {
-    try {
-      const response = await axios.get("http://localhost:4000/targets"); // Fetch all targets
-      const targets = response.data;
-
-      // Find the highest existing ID
-      const maxId = targets.length > 0 ? Math.max(...targets.map(target => target["target-id"])) : 0;
-
-      return maxId + 1; // Return the next available ID
-    } catch (error) {
-      console.error("Error fetching existing targets:", error);
-      return 1; // Default to 1 if there's an error
-    }
-  };
-
   const handleBoxClick = async (targetId) => {
     if (targetId === "Add Target") {
-      const newId = await fetchExistingTargets(); // Get the next sequential ID
-      // Creating a new target with default empty values
       const newTarget = {
-        "target-id": newId, // Generate a temporary unique ID
-        "title": "",
+        "target-id": null,
+        "title": "New Target",
         "fields": [
           { "id": "target-cerp3_action_type", "label": "CERP3 Action Type", "value": "" },
           { "id": "target-smart_action_description", "label": "Smart Action Description", "value": "" },

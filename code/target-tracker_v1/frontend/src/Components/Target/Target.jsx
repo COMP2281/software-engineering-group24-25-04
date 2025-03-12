@@ -13,7 +13,7 @@ const Target = ({ userEmail, userRole, target, goToDashboard, goToManagerDashboa
 
     useEffect(() => {
         if (target) {
-            const initialFormData = {};
+            const initialFormData = { title: target.title || "" };
             target.fields.forEach(field => {
                 initialFormData[field.id] = field.value;
             });
@@ -45,56 +45,73 @@ const Target = ({ userEmail, userRole, target, goToDashboard, goToManagerDashboa
     };
 
     const handleSaveClick = async () => {
-        if (!target["target-id"]) {
-          console.error("Error: No target ID provided.");
-          return;
-        }
-      
         try {
-          const newTargetData = {
-            "target-id": target["target-id"],
-            "fields": target.fields.map(field => ({
-              id: field.id,
-              label: field.label,
-              value: formData[field.id] || ""
-            })),
-            "costFields": target.costFields.map(field => ({
-              id: field.id,
-              label: field.label,
-              value: formData[field.id] || ""
-            }))
-          };
-      
-          // If it's a new target, send a POST request to add it to the database
-          await axios.post("http://localhost:4000/target", newTargetData);
-      
-          alert("Target saved successfully!");
-          setShowSaveButton(false);
-          setAction("View");
-      
-          // Redirect user back to dashboard
-          handleDashboardClick();
-        } catch (error) {
-          console.error("Error saving target:", error);
-          alert("Failed to save target.");
-        }
-    };   
+            const newTargetData = {
+                "target-id": target["target-id"] || null,
+                "title": formData.title || "Target Heading",
+                "fields": target.fields.map(field => ({
+                    id: field.id,
+                    label: field.label,
+                    value: formData[field.id] || ""
+                })),
+                "costFields": target.costFields.map(field => ({
+                    id: field.id,
+                    label: field.label,
+                    value: formData[field.id] || ""
+                }))
+            };
 
-    /*const handleSaveClick = () => {
-        setShowSaveButton(false);
-        setAction("View");
-    };*/
+            if (!newTargetData["target-id"]) {
+                // Fetch all targets to determine the new target ID
+                const response = await axios.get("http://localhost:4000/targets");
+                const targets = response.data;
+                const highestId = targets.reduce((maxId, target) => Math.max(maxId, target["target-id"]), 0);
+                newTargetData["target-id"] = highestId + 1;
+            }
+
+            // If it's a new target, send a POST request to add it to the database
+            await axios.post("http://localhost:4000/target", newTargetData);
+
+            alert("Target saved successfully!");
+            setShowSaveButton(false);
+            setAction("View");
+
+            // Redirect user back to dashboard
+            handleDashboardClick();
+        } catch (error) {
+            console.error("Error saving target:", error);
+            alert("Failed to save target.");
+        }
+    };
 
     const handleChange = (id, value) => {
         setFormData((prev) => ({ ...prev, [id]: value }));
     };
+
+    // For when the user changes the target title
+    const handleTitleChange = (event) => {
+        setFormData(prev => ({
+            ...prev,
+            title: event.target.value
+        }));
+    }
 
     const excludedFields = ["target-funding_secured", "target-sufficient_staff", "target-start_date", "target-completion_date"];
 
     return (
         <Container className="target-container">
             <div className="target-header">
-                <h1 className="target-text">{target.title}</h1>
+                {action === "Edit" ? (
+                    <input
+                        type="text"
+                        className="target-title-input stylish-input"
+                        value={formData.title}
+                        onChange={handleTitleChange}
+                        placeholder="Enter target heading"
+                    />
+                ) : (
+                    <h1 className="target-title">{formData.title || "Target Heading"}</h1>
+                )}
                 <div className="target-underline"></div>
             </div>
             <div className="target-inputs">

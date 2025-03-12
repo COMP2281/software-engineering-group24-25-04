@@ -195,7 +195,7 @@ const AdminDashboard = ({ userEmail, goToProfile, goToTarget }) => {
             <div className="target-boxes">
               {filteredAllTargets.map((target, index) => (
                 <div key={index} className="target-box" onClick={() => handleBoxClick(target['target-id'])}>
-                  {target.title}
+                  <h3>{target.title}</h3>
                   <div className="progress-bar">
                     <div className="progress" style={{ width: getProgressPercentage(target) }}>
                       <span className="progress-text">{getProgressPercentage(target)}</span>
