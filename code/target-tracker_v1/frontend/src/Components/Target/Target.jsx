@@ -67,7 +67,7 @@ const Target = ({ userEmail, userRole, target, goToDashboard, goToManagerDashboa
                     label: field.label,
                     value: formData[field.id] || ""
                 })),
-                "userId": userEmail // Add userId so we know who created it
+                "userEmail": userEmail
             };
     
             if (!newTargetData["target-id"]) {
@@ -75,7 +75,7 @@ const Target = ({ userEmail, userRole, target, goToDashboard, goToManagerDashboa
                 const response = await axios.get("http://localhost:4000/targets");
                 const targets = response.data;
                 const highestId = targets.reduce((maxId, target) => Math.max(maxId, target["target-id"]), 0);
-                newTargetData["target-id"] = highestId + 1;
+                newTargetData["target-id"] = parseInt(highestId + 1);
             }
     
             // Send a POST request (same API handles both edit & new target)

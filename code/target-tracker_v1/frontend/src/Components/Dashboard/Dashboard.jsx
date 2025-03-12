@@ -155,6 +155,8 @@ const Dashboard = ({ userEmail, goToProfile, goToTarget }) => {
     } catch (error) {
       console.error("Error fetching target data:", error);
     }
+
+    
   };
 */
   const handleIconClick = () => {

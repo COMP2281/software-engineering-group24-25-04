@@ -232,12 +232,24 @@ router.post('/target', (req, res) => {
 // POST request to add or update a target
 router.post('/target', (req, res) => {
     const targets = readTargets();
-    const newTarget = req.body;
+    const users = readUsers();
+    const newTarget = { ...req.body }; // Copy so don't lose data
 
     if (!newTarget['target-id']) {
         return res.status(400).json({ message: 'target-id is required' });
     }
-
+    const userEmail = req.body.userEmail;
+    if (!userEmail) {
+        return res.status(400).json({ message: 'userEmail is required' });
+    }
+    // get user id using the user email by reading the users.json file
+    const user = users.find(user => user.email === userEmail);
+    if (!user) {
+        return res.status(404).json({ message: 'User not found' });
+    }
+    const userId = user.id;
+    // remove the userEmail from the target object
+    delete newTarget.userEmail;
     // Find the index of the existing target
     const targetIndex = targets.findIndex(t => t["target-id"] === newTarget["target-id"]);
 
@@ -250,6 +262,18 @@ router.post('/target', (req, res) => {
     }
 
     fs.writeFileSync(targetsFilePath, JSON.stringify(targets, null, 2), 'utf8');
+
+    // Add target-id to the user's assigned targets
+    const userTargets = readUserTargets();
+    // If the user does not have any assigned targets, create an array with the target ID
+    if (!userTargets[userId]) {
+        userTargets[userId] = [];
+    }
+    // If the target is not already assigned to the user, add it
+    if (!userTargets[userId].includes(newTarget["target-id"])) {
+        userTargets[userId].push(newTarget["target-id"]);
+        writeUserTargets(userTargets);
+    }
 
     res.status(200).json({ message: "Target saved successfully", target: newTarget });
 });

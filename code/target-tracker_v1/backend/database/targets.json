@@ -1812,108 +1812,7 @@
   },
   {
     "target-id": "18",
-    "title": "Test Target Heading",
-    "fields": [
-      {
-        "id": "target-cerp3_action_type",
-        "label": "CERP3 Action Type",
-        "value": "Building Decarbonisation"
-      },
-      {
-        "id": "target-smart_action_description",
-        "label": "Smart Action Description",
-        "value": "Testing this"
-      },
-      {
-        "id": "target-related_work_programme",
-        "label": "Related Work Programme",
-        "value": "test"
-      },
-      {
-        "id": "target-action_type",
-        "label": "Action Type",
-        "value": "test"
-      },
-      {
-        "id": "target-project_lead",
-        "label": "Project Lead",
-        "value": "TBC"
-      },
-      {
-        "id": "target-progress_metric",
-        "label": "Progress Metric",
-        "value": "Number of sites per year"
-      },
-      {
-        "id": "target-targets_set",
-        "label": "Targets Set",
-        "value": "10 sites"
-      },
-      {
-        "id": "target-kpi",
-        "label": "KPI",
-        "value": ""
-      },
-      {
-        "id": "target-carbon_reduction",
-        "label": "Carbon Reduction",
-        "value": ""
-      },
-      {
-        "id": "target-potential_obstacles_and_solutions",
-        "label": "Potential Obstacles and Solutions",
-        "value": "IDK"
-      },
-      {
-        "id": "target-governing_group",
-        "label": "Governing Group",
-        "value": "DCC"
-      }
-    ],
-    "costFields": [
-      {
-        "id": "target-countywide_estimated_annual_saving",
-        "label": "Countywide Estimated Annual Saving",
-        "value": "3000"
-      },
-      {
-        "id": "target-actual_annual_saving",
-        "label": "Actual Annual Saving",
-        "value": "4000"
-      },
-      {
-        "id": "target-cost",
-        "label": "Cost",
-        "value": "2500"
-      }
-    ],
-    "otherFields": [
-      {
-        "id": "target-funding_secured",
-        "label": "Funding Secured",
-        "value": "invest to save"
-      },
-      {
-        "id": "target-sufficient_staff",
-        "label": "Sufficient Staff",
-        "value": "uncertain"
-      },
-      {
-        "id": "target-start_date",
-        "label": "Start Date",
-        "value": "2025-03-13"
-      },
-      {
-        "id": "target-completion_date",
-        "label": "Completion Date",
-        "value": "2026-10-07"
-      }
-    ],
-    "userId": "email1@example.com"
-  },
-  {
-    "target-id": "19",
-    "title": "Testing New Target",
+    "title": "New Target",
     "fields": [
       {
         "id": "target-cerp3_action_type",
@@ -1923,17 +1822,17 @@
       {
         "id": "target-smart_action_description",
         "label": "Smart Action Description",
-        "value": "test this"
+        "value": "testing"
       },
       {
         "id": "target-related_work_programme",
         "label": "Related Work Programme",
-        "value": "test"
+        "value": ""
       },
       {
         "id": "target-action_type",
         "label": "Action Type",
-        "value": "this test"
+        "value": ""
       },
       {
         "id": "target-project_lead",
@@ -1943,12 +1842,12 @@
       {
         "id": "target-progress_metric",
         "label": "Progress Metric",
-        "value": "no sites per year"
+        "value": ""
       },
       {
         "id": "target-targets_set",
         "label": "Targets Set",
-        "value": "15"
+        "value": "10"
       },
       {
         "id": "target-kpi",
@@ -1975,17 +1874,17 @@
       {
         "id": "target-countywide_estimated_annual_saving",
         "label": "Countywide Estimated Annual Saving",
-        "value": "600000"
+        "value": "500"
       },
       {
         "id": "target-actual_annual_saving",
         "label": "Actual Annual Saving",
-        "value": "50000"
+        "value": ""
       },
       {
         "id": "target-cost",
         "label": "Cost",
-        "value": "3000"
+        "value": ""
       }
     ],
     "otherFields": [
@@ -1997,19 +1896,18 @@
       {
         "id": "target-sufficient_staff",
         "label": "Sufficient Staff",
-        "value": "uncertain"
+        "value": "No"
       },
       {
         "id": "target-start_date",
         "label": "Start Date",
-        "value": "2025-03-15"
+        "value": "2025-03-13"
       },
       {
         "id": "target-completion_date",
         "label": "Completion Date",
-        "value": "2025-04-04"
+        "value": "2025-03-22"
       }
-    ],
-    "userId": "email1@example.com"
+    ]
   }
 ]
