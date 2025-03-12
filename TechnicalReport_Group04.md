@@ -412,7 +412,50 @@ Our colour schemes were selected based on the clients colour scheme, green and n
 ### 3.4
 ## Section 4: Maintenance and Implications
 ### 4.1
+To sustain the capability of the system to provide a reliable and high-performance service, regular system maintenance is needed. Regular database maintenance, code maintenance and dependency management are essential for system maintenance.
+
+#### **Database Maintenance:**
+
+- **Regular Database Backup:**  
+ Implement automated backup schedules to prevent data loss and ensure quick recovery in case of failures.
+
+- **Data Integrity Checks:**  
+  Perform routine validation of stored data to detect and correct inconsistencies.
+
+#### **Code Maintenance:**
+
+- **Bug Fixes and Patching:**  
+  Continuously monitor for potential issues and apply patches promptly to ensure security and maintain optimal functionality.
+
+- **Code Enhancement:**  
+  Regularly reviewing code and adding comments improves readability and maintainability, making it easier to implement new features in the future.
+
+#### **Dependency Management:**
+
+- **Package Updates:**  
+   Regularly update libraries and frameworks since many vulnerabilities arise due to outdated software
+  
+- **Compatibility Checks:**  
+  When updating libraries and frameworks, compatibility checks are crucial to prevent conflicts that may break the application or introduce security risks
+
 ### 4.2
+In this section, we focus on how the system’s future development can be implemented to enhance usability, efficiency, and accessibility.
+#### Cloud-Based Infrastructure
+Cloud platforms provide load balancing and failover mechanisms which can ensure system stability even in case of hardware failures. Cloud platforms can provide multiple servers and distribute incoming traffic across multiple servers to prevent single server overloading. Also cloud platforms will split large databases into smaller parts, allowing faster processing and parallel execution of queries.
+
+#### Mobile App
+Integrating a mobile app into the system can significantly improve user accessibility since users can update progress and check reports anytime, anywhere. Also users can input data even without internet access, which syncs automatically when reconnected.
+
+#### Inclusivity and Accessibility
+Supporting multiple languages should improve the usability for diverse users . Also adding features such as text-to-speech, high-contrast modes, and keyboard navigation can make the system more inclusive.
+
+
+#### Performance Optimization
+Implementing lazy loading in React can improve the speed and performance of the website since data is only rendered when visited. Lazy loading helps to load the web page quickly and presents the limited content to the user that is needed.
+
+#### Customization and Personalization
+In future, users should be able to customize dashboard, layout and the font style based on their need. Also notification should be customizable, allowing users to choose their preferred communication channel like in app or email and frequencies.
+
 ### 4.3
 Finally, we will discuss the potential ethical and societal impacts of our system for both its current and future status.
 #### Ethical Impacts
