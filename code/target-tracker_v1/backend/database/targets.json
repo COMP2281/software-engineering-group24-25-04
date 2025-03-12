@@ -1811,7 +1811,7 @@
     ]
   },
   {
-    "target-id": "18",
+    "target-id": 18,
     "title": "New Target",
     "fields": [
       {
@@ -1822,7 +1822,7 @@
       {
         "id": "target-smart_action_description",
         "label": "Smart Action Description",
-        "value": "testing"
+        "value": "test"
       },
       {
         "id": "target-related_work_programme",
@@ -1847,7 +1847,7 @@
       {
         "id": "target-targets_set",
         "label": "Targets Set",
-        "value": "10"
+        "value": ""
       },
       {
         "id": "target-kpi",
@@ -1874,12 +1874,12 @@
       {
         "id": "target-countywide_estimated_annual_saving",
         "label": "Countywide Estimated Annual Saving",
-        "value": "500"
+        "value": ""
       },
       {
         "id": "target-actual_annual_saving",
         "label": "Actual Annual Saving",
-        "value": ""
+        "value": "4"
       },
       {
         "id": "target-cost",
@@ -1901,12 +1901,12 @@
       {
         "id": "target-start_date",
         "label": "Start Date",
-        "value": "2025-03-13"
+        "value": "2025-03-08"
       },
       {
         "id": "target-completion_date",
         "label": "Completion Date",
-        "value": "2025-03-22"
+        "value": "2025-03-28"
       }
     ]
   }

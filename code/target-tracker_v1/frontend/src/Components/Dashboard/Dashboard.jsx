@@ -88,7 +88,8 @@ const Dashboard = ({ userEmail, goToProfile, goToTarget }) => {
     } else {
         // Fetch existing target as usual
         try {
-            const response = await axios.get(`http://localhost:4000/target/${targetId}`);
+            const numericTargetId = Number(targetId); // Convert to number
+            const response = await axios.get(`http://localhost:4000/target/${numericTargetId}`);
             const targetData = response.data;
 
             goToTarget(userEmail, targetData);

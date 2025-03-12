@@ -252,6 +252,8 @@ router.post('/target', (req, res) => {
     delete newTarget.userEmail;
     // Find the index of the existing target
     const targetIndex = targets.findIndex(t => t["target-id"] === newTarget["target-id"]);
+    // if target doesn't exist make sure new target id is a number
+    newTarget["target-id"] = parseInt(newTarget["target-id"]);
 
     if (targetIndex !== -1) {
         // If target exists, update it
