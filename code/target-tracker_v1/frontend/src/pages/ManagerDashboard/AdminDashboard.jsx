@@ -13,6 +13,7 @@ const AdminDashboard = ({ userEmail, goToProfile, goToTarget }) => {
   const [selectedStaff, setSelectedStaff] = useState("");
   const [message, setMessage] = useState("");
   const [assignedTargets, setAssignedTargets] = useState([]);
+  const [progressValues, setProgressValues] = useState({});
 
   useEffect(() => {
     const fetchTargets = async () => {
@@ -35,7 +36,6 @@ const AdminDashboard = ({ userEmail, goToProfile, goToTarget }) => {
       }
     };
     
-    
     fetchTargets();
     fetchUsers();
   }, []);
@@ -55,19 +55,17 @@ const AdminDashboard = ({ userEmail, goToProfile, goToTarget }) => {
   };
 
   const fetchAssignedTargets = async (userEmail) => {
-    
     try {
       const response = await axios.get(`http://localhost:4000/usertargets/${userEmail}`);
       setAssignedTargets(response.data);
     } catch (error) {
       console.error("Error fetching assigned targets:", error);
       setAssignedTargets([]);
+    }
   };
-};
 
   const handleStaffChange = async (e) => {
     const userEmail = e.target.value;
-    console.log(userEmail); 
     setSelectedStaff(userEmail);
     if (userEmail) {
       await fetchAssignedTargets(userEmail);
@@ -121,19 +119,35 @@ const AdminDashboard = ({ userEmail, goToProfile, goToTarget }) => {
                           fieldValues.includes(filter.toLowerCase());
 
     return matchesSearch && matchesFilter;
-});
+  });
 
+  // Helper to extract the total number from the "Targets Set" string.
+  const extractTotal = (str) => {
+    if (!str) return 1; // Default to 1 if the string is empty or undefined
+    const match = str.match(/\d+/);
+    return match ? parseInt(match[0], 10) : 1; // Default to 1 if no numbers are found
+  };
 
-  const getProgressValue = (target) => {
-    switch(target['target-id']) {
-      case 1: return "30%";
-      case 2: return "60%";
-      case 3: return "80%";
-      case 4: return "20%";
-      case 5: return "50%";
-      case 6: return "90%";
-      default: return "0%";
+  // Handle change of progress input for a specific target.
+  const handleProgressChange = (targetId, value, total) => {
+    if (value === "") {
+      setProgressValues(prev => ({ ...prev, [targetId]: "" })); // Allow empty input
+    } else {
+      const parsedValue = parseInt(value, 10);
+      if (!isNaN(parsedValue)) {
+        const newVal = parsedValue > total ? total : parsedValue;
+        setProgressValues(prev => ({ ...prev, [targetId]: newVal.toString() }));
+      }
     }
+  };
+
+  // Calculate the progress percentage for a target.
+  const getProgressPercentage = (target) => {
+    const targetsSetField = target.fields.find(field => field.id === 'target-targets_set');
+    const total = extractTotal(targetsSetField?.value);
+    // Parse the stored string; if empty or NaN, default to 0.
+    const completed = parseFloat(progressValues[target['target-id']] ?? "") || 0;
+    return total > 0 ? `${Math.min((completed / total) * 100, 100).toFixed(2)}%` : "0.00%";
   };
 
   return (
@@ -183,10 +197,19 @@ const AdminDashboard = ({ userEmail, goToProfile, goToTarget }) => {
                 <div key={index} className="target-box" onClick={() => handleBoxClick(target['target-id'])}>
                   {target.title}
                   <div className="progress-bar">
-                    <div className="progress" style={{ width: getProgressValue(target) }}>
-                      <span className="progress-text">{getProgressValue(target)}</span>
+                    <div className="progress" style={{ width: getProgressPercentage(target) }}>
+                      <span className="progress-text">{getProgressPercentage(target)}</span>
                     </div>
                   </div>
+                  <input 
+                    type="number" 
+                    min="0" 
+                    max={extractTotal(target.fields.find(field => field.id === 'target-targets_set')?.value)} 
+                    value={progressValues[target['target-id']] ?? ""} 
+                    onChange={(e) => handleProgressChange(target['target-id'], e.target.value, extractTotal(target.fields.find(field => field.id === 'target-targets_set')?.value))}
+                    onClick={(e) => e.stopPropagation()}
+                    style={{ marginTop: "10px", width: "60px" }}
+                  />
                 </div>
               ))}
             </div>
@@ -194,76 +217,73 @@ const AdminDashboard = ({ userEmail, goToProfile, goToTarget }) => {
         </div>
       </div>
       {isModalOpen && (
-  <div className="modal-overlay" onClick={() => setIsModalOpen(false)}>
-    <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-      <h2>Assign Target</h2>
-      
-      <div className="modal-sections">
-        <div className="modal-section">
-          <h3>Targets</h3>
-          <select 
-            className="dropdown"
-            value={selectedTarget}
-            onChange={(e) => setSelectedTarget(e.target.value)}
-          >
-            <option value="">Select a target</option>
-            {allTargets.map(target => (
-                  <option key={target['target-id']} value={target['target-id']}>
-                    {target.title}
-                  </option>
-                ))}
-          </select>
+        <div className="modal-overlay" onClick={() => setIsModalOpen(false)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <h2>Assign Target</h2>
+            
+            <div className="modal-sections">
+              <div className="modal-section">
+                <h3>Targets</h3>
+                <select 
+                  className="dropdown"
+                  value={selectedTarget}
+                  onChange={(e) => setSelectedTarget(e.target.value)}
+                >
+                  <option value="">Select a target</option>
+                  {allTargets.map(target => (
+                    <option key={target['target-id']} value={target['target-id']}>
+                      {target.title}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              <div className="modal-section">
+                <h3>Staff</h3>
+                <select 
+                  className="dropdown"
+                  value={selectedStaff}
+                  onChange={handleStaffChange}
+                >
+                  <option value="">Select a staff member</option>
+                  {allUsers.map(user => (
+                    <option key={user.email} value={user.email}>
+                      {user.email}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </div>
+
+            <div className="modal-usertarget-display">
+              <h3>Assigned Targets for {selectedStaff}</h3>
+              {assignedTargets.length > 0 ? (
+                <ul>
+                  {assignedTargets.map((title, index) => (
+                    <li key={index}>{title}</li>
+                  ))}
+                </ul>
+              ) : (
+                <p>No targets assigned.</p>
+              )}
+            </div>  
+            
+            <div className="modal-buttons">
+              <button className="modal-action-button" onClick={handleConfirmSelection}>
+                Confirm Selection
+              </button>
+              <button 
+                className="remove-button" 
+                onClick={handleRemoveTarget}
+              >
+                Remove Target
+              </button>
+              <button onClick={() => setIsModalOpen(false)}>Close</button>
+            </div>
+            {message && <p className="success-message">{message}</p>}
+          </div>
         </div>
-
-        <div className="modal-section">
-          <h3>Staff</h3>
-          <select 
-            className="dropdown"
-            value={selectedStaff}
-            onChange={handleStaffChange}
-          >
-            <option value="">Select a staff member</option>
-            {allUsers.map(user => (
-              <option key={user.email} value={user.email}>
-                {user.email}
-              </option>
-            ))}
-          </select>
-        </div>
-      </div>
-
-      <div className="modal-usertarget-display">
-        <h3>Assigned Targets for {selectedStaff}</h3>
-        {assignedTargets.length > 0 ? (
-          <ul>
-            {assignedTargets.map((title, index) => (
-              <li key={index}>{title}</li>
-            ))}
-          </ul>
-        ) : (
-           <p>No targets assigned.</p>
-        )}
-      </div>  
-      
-      <div className="modal-buttons">
-        <button className="modal-action-button" onClick={handleConfirmSelection}>
-          Confirm Selection
-        </button>
-        <button 
-            className="remove-button" 
-            onClick={handleRemoveTarget}
-          >
-            Remove Target
-          </button>
-        <button onClick={() => setIsModalOpen(false)}>Close</button>
-      </div>
-      {message && <p className="success-message">{message}</p>}
-    </div>
-  </div>
-)}
-
-
-
+      )}
     </div>
   );
 };
