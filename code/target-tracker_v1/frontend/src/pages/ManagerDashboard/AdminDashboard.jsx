@@ -191,7 +191,9 @@ const AdminDashboard = ({ userEmail, goToProfile, goToTarget }) => {
                 ))}
               </select>
             </div>
-            <button className="open-modal-button" onClick={() => setIsModalOpen(true)}>Open Window</button>
+            <button className="open-modal-button" onClick={() => setIsModalOpen(true)}>
+            + Assign New Target
+            </button>
             <div className="target-boxes">
               {filteredAllTargets.map((target, index) => (
                 <div key={index} className="target-box" onClick={() => handleBoxClick(target['target-id'])}>
@@ -218,72 +220,75 @@ const AdminDashboard = ({ userEmail, goToProfile, goToTarget }) => {
       </div>
       {isModalOpen && (
         <div className="modal-overlay" onClick={() => setIsModalOpen(false)}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <h2>Assign Target</h2>
-            
-            <div className="modal-sections">
-              <div className="modal-section">
-                <h3>Targets</h3>
-                <select 
-                  className="dropdown"
-                  value={selectedTarget}
-                  onChange={(e) => setSelectedTarget(e.target.value)}
-                >
-                  <option value="">Select a target</option>
-                  {allTargets.map(target => (
-                    <option key={target['target-id']} value={target['target-id']}>
-                      {target.title}
-                    </option>
-                  ))}
-                </select>
-              </div>
+         <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+         <h2 className="modal-title">Assign Target</h2>
 
-              <div className="modal-section">
-                <h3>Staff</h3>
-                <select 
-                  className="dropdown"
-                  value={selectedStaff}
-                  onChange={handleStaffChange}
-                >
-                  <option value="">Select a staff member</option>
-                  {allUsers.map(user => (
-                    <option key={user.email} value={user.email}>
-                      {user.email}
-                    </option>
-                  ))}
-                </select>
-              </div>
-            </div>
 
-            <div className="modal-usertarget-display">
-              <h3>Assigned Targets for {selectedStaff}</h3>
-              {assignedTargets.length > 0 ? (
-                <ul>
-                  {assignedTargets.map((title, index) => (
-                    <li key={index}>{title}</li>
-                  ))}
-                </ul>
-              ) : (
-                <p>No targets assigned.</p>
-              )}
-            </div>  
-            
-            <div className="modal-buttons">
-              <button className="modal-action-button" onClick={handleConfirmSelection}>
-                Confirm Selection
-              </button>
-              <button 
-                className="remove-button" 
-                onClick={handleRemoveTarget}
-              >
-                Remove Target
-              </button>
-              <button onClick={() => setIsModalOpen(false)}>Close</button>
-            </div>
-            {message && <p className="success-message">{message}</p>}
-          </div>
+      <div className="modal-sections">
+        <div className="modal-section">
+          <label htmlFor="target-select">Select Target:</label>
+          <select
+            id="target-select"
+            className="dropdown"
+            value={selectedTarget}
+            onChange={(e) => setSelectedTarget(e.target.value)}
+          >
+            <option value="">Choose a target</option>
+            {allTargets.map(target => (
+              <option key={target['target-id']} value={target['target-id']}>
+                {target.title}
+              </option>
+            ))}
+          </select>
         </div>
-      )}
+
+        <div className="modal-section">
+          <label htmlFor="staff-select">Select Staff:</label>
+          <select
+            id="staff-select"
+            className="dropdown"
+            value={selectedStaff}
+            onChange={handleStaffChange}
+          >
+            <option value="">Choose a staff member</option>
+            {allUsers.map(user => (
+              <option key={user.email} value={user.email}>
+                {user.email}
+              </option>
+            ))}
+          </select>
+        </div>
+      </div>
+
+
+      <div className="modal-usertarget-display">
+        <h3>Assigned Targets for {selectedStaff || "Selected Staff"}</h3>
+        <ul className="assigned-targets-list">
+          {assignedTargets.length > 0 ? (
+            assignedTargets.map((title, index) => <li key={index}>{title}</li>)
+          ) : (
+            <p className="no-targets">No targets assigned.</p>
+          )}
+        </ul>
+      </div>  
+
+      <div className="modal-buttons">
+        <button className="modal-action-button confirm-btn" onClick={handleConfirmSelection}>
+          Confirm Selection
+        </button>
+        <button className="modal-action-button remove-btn" onClick={handleRemoveTarget}>
+          Remove Target
+        </button>
+        <button className="modal-action-button close-btn" onClick={() => setIsModalOpen(false)}>
+          Close
+        </button>
+      </div>
+
+
+      {message && <p className="success-message">{message}</p>}
+     </div>
+    </div>
+    )}
     </div>
   );
 };
