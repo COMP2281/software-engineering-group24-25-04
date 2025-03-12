@@ -1,6 +1,6 @@
 # Technical Report
 ## Section 1: Introduction
-### 1.1 Project Summary
+### 1.1: Project Summary
 Durham County Council (DCC) aims to achieve net-zero carbon emissions by 2030, requiring an effective method to track the progress of its climate initiatives. Their current Excel-based tracking system is inefficient due to difficulties in data navigation, frequent manual reminders, limited security, and poor visual representation. To resolve these issues, we need to develop a scalable, user-friendly platform to replace Excel and enhance productivity.
 The main goals of this project include:
 1. Improve usability and design a more intuitive user interface so that users at different levels (such as project managers, partners and related personnel) can easily enter, update and query progress information.
