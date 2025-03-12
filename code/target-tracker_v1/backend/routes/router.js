@@ -203,6 +203,7 @@ router.get('/user/:email', (req, res) => {
     }
   });
 
+  /*
 // POST request to add a new target
 router.post('/target', (req, res) => {
     const targets = readTargets();
@@ -226,6 +227,31 @@ router.post('/target', (req, res) => {
     fs.writeFileSync(userTargetsFilePath, JSON.stringify(userTargets, null, 2));
 
     res.status(201).json(newTarget);
+}); */
+
+// POST request to add or update a target
+router.post('/target', (req, res) => {
+    const targets = readTargets();
+    const newTarget = req.body;
+
+    if (!newTarget['target-id']) {
+        return res.status(400).json({ message: 'target-id is required' });
+    }
+
+    // Find the index of the existing target
+    const targetIndex = targets.findIndex(t => t["target-id"] === newTarget["target-id"]);
+
+    if (targetIndex !== -1) {
+        // If target exists, update it
+        targets[targetIndex] = newTarget;
+    } else {
+        // If it does not exist, add a new one
+        targets.push(newTarget);
+    }
+
+    fs.writeFileSync(targetsFilePath, JSON.stringify(targets, null, 2), 'utf8');
+
+    res.status(200).json({ message: "Target saved successfully", target: newTarget });
 });
 
 

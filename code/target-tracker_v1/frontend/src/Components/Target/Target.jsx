@@ -14,10 +14,13 @@ const Target = ({ userEmail, userRole, target, goToDashboard, goToManagerDashboa
     useEffect(() => {
         if (target) {
             const initialFormData = { title: target.title || "" };
-            target.fields.forEach(field => {
+            (target.fields ?? []).forEach(field => {
                 initialFormData[field.id] = field.value;
             });
-            target.costFields.forEach(field => {
+            (target.costFields ?? []).forEach(field => {
+                initialFormData[field.id] = field.value;
+            });
+            (target.otherFields ?? []).forEach(field => {
                 initialFormData[field.id] = field.value;
             });
             setFormData(initialFormData);
@@ -58,6 +61,58 @@ const Target = ({ userEmail, userRole, target, goToDashboard, goToManagerDashboa
                     id: field.id,
                     label: field.label,
                     value: formData[field.id] || ""
+                })),
+                "otherFields": target.otherFields.map(field => ({
+                    id: field.id,
+                    label: field.label,
+                    value: formData[field.id] || ""
+                })),
+                "userId": userEmail // Add userId so we know who created it
+            };
+    
+            if (!newTargetData["target-id"]) {
+                // If no target ID, fetch targets to get the next available ID
+                const response = await axios.get("http://localhost:4000/targets");
+                const targets = response.data;
+                const highestId = targets.reduce((maxId, target) => Math.max(maxId, target["target-id"]), 0);
+                newTargetData["target-id"] = highestId + 1;
+            }
+    
+            // Send a POST request (same API handles both edit & new target)
+            await axios.post("http://localhost:4000/target", newTargetData);
+    
+            alert("Target saved successfully!");
+            setShowSaveButton(false);
+            setAction("View");
+    
+            // Redirect back to dashboard
+            handleDashboardClick();
+        } catch (error) {
+            console.error("Error saving target:", error);
+            alert("Failed to save target.");
+        }
+    };
+
+/*
+    const handleSaveClick = async () => {
+        try {
+            const newTargetData = {
+                "target-id": target["target-id"] || null,
+                "title": formData.title || "Target Heading",
+                "fields": target.fields.map(field => ({
+                    id: field.id,
+                    label: field.label,
+                    value: formData[field.id] || ""
+                })),
+                "costFields": target.costFields.map(field => ({
+                    id: field.id,
+                    label: field.label,
+                    value: formData[field.id] || ""
+                })),
+                "otherFields": target.otherFields.map(field => ({
+                    id: field.id,
+                    label: field.label,
+                    value: formData[field.id] || ""
                 }))
             };
 
@@ -83,7 +138,7 @@ const Target = ({ userEmail, userRole, target, goToDashboard, goToManagerDashboa
             alert("Failed to save target.");
         }
     };
-
+*/
     const handleChange = (id, value) => {
         setFormData((prev) => ({ ...prev, [id]: value }));
     };
@@ -95,8 +150,6 @@ const Target = ({ userEmail, userRole, target, goToDashboard, goToManagerDashboa
             title: event.target.value
         }));
     }
-
-    const excludedFields = ["target-funding_secured", "target-sufficient_staff", "target-start_date", "target-completion_date"];
 
     return (
         <Container className="target-container">
@@ -115,9 +168,7 @@ const Target = ({ userEmail, userRole, target, goToDashboard, goToManagerDashboa
                 <div className="target-underline"></div>
             </div>
             <div className="target-inputs">
-                {target.fields
-                    .filter(({ id }) => !excludedFields.includes(id))
-                    .map(({ id, label }) => (
+                {target.fields.map(({ id, label }) => (
                         <TargetField
                             key={id}
                             id={id}
@@ -140,36 +191,38 @@ const Target = ({ userEmail, userRole, target, goToDashboard, goToManagerDashboa
                         goToTarget={goToTarget}
                     />
                 ))}
-                <TargetDropdown
-                    id="target-funding_secured"
-                    label="Funding Secured"
-                    options={["Yes", "No", "Invest to save"]}
-                    value={formData["target-funding_secured"] || ""}
-                    onChange={handleChange}
-                    isEditing={action === "Edit"}
-                />
-                <TargetDropdown
-                    id="target-sufficient_staff"
-                    label="Sufficient Staff"
-                    options={["Yes", "No", "Uncertain"]}
-                    value={formData["target-sufficient_staff"] || ""}
-                    onChange={handleChange}
-                    isEditing={action === "Edit"}
-                />
-                <TargetDate
-                    id="target-start_date"
-                    label="Start Date"
-                    value={formData["target-start_date"] || ""}
-                    onChange={handleChange}
-                    isEditing={action === "Edit"}
-                />
-                <TargetDate
-                    id="target-completion_date"
-                    label="Completion Date"
-                    value={formData["target-completion_date"] || ""}
-                    onChange={handleChange}
-                    isEditing={action === "Edit"}
-                />
+                        <TargetDropdown
+                            id="target-funding_secured"
+                            label="Funding Secured"
+                            options={["Yes", "No", "Invest to save"]}
+                            value={formData["target-funding_secured"] || ""}
+                            onChange={handleChange}
+                            isEditing={action === "Edit"}
+                        />
+                        <TargetDropdown
+                            id="target-sufficient_staff"
+                            label="Sufficient Staff"
+                            options={["Yes", "No", "Uncertain"]}
+                            value={formData["target-sufficient_staff"] || ""}
+                            onChange={handleChange}
+                            isEditing={action === "Edit"}
+                        />
+                        <TargetDate
+                            id="target-start_date"
+                            label="Start Date"
+                            value={formData["target-start_date"] || ""}
+                            onChange={handleChange}
+                            isEditing={action === "Edit"}
+                        /><TargetDate
+                            id="target-completion_date"
+                            label="Completion Date"
+                            value={formData["target-completion_date"] || ""}
+                            onChange={handleChange}
+                            isEditing={action === "Edit"}
+                        />
+                    
+                
+                
             </div>
             <div className="target-button-container">
                 <div className="target-btn dashboard-btn" onClick={handleDashboardClick}>

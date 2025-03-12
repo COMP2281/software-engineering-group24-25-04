@@ -1,461 +1,2015 @@
 [
-    {
-        "target-id": 1,
-        "title": "Retrofit ASHP into current DCC buildings",
-        "fields": [
-            { "id": "target-cerp3_action_type", "label": "CERP3 Action Type", "value": "Building Decarbonisation" },
-            { "id": "target-smart_action_description", "label": "Smart Action Description", "value": "Retrofit ASHP into current DCC buildings" },
-            { "id": "target-related_work_programme", "label": "Related Work Programme", "value": null },
-            { "id": "target-action_type", "label": "Action Type", "value": "Business as Usual" },
-            { "id": "target-project_lead", "label": "Project Lead", "value": "TBC" },
-            { "id": "target-progress_metric", "label": "Progress Metric", "value": "Number of upgrades/installs per year" },
-            { "id": "target-targets_set", "label": "Targets Set", "value": "6 per year" },
-            { "id": "target-kpi", "label": "KPI", "value": null },
-            { "id": "target-carbon_reduction", "label": "Carbon Reduction", "value": "Council" },
-            { "id": "target-council_estimated_annual_saving", "label": "Council Estimated Annual Saving", "value": "Med (>50-200t)" },
-            { "id": "target-funding_secured", "label": "Funding Secured", "value": "No" },
-            { "id": "target-sufficient_staff", "label": "Sufficient Staff", "value": "Uncertain" },
-            { "id": "target-potential_obstacles_and_solutions", "label": "Potential Obstacles and Solutions", "value": "Funding, capacity (internal/external)" },
-            { "id": "target-start_date", "label": "Start Date", "value": "Ongoing" },
-            { "id": "target-completion_date", "label": "Completion Date", "value": "01-01-2030" },
-            { "id": "target-governing_group", "label": "Governing Group", "value": "Carbon Capital Group" }
-        ],
-        "costFields": [
-            { "id": "target-countywide_estimated_annual_saving", "label": "Countywide Estimated Annual Saving", "value": null },
-            { "id": "target-actual_annual_saving", "label": "Actual Annual Saving", "value": null },
-            { "id": "target-cost", "label": "Cost", "value": null }
-        ]
-    },
-    {
-        "target-id": 2,
-        "title":"Install energy efficiency and building fabric improvements",
-        "fields": [
-            { "id": "target-cerp3_action_type", "label": "CERP3 Action Type", "value": "Building Decarbonisation" },
-            { "id": "target-smart_action_description", "label": "Smart Action Description", "value": "Install energy efficiency and building fabric improvements at 10 sites per year." },
-            { "id": "target-related_work_programme", "label": "Related Work Programme", "value": "Capitalised maintenance" },
-            { "id": "target-action_type", "label": "Action Type", "value": "Business as Usual" },
-            { "id": "target-project_lead", "label": "Project Lead", "value": "Louise Austin" },
-            { "id": "target-progress_metric", "label": "Progress Metric", "value": "Number of projects" },
-            { "id": "target-targets_set", "label": "Targets Set", "value": "10 sites to receive energy efficiency improvements per year" },
-            { "id": "target-kpi", "label": "KPI", "value": null },
-            { "id": "target-carbon_reduction", "label": "Carbon Reduction", "value": "Council" },
-            { "id": "target-council_estimated_annual_saving", "label": "Council Estimated Annual Saving", "value": "Low (1-50t)" },
-            { "id": "target-funding_secured", "label": "Funding Secured", "value": "Invest to save" },
-            { "id": "target-sufficient_staff", "label": "Sufficient Staff", "value": "Yes" },
-            { "id": "target-potential_obstacles_and_solutions", "label": "Potential Obstacles and Solutions", "value": "Technical issues, funding, capacity" },
-            { "id": "target-start_date", "label": "Start Date", "value": "Ongoing" },
-            { "id": "target-completion_date", "label": "Completion Date", "value": "31-03-2027" },
-            { "id": "target-governing_group", "label": "Governing Group", "value": "Carbon Capital Group" }
-        ],
-        "costFields": [
-            { "id": "target-countywide_estimated_annual_saving", "label": "Countywide Estimated Annual Saving", "value": null },
-            { "id": "target-actual_annual_saving", "label": "Actual Annual Saving", "value": null },
-            { "id": "target-cost", "label": "Cost", "value": null }
-        ]
-    },
-    {
-        "target-id": 3,
-        "title":"Decarbonising Leisure Centres",
-        "fields": [
-            { "id": "target-cerp3_action_type", "label": "CERP3 Action Type", "value": "Building Decarbonisation" },
-            { "id": "target-smart_action_description", "label": "Smart Action Description", "value": "Continue with decarbonising Leisure Centres with target to achieve over 50% fossil fuel free including; Peterlee LC - Additional solar PV Newton Aycliffe - Ph2 (heat recovery)" },
-            { "id": "target-related_work_programme", "label": "Related Work Programme", "value": "Leisure Transformation" },
-            { "id": "target-action_type", "label": "Action Type", "value": "Additional" },
-            { "id": "target-project_lead", "label": "Project Lead", "value": null },
-            { "id": "target-progress_metric", "label": "Progress Metric", "value": "Number of leisure centres reporting no gas for heating" },
-            { "id": "target-targets_set", "label": "Targets Set", "value": "7 in total by 2027" },
-            { "id": "target-kpi", "label": "KPI", "value": null },
-            { "id": "target-carbon_reduction", "label": "Carbon Reduction", "value": "Council" },
-            { "id": "target-council_estimated_annual_saving", "label": "Council Estimated Annual Saving", "value": "Med (>50-200t)" },
-            { "id": "target-funding_secured", "label": "Funding Secured", "value": "No" },
-            { "id": "target-sufficient_staff", "label": "Sufficient Staff", "value": "Yes" },
-            { "id": "target-potential_obstacles_and_solutions", "label": "Potential Obstacles and Solutions", "value": "Funding, capacity (internal/external)" },
-            { "id": "target-start_date", "label": "Start Date", "value": "Ongoing" },
-            { "id": "target-completion_date", "label": "Completion Date", "value": "31-03-2027" },
-            { "id": "target-governing_group", "label": "Governing Group", "value": "Carbon Capital Group" }
-        ],
-        "costFields": [
-            { "id": "target-countywide_estimated_annual_saving", "label": "Countywide Estimated Annual Saving", "value": null },
-            { "id": "target-actual_annual_saving", "label": "Actual Annual Saving", "value": null },
-            { "id": "target-cost", "label": "Cost", "value": null }
-        ]
-    },
-    {
-        "target-id": 4,
-        "title":"First Stage Decarbonisation Plans",
-        "fields": [
-            { "id": "target-cerp3_action_type", "label": "CERP3 Action Type", "value": "Building Decarbonisation" },
-            { "id": "target-smart_action_description", "label": "Smart Action Description", "value": "Take forward the following first stage decarbonisation plans: Spennymoor EDC Bishop Auckland TH Durham Pathways Chester - le - Street LC Louisa Centre" },
-            { "id": "target-related_work_programme", "label": "Related Work Programme", "value": null },
-            { "id": "target-action_type", "label": "Action Type", "value": "Additional" },
-            { "id": "target-project_lead", "label": "Project Lead", "value": "Tracy Millmore" },
-            { "id": "target-progress_metric", "label": "Progress Metric", "value": "No of plans" },
-            { "id": "target-targets_set", "label": "Targets Set", "value": "6 complete" },
-            { "id": "target-kpi", "label": "KPI", "value": null },
-            { "id": "target-carbon_reduction", "label": "Carbon Reduction", "value": "Council" },
-            { "id": "target-council_estimated_annual_saving", "label": "Council Estimated Annual Saving", "value": "0 Enabling or Adaptation Action" },
-            { "id": "target-funding_secured", "label": "Funding Secured", "value": "Yes" },
-            { "id": "target-sufficient_staff", "label": "Sufficient Staff", "value": "Yes" },
-            { "id": "target-potential_obstacles_and_solutions", "label": "Potential Obstacles and Solutions", "value": "Design, feasibility, funding" },
-            { "id": "target-start_date", "label": "Start Date", "value": "Ongoing" },
-            { "id": "target-completion_date", "label": "Completion Date", "value": "01-06-2024" },
-            { "id": "target-governing_group", "label": "Governing Group", "value": "Carbon Capital Group" }
-        ],
-        "costFields": [
-            { "id": "target-countywide_estimated_annual_saving", "label": "Countywide Estimated Annual Saving", "value": null },
-            { "id": "target-actual_annual_saving", "label": "Actual Annual Saving", "value": null },
-            { "id": "target-cost", "label": "Cost", "value": null }
-        ]
-    },
-    {
-        "target-id": 5,
-        "title":"Surveys and Heating Decarbonisation Plans",
-        "fields": [
-            { "id": "target-cerp3_action_type", "label": "CERP3 Action Type", "value": "Building Decarbonisation" },
-            { "id": "target-smart_action_description", "label": "Smart Action Description", "value": "Carry out surveys and heating decarbonisation plans at the remaining significant carbon emitting facilities: Freemans Quay LC, Spennymoor LC, Green Lane Offices, Hackworth Road Depot, Chilton Depot" },
-            { "id": "target-related_work_programme", "label": "Related Work Programme", "value": null },
-            { "id": "target-action_type", "label": "Action Type", "value": "Additional" },
-            { "id": "target-project_lead", "label": "Project Lead", "value": "Tracy Millmore" },
-            { "id": "target-progress_metric", "label": "Progress Metric", "value": "No of Surveys" },
-            { "id": "target-targets_set", "label": "Targets Set", "value": "5 complete" },
-            { "id": "target-kpi", "label": "KPI", "value": null },
-            { "id": "target-carbon_reduction", "label": "Carbon Reduction", "value": "Council" },
-            { "id": "target-council_estimated_annual_saving", "label": "Council Estimated Annual Saving", "value": "0 Enabling or Adaptation Action" },
-            { "id": "target-funding_secured", "label": "Funding Secured", "value": "No" },
-            { "id": "target-sufficient_staff", "label": "Sufficient Staff", "value": "Yes" },
-            { "id": "target-potential_obstacles_and_solutions", "label": "Potential Obstacles and Solutions", "value": "Design, feasibility, funding" },
-            { "id": "target-start_date", "label": "Start Date", "value": "Ongoing" },
-            { "id": "target-completion_date", "label": "Completion Date", "value": "01-04-2025" },
-            { "id": "target-governing_group", "label": "Governing Group", "value": "Carbon Capital Group" }
-        ],
-        "costFields": [
-            { "id": "target-countywide_estimated_annual_saving", "label": "Countywide Estimated Annual Saving", "value": null },
-            { "id": "target-actual_annual_saving", "label": "Actual Annual Saving", "value": null },
-            { "id": "target-cost", "label": "Cost", "value": null }
-        ]
-    },
-    {
-        "target-id": 6,
-        "title":"Install LED Lighting - DCC",
-        "fields": [
-            { "id": "target-cerp3_action_type", "label": "CERP3 Action Type", "value": "Building Decarbonisation" },
-            { "id": "target-smart_action_description", "label": "Smart Action Description", "value": "Install LED lighting across 60 DCC owned sites" },
-            { "id": "target-related_work_programme", "label": "Related Work Programme", "value": "Leisure Transformation; Capital Maintenance" },
-            { "id": "target-action_type", "label": "Action Type", "value": "Business as Usual" },
-            { "id": "target-project_lead", "label": "Project Lead", "value": "Louise Austin" },
-            { "id": "target-progress_metric", "label": "Progress Metric", "value": "Number of buildings" },
-            { "id": "target-targets_set", "label": "Targets Set", "value": "60 sites will have LED lighting installed" },
-            { "id": "target-kpi", "label": "KPI", "value": null },
-            { "id": "target-carbon_reduction", "label": "Carbon Reduction", "value": "Council" },
-            { "id": "target-council_estimated_annual_saving", "label": "Council Estimated Annual Saving", "value": "Med (>50-200t)" },
-            { "id": "target-funding_secured", "label": "Funding Secured", "value": "Invest to save" },
-            { "id": "target-sufficient_staff", "label": "Sufficient Staff", "value": "Yes" },
-            { "id": "target-potential_obstacles_and_solutions", "label": "Potential Obstacles and Solutions", "value": "Design costs, technical issues" },
-            { "id": "target-start_date", "label": "Start Date", "value": "Ongoing" },
-            { "id": "target-completion_date", "label": "Completion Date", "value": "31-03-2027" },
-            { "id": "target-governing_group", "label": "Governing Group", "value": "Carbon Capital Group" }
-        ],
-        "costFields": [
-            { "id": "target-countywide_estimated_annual_saving", "label": "Countywide Estimated Annual Saving", "value": null },
-            { "id": "target-actual_annual_saving", "label": "Actual Annual Saving", "value": null },
-            { "id": "target-cost", "label": "Cost", "value": null }
-        ]
-    },
-    {
-        "target-id": 7,
-        "title":"Increase Proportion - BEMS",
-        "fields": [
-            { "id": "target-cerp3_action_type", "label": "CERP3 Action Type", "value": "Building Decarbonisation" },
-            { "id": "target-smart_action_description", "label": "Smart Action Description", "value": "Increase proportion of top 30 sites covered by BEMS" },
-            { "id": "target-related_work_programme", "label": "Related Work Programme", "value": null },
-            { "id": "target-action_type", "label": "Action Type", "value": "Business as Usual" },
-            { "id": "target-project_lead", "label": "Project Lead", "value": "David Walker" },
-            { "id": "target-progress_metric", "label": "Progress Metric", "value": "Percentage" },
-            { "id": "target-targets_set", "label": "Targets Set", "value": "75%" },
-            { "id": "target-kpi", "label": "KPI", "value": null },
-            { "id": "target-carbon_reduction", "label": "Carbon Reduction", "value": "Council" },
-            { "id": "target-council_estimated_annual_saving", "label": "Council Estimated Annual Saving", "value": "Low (1-50t)" },
-            { "id": "target-funding_secured", "label": "Funding Secured", "value": "Invest to save" },
-            { "id": "target-sufficient_staff", "label": "Sufficient Staff", "value": null },
-            { "id": "target-potential_obstacles_and_solutions", "label": "Potential Obstacles and Solutions", "value": "Design, feasibility, funding" },
-            { "id": "target-start_date", "label": "Start Date", "value": "Ongoing" },
-            { "id": "target-completion_date", "label": "Completion Date", "value": "31-03-2027" },
-            { "id": "target-governing_group", "label": "Governing Group", "value": "Carbon Capital Group" }
-        ],
-        "costFields": [
-            { "id": "target-countywide_estimated_annual_saving", "label": "Countywide Estimated Annual Saving", "value": null },
-            { "id": "target-actual_annual_saving", "label": "Actual Annual Saving", "value": null },
-            { "id": "target-cost", "label": "Cost", "value": null }
-        ]
-    },
-    {
-        "target-id": 8,
-        "title":"BMS - DCC Portfolio",
-        "fields": [
-            { "id": "target-cerp3_action_type", "label": "CERP3 Action Type", "value": "Building Decarbonisation" },
-            { "id": "target-smart_action_description", "label": "Smart Action Description", "value": "Develop integrated BMS system across DCC portfolio" },
-            { "id": "target-related_work_programme", "label": "Related Work Programme", "value": null },
-            { "id": "target-action_type", "label": "Action Type", "value": "Business as Usual" },
-            { "id": "target-project_lead", "label": "Project Lead", "value": "David Walker" },
-            { "id": "target-progress_metric", "label": "Progress Metric", "value": "Number of upgrades/installs per year" },
-            { "id": "target-targets_set", "label": "Targets Set", "value": "4 per year" },
-            { "id": "target-kpi", "label": "KPI", "value": null },
-            { "id": "target-carbon_reduction", "label": "Carbon Reduction", "value": "Council" },
-            { "id": "target-council_estimated_annual_saving", "label": "Council Estimated Annual Saving", "value": "Low (1-50t)" },
-            { "id": "target-funding_secured", "label": "Funding Secured", "value": "Yes" },
-            { "id": "target-sufficient_staff", "label": "Sufficient Staff", "value": "Yes" },
-            { "id": "target-potential_obstacles_and_solutions", "label": "Potential Obstacles and Solutions", "value": "Funding, Communication / security - DCC Aged plant Outstanding maintenance" },
-            { "id": "target-start_date", "label": "Start Date", "value": "Ongoing" },
-            { "id": "target-completion_date", "label": "Completion Date", "value": "01-04-2025" },
-            { "id": "target-governing_group", "label": "Governing Group", "value": "Carbon Capital Group" }
-        ],
-        "costFields": [
-            { "id": "target-countywide_estimated_annual_saving", "label": "Countywide Estimated Annual Saving", "value": null },
-            { "id": "target-actual_annual_saving", "label": "Actual Annual Saving", "value": null },
-            { "id": "target-cost", "label": "Cost", "value": null }
-        ]
-    },
-    {
-        "target-id": 9,
-        "title":"Energy Management Responsibilities",
-        "fields": [
-            { "id": "target-cerp3_action_type", "label": "CERP3 Action Type", "value": "Building Decarbonisation" },
-            { "id": "target-smart_action_description", "label": "Smart Action Description", "value": "Improve understanding of energy management responsibilities with building managers" },
-            { "id": "target-related_work_programme", "label": "Related Work Programme", "value": null },
-            { "id": "target-action_type", "label": "Action Type", "value": "Business as Usual" },
-            { "id": "target-project_lead", "label": "Project Lead", "value": "Tracy Millmore" },
-            { "id": "target-progress_metric", "label": "Progress Metric", "value": "Develop Specific ENERGY teams channel for building managers and training" },
-            { "id": "target-targets_set", "label": "Targets Set", "value": "4 sessions delivered per year" },
-            { "id": "target-kpi", "label": "KPI", "value": null },
-            { "id": "target-carbon_reduction", "label": "Carbon Reduction", "value": "Council" },
-            { "id": "target-council_estimated_annual_saving", "label": "Council Estimated Annual Saving", "value": "0 Enabling or Adaptation Action" },
-            { "id": "target-funding_secured", "label": "Funding Secured", "value": null },
-            { "id": "target-sufficient_staff", "label": "Sufficient Staff", "value": "Yes" },
-            { "id": "target-potential_obstacles_and_solutions", "label": "Potential Obstacles and Solutions", "value": "communication, capacity" },
-            { "id": "target-start_date", "label": "Start Date", "value": "01-03-2024" },
-            { "id": "target-completion_date", "label": "Completion Date", "value": "Ongoing" },
-            { "id": "target-governing_group", "label": "Governing Group", "value": "Carbon Capital Group" }
-        ],
-        "costFields": [
-            { "id": "target-countywide_estimated_annual_saving", "label": "Countywide Estimated Annual Saving", "value": null },
-            { "id": "target-actual_annual_saving", "label": "Actual Annual Saving", "value": null },
-            { "id": "target-cost", "label": "Cost", "value": null }
-        ]
-    },
-    {
-        "target-id": 10,
-        "title":"Insulation Maximisation",
-        "fields": [
-            { "id": "target-cerp3_action_type", "label": "CERP3 Action Type", "value": "Building Decarbonisation" },
-            { "id": "target-smart_action_description", "label": "Smart Action Description", "value": "Work with DCC teams to ensure Insulation is maximised during refurbishments" },
-            { "id": "target-related_work_programme", "label": "Related Work Programme", "value": "leisure transformation" },
-            { "id": "target-action_type", "label": "Action Type", "value": "Business as Usual" },
-            { "id": "target-project_lead", "label": "Project Lead", "value": "Tracy Millmore" },
-            { "id": "target-progress_metric", "label": "Progress Metric", "value": "Number of projects where insulation has been upgraded" },
-            { "id": "target-targets_set", "label": "Targets Set", "value": "6 per year" },
-            { "id": "target-kpi", "label": "KPI", "value": null },
-            { "id": "target-carbon_reduction", "label": "Carbon Reduction", "value": "Council" },
-            { "id": "target-council_estimated_annual_saving", "label": "Council Estimated Annual Saving", "value": "Low (1-50t)" },
-            { "id": "target-funding_secured", "label": "Funding Secured", "value": "no" },
-            { "id": "target-sufficient_staff", "label": "Sufficient Staff", "value": "Yes" },
-            { "id": "target-potential_obstacles_and_solutions", "label": "Potential Obstacles and Solutions", "value": "Design, feasibility, funding" },
-            { "id": "target-start_date", "label": "Start Date", "value": "Ongoing" },
-            { "id": "target-completion_date", "label": "Completion Date", "value": "Ongoing" },
-            { "id": "target-governing_group", "label": "Governing Group", "value": "Carbon Capital Group" }
-        ],
-        "costFields": [
-            { "id": "target-countywide_estimated_annual_saving", "label": "Countywide Estimated Annual Saving", "value": null },
-            { "id": "target-actual_annual_saving", "label": "Actual Annual Saving", "value": null },
-            { "id": "target-cost", "label": "Cost", "value": null }
-        ]
-    },
-    {
-        "target-id": 11,
-        "title":"PV Generation Increase - DCC Estate",
-        "fields": [
-            { "id": "target-cerp3_action_type", "label": "CERP3 Action Type", "value": "Renewable Energy" },
-            { "id": "target-smart_action_description", "label": "Smart Action Description", "value": "Increase PV generation across DCC estate by 3MW. This will include a mixture of roof mounted, ground mounted, and vertical mounted, to best suit the site." },
-            { "id": "target-related_work_programme", "label": "Related Work Programme", "value": "Capital Maintenance" },
-            { "id": "target-action_type", "label": "Action Type", "value": "Business as Usual" },
-            { "id": "target-project_lead", "label": "Project Lead", "value": "Louise Austin" },
-            { "id": "target-progress_metric", "label": "Progress Metric", "value": "Installed capacity" },
-            { "id": "target-targets_set", "label": "Targets Set", "value": "3MW of solar PV to be installed" },
-            { "id": "target-kpi", "label": "KPI", "value": null },
-            { "id": "target-carbon_reduction", "label": "Carbon Reduction", "value": "Council" },
-            { "id": "target-council_estimated_annual_saving", "label": "Council Estimated Annual Saving", "value": "Med (>50-200t)" },
-            { "id": "target-funding_secured", "label": "Funding Secured", "value": "Invest to save" },
-            { "id": "target-sufficient_staff", "label": "Sufficient Staff", "value": "Yes" },
-            { "id": "target-potential_obstacles_and_solutions", "label": "Potential Obstacles and Solutions", "value": "Design, feasibility, funding" },
-            { "id": "target-start_date", "label": "Start Date", "value": "Ongoing" },
-            { "id": "target-completion_date", "label": "Completion Date", "value": "31-03-2027" },
-            { "id": "target-governing_group", "label": "Governing Group", "value": "Carbon Capital Group" }
-        ],
-        "costFields": [
-            { "id": "target-countywide_estimated_annual_saving", "label": "Countywide Estimated Annual Saving", "value": null },
-            { "id": "target-actual_annual_saving", "label": "Actual Annual Saving", "value": null },
-            { "id": "target-cost", "label": "Cost", "value": null }
-        ]
-    },
-    {
-        "target-id": 12,
-        "title":"Solar Array Development - Jade Business Park",
-        "fields": [
-            { "id": "target-cerp3_action_type", "label": "CERP3 Action Type", "value": "Renewable Energy" },
-            { "id": "target-smart_action_description", "label": "Smart Action Description", "value": "Develop 1MW solar array at Jade Business Park (following SEGL1 construction when field is back with DCC)" },
-            { "id": "target-related_work_programme", "label": "Related Work Programme", "value": null },
-            { "id": "target-action_type", "label": "Action Type", "value": "Additional" },
-            { "id": "target-project_lead", "label": "Project Lead", "value": "Malcolm Johnson" },
-            { "id": "target-progress_metric", "label": "Progress Metric", "value": "Installed capacity" },
-            { "id": "target-targets_set", "label": "Targets Set", "value": "1MW" },
-            { "id": "target-kpi", "label": "KPI", "value": null },
-            { "id": "target-carbon_reduction", "label": "Carbon Reduction", "value": "Council" },
-            { "id": "target-council_estimated_annual_saving", "label": "Council Estimated Annual Saving", "value": "Low (1-50t)" },
-            { "id": "target-funding_secured", "label": "Funding Secured", "value": "Invest to save" },
-            { "id": "target-sufficient_staff", "label": "Sufficient Staff", "value": null },
-            { "id": "target-potential_obstacles_and_solutions", "label": "Potential Obstacles and Solutions", "value": "Design, feasibility, funding" },
-            { "id": "target-start_date", "label": "Start Date", "value": "Ongoing" },
-            { "id": "target-completion_date", "label": "Completion Date", "value": "31-03-2029" },
-            { "id": "target-governing_group", "label": "Governing Group", "value": "Carbon Capital Group" }
-        ],
-        "costFields": [
-            { "id": "target-countywide_estimated_annual_saving", "label": "Countywide Estimated Annual Saving", "value": null },
-            { "id": "target-actual_annual_saving", "label": "Actual Annual Saving", "value": null },
-            { "id": "target-cost", "label": "Cost", "value": null }
-        ]
-    },
-    {
-        "target-id": 13,
-        "title":"Small wind turbines - Hackworth Road Depot",
-        "fields": [
-            { "id": "target-cerp3_action_type", "label": "CERP3 Action Type", "value": "Renewable Energy" },
-            { "id": "target-smart_action_description", "label": "Smart Action Description", "value": "Development of 4 Small wind turbines at Hackworth Road Depot" },
-            { "id": "target-related_work_programme", "label": "Related Work Programme", "value": null },
-            { "id": "target-action_type", "label": "Action Type", "value": "Additional" },
-            { "id": "target-project_lead", "label": "Project Lead", "value": "Tracy Millmore" },
-            { "id": "target-progress_metric", "label": "Progress Metric", "value": "Number of turbines installed" },
-            { "id": "target-targets_set", "label": "Targets Set", "value": "4" },
-            { "id": "target-kpi", "label": "KPI", "value": null },
-            { "id": "target-carbon_reduction", "label": "Carbon Reduction", "value": "Council" },
-            { "id": "target-council_estimated_annual_saving", "label": "Council Estimated Annual Saving", "value": "Low (1-50t)" },
-            { "id": "target-funding_secured", "label": "Funding Secured", "value": "Invest to save" },
-            { "id": "target-sufficient_staff", "label": "Sufficient Staff", "value": "Yes" },
-            { "id": "target-potential_obstacles_and_solutions", "label": "Potential Obstacles and Solutions", "value": "Design, feasibility, funding" },
-            { "id": "target-start_date", "label": "Start Date", "value": "Ongoing" },
-            { "id": "target-completion_date", "label": "Completion Date", "value": "31-03-2027" },
-            { "id": "target-governing_group", "label": "Governing Group", "value": "Carbon Capital Group" }
-        ],
-        "costFields": [
-            { "id": "target-countywide_estimated_annual_saving", "label": "Countywide Estimated Annual Saving", "value": null },
-            { "id": "target-actual_annual_saving", "label": "Actual Annual Saving", "value": null },
-            { "id": "target-cost", "label": "Cost", "value": null }
-        ]
-    },
-    {
-        "target-id": 14,
-        "title": "Learnings From Hackworth Road Project",
-        "fields": [
-            { "id": "target-cerp3_action_type", "label": "CERP3 Action Type", "value": "Renewable Energy" },
-            { "id": "target-smart_action_description", "label": "Smart Action Description", "value": "Following learnings from Hackworth Road project take forward additional sites." },
-            { "id": "target-related_work_programme", "label": "Related Work Programme", "value": null },
-            { "id": "target-action_type", "label": "Action Type", "value": "Additional" },
-            { "id": "target-project_lead", "label": "Project Lead", "value": "Malcolm Johnson" },
-            { "id": "target-progress_metric", "label": "Progress Metric", "value": "no of turbines installed" },
-            { "id": "target-targets_set", "label": "Targets Set", "value": null },
-            { "id": "target-kpi", "label": "KPI", "value": null },
-            { "id": "target-carbon_reduction", "label": "Carbon Reduction", "value": "Council" },
-            { "id": "target-council_estimated_annual_saving", "label": "Council Estimated Annual Saving", "value": "0 Enabling or Adaptation Action" },
-            { "id": "target-funding_secured", "label": "Funding Secured", "value": "Invest to save" },
-            { "id": "target-sufficient_staff", "label": "Sufficient Staff", "value": "Yes" },
-            { "id": "target-potential_obstacles_and_solutions", "label": "Potential Obstacles and Solutions", "value": "Design, feasibility, funding" },
-            { "id": "target-start_date", "label": "Start Date", "value": "Ongoing" },
-            { "id": "target-completion_date", "label": "Completion Date", "value": "01-04-2027" },
-            { "id": "target-governing_group", "label": "Governing Group", "value": "Carbon Capital Group" }
-        ],
-        "costFields": [
-            { "id": "target-countywide_estimated_annual_saving", "label": "Countywide Estimated Annual Saving", "value": null },
-            { "id": "target-actual_annual_saving", "label": "Actual Annual Saving", "value": null },
-            { "id": "target-cost", "label": "Cost", "value": null }
-        ]
-    },
-    {
-        "target-id": 15,
-        "title": "Solar and Wind Hybrid - Joint Stocks Quarry",
-        "fields": [
-            { "id": "target-cerp3_action_type", "label": "CERP3 Action Type", "value": "Renewable Energy" },
-            { "id": "target-smart_action_description", "label": "Smart Action Description", "value": "Development of Solar and Wind Hybrid at Joint Stocks Quarry/former landfill" },
-            { "id": "target-related_work_programme", "label": "Related Work Programme", "value": null },
-            { "id": "target-action_type", "label": "Action Type", "value": "Additional" },
-            { "id": "target-project_lead", "label": "Project Lead", "value": "Louise Austin" },
-            { "id": "target-progress_metric", "label": "Progress Metric", "value": "Capacity installed" },
-            { "id": "target-targets_set", "label": "Targets Set", "value": "TBC" },
-            { "id": "target-kpi", "label": "KPI", "value": null },
-            { "id": "target-carbon_reduction", "label": "Carbon Reduction", "value": "Council" },
-            { "id": "target-council_estimated_annual_saving", "label": "Council Estimated Annual Saving", "value": "Low (1-50t)" },
-            { "id": "target-funding_secured", "label": "Funding Secured", "value": "Invest to save" },
-            { "id": "target-sufficient_staff", "label": "Sufficient Staff", "value": null },
-            { "id": "target-potential_obstacles_and_solutions", "label": "Potential Obstacles and Solutions", "value": "Design, feasibility, funding" },
-            { "id": "target-start_date", "label": "Start Date", "value": "Ongoing" },
-            { "id": "target-completion_date", "label": "Completion Date", "value": "31-03-2027" },
-            { "id": "target-governing_group", "label": "Governing Group", "value": "Carbon Capital Group" }
-        ],
-        "costFields": [
-            { "id": "target-countywide_estimated_annual_saving", "label": "Countywide Estimated Annual Saving", "value": null },
-            { "id": "target-actual_annual_saving", "label": "Actual Annual Saving", "value": null },
-            { "id": "target-cost", "label": "Cost", "value": null }
-        ]
-    },
-    {
-        "target-id": 16,
-        "title":"Solar Car Ports",
-        "fields": [
-            { "id": "target-cerp3_action_type", "label": "CERP3 Action Type", "value": "Renewable Energy" },
-            { "id": "target-smart_action_description", "label": "Smart Action Description", "value": "Develop and implement phased solar car ports implementation plan across 5 sites." },
-            { "id": "target-related_work_programme", "label": "Related Work Programme", "value": null },
-            { "id": "target-action_type", "label": "Action Type", "value": "Additional" },
-            { "id": "target-project_lead", "label": "Project Lead", "value": "Louise Austin" },
-            { "id": "target-progress_metric", "label": "Progress Metric", "value": "Solar Car Ports delivered" },
-            { "id": "target-targets_set", "label": "Targets Set", "value": "5 in total" },
-            { "id": "target-kpi", "label": "KPI", "value": null },
-            { "id": "target-carbon_reduction", "label": "Carbon Reduction", "value": "Council" },
-            { "id": "target-council_estimated_annual_saving", "label": "Council Estimated Annual Saving", "value": "Low (1-50t)" },
-            { "id": "target-funding_secured", "label": "Funding Secured", "value": "Invest to save" },
-            { "id": "target-sufficient_staff", "label": "Sufficient Staff", "value": "Yes" },
-            { "id": "target-potential_obstacles_and_solutions", "label": "Potential Obstacles and Solutions", "value": "Design, feasibility, funding" },
-            { "id": "target-start_date", "label": "Start Date", "value": "Ongoing" },
-            { "id": "target-completion_date", "label": "Completion Date", "value": "31-03-2027" },
-            { "id": "target-governing_group", "label": "Governing Group", "value": "Carbon Capital Group" }
-        ],
-        "costFields": [
-            { "id": "target-countywide_estimated_annual_saving", "label": "Countywide Estimated Annual Saving", "value": null },
-            { "id": "target-actual_annual_saving", "label": "Actual Annual Saving", "value": null },
-            { "id": "target-cost", "label": "Cost", "value": null }
-        ]
-    },
-    {
-        "target-id": 17,
-        "title":"Upscale Solar Farm - Tanfield",
-        "fields": [
-            { "id": "target-cerp3_action_type", "label": "CERP3 Action Type", "value": "Renewable Energy" },
-            { "id": "target-smart_action_description", "label": "Smart Action Description", "value": "Review and upscale solar farm at Tanfield to match demand from nearby building by 2025. Explore commercial potential of project" },
-            { "id": "target-related_work_programme", "label": "Related Work Programme", "value": null },
-            { "id": "target-action_type", "label": "Action Type", "value": "Additional" },
-            { "id": "target-project_lead", "label": "Project Lead", "value": "Stephen Beresford" },
-            { "id": "target-progress_metric", "label": "Progress Metric", "value": "Extension delivered" },
-            { "id": "target-targets_set", "label": "Targets Set", "value": "Extension delivered" },
-            { "id": "target-kpi", "label": "KPI", "value": null },
-            { "id": "target-carbon_reduction", "label": "Carbon Reduction", "value": "Council" },
-            { "id": "target-council_estimated_annual_saving", "label": "Council Estimated Annual Saving", "value": "Low (1-50t)" },
-            { "id": "target-funding_secured", "label": "Funding Secured", "value": "Invest to save" },
-            { "id": "target-sufficient_staff", "label": "Sufficient Staff", "value": "Yes" },
-            { "id": "target-potential_obstacles_and_solutions", "label": "Potential Obstacles and Solutions", "value": "Design, feasibility, funding" },
-            { "id": "target-start_date", "label": "Start Date", "value": "Ongoing" },
-            { "id": "target-completion_date", "label": "Completion Date", "value": "31-03-2027" },
-            { "id": "target-governing_group", "label": "Governing Group", "value": "Carbon Capital Group" }
-        ],
-        "costFields": [
-            { "id": "target-countywide_estimated_annual_saving", "label": "Countywide Estimated Annual Saving", "value": null },
-            { "id": "target-actual_annual_saving", "label": "Actual Annual Saving", "value": null },
-            { "id": "target-cost", "label": "Cost", "value": null }
-        ]
-    }
+  {
+    "target-id": 1,
+    "title": "Retrofit ASHP into current DCC buildings",
+    "fields": [
+      {
+        "id": "target-cerp3_action_type",
+        "label": "CERP3 Action Type",
+        "value": "Building Decarbonisation"
+      },
+      {
+        "id": "target-smart_action_description",
+        "label": "Smart Action Description",
+        "value": "Retrofit ASHP into current DCC buildings"
+      },
+      {
+        "id": "target-related_work_programme",
+        "label": "Related Work Programme",
+        "value": ""
+      },
+      {
+        "id": "target-action_type",
+        "label": "Action Type",
+        "value": "Business as Usual"
+      },
+      {
+        "id": "target-project_lead",
+        "label": "Project Lead",
+        "value": "TBC"
+      },
+      {
+        "id": "target-progress_metric",
+        "label": "Progress Metric",
+        "value": "Number of upgrades/installs per year"
+      },
+      {
+        "id": "target-targets_set",
+        "label": "Targets Set",
+        "value": "6 per year"
+      },
+      {
+        "id": "target-kpi",
+        "label": "KPI",
+        "value": ""
+      },
+      {
+        "id": "target-carbon_reduction",
+        "label": "Carbon Reduction",
+        "value": "Council"
+      },
+      {
+        "id": "target-potential_obstacles_and_solutions",
+        "label": "Potential Obstacles and Solutions",
+        "value": "Funding, capacity (internal/external)"
+      },
+      {
+        "id": "target-governing_group",
+        "label": "Governing Group",
+        "value": "Carbon Capital Group"
+      }
+    ],
+    "costFields": [
+      {
+        "id": "target-countywide_estimated_annual_saving",
+        "label": "Countywide Estimated Annual Saving",
+        "value": "5000"
+      },
+      {
+        "id": "target-actual_annual_saving",
+        "label": "Actual Annual Saving",
+        "value": "4500"
+      },
+      {
+        "id": "target-cost",
+        "label": "Cost",
+        "value": "3000"
+      }
+    ],
+    "otherFields": [
+      {
+        "id": "target-funding_secured",
+        "label": "Funding Secured",
+        "value": "No"
+      },
+      {
+        "id": "target-sufficient_staff",
+        "label": "Sufficient Staff",
+        "value": "Uncertain"
+      },
+      {
+        "id": "target-start_date",
+        "label": "Start Date",
+        "value": "Ongoing"
+      },
+      {
+        "id": "target-completion_date",
+        "label": "Completion Date",
+        "value": "01-01-2030"
+      }
+    ],
+    "userId": "email1@example.com"
+  },
+  {
+    "target-id": 2,
+    "title": "Install energy efficiency and building fabric improvements",
+    "fields": [
+      {
+        "id": "target-cerp3_action_type",
+        "label": "CERP3 Action Type",
+        "value": "Building Decarbonisation"
+      },
+      {
+        "id": "target-smart_action_description",
+        "label": "Smart Action Description",
+        "value": "Install energy efficiency and building fabric improvements at 10 sites per year."
+      },
+      {
+        "id": "target-related_work_programme",
+        "label": "Related Work Programme",
+        "value": "Capitalised maintenance"
+      },
+      {
+        "id": "target-action_type",
+        "label": "Action Type",
+        "value": "Business as Usual"
+      },
+      {
+        "id": "target-project_lead",
+        "label": "Project Lead",
+        "value": "Louise Austin"
+      },
+      {
+        "id": "target-progress_metric",
+        "label": "Progress Metric",
+        "value": "Number of projects"
+      },
+      {
+        "id": "target-targets_set",
+        "label": "Targets Set",
+        "value": "10 sites to receive energy efficiency improvements per year"
+      },
+      {
+        "id": "target-kpi",
+        "label": "KPI",
+        "value": null
+      },
+      {
+        "id": "target-carbon_reduction",
+        "label": "Carbon Reduction",
+        "value": "Council"
+      },
+      {
+        "id": "target-council_estimated_annual_saving",
+        "label": "Council Estimated Annual Saving",
+        "value": "Low (1-50t)"
+      },
+      {
+        "id": "target-potential_obstacles_and_solutions",
+        "label": "Potential Obstacles and Solutions",
+        "value": "Technical issues, funding, capacity"
+      },
+      {
+        "id": "target-governing_group",
+        "label": "Governing Group",
+        "value": "Carbon Capital Group"
+      }
+    ],
+    "costFields": [
+      {
+        "id": "target-countywide_estimated_annual_saving",
+        "label": "Countywide Estimated Annual Saving",
+        "value": null
+      },
+      {
+        "id": "target-actual_annual_saving",
+        "label": "Actual Annual Saving",
+        "value": null
+      },
+      {
+        "id": "target-cost",
+        "label": "Cost",
+        "value": null
+      }
+    ],
+    "otherFields": [
+      {
+        "id": "target-funding_secured",
+        "label": "Funding Secured",
+        "value": "Invest to save"
+      },
+      {
+        "id": "target-sufficient_staff",
+        "label": "Sufficient Staff",
+        "value": "Yes"
+      },
+      {
+        "id": "target-start_date",
+        "label": "Start Date",
+        "value": "Ongoing"
+      },
+      {
+        "id": "target-completion_date",
+        "label": "Completion Date",
+        "value": "31-03-2027"
+      }
+    ]
+  },
+  {
+    "target-id": 3,
+    "title": "Decarbonising Leisure Centres",
+    "fields": [
+      {
+        "id": "target-cerp3_action_type",
+        "label": "CERP3 Action Type",
+        "value": "Building Decarbonisation"
+      },
+      {
+        "id": "target-smart_action_description",
+        "label": "Smart Action Description",
+        "value": "Continue with decarbonising Leisure Centres with target to achieve over 50% fossil fuel free including; Peterlee LC - Additional solar PV Newton Aycliffe - Ph2 (heat recovery)"
+      },
+      {
+        "id": "target-related_work_programme",
+        "label": "Related Work Programme",
+        "value": "Leisure Transformation"
+      },
+      {
+        "id": "target-action_type",
+        "label": "Action Type",
+        "value": "Additional"
+      },
+      {
+        "id": "target-project_lead",
+        "label": "Project Lead",
+        "value": null
+      },
+      {
+        "id": "target-progress_metric",
+        "label": "Progress Metric",
+        "value": "Number of leisure centres reporting no gas for heating"
+      },
+      {
+        "id": "target-targets_set",
+        "label": "Targets Set",
+        "value": "7 in total by 2027"
+      },
+      {
+        "id": "target-kpi",
+        "label": "KPI",
+        "value": null
+      },
+      {
+        "id": "target-carbon_reduction",
+        "label": "Carbon Reduction",
+        "value": "Council"
+      },
+      {
+        "id": "target-council_estimated_annual_saving",
+        "label": "Council Estimated Annual Saving",
+        "value": "Med (>50-200t)"
+      },
+      {
+        "id": "target-potential_obstacles_and_solutions",
+        "label": "Potential Obstacles and Solutions",
+        "value": "Funding, capacity (internal/external)"
+      },
+      {
+        "id": "target-governing_group",
+        "label": "Governing Group",
+        "value": "Carbon Capital Group"
+      }
+    ],
+    "costFields": [
+      {
+        "id": "target-countywide_estimated_annual_saving",
+        "label": "Countywide Estimated Annual Saving",
+        "value": null
+      },
+      {
+        "id": "target-actual_annual_saving",
+        "label": "Actual Annual Saving",
+        "value": null
+      },
+      {
+        "id": "target-cost",
+        "label": "Cost",
+        "value": null
+      }
+    ],
+    "otherFields": [
+      {
+        "id": "target-funding_secured",
+        "label": "Funding Secured",
+        "value": "No"
+      },
+      {
+        "id": "target-sufficient_staff",
+        "label": "Sufficient Staff",
+        "value": "Yes"
+      },
+      {
+        "id": "target-start_date",
+        "label": "Start Date",
+        "value": "Ongoing"
+      },
+      {
+        "id": "target-completion_date",
+        "label": "Completion Date",
+        "value": "31-03-2027"
+      }
+    ]
+  },
+  {
+    "target-id": 4,
+    "title": "First Stage Decarbonisation Plans",
+    "fields": [
+      {
+        "id": "target-cerp3_action_type",
+        "label": "CERP3 Action Type",
+        "value": "Building Decarbonisation"
+      },
+      {
+        "id": "target-smart_action_description",
+        "label": "Smart Action Description",
+        "value": "Take forward the following first stage decarbonisation plans: Spennymoor EDC Bishop Auckland TH Durham Pathways Chester - le - Street LC Louisa Centre"
+      },
+      {
+        "id": "target-related_work_programme",
+        "label": "Related Work Programme",
+        "value": null
+      },
+      {
+        "id": "target-action_type",
+        "label": "Action Type",
+        "value": "Additional"
+      },
+      {
+        "id": "target-project_lead",
+        "label": "Project Lead",
+        "value": "Tracy Millmore"
+      },
+      {
+        "id": "target-progress_metric",
+        "label": "Progress Metric",
+        "value": "No of plans"
+      },
+      {
+        "id": "target-targets_set",
+        "label": "Targets Set",
+        "value": "6 complete"
+      },
+      {
+        "id": "target-kpi",
+        "label": "KPI",
+        "value": null
+      },
+      {
+        "id": "target-carbon_reduction",
+        "label": "Carbon Reduction",
+        "value": "Council"
+      },
+      {
+        "id": "target-council_estimated_annual_saving",
+        "label": "Council Estimated Annual Saving",
+        "value": "0 Enabling or Adaptation Action"
+      },
+      {
+        "id": "target-potential_obstacles_and_solutions",
+        "label": "Potential Obstacles and Solutions",
+        "value": "Design, feasibility, funding"
+      },
+      {
+        "id": "target-start_date",
+        "label": "Start Date",
+        "value": "Ongoing"
+      },
+      {
+        "id": "target-completion_date",
+        "label": "Completion Date",
+        "value": "01-06-2024"
+      },
+      {
+        "id": "target-governing_group",
+        "label": "Governing Group",
+        "value": "Carbon Capital Group"
+      }
+    ],
+    "costFields": [
+      {
+        "id": "target-countywide_estimated_annual_saving",
+        "label": "Countywide Estimated Annual Saving",
+        "value": null
+      },
+      {
+        "id": "target-actual_annual_saving",
+        "label": "Actual Annual Saving",
+        "value": null
+      },
+      {
+        "id": "target-cost",
+        "label": "Cost",
+        "value": null
+      }
+    ],
+    "otherFields": [
+      {
+        "id": "target-funding_secured",
+        "label": "Funding Secured",
+        "value": "Yes"
+      },
+      {
+        "id": "target-sufficient_staff",
+        "label": "Sufficient Staff",
+        "value": "Yes"
+      },
+      {
+        "id": "target-start_date",
+        "label": "Start Date",
+        "value": "Ongoing"
+      },
+      {
+        "id": "target-completion_date",
+        "label": "Completion Date",
+        "value": "01-06-2024"
+      }
+    ]
+  },
+  {
+    "target-id": 5,
+    "title": "Surveys and Heating Decarbonisation Plans",
+    "fields": [
+      {
+        "id": "target-cerp3_action_type",
+        "label": "CERP3 Action Type",
+        "value": "Building Decarbonisation"
+      },
+      {
+        "id": "target-smart_action_description",
+        "label": "Smart Action Description",
+        "value": "Carry out surveys and heating decarbonisation plans at the remaining significant carbon emitting facilities: Freemans Quay LC, Spennymoor LC, Green Lane Offices, Hackworth Road Depot, Chilton Depot"
+      },
+      {
+        "id": "target-related_work_programme",
+        "label": "Related Work Programme",
+        "value": null
+      },
+      {
+        "id": "target-action_type",
+        "label": "Action Type",
+        "value": "Additional"
+      },
+      {
+        "id": "target-project_lead",
+        "label": "Project Lead",
+        "value": "Tracy Millmore"
+      },
+      {
+        "id": "target-progress_metric",
+        "label": "Progress Metric",
+        "value": "No of Surveys"
+      },
+      {
+        "id": "target-targets_set",
+        "label": "Targets Set",
+        "value": "5 complete"
+      },
+      {
+        "id": "target-kpi",
+        "label": "KPI",
+        "value": null
+      },
+      {
+        "id": "target-carbon_reduction",
+        "label": "Carbon Reduction",
+        "value": "Council"
+      },
+      {
+        "id": "target-council_estimated_annual_saving",
+        "label": "Council Estimated Annual Saving",
+        "value": "0 Enabling or Adaptation Action"
+      },
+      {
+        "id": "target-potential_obstacles_and_solutions",
+        "label": "Potential Obstacles and Solutions",
+        "value": "Design, feasibility, funding"
+      },
+      {
+        "id": "target-governing_group",
+        "label": "Governing Group",
+        "value": "Carbon Capital Group"
+      }
+    ],
+    "costFields": [
+      {
+        "id": "target-countywide_estimated_annual_saving",
+        "label": "Countywide Estimated Annual Saving",
+        "value": null
+      },
+      {
+        "id": "target-actual_annual_saving",
+        "label": "Actual Annual Saving",
+        "value": null
+      },
+      {
+        "id": "target-cost",
+        "label": "Cost",
+        "value": null
+      }
+    ],
+    "otherFields": [
+      {
+        "id": "target-funding_secured",
+        "label": "Funding Secured",
+        "value": "No"
+      },
+      {
+        "id": "target-sufficient_staff",
+        "label": "Sufficient Staff",
+        "value": "Yes"
+      },
+      {
+        "id": "target-start_date",
+        "label": "Start Date",
+        "value": "Ongoing"
+      },
+      {
+        "id": "target-completion_date",
+        "label": "Completion Date",
+        "value": "01-04-2025"
+      }
+    ]
+  },
+  {
+    "target-id": 6,
+    "title": "Install LED Lighting - DCC",
+    "fields": [
+      {
+        "id": "target-cerp3_action_type",
+        "label": "CERP3 Action Type",
+        "value": "Building Decarbonisation"
+      },
+      {
+        "id": "target-smart_action_description",
+        "label": "Smart Action Description",
+        "value": "Install LED lighting across 60 DCC owned sites"
+      },
+      {
+        "id": "target-related_work_programme",
+        "label": "Related Work Programme",
+        "value": "Leisure Transformation; Capital Maintenance"
+      },
+      {
+        "id": "target-action_type",
+        "label": "Action Type",
+        "value": "Business as Usual"
+      },
+      {
+        "id": "target-project_lead",
+        "label": "Project Lead",
+        "value": "Louise Austin"
+      },
+      {
+        "id": "target-progress_metric",
+        "label": "Progress Metric",
+        "value": "Number of buildings"
+      },
+      {
+        "id": "target-targets_set",
+        "label": "Targets Set",
+        "value": "60 sites will have LED lighting installed"
+      },
+      {
+        "id": "target-kpi",
+        "label": "KPI",
+        "value": null
+      },
+      {
+        "id": "target-carbon_reduction",
+        "label": "Carbon Reduction",
+        "value": "Council"
+      },
+      {
+        "id": "target-council_estimated_annual_saving",
+        "label": "Council Estimated Annual Saving",
+        "value": "Med (>50-200t)"
+      },
+      {
+        "id": "target-potential_obstacles_and_solutions",
+        "label": "Potential Obstacles and Solutions",
+        "value": "Design costs, technical issues"
+      },
+      {
+        "id": "target-governing_group",
+        "label": "Governing Group",
+        "value": "Carbon Capital Group"
+      }
+    ],
+    "costFields": [
+      {
+        "id": "target-countywide_estimated_annual_saving",
+        "label": "Countywide Estimated Annual Saving",
+        "value": null
+      },
+      {
+        "id": "target-actual_annual_saving",
+        "label": "Actual Annual Saving",
+        "value": null
+      },
+      {
+        "id": "target-cost",
+        "label": "Cost",
+        "value": null
+      }
+    ],
+    "otherFields": [
+      {
+        "id": "target-funding_secured",
+        "label": "Funding Secured",
+        "value": "Invest to save"
+      },
+      {
+        "id": "target-sufficient_staff",
+        "label": "Sufficient Staff",
+        "value": "Yes"
+      },
+      {
+        "id": "target-start_date",
+        "label": "Start Date",
+        "value": "Ongoing"
+      },
+      {
+        "id": "target-completion_date",
+        "label": "Completion Date",
+        "value": "31-03-2027"
+      }
+    ]
+  },
+  {
+    "target-id": 7,
+    "title": "Increase Proportion - BEMS",
+    "fields": [
+      {
+        "id": "target-cerp3_action_type",
+        "label": "CERP3 Action Type",
+        "value": "Building Decarbonisation"
+      },
+      {
+        "id": "target-smart_action_description",
+        "label": "Smart Action Description",
+        "value": "Increase proportion of top 30 sites covered by BEMS"
+      },
+      {
+        "id": "target-related_work_programme",
+        "label": "Related Work Programme",
+        "value": null
+      },
+      {
+        "id": "target-action_type",
+        "label": "Action Type",
+        "value": "Business as Usual"
+      },
+      {
+        "id": "target-project_lead",
+        "label": "Project Lead",
+        "value": "David Walker"
+      },
+      {
+        "id": "target-progress_metric",
+        "label": "Progress Metric",
+        "value": "Percentage"
+      },
+      {
+        "id": "target-targets_set",
+        "label": "Targets Set",
+        "value": "75%"
+      },
+      {
+        "id": "target-kpi",
+        "label": "KPI",
+        "value": null
+      },
+      {
+        "id": "target-carbon_reduction",
+        "label": "Carbon Reduction",
+        "value": "Council"
+      },
+      {
+        "id": "target-council_estimated_annual_saving",
+        "label": "Council Estimated Annual Saving",
+        "value": "Low (1-50t)"
+      },
+      {
+        "id": "target-potential_obstacles_and_solutions",
+        "label": "Potential Obstacles and Solutions",
+        "value": "Design, feasibility, funding"
+      },
+      {
+        "id": "target-governing_group",
+        "label": "Governing Group",
+        "value": "Carbon Capital Group"
+      }
+    ],
+    "costFields": [
+      {
+        "id": "target-countywide_estimated_annual_saving",
+        "label": "Countywide Estimated Annual Saving",
+        "value": null
+      },
+      {
+        "id": "target-actual_annual_saving",
+        "label": "Actual Annual Saving",
+        "value": null
+      },
+      {
+        "id": "target-cost",
+        "label": "Cost",
+        "value": null
+      }
+    ],
+    "otherFields": [
+      {
+        "id": "target-funding_secured",
+        "label": "Funding Secured",
+        "value": "Invest to save"
+      },
+      {
+        "id": "target-sufficient_staff",
+        "label": "Sufficient Staff",
+        "value": null
+      },
+      {
+        "id": "target-start_date",
+        "label": "Start Date",
+        "value": "Ongoing"
+      },
+      {
+        "id": "target-completion_date",
+        "label": "Completion Date",
+        "value": "31-03-2027"
+      }
+    ]
+  },
+  {
+    "target-id": 8,
+    "title": "BMS - DCC Portfolio",
+    "fields": [
+      {
+        "id": "target-cerp3_action_type",
+        "label": "CERP3 Action Type",
+        "value": "Building Decarbonisation"
+      },
+      {
+        "id": "target-smart_action_description",
+        "label": "Smart Action Description",
+        "value": "Develop integrated BMS system across DCC portfolio"
+      },
+      {
+        "id": "target-related_work_programme",
+        "label": "Related Work Programme",
+        "value": null
+      },
+      {
+        "id": "target-action_type",
+        "label": "Action Type",
+        "value": "Business as Usual"
+      },
+      {
+        "id": "target-project_lead",
+        "label": "Project Lead",
+        "value": "David Walker"
+      },
+      {
+        "id": "target-progress_metric",
+        "label": "Progress Metric",
+        "value": "Number of upgrades/installs per year"
+      },
+      {
+        "id": "target-targets_set",
+        "label": "Targets Set",
+        "value": "4 per year"
+      },
+      {
+        "id": "target-kpi",
+        "label": "KPI",
+        "value": null
+      },
+      {
+        "id": "target-carbon_reduction",
+        "label": "Carbon Reduction",
+        "value": "Council"
+      },
+      {
+        "id": "target-council_estimated_annual_saving",
+        "label": "Council Estimated Annual Saving",
+        "value": "Low (1-50t)"
+      },
+      {
+        "id": "target-potential_obstacles_and_solutions",
+        "label": "Potential Obstacles and Solutions",
+        "value": "Funding, Communication / security - DCC Aged plant Outstanding maintenance"
+      },
+      {
+        "id": "target-governing_group",
+        "label": "Governing Group",
+        "value": "Carbon Capital Group"
+      }
+    ],
+    "costFields": [
+      {
+        "id": "target-countywide_estimated_annual_saving",
+        "label": "Countywide Estimated Annual Saving",
+        "value": null
+      },
+      {
+        "id": "target-actual_annual_saving",
+        "label": "Actual Annual Saving",
+        "value": null
+      },
+      {
+        "id": "target-cost",
+        "label": "Cost",
+        "value": null
+      }
+    ],
+    "otherFields": [
+      {
+        "id": "target-funding_secured",
+        "label": "Funding Secured",
+        "value": "Yes"
+      },
+      {
+        "id": "target-sufficient_staff",
+        "label": "Sufficient Staff",
+        "value": "Yes"
+      },
+      {
+        "id": "target-start_date",
+        "label": "Start Date",
+        "value": "Ongoing"
+      },
+      {
+        "id": "target-completion_date",
+        "label": "Completion Date",
+        "value": "01-04-2025"
+      }
+    ]
+  },
+  {
+    "target-id": 9,
+    "title": "Energy Management Responsibilities",
+    "fields": [
+      {
+        "id": "target-cerp3_action_type",
+        "label": "CERP3 Action Type",
+        "value": "Building Decarbonisation"
+      },
+      {
+        "id": "target-smart_action_description",
+        "label": "Smart Action Description",
+        "value": "Improve understanding of energy management responsibilities with building managers"
+      },
+      {
+        "id": "target-related_work_programme",
+        "label": "Related Work Programme",
+        "value": null
+      },
+      {
+        "id": "target-action_type",
+        "label": "Action Type",
+        "value": "Business as Usual"
+      },
+      {
+        "id": "target-project_lead",
+        "label": "Project Lead",
+        "value": "Tracy Millmore"
+      },
+      {
+        "id": "target-progress_metric",
+        "label": "Progress Metric",
+        "value": "Develop Specific ENERGY teams channel for building managers and training"
+      },
+      {
+        "id": "target-targets_set",
+        "label": "Targets Set",
+        "value": "4 sessions delivered per year"
+      },
+      {
+        "id": "target-kpi",
+        "label": "KPI",
+        "value": null
+      },
+      {
+        "id": "target-carbon_reduction",
+        "label": "Carbon Reduction",
+        "value": "Council"
+      },
+      {
+        "id": "target-council_estimated_annual_saving",
+        "label": "Council Estimated Annual Saving",
+        "value": "0 Enabling or Adaptation Action"
+      },
+      {
+        "id": "target-potential_obstacles_and_solutions",
+        "label": "Potential Obstacles and Solutions",
+        "value": "communication, capacity"
+      },
+      {
+        "id": "target-governing_group",
+        "label": "Governing Group",
+        "value": "Carbon Capital Group"
+      }
+    ],
+    "costFields": [
+      {
+        "id": "target-countywide_estimated_annual_saving",
+        "label": "Countywide Estimated Annual Saving",
+        "value": null
+      },
+      {
+        "id": "target-actual_annual_saving",
+        "label": "Actual Annual Saving",
+        "value": null
+      },
+      {
+        "id": "target-cost",
+        "label": "Cost",
+        "value": null
+      }
+    ],
+    "otherFields": [
+      {
+        "id": "target-funding_secured",
+        "label": "Funding Secured",
+        "value": null
+      },
+      {
+        "id": "target-sufficient_staff",
+        "label": "Sufficient Staff",
+        "value": "Yes"
+      },
+      {
+        "id": "target-start_date",
+        "label": "Start Date",
+        "value": "01-03-2024"
+      },
+      {
+        "id": "target-completion_date",
+        "label": "Completion Date",
+        "value": "Ongoing"
+      }
+    ]
+  },
+  {
+    "target-id": 10,
+    "title": "Insulation Maximisation",
+    "fields": [
+      {
+        "id": "target-cerp3_action_type",
+        "label": "CERP3 Action Type",
+        "value": "Building Decarbonisation"
+      },
+      {
+        "id": "target-smart_action_description",
+        "label": "Smart Action Description",
+        "value": "Work with DCC teams to ensure Insulation is maximised during refurbishments"
+      },
+      {
+        "id": "target-related_work_programme",
+        "label": "Related Work Programme",
+        "value": "leisure transformation"
+      },
+      {
+        "id": "target-action_type",
+        "label": "Action Type",
+        "value": "Business as Usual"
+      },
+      {
+        "id": "target-project_lead",
+        "label": "Project Lead",
+        "value": "Tracy Millmore"
+      },
+      {
+        "id": "target-progress_metric",
+        "label": "Progress Metric",
+        "value": "Number of projects where insulation has been upgraded"
+      },
+      {
+        "id": "target-targets_set",
+        "label": "Targets Set",
+        "value": "6 per year"
+      },
+      {
+        "id": "target-kpi",
+        "label": "KPI",
+        "value": null
+      },
+      {
+        "id": "target-carbon_reduction",
+        "label": "Carbon Reduction",
+        "value": "Council"
+      },
+      {
+        "id": "target-council_estimated_annual_saving",
+        "label": "Council Estimated Annual Saving",
+        "value": "Low (1-50t)"
+      },
+      {
+        "id": "target-potential_obstacles_and_solutions",
+        "label": "Potential Obstacles and Solutions",
+        "value": "Design, feasibility, funding"
+      },
+      {
+        "id": "target-governing_group",
+        "label": "Governing Group",
+        "value": "Carbon Capital Group"
+      }
+    ],
+    "costFields": [
+      {
+        "id": "target-countywide_estimated_annual_saving",
+        "label": "Countywide Estimated Annual Saving",
+        "value": null
+      },
+      {
+        "id": "target-actual_annual_saving",
+        "label": "Actual Annual Saving",
+        "value": null
+      },
+      {
+        "id": "target-cost",
+        "label": "Cost",
+        "value": null
+      }
+    ],
+    "otherFields": [
+      {
+        "id": "target-funding_secured",
+        "label": "Funding Secured",
+        "value": "no"
+      },
+      {
+        "id": "target-sufficient_staff",
+        "label": "Sufficient Staff",
+        "value": "Yes"
+      },
+      {
+        "id": "target-start_date",
+        "label": "Start Date",
+        "value": "Ongoing"
+      },
+      {
+        "id": "target-completion_date",
+        "label": "Completion Date",
+        "value": "Ongoing"
+      }
+    ]
+  },
+  {
+    "target-id": 11,
+    "title": "PV Generation Increase - DCC Estate",
+    "fields": [
+      {
+        "id": "target-cerp3_action_type",
+        "label": "CERP3 Action Type",
+        "value": "Renewable Energy"
+      },
+      {
+        "id": "target-smart_action_description",
+        "label": "Smart Action Description",
+        "value": "Increase PV generation across DCC estate by 3MW. This will include a mixture of roof mounted, ground mounted, and vertical mounted, to best suit the site."
+      },
+      {
+        "id": "target-related_work_programme",
+        "label": "Related Work Programme",
+        "value": "Capital Maintenance"
+      },
+      {
+        "id": "target-action_type",
+        "label": "Action Type",
+        "value": "Business as Usual"
+      },
+      {
+        "id": "target-project_lead",
+        "label": "Project Lead",
+        "value": "Louise Austin"
+      },
+      {
+        "id": "target-progress_metric",
+        "label": "Progress Metric",
+        "value": "Installed capacity"
+      },
+      {
+        "id": "target-targets_set",
+        "label": "Targets Set",
+        "value": "3MW of solar PV to be installed"
+      },
+      {
+        "id": "target-kpi",
+        "label": "KPI",
+        "value": null
+      },
+      {
+        "id": "target-carbon_reduction",
+        "label": "Carbon Reduction",
+        "value": "Council"
+      },
+      {
+        "id": "target-council_estimated_annual_saving",
+        "label": "Council Estimated Annual Saving",
+        "value": "Med (>50-200t)"
+      },
+      {
+        "id": "target-potential_obstacles_and_solutions",
+        "label": "Potential Obstacles and Solutions",
+        "value": "Design, feasibility, funding"
+      },
+      {
+        "id": "target-governing_group",
+        "label": "Governing Group",
+        "value": "Carbon Capital Group"
+      }
+    ],
+    "costFields": [
+      {
+        "id": "target-countywide_estimated_annual_saving",
+        "label": "Countywide Estimated Annual Saving",
+        "value": null
+      },
+      {
+        "id": "target-actual_annual_saving",
+        "label": "Actual Annual Saving",
+        "value": null
+      },
+      {
+        "id": "target-cost",
+        "label": "Cost",
+        "value": null
+      }
+    ],
+    "otherFields": [
+      {
+        "id": "target-funding_secured",
+        "label": "Funding Secured",
+        "value": "Invest to save"
+      },
+      {
+        "id": "target-sufficient_staff",
+        "label": "Sufficient Staff",
+        "value": "Yes"
+      },
+      {
+        "id": "target-start_date",
+        "label": "Start Date",
+        "value": "Ongoing"
+      },
+      {
+        "id": "target-completion_date",
+        "label": "Completion Date",
+        "value": "31-03-2027"
+      }
+    ]
+  },
+  {
+    "target-id": 12,
+    "title": "Solar Array Development - Jade Business Park",
+    "fields": [
+      {
+        "id": "target-cerp3_action_type",
+        "label": "CERP3 Action Type",
+        "value": "Renewable Energy"
+      },
+      {
+        "id": "target-smart_action_description",
+        "label": "Smart Action Description",
+        "value": "Develop 1MW solar array at Jade Business Park (following SEGL1 construction when field is back with DCC)"
+      },
+      {
+        "id": "target-related_work_programme",
+        "label": "Related Work Programme",
+        "value": null
+      },
+      {
+        "id": "target-action_type",
+        "label": "Action Type",
+        "value": "Additional"
+      },
+      {
+        "id": "target-project_lead",
+        "label": "Project Lead",
+        "value": "Malcolm Johnson"
+      },
+      {
+        "id": "target-progress_metric",
+        "label": "Progress Metric",
+        "value": "Installed capacity"
+      },
+      {
+        "id": "target-targets_set",
+        "label": "Targets Set",
+        "value": "1MW"
+      },
+      {
+        "id": "target-kpi",
+        "label": "KPI",
+        "value": null
+      },
+      {
+        "id": "target-carbon_reduction",
+        "label": "Carbon Reduction",
+        "value": "Council"
+      },
+      {
+        "id": "target-council_estimated_annual_saving",
+        "label": "Council Estimated Annual Saving",
+        "value": "Low (1-50t)"
+      },
+      {
+        "id": "target-potential_obstacles_and_solutions",
+        "label": "Potential Obstacles and Solutions",
+        "value": "Design, feasibility, funding"
+      },
+      {
+        "id": "target-governing_group",
+        "label": "Governing Group",
+        "value": "Carbon Capital Group"
+      }
+    ],
+    "costFields": [
+      {
+        "id": "target-countywide_estimated_annual_saving",
+        "label": "Countywide Estimated Annual Saving",
+        "value": null
+      },
+      {
+        "id": "target-actual_annual_saving",
+        "label": "Actual Annual Saving",
+        "value": null
+      },
+      {
+        "id": "target-cost",
+        "label": "Cost",
+        "value": null
+      }
+    ],
+    "otherFields": [
+      {
+        "id": "target-funding_secured",
+        "label": "Funding Secured",
+        "value": "Invest to save"
+      },
+      {
+        "id": "target-sufficient_staff",
+        "label": "Sufficient Staff",
+        "value": null
+      },
+      {
+        "id": "target-start_date",
+        "label": "Start Date",
+        "value": "Ongoing"
+      },
+      {
+        "id": "target-completion_date",
+        "label": "Completion Date",
+        "value": "31-03-2029"
+      }
+    ]
+  },
+  {
+    "target-id": 13,
+    "title": "Small wind turbines - Hackworth Road Depot",
+    "fields": [
+      {
+        "id": "target-cerp3_action_type",
+        "label": "CERP3 Action Type",
+        "value": "Renewable Energy"
+      },
+      {
+        "id": "target-smart_action_description",
+        "label": "Smart Action Description",
+        "value": "Development of 4 Small wind turbines at Hackworth Road Depot"
+      },
+      {
+        "id": "target-related_work_programme",
+        "label": "Related Work Programme",
+        "value": null
+      },
+      {
+        "id": "target-action_type",
+        "label": "Action Type",
+        "value": "Additional"
+      },
+      {
+        "id": "target-project_lead",
+        "label": "Project Lead",
+        "value": "Tracy Millmore"
+      },
+      {
+        "id": "target-progress_metric",
+        "label": "Progress Metric",
+        "value": "Number of turbines installed"
+      },
+      {
+        "id": "target-targets_set",
+        "label": "Targets Set",
+        "value": "4"
+      },
+      {
+        "id": "target-kpi",
+        "label": "KPI",
+        "value": null
+      },
+      {
+        "id": "target-carbon_reduction",
+        "label": "Carbon Reduction",
+        "value": "Council"
+      },
+      {
+        "id": "target-council_estimated_annual_saving",
+        "label": "Council Estimated Annual Saving",
+        "value": "Low (1-50t)"
+      },
+      {
+        "id": "target-potential_obstacles_and_solutions",
+        "label": "Potential Obstacles and Solutions",
+        "value": "Design, feasibility, funding"
+      },
+      {
+        "id": "target-governing_group",
+        "label": "Governing Group",
+        "value": "Carbon Capital Group"
+      }
+    ],
+    "costFields": [
+      {
+        "id": "target-countywide_estimated_annual_saving",
+        "label": "Countywide Estimated Annual Saving",
+        "value": null
+      },
+      {
+        "id": "target-actual_annual_saving",
+        "label": "Actual Annual Saving",
+        "value": null
+      },
+      {
+        "id": "target-cost",
+        "label": "Cost",
+        "value": null
+      }
+    ],
+    "otherFields": [
+      {
+        "id": "target-funding_secured",
+        "label": "Funding Secured",
+        "value": "Invest to save"
+      },
+      {
+        "id": "target-sufficient_staff",
+        "label": "Sufficient Staff",
+        "value": "Yes"
+      },
+      {
+        "id": "target-start_date",
+        "label": "Start Date",
+        "value": "Ongoing"
+      },
+      {
+        "id": "target-completion_date",
+        "label": "Completion Date",
+        "value": "31-03-2027"
+      }
+    ]
+  },
+  {
+    "target-id": 14,
+    "title": "Learnings From Hackworth Road Project",
+    "fields": [
+      {
+        "id": "target-cerp3_action_type",
+        "label": "CERP3 Action Type",
+        "value": "Renewable Energy"
+      },
+      {
+        "id": "target-smart_action_description",
+        "label": "Smart Action Description",
+        "value": "Following learnings from Hackworth Road project take forward additional sites."
+      },
+      {
+        "id": "target-related_work_programme",
+        "label": "Related Work Programme",
+        "value": null
+      },
+      {
+        "id": "target-action_type",
+        "label": "Action Type",
+        "value": "Additional"
+      },
+      {
+        "id": "target-project_lead",
+        "label": "Project Lead",
+        "value": "Malcolm Johnson"
+      },
+      {
+        "id": "target-progress_metric",
+        "label": "Progress Metric",
+        "value": "no of turbines installed"
+      },
+      {
+        "id": "target-targets_set",
+        "label": "Targets Set",
+        "value": null
+      },
+      {
+        "id": "target-kpi",
+        "label": "KPI",
+        "value": null
+      },
+      {
+        "id": "target-carbon_reduction",
+        "label": "Carbon Reduction",
+        "value": "Council"
+      },
+      {
+        "id": "target-council_estimated_annual_saving",
+        "label": "Council Estimated Annual Saving",
+        "value": "0 Enabling or Adaptation Action"
+      },
+      {
+        "id": "target-potential_obstacles_and_solutions",
+        "label": "Potential Obstacles and Solutions",
+        "value": "Design, feasibility, funding"
+      },
+      {
+        "id": "target-governing_group",
+        "label": "Governing Group",
+        "value": "Carbon Capital Group"
+      }
+    ],
+    "costFields": [
+      {
+        "id": "target-countywide_estimated_annual_saving",
+        "label": "Countywide Estimated Annual Saving",
+        "value": null
+      },
+      {
+        "id": "target-actual_annual_saving",
+        "label": "Actual Annual Saving",
+        "value": null
+      },
+      {
+        "id": "target-cost",
+        "label": "Cost",
+        "value": null
+      }
+    ],
+    "otherFields": [
+      {
+        "id": "target-funding_secured",
+        "label": "Funding Secured",
+        "value": "Invest to save"
+      },
+      {
+        "id": "target-sufficient_staff",
+        "label": "Sufficient Staff",
+        "value": "Yes"
+      },
+      {
+        "id": "target-start_date",
+        "label": "Start Date",
+        "value": "Ongoing"
+      },
+      {
+        "id": "target-completion_date",
+        "label": "Completion Date",
+        "value": "01-04-2027"
+      }
+    ]
+  },
+  {
+    "target-id": 15,
+    "title": "Solar and Wind Hybrid - Joint Stocks Quarry",
+    "fields": [
+      {
+        "id": "target-cerp3_action_type",
+        "label": "CERP3 Action Type",
+        "value": "Renewable Energy"
+      },
+      {
+        "id": "target-smart_action_description",
+        "label": "Smart Action Description",
+        "value": "Development of Solar and Wind Hybrid at Joint Stocks Quarry/former landfill"
+      },
+      {
+        "id": "target-related_work_programme",
+        "label": "Related Work Programme",
+        "value": null
+      },
+      {
+        "id": "target-action_type",
+        "label": "Action Type",
+        "value": "Additional"
+      },
+      {
+        "id": "target-project_lead",
+        "label": "Project Lead",
+        "value": "Louise Austin"
+      },
+      {
+        "id": "target-progress_metric",
+        "label": "Progress Metric",
+        "value": "Capacity installed"
+      },
+      {
+        "id": "target-targets_set",
+        "label": "Targets Set",
+        "value": "TBC"
+      },
+      {
+        "id": "target-kpi",
+        "label": "KPI",
+        "value": null
+      },
+      {
+        "id": "target-carbon_reduction",
+        "label": "Carbon Reduction",
+        "value": "Council"
+      },
+      {
+        "id": "target-council_estimated_annual_saving",
+        "label": "Council Estimated Annual Saving",
+        "value": "Low (1-50t)"
+      },
+      {
+        "id": "target-funding_secured",
+        "label": "Funding Secured",
+        "value": "Invest to save"
+      },
+      {
+        "id": "target-sufficient_staff",
+        "label": "Sufficient Staff",
+        "value": null
+      },
+      {
+        "id": "target-potential_obstacles_and_solutions",
+        "label": "Potential Obstacles and Solutions",
+        "value": "Design, feasibility, funding"
+      },
+      {
+        "id": "target-governing_group",
+        "label": "Governing Group",
+        "value": "Carbon Capital Group"
+      }
+    ],
+    "costFields": [
+      {
+        "id": "target-countywide_estimated_annual_saving",
+        "label": "Countywide Estimated Annual Saving",
+        "value": null
+      },
+      {
+        "id": "target-actual_annual_saving",
+        "label": "Actual Annual Saving",
+        "value": null
+      },
+      {
+        "id": "target-cost",
+        "label": "Cost",
+        "value": null
+      }
+    ],
+    "otherFields": [
+      {
+        "id": "target-funding_secured",
+        "label": "Funding Secured",
+        "value": "Invest to save"
+      },
+      {
+        "id": "target-sufficient_staff",
+        "label": "Sufficient Staff",
+        "value": null
+      },
+      {
+        "id": "target-start_date",
+        "label": "Start Date",
+        "value": "Ongoing"
+      },
+      {
+        "id": "target-completion_date",
+        "label": "Completion Date",
+        "value": "31-03-2027"
+      }
+    ]
+  },
+  {
+    "target-id": 16,
+    "title": "Solar Car Ports",
+    "fields": [
+      {
+        "id": "target-cerp3_action_type",
+        "label": "CERP3 Action Type",
+        "value": "Renewable Energy"
+      },
+      {
+        "id": "target-smart_action_description",
+        "label": "Smart Action Description",
+        "value": "Develop and implement phased solar car ports implementation plan across 5 sites."
+      },
+      {
+        "id": "target-related_work_programme",
+        "label": "Related Work Programme",
+        "value": null
+      },
+      {
+        "id": "target-action_type",
+        "label": "Action Type",
+        "value": "Additional"
+      },
+      {
+        "id": "target-project_lead",
+        "label": "Project Lead",
+        "value": "Louise Austin"
+      },
+      {
+        "id": "target-progress_metric",
+        "label": "Progress Metric",
+        "value": "Solar Car Ports delivered"
+      },
+      {
+        "id": "target-targets_set",
+        "label": "Targets Set",
+        "value": "5 in total"
+      },
+      {
+        "id": "target-kpi",
+        "label": "KPI",
+        "value": null
+      },
+      {
+        "id": "target-carbon_reduction",
+        "label": "Carbon Reduction",
+        "value": "Council"
+      },
+      {
+        "id": "target-council_estimated_annual_saving",
+        "label": "Council Estimated Annual Saving",
+        "value": "Low (1-50t)"
+      },
+      {
+        "id": "target-funding_secured",
+        "label": "Funding Secured",
+        "value": "Invest to save"
+      },
+      {
+        "id": "target-sufficient_staff",
+        "label": "Sufficient Staff",
+        "value": "Yes"
+      },
+      {
+        "id": "target-potential_obstacles_and_solutions",
+        "label": "Potential Obstacles and Solutions",
+        "value": "Design, feasibility, funding"
+      },
+      {
+        "id": "target-governing_group",
+        "label": "Governing Group",
+        "value": "Carbon Capital Group"
+      }
+    ],
+    "costFields": [
+      {
+        "id": "target-countywide_estimated_annual_saving",
+        "label": "Countywide Estimated Annual Saving",
+        "value": null
+      },
+      {
+        "id": "target-actual_annual_saving",
+        "label": "Actual Annual Saving",
+        "value": null
+      },
+      {
+        "id": "target-cost",
+        "label": "Cost",
+        "value": null
+      }
+    ],
+    "otherFields": [
+      {
+        "id": "target-funding_secured",
+        "label": "Funding Secured",
+        "value": "Invest to save"
+      },
+      {
+        "id": "target-sufficient_staff",
+        "label": "Sufficient Staff",
+        "value": "Yes"
+      },
+      {
+        "id": "target-start_date",
+        "label": "Start Date",
+        "value": "Ongoing"
+      },
+      {
+        "id": "target-completion_date",
+        "label": "Completion Date",
+        "value": "31-03-2027"
+      }
+    ]
+  },
+  {
+    "target-id": 17,
+    "title": "Upscale Solar Farm - Tanfield",
+    "fields": [
+      {
+        "id": "target-cerp3_action_type",
+        "label": "CERP3 Action Type",
+        "value": "Renewable Energy"
+      },
+      {
+        "id": "target-smart_action_description",
+        "label": "Smart Action Description",
+        "value": "Review and upscale solar farm at Tanfield to match demand from nearby building by 2025. Explore commercial potential of project"
+      },
+      {
+        "id": "target-related_work_programme",
+        "label": "Related Work Programme",
+        "value": null
+      },
+      {
+        "id": "target-action_type",
+        "label": "Action Type",
+        "value": "Additional"
+      },
+      {
+        "id": "target-project_lead",
+        "label": "Project Lead",
+        "value": "Stephen Beresford"
+      },
+      {
+        "id": "target-progress_metric",
+        "label": "Progress Metric",
+        "value": "Extension delivered"
+      },
+      {
+        "id": "target-targets_set",
+        "label": "Targets Set",
+        "value": "Extension delivered"
+      },
+      {
+        "id": "target-kpi",
+        "label": "KPI",
+        "value": null
+      },
+      {
+        "id": "target-carbon_reduction",
+        "label": "Carbon Reduction",
+        "value": "Council"
+      },
+      {
+        "id": "target-council_estimated_annual_saving",
+        "label": "Council Estimated Annual Saving",
+        "value": "Low (1-50t)"
+      },
+      {
+        "id": "target-potential_obstacles_and_solutions",
+        "label": "Potential Obstacles and Solutions",
+        "value": "Design, feasibility, funding"
+      },
+      {
+        "id": "target-governing_group",
+        "label": "Governing Group",
+        "value": "Carbon Capital Group"
+      }
+    ],
+    "costFields": [
+      {
+        "id": "target-countywide_estimated_annual_saving",
+        "label": "Countywide Estimated Annual Saving",
+        "value": null
+      },
+      {
+        "id": "target-actual_annual_saving",
+        "label": "Actual Annual Saving",
+        "value": null
+      },
+      {
+        "id": "target-cost",
+        "label": "Cost",
+        "value": null
+      }
+    ],
+    "otherFields": [
+      {
+        "id": "target-funding_secured",
+        "label": "Funding Secured",
+        "value": "Invest to save"
+      },
+      {
+        "id": "target-sufficient_staff",
+        "label": "Sufficient Staff",
+        "value": "Yes"
+      },
+      {
+        "id": "target-start_date",
+        "label": "Start Date",
+        "value": "Ongoing"
+      },
+      {
+        "id": "target-completion_date",
+        "label": "Completion Date",
+        "value": "31-03-2027"
+      }
+    ]
+  },
+  {
+    "target-id": "18",
+    "title": "Test Target Heading",
+    "fields": [
+      {
+        "id": "target-cerp3_action_type",
+        "label": "CERP3 Action Type",
+        "value": "Building Decarbonisation"
+      },
+      {
+        "id": "target-smart_action_description",
+        "label": "Smart Action Description",
+        "value": "Testing this"
+      },
+      {
+        "id": "target-related_work_programme",
+        "label": "Related Work Programme",
+        "value": "test"
+      },
+      {
+        "id": "target-action_type",
+        "label": "Action Type",
+        "value": "test"
+      },
+      {
+        "id": "target-project_lead",
+        "label": "Project Lead",
+        "value": "TBC"
+      },
+      {
+        "id": "target-progress_metric",
+        "label": "Progress Metric",
+        "value": "Number of sites per year"
+      },
+      {
+        "id": "target-targets_set",
+        "label": "Targets Set",
+        "value": "10 sites"
+      },
+      {
+        "id": "target-kpi",
+        "label": "KPI",
+        "value": ""
+      },
+      {
+        "id": "target-carbon_reduction",
+        "label": "Carbon Reduction",
+        "value": ""
+      },
+      {
+        "id": "target-potential_obstacles_and_solutions",
+        "label": "Potential Obstacles and Solutions",
+        "value": "IDK"
+      },
+      {
+        "id": "target-governing_group",
+        "label": "Governing Group",
+        "value": "DCC"
+      }
+    ],
+    "costFields": [
+      {
+        "id": "target-countywide_estimated_annual_saving",
+        "label": "Countywide Estimated Annual Saving",
+        "value": "3000"
+      },
+      {
+        "id": "target-actual_annual_saving",
+        "label": "Actual Annual Saving",
+        "value": "4000"
+      },
+      {
+        "id": "target-cost",
+        "label": "Cost",
+        "value": "2500"
+      }
+    ],
+    "otherFields": [
+      {
+        "id": "target-funding_secured",
+        "label": "Funding Secured",
+        "value": "invest to save"
+      },
+      {
+        "id": "target-sufficient_staff",
+        "label": "Sufficient Staff",
+        "value": "uncertain"
+      },
+      {
+        "id": "target-start_date",
+        "label": "Start Date",
+        "value": "2025-03-13"
+      },
+      {
+        "id": "target-completion_date",
+        "label": "Completion Date",
+        "value": "2026-10-07"
+      }
+    ],
+    "userId": "email1@example.com"
+  },
+  {
+    "target-id": "19",
+    "title": "Testing New Target",
+    "fields": [
+      {
+        "id": "target-cerp3_action_type",
+        "label": "CERP3 Action Type",
+        "value": "test"
+      },
+      {
+        "id": "target-smart_action_description",
+        "label": "Smart Action Description",
+        "value": "test this"
+      },
+      {
+        "id": "target-related_work_programme",
+        "label": "Related Work Programme",
+        "value": "test"
+      },
+      {
+        "id": "target-action_type",
+        "label": "Action Type",
+        "value": "this test"
+      },
+      {
+        "id": "target-project_lead",
+        "label": "Project Lead",
+        "value": ""
+      },
+      {
+        "id": "target-progress_metric",
+        "label": "Progress Metric",
+        "value": "no sites per year"
+      },
+      {
+        "id": "target-targets_set",
+        "label": "Targets Set",
+        "value": "15"
+      },
+      {
+        "id": "target-kpi",
+        "label": "KPI",
+        "value": ""
+      },
+      {
+        "id": "target-carbon_reduction",
+        "label": "Carbon Reduction",
+        "value": ""
+      },
+      {
+        "id": "target-potential_obstacles_and_solutions",
+        "label": "Potential Obstacles and Solutions",
+        "value": ""
+      },
+      {
+        "id": "target-governing_group",
+        "label": "Governing Group",
+        "value": ""
+      }
+    ],
+    "costFields": [
+      {
+        "id": "target-countywide_estimated_annual_saving",
+        "label": "Countywide Estimated Annual Saving",
+        "value": "600000"
+      },
+      {
+        "id": "target-actual_annual_saving",
+        "label": "Actual Annual Saving",
+        "value": "50000"
+      },
+      {
+        "id": "target-cost",
+        "label": "Cost",
+        "value": "3000"
+      }
+    ],
+    "otherFields": [
+      {
+        "id": "target-funding_secured",
+        "label": "Funding Secured",
+        "value": "no"
+      },
+      {
+        "id": "target-sufficient_staff",
+        "label": "Sufficient Staff",
+        "value": "uncertain"
+      },
+      {
+        "id": "target-start_date",
+        "label": "Start Date",
+        "value": "2025-03-15"
+      },
+      {
+        "id": "target-completion_date",
+        "label": "Completion Date",
+        "value": "2025-04-04"
+      }
+    ],
+    "userId": "email1@example.com"
+  }
 ]
