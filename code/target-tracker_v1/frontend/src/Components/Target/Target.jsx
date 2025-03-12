@@ -6,7 +6,7 @@ import TargetDropdown from "./TargetDropdown";
 import TargetDate from "./TargetDate";
 import "./Target.css";
 
-const Target = ({ userEmail, userRole, target, goToDashboard, goToManagerDashboard, goToTarget, isMyTarget }) => {
+const Target = ({ userEmail, userRole, target, goToDashboard, goToManagerDashboard, goToTarget, isMyTarget, fromAdminDashboard }) => {
     const [action, setAction] = useState("View");
     const [showSaveButton, setShowSaveButton] = useState(false);
     const [showDeleteButton, setShowDeleteButton] = useState(false);
@@ -32,7 +32,7 @@ const Target = ({ userEmail, userRole, target, goToDashboard, goToManagerDashboa
             const total = extractTotal(targetsSetField?.value);
             setMaxProgress(total);
 
-            if (isMyTarget) {
+            if (isMyTarget || fromAdminDashboard) {
                 setAction("Edit");
                 setShowSaveButton(true);
                 setShowDeleteButton(true);
@@ -42,7 +42,7 @@ const Target = ({ userEmail, userRole, target, goToDashboard, goToManagerDashboa
                 setShowDeleteButton(false);
             }
         }
-    }, [target, isMyTarget]);
+    }, [target]);
 
     const oppositeAction = action === "Edit" ? "View" : "Edit";
 

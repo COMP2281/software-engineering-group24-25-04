@@ -12,6 +12,7 @@ function App() {
   const [userRole, setUserRole] = useState(localStorage.getItem('userRole') || "");
   const [target, setTarget] = useState(localStorage.getItem('target') ? JSON.parse(localStorage.getItem('target')) : "");
   const [isMyTarget, setIsMyTarget] = useState("");
+  const [fromAdminDashboard, setFromAdminDashboard] = useState("");
 
   useEffect(() => {
     localStorage.setItem('currentPage', currentPage);
@@ -45,11 +46,12 @@ function App() {
     setCurrentPage('profile');
   };
 
-  const goToTarget = (email, target, isMyTarget) => {
+  const goToTarget = (email, target, isMyTarget, fromAdminDashboard = false) => {
     setIsMyTarget(isMyTarget);
     setUserEmail(email);
     setTarget(target);
     setCurrentPage('target');
+    setFromAdminDashboard(fromAdminDashboard);
   };
 
   return (
@@ -68,7 +70,7 @@ function App() {
                   <Profile userEmail={userEmail} userRole={userRole} goToDashboard={goToDashboard} goToManagerDashboard={goToManagerDashboard} goToLogin={goToLogin} />
               )}
               {currentPage === 'target' && (
-                  <Target userEmail={userEmail} isMyTarget={isMyTarget} userRole={userRole} target={target} goToDashboard={goToDashboard} goToManagerDashboard={goToManagerDashboard} />
+                  <Target userEmail={userEmail} isMyTarget={isMyTarget} fromAdminDashboard={fromAdminDashboard} userRole={userRole} target={target} goToDashboard={goToDashboard} goToManagerDashboard={goToManagerDashboard} />
               )}
           </div>
       </div>

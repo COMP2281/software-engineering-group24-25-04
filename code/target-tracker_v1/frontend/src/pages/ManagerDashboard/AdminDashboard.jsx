@@ -43,7 +43,7 @@ const AdminDashboard = ({ userEmail, goToProfile, goToTarget }) => {
     try {
       const response = await axios.get(`http://localhost:4000/target/${targetId}`);
       const targetData = response.data;
-      goToTarget(userEmail, targetData);
+      goToTarget(userEmail, targetData, true);
     } catch (error) {
       console.error("Error fetching target data:", error);
     }
