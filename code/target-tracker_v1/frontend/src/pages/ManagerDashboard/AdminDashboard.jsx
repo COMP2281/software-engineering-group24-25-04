@@ -13,7 +13,6 @@ const AdminDashboard = ({ userEmail, goToProfile, goToTarget }) => {
   const [selectedStaff, setSelectedStaff] = useState("");
   const [message, setMessage] = useState("");
   const [assignedTargets, setAssignedTargets] = useState([]);
-  const [progressValues, setProgressValues] = useState({});
 
   useEffect(() => {
     const fetchTargets = async () => {
@@ -128,26 +127,12 @@ const AdminDashboard = ({ userEmail, goToProfile, goToTarget }) => {
     return match ? parseInt(match[0], 10) : 1; // Default to 1 if no numbers are found
   };
 
-  // Handle change of progress input for a specific target.
-  const handleProgressChange = (targetId, value, total) => {
-    if (value === "") {
-      setProgressValues(prev => ({ ...prev, [targetId]: "" })); // Allow empty input
-    } else {
-      const parsedValue = parseInt(value, 10);
-      if (!isNaN(parsedValue)) {
-        const newVal = parsedValue > total ? total : parsedValue;
-        setProgressValues(prev => ({ ...prev, [targetId]: newVal.toString() }));
-      }
-    }
-  };
-
   // Calculate the progress percentage for a target.
   const getProgressPercentage = (target) => {
     const targetsSetField = target.fields.find(field => field.id === 'target-targets_set');
     const total = extractTotal(targetsSetField?.value);
-    // Parse the stored string; if empty or NaN, default to 0.
-    const completed = parseFloat(progressValues[target['target-id']] ?? "") || 0;
-    return total > 0 ? `${Math.min((completed / total) * 100, 100).toFixed(2)}%` : "0.00%";
+    const progress = target.progress || 0;
+    return total > 0 ? `${Math.min((progress / total) * 100, 100).toFixed(2)}%` : "0.00%";
   };
 
   return (
@@ -203,15 +188,6 @@ const AdminDashboard = ({ userEmail, goToProfile, goToTarget }) => {
                       <span className="progress-text">{getProgressPercentage(target)}</span>
                     </div>
                   </div>
-                  <input 
-                    type="number" 
-                    min="0" 
-                    max={extractTotal(target.fields.find(field => field.id === 'target-targets_set')?.value)} 
-                    value={progressValues[target['target-id']] ?? ""} 
-                    onChange={(e) => handleProgressChange(target['target-id'], e.target.value, extractTotal(target.fields.find(field => field.id === 'target-targets_set')?.value))}
-                    onClick={(e) => e.stopPropagation()}
-                    style={{ marginTop: "10px", width: "60px" }}
-                  />
                 </div>
               ))}
             </div>

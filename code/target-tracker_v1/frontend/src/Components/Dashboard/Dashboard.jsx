@@ -141,7 +141,7 @@ const Dashboard = ({ userEmail, goToProfile, goToTarget }) => {
     <div className="dashboard">
       <header className="dashboard-header">
         <div className="dashboard-header-left">
-          <h1>Dashboard</h1>
+          <h1>Staff Dashboard</h1>
         </div>
         <div className="dashboard-header-right">
           <img 
