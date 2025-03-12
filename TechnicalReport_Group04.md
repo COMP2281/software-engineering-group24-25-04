@@ -8,6 +8,7 @@ The main goals of this project include:
 3. Introduce role-based permission control to ensure that different users can only access and manage target data related to them to prevent misoperation or unauthorised changes.
 4. Support real-time progress bar, task filtering and multiple data visualization methods to help managers understand the progress of targets more intuitively.
 5. Ensure that the system can run smoothly on different devices (PC, tablet, mobile phone) to meet modern office needs.
+
 In conclusion, we hope to reduce manual management costs while improving data accuracy and transparency, so that DCC and its stakeholders can manage carbon emission targets more efficiently and promote sustainable development.
 ### 1.2 
 To access the system locally, clone the GitHub repository in an interactive development environment such as Visual Studio Code (with git built-in) and install Node.js from their website. The code is split into two folders: frontend and backend. To get them to work together, you’ll need to npm install axios in the frontend folder and then npm install express cors body-parser in the backend folder. To start the website, split the terminal into two parts and navigate to the frontend in one and the backend in the other, and type npm start in both.
