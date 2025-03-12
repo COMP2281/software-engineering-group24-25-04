@@ -432,7 +432,7 @@ Our colour schemes were selected based on the clients colour scheme, green and n
 | **Linux**        | Ubuntu 20.04 LTS or equivalent distribution | Latest Long Term Support (LTS) distribution (e.g., Ubuntu 22.04 LTS) |
 | **macOS**        | macOS 10.15 (Catalina) or later | macOS 11 (Big Sur) or later   |
 
-####3.1.3 Software Installation and Configuration Guide
+#### 3.1.3 Software Installation and Configuration Guide
 The software is finally presented in the form of a website. Compared to using an app, presenting the software as a website offers several advantages, such as cross-platform compatibility, no need for users to download and install applications (which reduces storage space usage), and easier updates and maintenance. It is recommended to use a web browser for accessing the website, with Google Chrome and Firefox being the preferred options. Below are the installation steps for these browsers.
 
 ### 3.2
