@@ -414,3 +414,23 @@ Our colour schemes were selected based on the clients colour scheme, green and n
 ### 4.1
 ### 4.2
 ### 4.3
+Finally, we will discuss the potential ethical and societal impacts of our system for both its current and future status.
+#### Ethical Impacts
+Data Security:
+-	Our system stores personal data, as well as data about targets. Ethical concerns arise regarding how data is stored, shared, and protected. Ensuring sensitive data is not misused or compromised is crucial.
+
+Environmental:
+-	Our system currently stores database information in local JSON files. Scaling the system up requires use of larger and more resources. Environmental concerns arise with how much energy these resources would take.
+
+Transparency and Accountability
+-   Our system must be transparent and allow users and relevant stakeholders to understand how progress is measured. Ensuring transparency mitigates the mistrust or manipulation of data, undermining efforts to address climate change effectively.
+
+#### Societal Impacts
+Public Awareness and Engagement
+-	Our system has the potential to raise awareness to the public and encourage climate action. Seeing visual progress on the CERP targets may motivate individuals and stakeholders to continue to, or take more, action.
+
+Policy Development
+-	Our system could influence policy decisions by providing data that informs the Council’s actions. It could help create more effective policies for reducing emissions, but also holds the council accountable for meeting climate targets, leading to more proactive climate policies.
+
+Technological Dependence and Digital Divide
+-	Our system requires technology to access, and whilst tracking online makes productivity more efficient, we must consider communities that lack technology. Those who don't have the means to engage with such systems may be left out of important climate conversations, potentially exacerbating the digital divide.
