@@ -6,7 +6,7 @@ import TargetDropdown from "./TargetDropdown";
 import TargetDate from "./TargetDate";
 import "./Target.css";
 
-const Target = ({ userEmail, userRole, target, goToDashboard, goToManagerDashboard, goToTarget }) => {
+const Target = ({ userEmail, userRole, target, goToDashboard, goToManagerDashboard, goToTarget, isMyTarget }) => {
     const [action, setAction] = useState("View");
     const [showSaveButton, setShowSaveButton] = useState(false);
     const [showDeleteButton, setShowDeleteButton] = useState(false);
@@ -280,9 +280,9 @@ const Target = ({ userEmail, userRole, target, goToDashboard, goToManagerDashboa
                 <div className="target-btn dashboard-btn" onClick={handleDashboardClick}>
                     Return to Dashboard
                 </div>
-                <div className="target-btn edit-btn" onClick={handleToggleActionClick}>
+                <button className="target-btn edit-btn" onClick={handleToggleActionClick} disabled={!isMyTarget} style={{cursor: isMyTarget ? "pointer" : "not-allowed", opacity: isMyTarget ? 1 : 0.5,}}>
                     {oppositeAction}
-                </div>
+                </button>
                 {showDeleteButton && (
                     <div className="target-btn delete-btn" onClick={handleDeleteClick}>
                         Delete

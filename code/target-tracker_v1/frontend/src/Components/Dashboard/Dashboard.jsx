@@ -37,7 +37,7 @@ const Dashboard = ({ userEmail, goToProfile, goToTarget }) => {
     fetchTargets();
   }, [userEmail], allTargets);
 
-  const handleBoxClick = async (targetId) => {
+  const handleBoxClick = async (targetId, isMyTarget) => {
     if (targetId === "Add Target") {
         try {
             // Fetch the existing targets to determine the next ID
@@ -79,7 +79,7 @@ const Dashboard = ({ userEmail, goToProfile, goToTarget }) => {
             };
 
             // Redirect user to Target.jsx with new target
-            goToTarget(userEmail, newTarget);
+            goToTarget(userEmail, newTarget, true);
 
         } catch (error) {
             console.error("Error fetching targets:", error);
@@ -91,7 +91,10 @@ const Dashboard = ({ userEmail, goToProfile, goToTarget }) => {
             const response = await axios.get(`http://localhost:4000/target/${numericTargetId}`);
             const targetData = response.data;
 
-            goToTarget(userEmail, targetData);
+            // Check if this target belongs to the user
+            const isMyTarget = myTargets.some(target => target["target-id"] === targetId);
+
+            goToTarget(userEmail, targetData, isMyTarget);
         } catch (error) {
             console.error("Error fetching target data:", error);
         }
