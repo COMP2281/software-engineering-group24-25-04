@@ -544,105 +544,107 @@ pm2 start app.js
 | **Toolkit**   | Building Tools                                                 | Webpack    |
 
 ### 3.2 Deployment
-Deploy Node.js + Express application on a local virtual machine and configure Nginx (compatible with Windows, Mac and Linux)
+Deploy Node.js and Express-based web applications directly in your local environment and configure Nginx as a reverse proxy. The deployment solution is compatible with Windows, Mac, and Linux, covering the installation of necessary software and configuration of Nginx to provide web services.
 #### 3.2.1Prerequisites
-**Virtualization tools (for different operating systems):**
-- VirtualBox or VMware Workstation/Fusion for Windows and Mac
-1. UTM for Mac (M1/M2 and later)
-2. VirtualBox or KVM/QEMU for Linux users
-3. ISO image of Ubuntu Server (or other Linux distributions)
-- Host with sufficient resources (RAM, CPU and storage space)
-- Install Nginx on the VM
-- Node.js and npm
+- Operating System: Windows, macOS, or Linux
+- Node.js and npm: Download from Node.js official site)
+- Nginx: Download from Nginx official site
+- Frontend Framework: React
 #### 3.2.2 Setting up the virtual machine
-**Install the virtual machine software:**
-- Windows/Mac: Download and install VirtualBox or VMware.
-- Mac (Apple Silicon): Use UTM as the virtual machine manager.
-- Linux: Use VirtualBox or KVM (Kernel-based Virtual Machine).
-**Create a new virtual machine:**
-- Open the virtual machine software and create a new virtual machine.
-- Allocate at least 2GB RAM, 2 cores CPU, and 20GB hard disk.
-- Mount the Ubuntu Server ISO to start the installation.
-**Install Ubuntu Server:**
-- Follow the installation wizard to complete the system installation.
-- Set up user accounts and configure SSH access (if required).
-- Update the system after the installation is complete: 
+**Windows Users**
+**Install Node.js and npm:**
+- Download and install the latest LTS version from Node.js official site.
+- Verify the installation:
 ```bash
-sudo apt update
-sudo apt upgrade -y
+node -v
+npm -v
 ```
 
-#### 3.2.3 Install necessary software
-**Nginx:**
+**Install Nginx**
+- Download the Windows version from Nginx official site.
+- Extract and run:
 ```bash
-sudo apt install nginx -y
+start nginx
 ```
 
-**Node.js and npm:**
+**macOS (Using Homebrew)**
+- Install Node.js and npm
+```bash
+brew install node
+```
+
+- Install Nginx
+```bash
+brew install nginx
+```
+Linux (Ubuntu/Debian)
+- Install Node.js and npm
 ```bash
 curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 sudo apt install -y nodejs
 ```
 
-#### 3.2.4 Deploy Node.js + Express application
-Clone the application code:
+- Install Nginx
+```bash
+sudo apt install nginx -y
+```
 
+#### 3.2.3 Deploying the Web Application
+**Clone the Web Application Code:**
 ```bash
 git clone https://github.com/yourrepo/myapp.git
 cd myapp
 ```
-    
-**Install dependencies:**
+
+**Install Dependencies：**
 ```bash
 npm install
 ```
 
-**Create an Express server:**
+**Create an Express Server (server.js)：**
 ```bash
 const express = require('express');
+const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3000;
-app.get('/', (req, res) => {
-res.send('Hello, Node.js + Express!');
+
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
+
 app.listen(PORT, () => {
-console.log(`Server is running on port ${PORT}`);
+    console.log(`Server is running on port ${PORT}`);
 });
 ```
 
-**Start the application:**
+**Build the Frontend Application：**
+```bash
+npm run build
+mv build public
+```
+
+**Start the Backend Service：**
 ```bash
 node server.js
 ```
 
-#### 3.2.5 Configure Nginx as a reverse proxy
-**Create Nginx configuration file:**
+#### 3.2.4 Configure Nginx as a reverse proxy
+**Edit the Nginx Configuration File:**
+- Windows users need to edit nginx.conf.
 ```bash
 sudo nano /etc/nginx/sites-available/myapp
-Add the following configuration:
-server {
-listen 80;
-server_name myapp.local;
-location / {
-proxy_pass http://127.0.0.1:3000;
-proxy_set_header Host $host;
-proxy_set_header X-Real-IP $remote_addr;
-proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-}
-}
 ```
 
-**Enable the configuration and restart Nginx:**
+**Restart Nginx:**
 ```bash
-sudo ln -s /etc/nginx/sites-available/myapp /etc/nginx/sites-enabled/
-sudo nginx -t
-sudo systemctl restart nginx
+sudo systemctl restart nginx  # Linux/macOS
+nginx -s reload  # Windows
 ```
 
-**Test deployment:**
-```bash
-Visit http://myapp.local in a browser to check whether the application is running normally.
-```
+**Test Web Application Deployment:**
+- Open a browser and visit http://myapp.local.
 
 ### 3.3 Startup and User Account Management
 #### 3.3.1 Creating User Accounts or Logging into the System
