@@ -464,7 +464,7 @@ Visit the [Firefox official website](https://www.mozilla.org/firefox/) to downlo
   sudo apt install firefox
 
 **Configuration:**
-Go to Settings → General to adjust cache, JavaScript, and privacy settings.
+- Go to Settings → General to adjust cache, JavaScript, and privacy settings.
 
 **Environment:**
 
