@@ -545,46 +545,48 @@ pm2 start app.js
 
 ### 3.2 Deployment
 Deploy Node.js and Express-based web applications directly in your local environment and configure Nginx as a reverse proxy. The deployment solution is compatible with Windows, Mac, and Linux, covering the installation of necessary software and configuration of Nginx to provide web services.
-#### 3.2.1Prerequisites
-- Operating System: Windows, macOS, or Linux
-- Node.js and npm: Download from Node.js official site)
-- Nginx: Download from Nginx official site
-- Frontend Framework: React
+#### 3.2.1 Prerequisites
+- **Operating System**: Windows, macOS, or Linux
+- **Node.js and npm**: Download from [Node.js official site](https://nodejs.org/)
+- **Nginx**: Download from [Nginx official site](https://nginx.org/)
+- **Frontend Framework**: React
+
 #### 3.2.2 Setting up the virtual machine
-**Windows Users**
+**Windows Users**  
 **Install Node.js and npm:**
-- Download and install the latest LTS version from Node.js official site.
+- Download and install the latest LTS version from [Node.js official site](https://nodejs.org/)
+
 - Verify the installation:
 ```bash
 node -v
 npm -v
 ```
 
-**Install Nginx**
-- Download the Windows version from Nginx official site.
+**Install Nginx:**
+- Download the Windows version from [Nginx official site](https://nginx.org/en/download.html)
 - Extract and run:
 ```bash
 start nginx
 ```
 
-**macOS (Using Homebrew)**
-- Install Node.js and npm
+**macOS (Using Homebrew):**
+**Install Node.js and npm:**
 ```bash
 brew install node
 ```
 
-- Install Nginx
+**Install Nginx:**
 ```bash
 brew install nginx
 ```
-Linux (Ubuntu/Debian)
-- Install Node.js and npm
+**Linux (Ubuntu/Debian):**
+**Install Node.js and npm:**
 ```bash
 curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 sudo apt install -y nodejs
 ```
 
-- Install Nginx
+**Install Nginx:**
 ```bash
 sudo apt install nginx -y
 ```
@@ -619,13 +621,13 @@ app.listen(PORT, () => {
 });
 ```
 
-**Build the Frontend Application：**
+**Build the Frontend Application:**
 ```bash
 npm run build
 mv build public
 ```
 
-**Start the Backend Service：**
+**Start the Backend Service:**
 ```bash
 node server.js
 ```
