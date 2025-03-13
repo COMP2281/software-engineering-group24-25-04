@@ -12,6 +12,7 @@ const Target = ({ userEmail, userRole, target, goToDashboard, goToManagerDashboa
     const [showDeleteButton, setShowDeleteButton] = useState(false);
     const [formData, setFormData] = useState({});
     const [maxProgress, setMaxProgress] = useState(100);
+    const [progressError, setProgressError] = useState("");
 
     useEffect(() => {
         if (target) {
@@ -165,6 +166,8 @@ const Target = ({ userEmail, userRole, target, goToDashboard, goToManagerDashboa
         const value = event.target.value; // Get the raw input value
         let parsedValue = parseInt(value, 10); // Try to parse it as an integer
 
+        setProgressError(""); // Clear any previous error
+
         if (isNaN(parsedValue)) {
             // If parsing fails, it means the input is not a number
             if (value === "") {
@@ -179,7 +182,8 @@ const Target = ({ userEmail, userRole, target, goToDashboard, goToManagerDashboa
 
         // If parsing succeeds, ensure the value is within the allowed range
         if (parsedValue > maxProgress) {
-            parsedValue = maxProgress;
+            setProgressError("Value greater than target set!");
+            return;
         }
         if (parsedValue < 0) {
             parsedValue = 0;
@@ -272,15 +276,18 @@ const Target = ({ userEmail, userRole, target, goToDashboard, goToManagerDashboa
                     <label htmlFor="progress" className="target-text-2">Progress Completed</label>
                     <div style={{ marginBottom: '15px' }}></div> 
                     {action === "Edit" ? (
-                        <input
-                            type="number"
-                            id="progress"
-                            value={formData.progress}
-                            onChange={handleProgressChange}
-                            className="stylish-input"
-                            min="0"
-                            max={maxProgress}
-                        />
+                        <>
+                            <input
+                                type="number"
+                                id="progress"
+                                value={formData.progress}
+                                onChange={handleProgressChange}
+                                className="stylish-input"
+                                min="0"
+                                max={maxProgress}
+                            />
+                            {progressError && <div className="error-message">{progressError}</div>}
+                        </>
                     ) : (
                         <div className="target-view-text">{formData.progress}</div>
                     )}
