@@ -568,52 +568,52 @@ Deploy Node.js + Express application on a local virtual machine and configure Ng
 - Set up user accounts and configure SSH access (if required).
 - Update the system after the installation is complete: 
     ```bash
-    sudo apt update
-    sudo apt upgrade -y
+sudo apt update
+sudo apt upgrade -y
      ```
 
 #### 3.2.3 Install necessary software
 **Nginx:**
 ```bash
-    sudo apt install nginx -y
+sudo apt install nginx -y
 ```
 
 **Node.js and npm:**
 ```bash
-    curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
-    sudo apt install -y nodejs
+curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+sudo apt install -y nodejs
 ```
     
 **Database server (MySQL or PostgreSQL):**
 ```bash
-    sudo apt install mysql-server -y # MySQL
-    sudo apt install postgresql -y # PostgreSQL
+sudo apt install mysql-server -y # MySQL
+sudo apt install postgresql -y # PostgreSQL
 ```
 
 #### 3.2.4 Deploy Node.js + Express application
 Clone the application code:
 
 ```bash
-    git clone https://github.com/yourrepo/myapp.git
-    cd myapp
+git clone https://github.com/yourrepo/myapp.git
+cd myapp
 ```
     
 **Install dependencies:**
 ```bash
-    npm install
+npm install
 ```
 
 **Create an Express server:**
 ```bash
-    const express = require('express');
-    const app = express();
-    const PORT = process.env.PORT || 3000;
-    app.get('/', (req, res) => {
-    res.send('Hello, Node.js + Express!');
-    });
-    app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-    });
+const express = require('express');
+const app = express();
+const PORT = process.env.PORT || 3000;
+app.get('/', (req, res) => {
+res.send('Hello, Node.js + Express!');
+});
+app.listen(PORT, () => {
+console.log(`Server is running on port ${PORT}`);
+});
 ```
 
 **Start the application:**
@@ -624,30 +624,30 @@ Clone the application code:
 ####3.2.6 Configure Nginx as a reverse proxy
 **Create Nginx configuration file:**
 ```bash
-    sudo nano /etc/nginx/sites-available/myapp
-    Add the following configuration:
-    server {
-    listen 80;
-    server_name myapp.local;
-    location / {
-    proxy_pass http://127.0.0.1:3000;
-    proxy_set_header Host $host;
-    proxy_set_header X-Real-IP $remote_addr;
-    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-    }
-    }
+sudo nano /etc/nginx/sites-available/myapp
+Add the following configuration:
+server {
+listen 80;
+server_name myapp.local;
+location / {
+proxy_pass http://127.0.0.1:3000;
+proxy_set_header Host $host;
+proxy_set_header X-Real-IP $remote_addr;
+proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+}
+}
 ```
 
 **Enable the configuration and restart Nginx:**
 ```bash
-    sudo ln -s /etc/nginx/sites-available/myapp /etc/nginx/sites-enabled/
-    sudo nginx -t
-    sudo systemctl restart nginx
+sudo ln -s /etc/nginx/sites-available/myapp /etc/nginx/sites-enabled/
+sudo nginx -t
+sudo systemctl restart nginx
 ```
 
 **Test deployment:**
 ```bash
-    Visit http://myapp.local in a browser to check whether the application is running normally.
+Visit http://myapp.local in a browser to check whether the application is running normally.
 ```
 
 ### 3.3 Startup and User Account Management
@@ -702,15 +702,15 @@ Our project logs are managed using Console.log to directly output Winston and ex
 **Viewing Express-Winston Logs in Real Time:**
 Express environments typically use winston for logging, and the log files are stored in the logs/ directory:
 ```bash
-    tail -f logs/error.log # Monitor the error log in real time.
-    tail -f logs/combined.log # View all logs in real time (including info, warn, error)
-    grep "error" logs/*.log # Search for error messages in all log files
+tail -f logs/error.log # Monitor the error log in real time.
+tail -f logs/combined.log # View all logs in real time (including info, warn, error)
+grep "error" logs/*.log # Search for error messages in all log files
 ```
 
 **Query specific error logs:**
 ```bash
-    jq '.level == "error"' logs/express-error.log # Filter out only error level logs
-    grep -i "error" logs/express-error.log # Search for logs containing the "error" keyword
+jq '.level == "error"' logs/express-error.log # Filter out only error level logs
+grep -i "error" logs/express-error.log # Search for logs containing the "error" keyword
 ```
 
 ## Section 4: Maintenance and Implications
