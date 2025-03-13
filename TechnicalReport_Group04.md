@@ -512,24 +512,24 @@ This software adopts a front-end and back-end separation architecture, allowing 
      
 ###### Obtain and Run the Code via Git
 **Clone the Repository:**
-```bash
-    git clone https://github.com/example/project.git
-```
+ ```bash
+ git clone https://github.com/example/project.git
+ ```
 
 **Install Project Dependencies:**
-```bash
-    npm install
-```
+ ```bash
+ npm install
+ ```
 
 **Run the Project:**
-```bash 
-    npm start
+```bash
+npm start
 ```
 
 Packaging and Running: , 
 ```bash
-    npm install -g pm2 #To manage the Node.js process using PM2
-    pm2 start app.js
+npm install -g pm2 #To manage the Node.js process using PM2
+pm2 start app.js
 ```
 
 
