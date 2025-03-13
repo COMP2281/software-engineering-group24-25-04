@@ -466,12 +466,31 @@ Visit the [Firefox official website](https://www.mozilla.org/firefox/) to downlo
 **Configuration:**
 Go to Settings → General to adjust cache, JavaScript, and privacy settings.
 
-| **Environment** | **Runtime Environment** |   |
-|---------------|----------------------|-------------------------------|
-|              | **Browser Environment** | Chrome, Firefox and other commonly used browsers |
-|              | **Node.js** | Provides a server-side JavaScript execution environment (use with npm) |
-|              | **Database Management System** | MySQL |
+**Environment:**
 
+| **Runtime Environment**        | Description |
+|--------------------------------|----------------------------------------------|
+| **Browser Environment**        | Chrome, Firefox, and other commonly used browsers |
+| **Node.js**                    | Provides a server-side JavaScript execution environment (use with npm) |
+| **Database Management System** | MySQL |
+
+#### 3.1.4 Code Acquisition and Execution
+If customers need to manage the software internally on their servers, the following steps provide local execution instructions:
+This software adopts a front-end and back-end separation architecture, allowing both teams to develop in parallel, reducing mutual dependencies. The frontend handles page rendering, while the back-end focuses on data logic, lowering server load. The frontend and backend can be upgraded independently without affecting each other. This project’s frontend runs on Node.js (v20.11). Please install Node.js first.
+
+###### Node.js
+
+**Download:**
+
+**Windows/macOS Users:**
+- Use the official installer to install directly. Visit the [Node.js official website](https://nodejs.org) to download **version v20.11**.
+
+**Linux Users:**
+- Execute the following commands:
+
+```bash
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+sudo apt install -y nodejs
 
 ### 3.2
 ### 3.3
