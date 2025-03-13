@@ -42,7 +42,7 @@ const Target = ({ userEmail, userRole, target, goToDashboard, goToManagerDashboa
                 setShowDeleteButton(false);
             }
         }
-    }, [target]);
+    }, [target, fromAdminDashboard, isMyTarget]);
 
     const oppositeAction = action === "Edit" ? "View" : "Edit";
 
