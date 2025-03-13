@@ -544,7 +544,7 @@ pm2 start app.js
 | **Toolkit**   | Building Tools                                                 | Webpack    |
 
 ### 3.2 Deployment
-Deploy Node.js and Express-based web applications directly in your local environment and configure Nginx as a reverse proxy. The deployment solution is compatible with Windows, Mac, and Linux, covering the installation of necessary software and configuration of Nginx to provide web services.
+Deploy Node.js and Express-based web applications directly in your local environment and configure Nginx as a reverse proxy. The deployment solution is compatible with Windows, Mac, and Linux, covering the installation of necessary software and configuration of Nginx to provide web services.In addition, the solution supports devices within the same Local Area Network (LAN) to access the application via IP address, such as multiple computers connected to the same Wi-Fi hotspot.
 #### 3.2.1 Prerequisites
 - **Operating System**: Windows, macOS, or Linux
 - **Node.js and npm**: Download from [Node.js official site](https://nodejs.org/)
