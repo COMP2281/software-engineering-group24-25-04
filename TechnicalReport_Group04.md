@@ -14,33 +14,34 @@ In conclusion, we hope to reduce manual management costs while improving data ac
 To access the system locally, clone the GitHub repository in an interactive development environment such as Visual Studio Code (with git built-in) and install Node.js from their website. The code is split into two folders: frontend and backend. To get them to work together, you’ll need to npm install axios in the frontend folder and then npm install express cors body-parser in the backend folder. To start the website, split the terminal into two parts and navigate to the frontend in one and the backend in the other, and type npm start in both.
 ### 1.3: Status of Behavioural Requirement
 
-| BR Code | Requirement Description                                             | Status | Justification |
-|---------|----------------------------------------------------------------------|--------|--------------|
-| BR 1.1  | Logging in without an account                                       | Met    |              |
-| BR 1.2  | Creating an account                                                 | Met    |              |
-| BR 1.3  | Logging in with correct credentials                                 | Met    |              |
-| BR 1.4  | Logging in with incorrect credentials and attempt is less than three |        |              |
-| BR 1.5  | Logging in with incorrect credentials on third attempt              |        |              |
-| BR 2.1  | Permission to view other team’s tasks                               | Met    |              |
-| BR 2.2  | Manager granting permissions to users                              |        |              |
-| BR 2.3  | Manager transferring tasks from one user to another                 |        |              |
-| BR 3.1  | Adaptive user layout on different devices                           | Met    |              |
-| BR 3.2  | Customisable visual settings                                        |        |              |
-| BR 4.1  | Filter tasks based on Day/Week/Month/Year                           |        |              |
-| BR 4.2  | Filter tasks based on custom date range                             |        |              |
-| BR 4.3  | Message when no tasks are due within selected period                |        |              |
-| BR 4.4  | Clear filter                                                        |        |              |
-| BR 5.1  | Add a goal                                                          |        |              |
-| BR 5.2  | Remove a goal                                                       |        |              |
-| BR 5.3  | Edit a goal                                                         |        |              |
-| BR 5.4  | Transfer a goal                                                     |        |              |
-| BR 6.1  | Staff viewing their own progress                                    |        |              |
-| BR 6.2  | Manager viewing staff’s progress                                   |        |              |
-| BR 7.1  | Automated reminders on project progress                            |        |              |
-| BR 7.2  | Automated reminders for overdue tasks                              |        |              |
-| BR 7.3  | Change in automated reminders when project is transferred          |        |              |
-| BR 8.1  | Viewing target details                                             | Met    |              |
-| BR 8.2  | Clicking on an icon to carry out a function                        |        |              |
+| BR Code  | Requirement Description                                   | Status  | Justification |
+|----------|-----------------------------------------------------------|---------|--------------|
+| BR 1.1  | Logging in without an account                            | Met     | An error message is shown when a user tries to log in without creating an account. |
+| BR 1.2  | Creating an account                                      | Met     | Users are able to click on the Sign Up icon on the Login page and will be redirected to a page where they can create an account. Users must abide by strict password requirements for security purposes. |
+| BR 1.3  | Logging in with correct credentials                      | Met     | Users will be redirected to the staff dashboard and managers are redirected to the admin dashboard upon logging in with their registered credentials. |
+| BR 1.4  | Logging in with incorrect credentials and attempt is less than three | Met | An error message pops up each time incorrect credentials are used to login. Users and managers are not redirected to their respective dashboards. |
+| BR 1.5  | Logging in with incorrect credentials on third attempt    | Not Met | An error message pops up each time incorrect credentials are submitted. A limit has not been implemented yet. The user is not prompted via an email to reset their password yet. We have not configured how to connect the database to an actual email address. |
+| BR 2.1  | Permission to view other teams’ tasks                    | Not Met | Permission levels have not been implemented yet. We have a basic dashboard that allows each user to have access to the progress of every target. Denial for viewing access via permission levels is a more complex job to achieve and it is currently a work in progress. |
+| BR 2.2  | Manager granting permissions to users                     | Not Met | Permission levels have not been implemented yet. Currently, every user is able to see all the targets but they should only be able to see the targets assigned to them. |
+| BR 2.3  | Manager transferring tasks from one user to another       | Met     | On the manager’s dashboard, the assign target feature allows the manager to assign targets to a user and the remove target feature allows the manager to remove a target from an old user. This allows transferring tasks from one user to another. |
+| BR 3.1  | Adaptive user layout on different devices                 | Met     | The dashboard has been tested on multiple devices. The screen size and user layout has been proven to be adaptive. |
+| BR 3.2  | Customisable visual settings                             | Not Met | As per the revised requirement, font size and color customization is no longer needed, and the dashboard will stick to a single color scheme. This allows design consistency and reduces complexity. |
+| BR 4.1  | Filter tasks based on Day/Week/Month/Year                | Not Met | Currently, we have only implemented filtering based on target title. |
+| BR 4.2  | Filter tasks based on custom date range                   | Not Met | Currently, we have only implemented filtering based on target title. |
+| BR 4.3  | Message when no tasks are due within selected period      | Not Met | No message is shown currently because the filter based on the selected period has not been implemented yet. |
+| BR 4.4  | Clear filter                                              | Met     | When a specific target title is not selected on the target filter bar, the dashboard shows all the targets available. |
+| BR 5.1  | Add a goal                                                | Met     | Both users and managers are able to add a new target. |
+| BR 5.2  | Remove a goal                                             | Met     | The remove goal icon on users dashboard allows users to delete a goal once they have completed it. |
+| BR 5.3  | Edit a goal                                               | Met     | Both users and managers are able to click on the edit goal icon and make changes to their existing targets. The edited targets are then updated to replace the old ones. |
+| BR 5.4  | Transfer a goal                                           | Met     | The assign target and remove target functions available on the manager’s dashboard allow seamless transfer of a goal from one user to another. |
+| BR 6.1  | Staff viewing their own progress                         | Met     | Users are able to see their progress based on the level of the progress bar of a target. Each time a user updates the value of the target set, the progress bar would reflect their progress of each target on the dashboard. |
+| BR 6.2  | Manager viewing staff’s progress                          | Met     | Progress bars on users’ progress for every target have been added and these progress bars can be seen from the manager’s dashboard. |
+| BR 7.1  | Automated reminders on project progress                  | Not Met |  |
+| BR 7.2  | Automated reminders for overdue tasks                     | Not Met |  |
+| BR 7.3  | Change in automated reminders when project is transferred | Not Met |  |
+| BR 8.1  | Viewing target details                                   | Met     | When a target is clicked on the dashboard, users and managers are redirected to a page that has a detailed description of the specific target. |
+| BR 8.2  | Clicking on an icon to carry out a function               | Met     | Every icon on both the manager and user dashboard works well and carries out their respective functions. |
+
 
 ## Section 2: Technical Development
 ### 2.1
