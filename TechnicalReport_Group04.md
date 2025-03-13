@@ -486,43 +486,52 @@ This software adopts a front-end and back-end separation architecture, allowing 
   Use the official installer to install directly. Visit the [Node.js official website](https://nodejs.org) to download **version v20.11**.
 
 - **Linux Users:**  
-  **Execute:**
+    **Execute:**
     ```bash
     curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
     sudo apt install -y nodejs
     ```
 
-  **Verify installation:**
+    **Verify installation:**
     ```bash
     node -v   # Ensure Node.js version is v20.11
     npm -v    # Ensure npm (package manager) is correctly installed
     ```
 
+    **Install Front-end Dependencies:**
+     ```bash
+      cd frontend
+      npm install
+     ```
 
-### **Install Front-end Dependencies:**
-    ```bash
-    cd frontend
+    **Install Back-end Dependencies:**
+     ```bash
+    cd backend
     npm install
-
-
+     ```
+     
 ###### Obtain and Run the Code via Git
 **Clone the Repository:**
-    ```bash
+```bash
     git clone https://github.com/example/project.git
-    ```
+```
+
 **Install Project Dependencies:**
-    ```bash
+```bash
     npm install
-    ```
+```
+
 **Run the Project:**
-    ```bash 
+```bash 
     npm start
-    ```
+```
+
 Packaging and Running: , 
-    ```bash
+```bash
     npm install -g pm2 #To manage the Node.js process using PM2
     pm2 start app.js
-    ```
+```
+
 
 | Component      | Description                                                       | Technology |
 |--------------|-------------------------------------------------------------------|------------|
@@ -558,42 +567,44 @@ Deploy Node.js + Express application on a local virtual machine and configure Ng
 - Follow the installation wizard to complete the system installation.
 - Set up user accounts and configure SSH access (if required).
 - Update the system after the installation is complete: 
-    
     ```bash
     sudo apt update
     sudo apt upgrade -y
+     ```
 
 #### 3.2.3 Install necessary software
 **Nginx:**
-
-    ```bash
+```bash
     sudo apt install nginx -y
+```
 
 **Node.js and npm:**
-
-    ```bash
+```bash
     curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
     sudo apt install -y nodejs
+```
     
 **Database server (MySQL or PostgreSQL):**
-
-    ```bash
+```bash
     sudo apt install mysql-server -y # MySQL
     sudo apt install postgresql -y # PostgreSQL
+```
 
 #### 3.2.4 Deploy Node.js + Express application
 Clone the application code:
 
-    ```bash
+```bash
     git clone https://github.com/yourrepo/myapp.git
     cd myapp
+```
+    
 **Install dependencies:**
-
-    ```bash
+```bash
     npm install
-**Create an Express server:**
+```
 
-    ```bash
+**Create an Express server:**
+```bash
     const express = require('express');
     const app = express();
     const PORT = process.env.PORT || 3000;
@@ -603,16 +614,16 @@ Clone the application code:
     app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
     });
+```
 
 **Start the application:**
-
-    ```bash
+ ```bash
     node server.js
+```
 
 ####3.2.6 Configure Nginx as a reverse proxy
 **Create Nginx configuration file:**
-
-    ```bash
+```bash
     sudo nano /etc/nginx/sites-available/myapp
     Add the following configuration:
     server {
@@ -625,25 +636,26 @@ Clone the application code:
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
     }
     }
+```
 
 **Enable the configuration and restart Nginx:**
-
-    ```bash
+```bash
     sudo ln -s /etc/nginx/sites-available/myapp /etc/nginx/sites-enabled/
     sudo nginx -t
     sudo systemctl restart nginx
+```
 
 **Test deployment:**
-
-    ```bash
+```bash
     Visit http://myapp.local in a browser to check whether the application is running normally.
+```
 
 ### 3.3 Startup and User Account Management
 #### 3.3.1 Creating User Accounts or Logging into the System
 **The system provides two access methods:**
 - Creating a New Account: Users who register through the front-end interface are assigned a low-permission role by default. If department managers or other users require a high-permission account, they should contact the system administrator, who can add high-permission accounts through the backend.
 - Logging into an Existing Account: Users can log into the system using their registered username and password.
-###3.3.2 User Roles and Permissions
+### 3.3.2 User Roles and Permissions
 **Root Account (Highest Permission)**
 - Logs in directly using the system's preset username and password.
 - Has access to the Administrator Page to manage all user accounts.
@@ -660,11 +672,10 @@ Clone the application code:
 - Once created, users can log into the Standard User Task Interface to perform operations.
 - Permissions:
 1. Can view all targets but can only modify their own target (My Target section).
-###3.3.3 Initial Setup Guide
+### 3.3.3 Initial Setup Guide
 **Creating a Root Account:**
 - Log in using the default credentials, or reset the Root account during installation.
 - When adding the first high-permission super administrator account to the database, it is usually necessary to operate directly on the database (if used). Typically, this involves switching to the target database and executing:
-
      ```bash
     INSERT INTO users VALUES ('root', ...);
 **Registering an Administrator Account:**
@@ -673,8 +684,8 @@ Clone the application code:
 **Registering a Standard User:**
 - Visit the Registration Page, fill in the required information, and complete the account creation.
 - Once registered, users can log in and access the Standard User Task Interface with appropriate permissions.
-###3.4 Common errors and log queries
-####3.4.1 Common Error Messages and Corresponding Solutions
+### 3.4 Common errors and log queries
+#### 3.4.1 Common Error Messages and Corresponding Solutions
 
 | error code              | misdescription                      | prescription  |
 |-------------------------|-----------------------------------|-------------------------------------------------------------|
@@ -686,21 +697,21 @@ Clone the application code:
 | Network Latency Timeout | Slow network response or timeout | Check network cable, Wi-Fi connection. |
 | ERR-HTTP-408           | HTTP request timeout             | Check the network connection and service status between the client and the server. |
 
-####3.4.2 How to find logs or diagnostic information
+#### 3.4.2 How to find logs or diagnostic information
 Our project logs are managed using Console.log to directly output Winston and express-winston. Customers can obtain system logs or application diagnostic information by directly viewing log files to assist in troubleshooting. Use the following methods to find logs, warnings, and error information in different systems:
 **Viewing Express-Winston Logs in Real Time:**
 Express environments typically use winston for logging, and the log files are stored in the logs/ directory:
-
-     ```bash
+```bash
     tail -f logs/error.log # Monitor the error log in real time.
     tail -f logs/combined.log # View all logs in real time (including info, warn, error)
     grep "error" logs/*.log # Search for error messages in all log files
+```
 
 **Query specific error logs:**
-
-     ```bash
+```bash
     jq '.level == "error"' logs/express-error.log # Filter out only error level logs
     grep -i "error" logs/express-error.log # Search for logs containing the "error" keyword
+```
 
 ## Section 4: Maintenance and Implications
 ### 4.1
