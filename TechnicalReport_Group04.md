@@ -417,7 +417,7 @@ Our colour schemes were selected based on the clients colour scheme, green and n
 
 ## Section 3: Use Instructions
 ### 3.1：Software Installation Guide: System Requirements and Installation Configuration Steps
-#### 3.1.1 Hardware Requirements (Table Comparison)
+#### 3.1.1 Hardware Requirements 
 
 | Component      | Minimum Requirement  | Recommended Configuration |
 |--------------|----------------------|---------------------------|
