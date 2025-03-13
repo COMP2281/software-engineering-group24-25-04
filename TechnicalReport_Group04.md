@@ -536,11 +536,11 @@ pm2 start app.js
 | Component      | Description                                                       | Technology |
 |--------------|-------------------------------------------------------------------|------------|
 | **Front-end** | UI component libraries                                          | React      |
-|              | CSS preprocessors                                               | Sass       |
+| **Front-end** | CSS preprocessors                                               | Sass       |
 | **Back-end**  | Node.js-based web application framework that simplifies server-side application development | Express    |
-|              | Configuring and Managing Cross-Domain Requests for Web Applications | Cors       |
+| **Back-end**  | Configuring and Managing Cross-Domain Requests for Web Applications | Cors       |
 | **Infrastructure** | Caching system                                              | Redis      |
-|              | Load balancer                                                   | Nginx      |
+| **Infrastructure** | Load balancer                                                   | Nginx      |
 | **Toolkit**   | Building Tools                                                 | Webpack    |
 
 ### 3.2 Deployment
@@ -567,10 +567,10 @@ Deploy Node.js + Express application on a local virtual machine and configure Ng
 - Follow the installation wizard to complete the system installation.
 - Set up user accounts and configure SSH access (if required).
 - Update the system after the installation is complete: 
-    ```bash
+```bash
 sudo apt update
 sudo apt upgrade -y
-     ```
+```
 
 #### 3.2.3 Install necessary software
 **Nginx:**
@@ -617,8 +617,8 @@ console.log(`Server is running on port ${PORT}`);
 ```
 
 **Start the application:**
- ```bash
-    node server.js
+```bash
+node server.js
 ```
 
 ####3.2.6 Configure Nginx as a reverse proxy
