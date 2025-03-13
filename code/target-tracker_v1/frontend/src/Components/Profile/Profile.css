@@ -69,19 +69,19 @@
 }
 
 .exit-btn {
-  background-color: #ff5c5c;
+  background-color: #c23225;
   color: white;
 }
 
 .exit-btn:hover {
-  background-color: #e04f4f;
+  background-color: #a1291f;
 }
 
 .dashboard-btn {
-  background-color: #4CAF50;
+  background-color: #73a22d;
   color: white;
 }
 
 .dashboard-btn:hover {
-  background-color: #45a049;
+  background-color: #618726;
 }

@@ -221,21 +221,21 @@
 }
 
 .confirm-btn {
-  background-color: #4CAF50;
+  background-color: #73a22d;
   color: white;
 }
 
 .confirm-btn:hover {
-  background-color: #45a049;
+  background-color: #618726;
 }
 
 .remove-btn {
-  background-color: #E53935;
+  background-color: #c23225;
   color: white;
 }
 
 .remove-btn:hover {
-  background-color: #D32F2F;
+  background-color: #a1291f;
 }
 
 .close-btn {
@@ -253,7 +253,8 @@
   font-weight: bold;
 }
 .open-modal-button {
-  background: #4CAF50; 
+  background: #73a22d; 
+  margin-top: 5px;
   color: white;
   font-size: 0.9rem;
   font-weight: bold;
@@ -273,11 +274,11 @@
 }
 
 .open-modal-button:hover {
-  background: #45a049; 
+  background: #618726; 
   transform: scale(1.03);
 }
 
 .open-modal-button:active {
-  background: #3e8e41;
+  background: #618726;
   transform: scale(0.98);
 }

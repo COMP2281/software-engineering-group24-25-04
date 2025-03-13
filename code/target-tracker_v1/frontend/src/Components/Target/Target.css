@@ -164,6 +164,7 @@
 }
 
 .edit-btn {
+    all: unset;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -178,7 +179,25 @@
 }
 
 .edit-btn:hover {
-    background-color: #142642;
+    background-color: #0f1c30;
+}
+
+.delete-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    height: 59px;
+    color: #fff;
+    background: #c23225;
+    border-radius: 50px;
+    font-size: 19px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background-color: #a1291f;
 }
 
 .save-btn {
@@ -188,7 +207,7 @@
     width: 40%;
     height: 59px;
     color: #fff;
-    background: #a1352b;
+    background: #ba6d25;
     border-radius: 50px;
     font-size: 19px;
     font-weight: 700;
@@ -196,17 +215,16 @@
 }
 
 .save-btn:hover {
-    background-color: #882b22;
+    background-color: #94571e;
 }
 
 .dashboard-btn {
-    background-color: #4CAF50;
-    padding-left: 1rem;
+    background-color: #73a22d;
     color: white;
 }
 
 .dashboard-btn:hover {
-    background-color: #45a049;
+    background-color: #618726;
 }
 
 /* Target date customisation */

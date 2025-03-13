@@ -14,33 +14,34 @@ In conclusion, we hope to reduce manual management costs while improving data ac
 To access the system locally, clone the GitHub repository in an interactive development environment such as Visual Studio Code (with git built-in) and install Node.js from their website. The code is split into two folders: frontend and backend. To get them to work together, you’ll need to npm install axios in the frontend folder and then npm install express cors body-parser in the backend folder. To start the website, split the terminal into two parts and navigate to the frontend in one and the backend in the other, and type npm start in both.
 ### 1.3: Status of Behavioural Requirement
 
-| BR Code | Requirement Description                                             | Status | Justification |
-|---------|----------------------------------------------------------------------|--------|--------------|
-| BR 1.1  | Logging in without an account                                       | Met    |              |
-| BR 1.2  | Creating an account                                                 | Met    |              |
-| BR 1.3  | Logging in with correct credentials                                 | Met    |              |
-| BR 1.4  | Logging in with incorrect credentials and attempt is less than three |        |              |
-| BR 1.5  | Logging in with incorrect credentials on third attempt              |        |              |
-| BR 2.1  | Permission to view other team’s tasks                               | Met    |              |
-| BR 2.2  | Manager granting permissions to users                              |        |              |
-| BR 2.3  | Manager transferring tasks from one user to another                 |        |              |
-| BR 3.1  | Adaptive user layout on different devices                           | Met    |              |
-| BR 3.2  | Customisable visual settings                                        |        |              |
-| BR 4.1  | Filter tasks based on Day/Week/Month/Year                           |        |              |
-| BR 4.2  | Filter tasks based on custom date range                             |        |              |
-| BR 4.3  | Message when no tasks are due within selected period                |        |              |
-| BR 4.4  | Clear filter                                                        |        |              |
-| BR 5.1  | Add a goal                                                          |        |              |
-| BR 5.2  | Remove a goal                                                       |        |              |
-| BR 5.3  | Edit a goal                                                         |        |              |
-| BR 5.4  | Transfer a goal                                                     |        |              |
-| BR 6.1  | Staff viewing their own progress                                    |        |              |
-| BR 6.2  | Manager viewing staff’s progress                                   |        |              |
-| BR 7.1  | Automated reminders on project progress                            |        |              |
-| BR 7.2  | Automated reminders for overdue tasks                              |        |              |
-| BR 7.3  | Change in automated reminders when project is transferred          |        |              |
-| BR 8.1  | Viewing target details                                             | Met    |              |
-| BR 8.2  | Clicking on an icon to carry out a function                        |        |              |
+| BR Code  | Requirement Description                                   | Status  | Justification |
+|----------|-----------------------------------------------------------|---------|--------------|
+| BR 1.1  | Logging in without an account                            | Met     | An error message is shown when a user tries to log in without creating an account. |
+| BR 1.2  | Creating an account                                      | Met     | Users are able to click on the Sign Up icon on the Login page and will be redirected to a page where they can create an account. Users must abide by strict password requirements for security purposes. |
+| BR 1.3  | Logging in with correct credentials                      | Met     | Users will be redirected to the staff dashboard and managers are redirected to the admin dashboard upon logging in with their registered credentials. |
+| BR 1.4  | Logging in with incorrect credentials and attempt is less than three | Met | An error message pops up each time incorrect credentials are used to login. Users and managers are not redirected to their respective dashboards. |
+| BR 1.5  | Logging in with incorrect credentials on third attempt    | Not Met | An error message pops up each time incorrect credentials are submitted. A limit has not been implemented yet. The user is not prompted via an email to reset their password yet. We have not configured how to connect the database to an actual email address. |
+| BR 2.1  | Permission to view other teams’ tasks                    | Not Met | Permission levels have not been implemented yet. We have a basic dashboard that allows each user to have access to the progress of every target. Denial for viewing access via permission levels is a more complex job to achieve and it is currently a work in progress. |
+| BR 2.2  | Manager granting permissions to users                     | Not Met | Permission levels have not been implemented yet. Currently, every user is able to see all the targets but they should only be able to see the targets assigned to them. |
+| BR 2.3  | Manager transferring tasks from one user to another       | Met     | On the manager’s dashboard, the assign target feature allows the manager to assign targets to a user and the remove target feature allows the manager to remove a target from an old user. This allows transferring tasks from one user to another. |
+| BR 3.1  | Adaptive user layout on different devices                 | Met     | The dashboard has been tested on multiple devices. The screen size and user layout has been proven to be adaptive. |
+| BR 3.2  | Customisable visual settings                             | Not Met | As per the revised requirement, font size and color customization is no longer needed, and the dashboard will stick to a single color scheme. This allows design consistency and reduces complexity. |
+| BR 4.1  | Filter tasks based on Day/Week/Month/Year                | Not Met | Currently, we have only implemented filtering based on target title. |
+| BR 4.2  | Filter tasks based on custom date range                   | Not Met | Currently, we have only implemented filtering based on target title. |
+| BR 4.3  | Message when no tasks are due within selected period      | Not Met | No message is shown currently because the filter based on the selected period has not been implemented yet. |
+| BR 4.4  | Clear filter                                              | Met     | When a specific target title is not selected on the target filter bar, the dashboard shows all the targets available. |
+| BR 5.1  | Add a goal                                                | Met     | Both users and managers are able to add a new target. |
+| BR 5.2  | Remove a goal                                             | Met     | The remove goal icon on users dashboard allows users to delete a goal once they have completed it. |
+| BR 5.3  | Edit a goal                                               | Met     | Both users and managers are able to click on the edit goal icon and make changes to their existing targets. The edited targets are then updated to replace the old ones. |
+| BR 5.4  | Transfer a goal                                           | Met     | The assign target and remove target functions available on the manager’s dashboard allow seamless transfer of a goal from one user to another. |
+| BR 6.1  | Staff viewing their own progress                         | Met     | Users are able to see their progress based on the level of the progress bar of a target. Each time a user updates the value of the target set, the progress bar would reflect their progress of each target on the dashboard. |
+| BR 6.2  | Manager viewing staff’s progress                          | Met     | Progress bars on users’ progress for every target have been added and these progress bars can be seen from the manager’s dashboard. |
+| BR 7.1  | Automated reminders on project progress                  | Not Met |  |
+| BR 7.2  | Automated reminders for overdue tasks                     | Not Met |  |
+| BR 7.3  | Change in automated reminders when project is transferred | Not Met |  |
+| BR 8.1  | Viewing target details                                   | Met     | When a target is clicked on the dashboard, users and managers are redirected to a page that has a detailed description of the specific target. |
+| BR 8.2  | Clicking on an icon to carry out a function               | Met     | Every icon on both the manager and user dashboard works well and carries out their respective functions. |
+
 
 ## Section 2: Technical Development
 ### 2.1
@@ -416,7 +417,7 @@ Our colour schemes were selected based on the clients colour scheme, green and n
 
 ## Section 3: Use Instructions
 ### 3.1：Software Installation Guide: System Requirements and Installation Configuration Steps
-#### 3.1.1 Hardware Requirements (Table Comparison)
+#### 3.1.1 Hardware Requirements 
 
 | Component      | Minimum Requirement  | Recommended Configuration |
 |--------------|----------------------|---------------------------|
@@ -433,7 +434,7 @@ Our colour schemes were selected based on the clients colour scheme, green and n
 | **macOS**        | macOS 10.15 (Catalina) or later | macOS 11 (Big Sur) or later   |
 
 #### 3.1.3 Software Installation and Configuration Guide
-The software is finally presented in the form of a website. Compared to using an app, presenting the software as a website offers several advantages, such as cross-platform compatibility, no need for users to download and install applications (which reduces storage space usage), and easier updates and maintenance. It is recommended to use a web browser for accessing the website, with Google Chrome and Firefox being the preferred options. Below are the installation steps for these browsers.
+The software is finally presented in the form of a website. Compared to using an app presenting the software as a website, it offers several advantages, such as cross-platform compatibility, no need for users to download and install applications (which reduces storage space usage), and easier updates and maintenance. It is recommended to use a web browser for accessing the website, with Google Chrome and Firefox being the preferred options. Below are the installation steps for these browsers.
 
 ##### Microsoft Edge
 
@@ -451,7 +452,7 @@ Visit the [Chrome official website](https://www.google.com/chrome/) to download 
 
 ---
 
-###### Firefox
+##### Firefox
 
 **Download:**
 Visit the [Firefox official website](https://www.mozilla.org/firefox/) to download the appropriate version.
@@ -463,18 +464,249 @@ Visit the [Firefox official website](https://www.mozilla.org/firefox/) to downlo
   sudo apt install firefox
 
 **Configuration:**
-Go to Settings → General to adjust cache, JavaScript, and privacy settings.
+- Go to Settings → General to adjust cache, JavaScript, and privacy settings.
 
-| **Environment** | **Runtime Environment** |   |
-|---------------|----------------------|-------------------------------|
-|              | **Browser Environment** | Chrome, Firefox and other commonly used browsers |
-|              | **Node.js** | Provides a server-side JavaScript execution environment (use with npm) |
-|              | **Database Management System** | MySQL |
+**Environment:**
+
+| **Runtime Environment**        | Description |
+|--------------------------------|----------------------------------------------|
+| **Browser Environment**        | Chrome, Firefox, and other commonly used browsers |
+| **Node.js**                    | Provides a server-side JavaScript execution environment (use with npm) |
+| **Database Management System** | Json file |
+
+#### 3.1.4 Code Acquisition and Execution
+If customers need to manage the software internally on their servers, the following steps provide local execution instructions:
+This software adopts a front-end and back-end separation architecture, allowing both teams to develop in parallel, reducing mutual dependencies. The frontend handles page rendering, while the back-end focuses on data logic, lowering server load. The frontend and backend can be upgraded independently without affecting each other. This project’s frontend runs on Node.js (v20.11). The back-end is also based on Node.js (v20.11). Please install Node.js first.
+
+##### Node.js
+
+### **Download:**
+
+- **Windows/macOS Users:**  
+  Use the official installer to install directly. Visit the [Node.js official website](https://nodejs.org) to download **version v20.11**.
+
+- **Linux Users:**  
+    **Execute:**
+    ```bash
+    curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+    sudo apt install -y nodejs
+    ```
+
+    **Verify installation:**
+    ```bash
+    node -v   # Ensure Node.js version is v20.11
+    npm -v    # Ensure npm (package manager) is correctly installed
+    ```
+
+    **Install Front-end Dependencies:**
+     ```bash
+      cd frontend
+      npm install
+     ```
+
+    **Install Back-end Dependencies:**
+     ```bash
+    cd backend
+    npm install
+     ```
+     
+##### Obtain and Run the Code via Git
+**Clone the Repository:**
+ ```bash
+ git clone https://github.com/example/project.git
+ ```
+
+**Install Project Dependencies:**
+ ```bash
+ npm install
+ ```
+
+**Run the Project:**
+```bash
+npm start
+```
+
+**Packaging and Running:**
+```bash
+npm install -g pm2 #To manage the Node.js process using PM2
+pm2 start app.js
+```
 
 
-### 3.2
-### 3.3
-### 3.4
+| Component      | Description                                                       | Technology |
+|--------------|-------------------------------------------------------------------|------------|
+| **Front-end** | UI component libraries                                          | React      |
+| **Front-end** | CSS preprocessors                                               | Sass       |
+| **Back-end**  | Node.js-based web application framework that simplifies server-side application development | Express    |
+| **Back-end**  | Configuring and Managing Cross-Domain Requests for Web Applications | Cors       |
+| **Infrastructure** | Caching system                                              | Redis      |
+| **Infrastructure** | Load balancer                                                   | Nginx      |
+| **Toolkit**   | Building Tools                                                 | Webpack    |
+
+### 3.2 Deployment
+Deploy Node.js + Express application on a local virtual machine and configure Nginx (compatible with Windows, Mac and Linux)
+#### 3.2.1Prerequisites
+**Virtualization tools (for different operating systems):**
+- VirtualBox or VMware Workstation/Fusion for Windows and Mac
+1. UTM for Mac (M1/M2 and later)
+2. VirtualBox or KVM/QEMU for Linux users
+3. ISO image of Ubuntu Server (or other Linux distributions)
+- Host with sufficient resources (RAM, CPU and storage space)
+- Install Nginx on the VM
+- Node.js and npm
+#### 3.2.2 Setting up the virtual machine
+**Install the virtual machine software:**
+- Windows/Mac: Download and install VirtualBox or VMware.
+- Mac (Apple Silicon): Use UTM as the virtual machine manager.
+- Linux: Use VirtualBox or KVM (Kernel-based Virtual Machine).
+**Create a new virtual machine:**
+- Open the virtual machine software and create a new virtual machine.
+- Allocate at least 2GB RAM, 2 cores CPU, and 20GB hard disk.
+- Mount the Ubuntu Server ISO to start the installation.
+**Install Ubuntu Server:**
+- Follow the installation wizard to complete the system installation.
+- Set up user accounts and configure SSH access (if required).
+- Update the system after the installation is complete: 
+```bash
+sudo apt update
+sudo apt upgrade -y
+```
+
+#### 3.2.3 Install necessary software
+**Nginx:**
+```bash
+sudo apt install nginx -y
+```
+
+**Node.js and npm:**
+```bash
+curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+sudo apt install -y nodejs
+```
+
+#### 3.2.4 Deploy Node.js + Express application
+Clone the application code:
+
+```bash
+git clone https://github.com/yourrepo/myapp.git
+cd myapp
+```
+    
+**Install dependencies:**
+```bash
+npm install
+```
+
+**Create an Express server:**
+```bash
+const express = require('express');
+const app = express();
+const PORT = process.env.PORT || 3000;
+app.get('/', (req, res) => {
+res.send('Hello, Node.js + Express!');
+});
+app.listen(PORT, () => {
+console.log(`Server is running on port ${PORT}`);
+});
+```
+
+**Start the application:**
+```bash
+node server.js
+```
+
+#### 3.2.5 Configure Nginx as a reverse proxy
+**Create Nginx configuration file:**
+```bash
+sudo nano /etc/nginx/sites-available/myapp
+Add the following configuration:
+server {
+listen 80;
+server_name myapp.local;
+location / {
+proxy_pass http://127.0.0.1:3000;
+proxy_set_header Host $host;
+proxy_set_header X-Real-IP $remote_addr;
+proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+}
+}
+```
+
+**Enable the configuration and restart Nginx:**
+```bash
+sudo ln -s /etc/nginx/sites-available/myapp /etc/nginx/sites-enabled/
+sudo nginx -t
+sudo systemctl restart nginx
+```
+
+**Test deployment:**
+```bash
+Visit http://myapp.local in a browser to check whether the application is running normally.
+```
+
+### 3.3 Startup and User Account Management
+#### 3.3.1 Creating User Accounts or Logging into the System
+**The system provides two access methods:**
+- Creating a New Account: Users who register through the front-end interface are assigned a low-permission role by default. If department managers or other users require a high-permission account, they should contact the system administrator, who can add high-permission accounts through the backend.
+- Logging into an Existing Account: Users can log into the system using their registered username and password.
+### 3.3.2 User Roles and Permissions
+**Root Account (Highest Permission)**
+- Logs in directly using the system's preset username and password.
+- Has access to the Administrator Page to manage all user accounts.
+- Can assign administrator permissions to standard user accounts from the User Overview Page.
+**Administrator Account**
+- Requires users to first register as a standard account, then be upgraded by the Root account.
+- Once authorized, administrators can access the exclusive Administrator Panel, with the same permissions as the Root account.
+- Administrator Task Panel:
+1. Can add new targets.
+2. Can modify existing target content.
+3. Can grant target modification permissions to standard users.
+**Standard User**
+- Registers an account directly on the Registration Page.
+- Once created, users can log into the Standard User Task Interface to perform operations.
+- Permissions:
+1. Can view all targets but can only modify their own target (My Target section).
+### 3.3.3 Initial Setup Guide
+**Creating a Root Account:**
+- Log in using the default credentials, or reset the Root account during installation.
+- When adding the first high-permission super administrator account to the database, it is usually necessary to operate directly on the database (if used). Typically, this involves switching to the target database and executing:
+     ```bash
+    INSERT INTO users VALUES ('root', ...);
+**Registering an Administrator Account:**
+- Visit the Registration Page to create a standard account.
+- Upgrade the account to super administrator by granting permissions via the Root account.
+**Registering a Standard User:**
+- Visit the Registration Page, fill in the required information, and complete the account creation.
+- Once registered, users can log in and access the Standard User Task Interface with appropriate permissions.
+### 3.4 Common errors and log queries
+#### 3.4.1 Common Error Messages and Corresponding Solutions
+
+| error code              | misdescription                      | prescription  |
+|-------------------------|-----------------------------------|-------------------------------------------------------------|
+| ERR-502                | Database connection timeout      | Check if the database configuration is correct and make sure that the database service is up and running properly. |
+| ERR-307                | Insufficient authority           | Check your permission level or contact your administrator to obtain authorization. |
+| WARN-199               | Memory overflow                  | Adjust the memory allocation appropriately according to the actual memory situation of the server. |
+| 404                    | Resource not found               | Confirm that the URL you requested is correct. |
+| ERR-310                | Port occupied                    | Check whether there is any service started repeatedly and stop the conflicting process. |
+| Network Latency Timeout | Slow network response or timeout | Check network cable, Wi-Fi connection. |
+| ERR-HTTP-408           | HTTP request timeout             | Check the network connection and service status between the client and the server. |
+
+#### 3.4.2 How to find logs or diagnostic information
+Our project logs are managed using Console.log to directly output Winston and express-winston. Customers can obtain system logs or application diagnostic information by directly viewing log files to assist in troubleshooting. Use the following methods to find logs, warnings, and error information in different systems:
+**Viewing Express-Winston Logs in Real Time:**
+Express environments typically use winston for logging, and the log files are stored in the logs/ directory:
+```bash
+tail -f logs/error.log # Monitor the error log in real time.
+tail -f logs/combined.log # View all logs in real time (including info, warn, error)
+grep "error" logs/*.log # Search for error messages in all log files
+```
+
+**Query specific error logs:**
+```bash
+jq '.level == "error"' logs/express-error.log # Filter out only error level logs
+grep -i "error" logs/express-error.log # Search for logs containing the "error" keyword
+```
+
 ## Section 4: Maintenance and Implications
 ### 4.1
 To sustain the capability of the system to provide a reliable and high-performance service, regular system maintenance is needed. Regular database maintenance, code maintenance and dependency management are essential for system maintenance.
