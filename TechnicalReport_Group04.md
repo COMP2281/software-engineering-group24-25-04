@@ -472,7 +472,7 @@ Visit the [Firefox official website](https://www.mozilla.org/firefox/) to downlo
 |--------------------------------|----------------------------------------------|
 | **Browser Environment**        | Chrome, Firefox, and other commonly used browsers |
 | **Node.js**                    | Provides a server-side JavaScript execution environment (use with npm) |
-| **Database Management System** | MySQL |
+| **Database Management System** | Json file |
 
 #### 3.1.4 Code Acquisition and Execution
 If customers need to manage the software internally on their servers, the following steps provide local execution instructions:
@@ -526,7 +526,7 @@ This software adopts a front-end and back-end separation architecture, allowing 
 npm start
 ```
 
-Packaging and Running: , 
+**Packaging and Running:**
 ```bash
 npm install -g pm2 #To manage the Node.js process using PM2
 pm2 start app.js
