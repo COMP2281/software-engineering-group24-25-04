@@ -452,7 +452,7 @@ Visit the [Chrome official website](https://www.google.com/chrome/) to download 
 
 ---
 
-###### Firefox
+##### Firefox
 
 **Download:**
 Visit the [Firefox official website](https://www.mozilla.org/firefox/) to download the appropriate version.
@@ -478,7 +478,7 @@ Visit the [Firefox official website](https://www.mozilla.org/firefox/) to downlo
 If customers need to manage the software internally on their servers, the following steps provide local execution instructions:
 This software adopts a front-end and back-end separation architecture, allowing both teams to develop in parallel, reducing mutual dependencies. The frontend handles page rendering, while the back-end focuses on data logic, lowering server load. The frontend and backend can be upgraded independently without affecting each other. This project’s frontend runs on Node.js (v20.11). The back-end is also based on Node.js (v20.11). Please install Node.js first.
 
-###### Node.js
+##### Node.js
 
 ### **Download:**
 
@@ -510,7 +510,7 @@ This software adopts a front-end and back-end separation architecture, allowing 
     npm install
      ```
      
-###### Obtain and Run the Code via Git
+##### Obtain and Run the Code via Git
 **Clone the Repository:**
  ```bash
  git clone https://github.com/example/project.git
