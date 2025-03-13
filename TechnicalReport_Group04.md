@@ -476,25 +476,237 @@ Go to Settings → General to adjust cache, JavaScript, and privacy settings.
 
 #### 3.1.4 Code Acquisition and Execution
 If customers need to manage the software internally on their servers, the following steps provide local execution instructions:
-This software adopts a front-end and back-end separation architecture, allowing both teams to develop in parallel, reducing mutual dependencies. The frontend handles page rendering, while the back-end focuses on data logic, lowering server load. The frontend and backend can be upgraded independently without affecting each other. This project’s frontend runs on Node.js (v20.11). Please install Node.js first.
+This software adopts a front-end and back-end separation architecture, allowing both teams to develop in parallel, reducing mutual dependencies. The frontend handles page rendering, while the back-end focuses on data logic, lowering server load. The frontend and backend can be upgraded independently without affecting each other. This project’s frontend runs on Node.js (v20.11). The back-end is also based on Node.js (v20.11). Please install Node.js first.
 
 ###### Node.js
 
 **Download:**
 
-**Windows/macOS Users:**
-- Use the official installer to install directly. Visit the [Node.js official website](https://nodejs.org) to download **version v20.11**.
+- **Windows/macOS Users:** Use the official installer to install directly. Visit the [Node.js official website](https://nodejs.org) to download **version v20.11**.
 
-**Linux Users:**
-- Execute the following commands:
+- **Linux Users:**
+**Execute:**
 
-```bash
-curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
-sudo apt install -y nodejs
+    ```bash
+  curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+  sudo apt install -y nodejs
 
-### 3.2
-### 3.3
-### 3.4
+**Verify installation:**
+
+    ```bash
+    node -v   # Ensure Node.js version is v20.11
+    npm -v    # Ensure npm (package manager) is correctly installed
+
+
+**Install Front-end Dependencies:**
+
+    ```bash
+    cd frontend
+    npm install
+
+**Install Back-end Dependencies:**
+    
+    ```bash
+    cd backend
+    npm install
+
+###### Obtain and Run the Code via Git
+**Clone the Repository:**
+
+    ```bash
+    git clone https://github.com/example/project.git
+**Install Project Dependencies:**
+
+    ```bash
+    npm install
+**Run the Project:**
+    
+    ```bash
+    npm start
+Packaging and Running: , 
+    
+    ```bash
+    npm install -g pm2 #To manage the Node.js process using PM2
+    pm2 start app.js
+
+| Component      | Description                                                       | Technology |
+|--------------|-------------------------------------------------------------------|------------|
+| **Front-end** | UI component libraries                                          | React      |
+|              | CSS preprocessors                                               | Sass       |
+| **Back-end**  | Node.js-based web application framework that simplifies server-side application development | Express    |
+|              | Configuring and Managing Cross-Domain Requests for Web Applications | Cors       |
+| **Infrastructure** | Caching system                                              | Redis      |
+|              | Load balancer                                                   | Nginx      |
+| **Toolkit**   | Building Tools                                                 | Webpack    |
+
+### 3.2 Deployment
+Deploy Node.js + Express application on a local virtual machine and configure Nginx (compatible with Windows, Mac and Linux)
+#### 3.2.1Prerequisites
+**Virtualization tools (for different operating systems):**
+- VirtualBox or VMware Workstation/Fusion for Windows and Mac
+1. UTM for Mac (M1/M2 and later)
+2. VirtualBox or KVM/QEMU for Linux users
+3. ISO image of Ubuntu Server (or other Linux distributions)
+- Host with sufficient resources (RAM, CPU and storage space)
+- Install Nginx on the VM
+- Node.js and npm
+#### 3.2.2 Setting up the virtual machine
+**Install the virtual machine software:**
+- Windows/Mac: Download and install VirtualBox or VMware.
+- Mac (Apple Silicon): Use UTM as the virtual machine manager.
+- Linux: Use VirtualBox or KVM (Kernel-based Virtual Machine).
+**Create a new virtual machine:**
+- Open the virtual machine software and create a new virtual machine.
+- Allocate at least 2GB RAM, 2 cores CPU, and 20GB hard disk.
+- Mount the Ubuntu Server ISO to start the installation.
+**Install Ubuntu Server:**
+- Follow the installation wizard to complete the system installation.
+- Set up user accounts and configure SSH access (if required).
+- Update the system after the installation is complete: 
+    
+    ```bash
+    sudo apt update
+    sudo apt upgrade -y
+
+#### 3.2.3 Install necessary software
+**Nginx:**
+
+    ```bash
+    sudo apt install nginx -y
+
+**Node.js and npm:**
+
+    ```bash
+    curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+    sudo apt install -y nodejs
+    
+**Database server (MySQL or PostgreSQL):**
+
+    ```bash
+    sudo apt install mysql-server -y # MySQL
+    sudo apt install postgresql -y # PostgreSQL
+
+#### 3.2.4 Deploy Node.js + Express application
+Clone the application code:
+
+    ```bash
+    git clone https://github.com/yourrepo/myapp.git
+    cd myapp
+**Install dependencies:**
+
+    ```bash
+    npm install
+**Create an Express server:**
+
+    ```bash
+    const express = require('express');
+    const app = express();
+    const PORT = process.env.PORT || 3000;
+    app.get('/', (req, res) => {
+    res.send('Hello, Node.js + Express!');
+    });
+    app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+    });
+
+**Start the application:**
+
+    ```bash
+    node server.js
+
+####3.2.6 Configure Nginx as a reverse proxy
+**Create Nginx configuration file:**
+
+    ```bash
+    sudo nano /etc/nginx/sites-available/myapp
+    Add the following configuration:
+    server {
+    listen 80;
+    server_name myapp.local;
+    location / {
+    proxy_pass http://127.0.0.1:3000;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    }
+    }
+
+**Enable the configuration and restart Nginx:**
+
+    ```bash
+    sudo ln -s /etc/nginx/sites-available/myapp /etc/nginx/sites-enabled/
+    sudo nginx -t
+    sudo systemctl restart nginx
+
+**Test deployment:**
+
+    ```bash
+    Visit http://myapp.local in a browser to check whether the application is running normally.
+
+### 3.3 Startup and User Account Management
+#### 3.3.1 Creating User Accounts or Logging into the System
+**The system provides two access methods:**
+- Creating a New Account: Users who register through the front-end interface are assigned a low-permission role by default. If department managers or other users require a high-permission account, they should contact the system administrator, who can add high-permission accounts through the backend.
+- Logging into an Existing Account: Users can log into the system using their registered username and password.
+###3.3.2 User Roles and Permissions
+**Root Account (Highest Permission)**
+- Logs in directly using the system's preset username and password.
+- Has access to the Administrator Page to manage all user accounts.
+- Can assign administrator permissions to standard user accounts from the User Overview Page.
+**Administrator Account**
+- Requires users to first register as a standard account, then be upgraded by the Root account.
+- Once authorized, administrators can access the exclusive Administrator Panel, with the same permissions as the Root account.
+- Administrator Task Panel:
+1. Can add new targets.
+2. Can modify existing target content.
+3. Can grant target modification permissions to standard users.
+**Standard User**
+- Registers an account directly on the Registration Page.
+- Once created, users can log into the Standard User Task Interface to perform operations.
+- Permissions:
+1. Can view all targets but can only modify their own target (My Target section).
+###3.3.3 Initial Setup Guide
+**Creating a Root Account:**
+- Log in using the default credentials, or reset the Root account during installation.
+- When adding the first high-permission super administrator account to the database, it is usually necessary to operate directly on the database (if used). Typically, this involves switching to the target database and executing:
+
+     ```bash
+    INSERT INTO users VALUES ('root', ...);
+**Registering an Administrator Account:**
+- Visit the Registration Page to create a standard account.
+- Upgrade the account to super administrator by granting permissions via the Root account.
+**Registering a Standard User:**
+- Visit the Registration Page, fill in the required information, and complete the account creation.
+- Once registered, users can log in and access the Standard User Task Interface with appropriate permissions.
+###3.4 Common errors and log queries
+####3.4.1 Common Error Messages and Corresponding Solutions
+
+| error code              | misdescription                      | prescription  |
+|-------------------------|-----------------------------------|-------------------------------------------------------------|
+| ERR-502                | Database connection timeout      | Check if the database configuration is correct and make sure that the database service is up and running properly. |
+| ERR-307                | Insufficient authority           | Check your permission level or contact your administrator to obtain authorization. |
+| WARN-199               | Memory overflow                  | Adjust the memory allocation appropriately according to the actual memory situation of the server. |
+| 404                    | Resource not found               | Confirm that the URL you requested is correct. |
+| ERR-310                | Port occupied                    | Check whether there is any service started repeatedly and stop the conflicting process. |
+| Network Latency Timeout | Slow network response or timeout | Check network cable, Wi-Fi connection. |
+| ERR-HTTP-408           | HTTP request timeout             | Check the network connection and service status between the client and the server. |
+
+####3.4.2 How to find logs or diagnostic information
+Our project logs are managed using Console.log to directly output Winston and express-winston. Customers can obtain system logs or application diagnostic information by directly viewing log files to assist in troubleshooting. Use the following methods to find logs, warnings, and error information in different systems:
+**Viewing Express-Winston Logs in Real Time:**
+Express environments typically use winston for logging, and the log files are stored in the logs/ directory:
+
+     ```bash
+    tail -f logs/error.log # Monitor the error log in real time.
+    tail -f logs/combined.log # View all logs in real time (including info, warn, error)
+    grep "error" logs/*.log # Search for error messages in all log files
+
+**Query specific error logs:**
+
+     ```bash
+    jq '.level == "error"' logs/express-error.log # Filter out only error level logs
+    grep -i "error" logs/express-error.log # Search for logs containing the "error" keyword
+
 ## Section 4: Maintenance and Implications
 ### 4.1
 To sustain the capability of the system to provide a reliable and high-performance service, regular system maintenance is needed. Regular database maintenance, code maintenance and dependency management are essential for system maintenance.
