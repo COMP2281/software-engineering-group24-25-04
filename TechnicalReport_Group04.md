@@ -621,7 +621,7 @@ console.log(`Server is running on port ${PORT}`);
 node server.js
 ```
 
-#### 3.2.6 Configure Nginx as a reverse proxy
+#### 3.2.5 Configure Nginx as a reverse proxy
 **Create Nginx configuration file:**
 ```bash
 sudo nano /etc/nginx/sites-available/myapp
