@@ -583,12 +583,6 @@ sudo apt install nginx -y
 curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 sudo apt install -y nodejs
 ```
-    
-**Database server (MySQL or PostgreSQL):**
-```bash
-sudo apt install mysql-server -y # MySQL
-sudo apt install postgresql -y # PostgreSQL
-```
 
 #### 3.2.4 Deploy Node.js + Express application
 Clone the application code:
