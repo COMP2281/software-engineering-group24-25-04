@@ -480,54 +480,49 @@ This software adopts a front-end and back-end separation architecture, allowing 
 
 ###### Node.js
 
-**Download:**
+### **Download:**
 
-- **Windows/macOS Users:** Use the official installer to install directly. Visit the [Node.js official website](https://nodejs.org) to download **version v20.11**.
+- **Windows/macOS Users:**  
+  Use the official installer to install directly. Visit the [Node.js official website](https://nodejs.org) to download **version v20.11**.
 
-- **Linux Users:**
-**Execute:**
-
+- **Linux Users:**  
+  **Execute:**
     ```bash
-  curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
-  sudo apt install -y nodejs
+    curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+    sudo apt install -y nodejs
+    ```
 
-**Verify installation:**
-
+  **Verify installation:**
     ```bash
     node -v   # Ensure Node.js version is v20.11
     npm -v    # Ensure npm (package manager) is correctly installed
+    ```
 
 
-**Install Front-end Dependencies:**
-
+### **Install Front-end Dependencies:**
     ```bash
     cd frontend
     npm install
 
-**Install Back-end Dependencies:**
-    
-    ```bash
-    cd backend
-    npm install
 
 ###### Obtain and Run the Code via Git
 **Clone the Repository:**
-
     ```bash
     git clone https://github.com/example/project.git
+    ```
 **Install Project Dependencies:**
-
     ```bash
     npm install
+    ```
 **Run the Project:**
-    
-    ```bash
+    ```bash 
     npm start
+    ```
 Packaging and Running: , 
-    
     ```bash
     npm install -g pm2 #To manage the Node.js process using PM2
     pm2 start app.js
+    ```
 
 | Component      | Description                                                       | Technology |
 |--------------|-------------------------------------------------------------------|------------|
