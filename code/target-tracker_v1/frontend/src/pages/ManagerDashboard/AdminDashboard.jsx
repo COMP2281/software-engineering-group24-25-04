@@ -40,12 +40,60 @@ const AdminDashboard = ({ userEmail, goToProfile, goToTarget }) => {
   }, []);
 
   const handleBoxClick = async (targetId) => {
-    try {
-      const response = await axios.get(`http://localhost:4000/target/${targetId}`);
-      const targetData = response.data;
-      goToTarget(userEmail, targetData, true);
-    } catch (error) {
-      console.error("Error fetching target data:", error);
+    if (targetId === "Add Target") {
+      try {
+          // Fetch the existing targets to determine the next ID
+          const response = await axios.get("http://localhost:4000/targets");
+          const targets = response.data;
+
+          // Find the highest target-id and increment it
+          const highestId = Math.max(...targets.map(target => parseInt(target["target-id"], 10) || 0), 0);
+          const nextId = highestId + 1;
+
+          // Define the new target with correct field types
+          const newTarget = {
+              "target-id": nextId.toString(), // Convert to string to match existing format
+              "title": "New Target",
+              "fields": [
+                  { "id": "target-cerp3_action_type", "label": "CERP3 Action Type", "value": "" },
+                  { "id": "target-smart_action_description", "label": "Smart Action Description", "value": "" },
+                  { "id": "target-related_work_programme", "label": "Related Work Programme", "value": "" },
+                  { "id": "target-action_type", "label": "Action Type", "value": "" },
+                  { "id": "target-project_lead", "label": "Project Lead", "value": "" },
+                  { "id": "target-progress_metric", "label": "Progress Metric", "value": "" },
+                  { "id": "target-targets_set", "label": "Targets Set", "value": "", "numericValue": 0 },
+                  { "id": "target-kpi", "label": "KPI", "value": "" },
+                  { "id": "target-carbon_reduction", "label": "Carbon Reduction", "value": "" },
+                  { "id": "target-potential_obstacles_and_solutions", "label": "Potential Obstacles and Solutions", "value": "" },
+                  { "id": "target-governing_group", "label": "Governing Group", "value": "" }
+              ],
+              "costFields": [
+                  { "id": "target-countywide_estimated_annual_saving", "label": "Countywide Estimated Annual Saving", "value": "" },
+                  { "id": "target-actual_annual_saving", "label": "Actual Annual Saving", "value": "" },
+                  { "id": "target-cost", "label": "Cost", "value": "" }
+              ],
+              "otherFields": [
+                { "id": "target-funding_secured", "label": "Funding Secured", "value": "No", "type": "dropdown", "options": ["Yes", "No", "Invest to Save"] },
+                { "id": "target-sufficient_staff", "label": "Sufficient Staff", "value": "No", "type": "dropdown", "options": ["Yes", "No", "Uncertain"] },
+                { "id": "target-start_date", "label": "Start Date", "value": "", "type": "date" },
+                { "id": "target-completion_date", "label": "Completion Date", "value": "", "type": "date" }
+              ]
+          };
+
+          // Redirect user to Target.jsx with new target
+          goToTarget(userEmail, newTarget, true);
+
+      } catch (error) {
+          console.error("Error fetching targets:", error);
+      }
+  } else {
+      try {
+        const response = await axios.get(`http://localhost:4000/target/${targetId}`);
+        const targetData = response.data;
+        goToTarget(userEmail, targetData, true);
+      } catch (error) {
+        console.error("Error fetching target data:", error);
+      }
     }
   };
 
@@ -190,6 +238,9 @@ const AdminDashboard = ({ userEmail, goToProfile, goToTarget }) => {
                   </div>
                 </div>
               ))}
+              <div className="target-box plus-box" onClick={() => handleBoxClick("Add Target")}>
+                +
+              </div>
             </div>
           </div>
         </div>
