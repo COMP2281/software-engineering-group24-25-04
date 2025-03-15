@@ -1,65 +1,24 @@
 [
   {
     "id": "1",
-    "name": "name",
-    "email": "email1@example.com",
-    "password": "password2",
-    "role": "user"
+    "name": "managerName",
+    "email": "manager@email.com",
+    "password": "ManagerPassword1!",
+    "role": "manager"
   },
   {
     "id": "2",
-    "name": "rachel",
-    "email": "email@example.com",
+    "name": "example",
+    "email": "example@email.com",
     "password": "newPasword",
     "role": "user"
   },
   {
     "id": "3",
-    "name": "manager",
-    "email": "coolmanager23@gmail.com",
-    "password": "helloworld555",
+    "name": "anotherManager",
+    "email": "manager2@email.com",
+    "password": "passwordForManager2!",
     "role": "manager"
-  },
-  {
-    "id": "4",
-    "name": "TireniMannnzzz",
-    "email": "tirenibuoyz@example.com",
-    "password": "tirenioluwaoladimeji10198765ghjk",
-    "role": "user"
-  },
-  {
-    "id": "5",
-    "name": "manager",
-    "email": "manager@gmail.com",
-    "password": "ManagerPassword123!",
-    "role": "manager"
-  },
-  {
-    "id": "6",
-    "name": "Adam",
-    "email": "adamlovesfruits@gmail.com",
-    "password": "papaya56",
-    "role": "manager"
-  },
-  {
-    "id": "7",
-    "name": "Wendy Baker",
-    "email": "wendyhasredhair@gmail.com",
-    "password": "Burgeritall@88",
-    "role": "user"
-  },
-  {
-    "id": "8",
-    "name": "Gigi Hadid",
-    "email": "gigibakescookies@gmail.com",
-    "password": "GiveEmTheCroissants_4",
-    "role": "user"
-  },
-  {
-    "id": "9",
-    "name": "newUser",
-    "email": "newUser@example.com",
-    "password": "NewPassword1!",
-    "role": "user"
   }
 ]
+
