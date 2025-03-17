@@ -14,7 +14,9 @@ const userTargetsFilePath = path.join(__dirname, '../database/usertargets.json')
 
 const incorrectLoginFile = path.join(__dirname, './incorrectlogin.json');
 const TIME_WINDOW = 15 * 60 * 1000; 
-// const incorrectLogs = require(incorrectLoginFile);
+
+const {newTarget, removeTarget} = require('../email/assigntarget');
+
 
 // Function to validate login
 function validateLogin(email, password) {
@@ -408,7 +410,7 @@ router.post('/assign-target', (req, res) => {
     userTargets[userId].push(parsedTargetId);
     writeUserTargets(userTargets);
   }
-
+  newTarget(userEmail, targetId);
   res.status(200).json({ message: 'Target assigned successfully' });
 });
 
@@ -428,6 +430,7 @@ router.post('/remove-target', (req, res) => {
     const parsedTargetId = parseInt(targetId);
     userTargets[userId] = userTargets[userId].filter(id => id !== parsedTargetId);
     writeUserTargets(userTargets);
+    removeTarget(userEmail, targetId);
     res.status(200).json({ message: 'Target removed successfully' });
 });
 

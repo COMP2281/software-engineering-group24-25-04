@@ -19,6 +19,12 @@
     "email": "manager2@email.com",
     "password": "passwordForManager2!",
     "role": "manager"
+  },
+  {
+    "id": "4",
+    "name": "Rachel",
+    "email": "rachel.delaysla09@gmail.com",
+    "password": "ExamplePassword123!",
+    "role": "user"
   }
 ]
-
