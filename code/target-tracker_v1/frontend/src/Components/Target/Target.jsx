@@ -68,6 +68,10 @@ const Target = ({ userEmail, userRole, target, goToDashboard, goToManagerDashboa
 
     const handleSaveClick = async () => {
         try {
+             if (!formData.title) {
+            alert("Title required");
+            return;
+        }
             const newTargetData = {
                 "target-id": target["target-id"] || null,
                 "title": formData.title || "Target Heading",
