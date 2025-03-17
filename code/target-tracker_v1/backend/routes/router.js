@@ -422,6 +422,7 @@ router.post('/remove-target', (req, res) => {
     if (!user) {
         return res.status(404).json({ message: 'User not found' });
     }
+    removeTargetEmail(userEmail, targetId);
     const userTargets = readUserTargets();
     const userId = user.id;
     if (!userTargets[userId]) {
@@ -430,7 +431,6 @@ router.post('/remove-target', (req, res) => {
     const parsedTargetId = parseInt(targetId);
     userTargets[userId] = userTargets[userId].filter(id => id !== parsedTargetId);
     writeUserTargets(userTargets);
-    removeTargetEmail(userEmail, targetId);
     res.status(200).json({ message: 'Target removed successfully' });
 });
 
