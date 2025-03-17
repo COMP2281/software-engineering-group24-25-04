@@ -91,7 +91,6 @@ export const handleInput = async (action) => {
 
         try {
             const loginResult = await axios.post('http://localhost:4000/login', postData);
-
             if (loginResult.data.success) {
                 alert("Successfully logged in!");
                 return {
@@ -101,9 +100,15 @@ export const handleInput = async (action) => {
                     email: postData.email
                 };
             } else {
-            alert("Unsuccessful login attempt");
-            return {success: false};
-
+                if (loginResult.data.message.includes("locked")){
+                    alert("3 Unsuccessful login attempts. Please reset password");
+                    return {success: false,
+                            reset: true
+                    };
+                } else {
+                    alert("Unsuccessful login attempt");
+                    return {success: false};
+                }
             }
         } catch (error) {
             console.error("Login error:", error);

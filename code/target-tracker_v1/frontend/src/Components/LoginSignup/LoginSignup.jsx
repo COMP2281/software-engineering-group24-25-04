@@ -21,6 +21,8 @@ const LoginSignup = ({ goToDashboard, goToManagerDashboard }) => {
         } else {
           goToDashboard(loginResult.email); // Redirect users to User Dashboard
         }
+      } else if (loginResult.reset === true) {
+        setAction("Forgot Password");
       } else {
         alert("Login failed. Please check your credentials.");
       }

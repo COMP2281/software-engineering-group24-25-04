@@ -4,13 +4,13 @@ const nodemailer = require('nodemailer');
 const fs = require('fs');
 const path = require('path');
 
-const usersFile = path.resolve(__dirname, './database/user.json');
+const usersFile = path.resolve(__dirname, '../database/user.json');
 const userData = require(usersFile);
 
-const targetsFile = path.resolve(__dirname, './database/targets.json');
+const targetsFile = path.resolve(__dirname, '../database/targets.json');
 const targetData = require(targetsFile);
 
-const userTargetFile = path.resolve(__dirname, './database/usertargets.json');
+const userTargetFile = path.resolve(__dirname, '../database/usertargets.json');
 const userTargetData = require(userTargetFile);
 
 // console.log(targetData);

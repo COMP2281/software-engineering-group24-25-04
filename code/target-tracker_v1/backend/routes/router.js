@@ -12,6 +12,10 @@ const managers = require(managersFile);
 const targetsFilePath = path.join(__dirname, '../database/targets.json');
 const userTargetsFilePath = path.join(__dirname, '../database/usertargets.json');
 
+const incorrectLoginFile = path.join(__dirname, './incorrectlogin.json');
+const TIME_WINDOW = 15 * 60 * 1000; 
+// const incorrectLogs = require(incorrectLoginFile);
+
 // Function to validate login
 function validateLogin(email, password) {
     return users.find(user => user.email === email && user.password === password) || null;
@@ -35,6 +39,43 @@ function checkEmailUnique(email) {
     return !users.some(user => user.email === email);
 }
 
+function incorrectLogin(email) {
+    const now = new Date();
+    let logs = [];
+
+    // Read existing logs
+    try {
+        const data = fs.readFileSync(incorrectLoginFile, 'utf8');
+        logs = data ? JSON.parse(data) : [];
+    } catch (error) {
+        console.error("Error reading incorrect login file:", error);
+    }
+
+    // Filter logs for the same email within the last 15 minutes
+    const recentAttempts = logs.filter(log => 
+        log.email === email && 
+        (now - new Date(log.time)) <= TIME_WINDOW
+    );
+
+    // Add current attempt
+    logs.push({ email, time: now });
+
+    // Write updated logs back to the file
+    fs.writeFile(incorrectLoginFile, JSON.stringify(logs, null, 2), 'utf8', (err) => {
+        if (err) {
+            console.error("Error writing to incorrect login file:", err);
+        }
+    });
+
+    // Check if there have been 3 or more attempts within the time window
+    if (recentAttempts.length >= 2) {
+        console.log(`User ${email} has exceeded login attempts. Please reset your password.`);
+        return true; // Lock the account
+    }
+
+    return false; // Allow further attempts
+}
+
 // Helper function to read targets from the JSON file
 const readTargets = () => {
     const data = fs.readFileSync(targetsFilePath, 'utf8');
@@ -54,7 +95,7 @@ const readUsers = () => {
 
 // Helper function to write user targets
 const writeUserTargets = (userTargets) => {
-  fs.writeFileSync(userTargetsFilePath, JSON.stringify(userTargets, null, 2), 'utf8');
+    fs.writeFileSync(userTargetsFilePath, JSON.stringify(userTargets, null, 2), 'utf8');
 };
 
 // Login route
@@ -65,6 +106,13 @@ router.post('/login', (req, res) => {
 
     if (!user) {
         console.log("Login failed: Invalid credentials.");
+        // Here save to incorrect login log
+        if (!checkEmailUnique(req.body.email)){
+            const isLocked = incorrectLogin(req.body.email);
+            if (isLocked) {
+                return res.json({ success: false, message: "Account locked, please reset password"});
+            }
+        }
         return res.json({ success: false, message: "Invalid credentials" });
     }
 
