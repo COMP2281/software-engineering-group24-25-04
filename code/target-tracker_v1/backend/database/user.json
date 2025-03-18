@@ -19,19 +19,5 @@
     "email": "manager2@email.com",
     "password": "passwordForManager2!",
     "role": "manager"
-  },
-  {
-    "id": "4",
-    "name": "staff",
-    "email": "staff@email.com",
-    "password": "StaffPassword1!",
-    "role": "user"
-  },
-  {
-    "id": "5",
-    "name": "Rachel",
-    "email": "rachel.delaysla09@gmail.com",
-    "password": "ExamplePassword123!",
-    "role": "user"
   }
 ]
