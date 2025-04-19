@@ -9,6 +9,11 @@ const Dashboard = ({ userEmail, goToProfile, goToTarget }) => {
   const [myTargets, setMyTargets] = useState([]);
   const [allTargets, setAllTargets] = useState([]);
 
+  // Date filter states
+  const [dateFilterType, setDateFilterType] = useState("All");
+  const [customStartDate, setCustomStartDate] = useState("");
+  const [customEndDate, setCustomEndDate] = useState("");
+
   useEffect(() => {
     const fetchTargets = async () => {
       try {
@@ -105,6 +110,43 @@ const Dashboard = ({ userEmail, goToProfile, goToTarget }) => {
     goToProfile(userEmail);
   };
 
+  // Helper for date filtering
+  const isWithinDateRange = (target, type) => {
+    const dateField = target.otherFields?.find(field => field.id === "target-completion_date");
+    if (!dateField || !dateField.value || dateField.value.toLowerCase() === "ongoing") return false;
+
+    const date = new Date(dateField.value.split("-").reverse().join("-"));
+
+    const today = new Date();
+    const startOfWeek = new Date(today);
+    startOfWeek.setDate(today.getDate() - today.getDay() + 1);
+    const endOfWeek = new Date(startOfWeek);
+    endOfWeek.setDate(startOfWeek.getDate() + 6);
+
+    const startOfMonth = new Date(today.getFullYear(), today.getMonth(), 1);
+    const endOfMonth = new Date(today.getFullYear(), today.getMonth() + 1, 0);
+
+    const startOfYear = new Date(today.getFullYear(), 0, 1);
+    const endOfYear = new Date(today.getFullYear(), 11, 31);
+
+    if (type === "Day") {
+      return date.toDateString() === today.toDateString();
+    } else if (type === "Week") {
+      return date >= startOfWeek && date <= endOfWeek;
+    } else if (type === "Month") {
+      return date >= startOfMonth && date <= endOfMonth;
+    } else if (type === "Year") {
+      return date >= startOfYear && date <= endOfYear;
+    } else if (type === "Custom") {
+      if (!customStartDate || !customEndDate) return false;
+      const start = new Date(customStartDate);
+      const end = new Date(customEndDate);
+      return date >= start && date <= end;
+    }
+
+    return true;
+  };
+
   const filteredMyTargets = myTargets.filter(target => {
     if (!target?.fields) return false;
     const fieldValues = target.fields.map(field => field?.value?.toLowerCase() || "");
@@ -114,7 +156,8 @@ const Dashboard = ({ userEmail, goToProfile, goToTarget }) => {
     const matchesFilter = filter === "All" || 
                           target?.title?.toLowerCase() === filter.toLowerCase() || 
                           fieldValues.includes(filter.toLowerCase());
-    return matchesSearch && matchesFilter;
+    const matchesDate = dateFilterType === "All" || isWithinDateRange(target, dateFilterType);                      
+    return matchesSearch && matchesFilter && matchesDate;
 });
   
   const filteredAllTargets = allTargets.filter(target => {
@@ -124,9 +167,9 @@ const Dashboard = ({ userEmail, goToProfile, goToTarget }) => {
                           fieldValues.some(value => value.includes(searchTerm.toLowerCase()));
     const matchesFilter = filter === "All" || 
                           target.title.toLowerCase() === filter.toLowerCase() || 
-                          fieldValues.includes(filter.toLowerCase());
-
-    return matchesSearch && matchesFilter;
+                          fieldValues.includes(filter.toLowerCase());                      
+    const matchesDate = dateFilterType === "All" || isWithinDateRange(target, dateFilterType);
+    return matchesSearch && matchesFilter && matchesDate;
 });
 
   // Helper to extract the total number from the "Targets Set" string.
@@ -182,6 +225,9 @@ const Dashboard = ({ userEmail, goToProfile, goToTarget }) => {
                     </div>
                   );
                 })}
+                {filteredMyTargets.length === 0 && (
+                  <p className="no-targets-message">No targets due within the selected period.</p>
+                )}
                 <div className="target-box plus-box" onClick={() => handleBoxClick("Add Target")}>
                   +
                 </div>
@@ -212,8 +258,41 @@ const Dashboard = ({ userEmail, goToProfile, goToTarget }) => {
                   ))}
                 </select>
               </div>
+              
+              <div className="date-filter-container">
+                <label>Filter by Completion Date:</label>
+                <select
+                  className="date-filter-dropdown"
+                  value={dateFilterType}
+                  onChange={(e) => setDateFilterType(e.target.value)}
+                >
+                  <option value="All">All</option>
+                  <option value="Day">Today</option>
+                  <option value="Week">This Week</option>
+                  <option value="Month">This Month</option>
+                  <option value="Year">This Year</option>
+                  <option value="Custom">Custom Range</option>
+                </select>
+
+                {dateFilterType === "Custom" && (
+                  <div className="custom-date-range">
+                    <input
+                      type="date"
+                      value={customStartDate}
+                      onChange={(e) => setCustomStartDate(e.target.value)}
+                    />
+                    <input
+                      type="date"
+                      value={customEndDate}
+                      onChange={(e) => setCustomEndDate(e.target.value)}
+                    />
+                  </div>
+                )}
+              </div>
             </div>
           </div>
+
+          
           <div className="separator-line"></div>
           <div className="all-targets">
             <h2>All Targets</h2>
@@ -234,6 +313,9 @@ const Dashboard = ({ userEmail, goToProfile, goToTarget }) => {
                     </div>
                   );
               })}
+              {filteredAllTargets.length === 0 && (
+                <p className="no-targets-message">No targets found for the selected filters.</p>
+              )}
             </div>
           </div>
         </div>

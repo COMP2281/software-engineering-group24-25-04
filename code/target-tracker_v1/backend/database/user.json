@@ -8,9 +8,9 @@
   },
   {
     "id": "2",
-    "name": "example",
-    "email": "example@email.com",
-    "password": "newPasword",
+    "name": "staff",
+    "email": "staff@email.com",
+    "password": "Password1!",
     "role": "user"
   },
   {
