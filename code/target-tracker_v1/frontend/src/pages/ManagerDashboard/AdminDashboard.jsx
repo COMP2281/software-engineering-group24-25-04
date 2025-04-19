@@ -14,6 +14,11 @@ const AdminDashboard = ({ userEmail, goToProfile, goToTarget }) => {
   const [message, setMessage] = useState("");
   const [assignedTargets, setAssignedTargets] = useState([]);
 
+  // Date filtering states
+  const [dateFilterType, setDateFilterType] = useState("All");
+  const [customStartDate, setCustomStartDate] = useState("");
+  const [customEndDate, setCustomEndDate] = useState("");
+
   useEffect(() => {
     const fetchTargets = async () => {
       try {
@@ -156,6 +161,39 @@ const AdminDashboard = ({ userEmail, goToProfile, goToTarget }) => {
     }
   };
 
+  // NEW: Filter helper for date
+  const isWithinDateRange = (target, type) => {
+    const dateField = target.otherFields?.find(field => field.id === "target-completion_date");
+    if (!dateField || !dateField.value || dateField.value.toLowerCase() === "ongoing") return false;
+
+    const date = new Date(dateField.value.split("-").reverse().join("-"));
+    const today = new Date();
+
+    const startOfWeek = new Date(today);
+    startOfWeek.setDate(today.getDate() - today.getDay() + 1);
+    const endOfWeek = new Date(startOfWeek);
+    endOfWeek.setDate(startOfWeek.getDate() + 6);
+
+    const startOfMonth = new Date(today.getFullYear(), today.getMonth(), 1);
+    const endOfMonth = new Date(today.getFullYear(), today.getMonth() + 1, 0);
+
+    const startOfYear = new Date(today.getFullYear(), 0, 1);
+    const endOfYear = new Date(today.getFullYear(), 11, 31);
+
+    if (type === "Day") return date.toDateString() === today.toDateString();
+    if (type === "Week") return date >= startOfWeek && date <= endOfWeek;
+    if (type === "Month") return date >= startOfMonth && date <= endOfMonth;
+    if (type === "Year") return date >= startOfYear && date <= endOfYear;
+    if (type === "Custom") {
+      if (!customStartDate || !customEndDate) return false;
+      const start = new Date(customStartDate);
+      const end = new Date(customEndDate);
+      return date >= start && date <= end;
+    }
+
+    return true;
+  };
+
   const filteredAllTargets = allTargets.filter(target => {
     const fieldValues = target.fields ? target.fields.map(field => field?.value?.toLowerCase() || "") : [];
     const matchesSearch = searchTerm === "" || 
@@ -164,8 +202,9 @@ const AdminDashboard = ({ userEmail, goToProfile, goToTarget }) => {
     const matchesFilter = filter === "All" || 
                           target.title.toLowerCase() === filter.toLowerCase() || 
                           fieldValues.includes(filter.toLowerCase());
+    const matchesDate = dateFilterType === "All" || isWithinDateRange(target, dateFilterType);                      
 
-    return matchesSearch && matchesFilter;
+    return matchesSearch && matchesFilter && matchesDate;
   });
 
   // Helper to extract the total number from the "Targets Set" string.
@@ -223,6 +262,35 @@ const AdminDashboard = ({ userEmail, goToProfile, goToTarget }) => {
                   </option>
                 ))}
               </select>
+              <div className="date-filter-container">
+                <label>Filter by Completion Date:</label>
+                <select
+                  className="date-filter-dropdown"
+                  value={dateFilterType}
+                  onChange={(e) => setDateFilterType(e.target.value)}
+                >
+                  <option value="All">All</option>
+                  <option value="Day">Today</option>
+                  <option value="Week">This Week</option>
+                  <option value="Month">This Month</option>
+                  <option value="Year">This Year</option>
+                  <option value="Custom">Custom Range</option>
+                </select>
+                {dateFilterType === "Custom" && (
+                  <div className="custom-date-range">
+                    <input
+                      type="date"
+                      value={customStartDate}
+                      onChange={(e) => setCustomStartDate(e.target.value)}
+                    />
+                    <input
+                      type="date"
+                      value={customEndDate}
+                      onChange={(e) => setCustomEndDate(e.target.value)}
+                    />
+                  </div>
+                )}
+              </div>
             </div>
             <button className="open-modal-button" onClick={() => setIsModalOpen(true)}>
             + Assign New Target
@@ -238,6 +306,9 @@ const AdminDashboard = ({ userEmail, goToProfile, goToTarget }) => {
                   </div>
                 </div>
               ))}
+              {filteredAllTargets.length === 0 && (
+                <p className="no-targets-message">No targets found for the selected filters.</p>
+              )}
               <div className="target-box plus-box" onClick={() => handleBoxClick("Add Target")}>
                 +
               </div>
