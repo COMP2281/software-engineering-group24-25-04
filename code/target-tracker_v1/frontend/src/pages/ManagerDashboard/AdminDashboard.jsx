@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import './AdminDashboard.css';
 import icon from '../../Components/Assets/icon.jpg';
 import axios from 'axios';
+import { Button } from 'antd';
+import { useNavigate } from 'react-router-dom';
 
 const AdminDashboard = ({ userEmail, goToProfile, goToTarget }) => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -221,12 +223,22 @@ const AdminDashboard = ({ userEmail, goToProfile, goToTarget }) => {
     const progress = target.progress || 0;
     return total > 0 ? `${Math.min((progress / total) * 100, 100).toFixed(2)}%` : "0.00%";
   };
+  
+  const navigate = useNavigate();
+
+  const handleStatisticClick = () => {
+    // console.log("Statistic clicked");
+    navigate('/statistic');
+  }
 
   return (
     <div className="dashboard">
       <header className="dashboard-header">
         <div className="dashboard-header-left">
           <h1>Welcome to Admin's Dashboard -- Target Management</h1>
+        </div>
+        <div className="dashboard-header-right">
+          <Button onClick={handleStatisticClick} >View Statistic</Button>
         </div>
         <div className="dashboard-header-right">
           <img 
