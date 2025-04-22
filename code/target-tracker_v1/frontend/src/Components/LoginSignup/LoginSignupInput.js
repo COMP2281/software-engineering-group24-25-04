@@ -1,5 +1,6 @@
 import axios from "axios";
 import validator from "validator";
+import { Button, message } from 'antd';
 
 function validateEmail(email) {
     return validator.isEmail(email);
@@ -40,12 +41,14 @@ export const handleInput = async (action) => {
         const validPassword = validatePassword(postData.password);
 
         if (!validEmail) {
-            alert("Please enter a valid email");
+            // alert("Please enter a valid email");
+            message.error('Please enter a valid email');
             return false;
         }
 
         if (!validPassword) {
-            alert("Password needs to be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character");
+            // alert("Password needs to be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character");
+            message.error("Password needs to be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character");
             return false;
         }
 
@@ -85,14 +88,16 @@ export const handleInput = async (action) => {
 
     const login = async(postData) => {
         if (!validateEmail(postData.email)) {
-            alert("Please enter a valid email");
+            // alert("Please enter a valid email");
+            message.error('Please enter a valid email');
             return {success: false};
         }
 
         try {
             const loginResult = await axios.post('http://localhost:4000/login', postData);
             if (loginResult.data.success) {
-                alert("Successfully logged in!");
+                // alert("Successfully logged in!");
+                message.success('Successfully logged in!');
                 return {
                     success: true, 
                     id: loginResult.data.id,
@@ -101,18 +106,21 @@ export const handleInput = async (action) => {
                 };
             } else {
                 if (loginResult.data.message.includes("locked")){
-                    alert("3 Unsuccessful login attempts. Please reset password");
+                    // alert("3 Unsuccessful login attempts. Please reset password");
+                    message.error('3 Unsuccessful login attempts. Please reset password');
                     return {success: false,
                             reset: true
                     };
                 } else {
-                    alert("Unsuccessful login attempt");
+                    // alert("Unsuccessful login attempt");
+                    message.error('Unsuccessful login attempt');
                     return {success: false};
                 }
             }
         } catch (error) {
             console.error("Login error:", error);
-            alert("Login failed. Please try again.");
+            // alert("Login failed. Please try again.");
+            message.error("Login failed. Please try again.")
             return {success: false};
         }
     };
@@ -140,7 +148,8 @@ export const handleInput = async (action) => {
 
     const reset = async(postData) => {
         if (!validateEmail(postData.email)) {
-            alert("Please enter a valid email");
+            // alert("Please enter a valid email");
+            message.error('Please enter a valid email');
             return false;
         }
 
@@ -174,15 +183,18 @@ export const handleInput = async (action) => {
     }*/
 
     if (action === "Sign Up" && !(name && email && password)){
-        alert("Please fill in all fields");
+        // alert("Please fill in all fields");
+        message.error("Please fill in all fields");
         return false;
     }
     if (action === "Log In" && !(email && password)){
-        alert("Please fill in all fields");
+        // alert("Please fill in all fields");
+        message.error("Please fill in all fields");
         return false;
     }
     if (action === "Forgot Password" && !(name && email && newPassword)){
-        alert("Please fill in all fields");
+        // alert("Please fill in all fields");
+        message.error("Please fill in all fields");
         return false;
     }
 
@@ -190,10 +202,12 @@ export const handleInput = async (action) => {
         const signUpInput = { name, email, password };
         const result = await signUp(signUpInput);
         if (!result){
-            alert("Unsuccessful sign up");
+            // alert("Unsuccessful sign up");
+            message.error("Unsuccessful sign up");
             return false;
         }
-        alert("Successfully signed up");
+        // alert("Successfully signed up"); 
+        message.success("Successfully signed up");
         return true;
     }
 
@@ -201,7 +215,8 @@ export const handleInput = async (action) => {
         const loginInput = {email, password};
         const result = await login(loginInput);
         if (!result){
-            alert("Unsuccessful login attempt")
+            // alert("Unsuccessful login attempt")
+            message.error("Unsuccessful login attempt")
             return false;
         }
         return result;
@@ -217,10 +232,12 @@ export const handleInput = async (action) => {
         const resetInput = {name, email, newPassword};
         const result = await reset(resetInput);
         if (!result){
-            alert("Password unchanged");
+            // alert("Password unchanged");
+            message.error("Password unchanged");
             return false;
         }
-        alert("Successfully changed password!");
+        // alert("Successfully changed password!");
+        message.success("Successfully changed password!");  
         return true;
     }
 };
