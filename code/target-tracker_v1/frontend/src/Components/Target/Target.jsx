@@ -6,6 +6,8 @@ import TargetDropdown from "./TargetDropdown";
 import TargetDate from "./TargetDate";
 import "./Target.css";
 
+import { message } from 'antd';
+
 const Target = ({ userEmail, userRole, target, goToDashboard, goToManagerDashboard, goToTarget, isMyTarget, fromAdminDashboard }) => {
     const [action, setAction] = useState("View");
     const [showSaveButton, setShowSaveButton] = useState(false);
@@ -69,7 +71,8 @@ const Target = ({ userEmail, userRole, target, goToDashboard, goToManagerDashboa
     const handleSaveClick = async () => {
         try {
              if (!formData.title) {
-            alert("Title required");
+            // alert("Title required");
+            message.error("Title required");
             return;
         }
             const newTargetData = {
@@ -105,7 +108,8 @@ const Target = ({ userEmail, userRole, target, goToDashboard, goToManagerDashboa
             // Send a POST request (same API handles both edit & new target)
             await axios.post("http://localhost:4000/target", newTargetData);
     
-            alert("Target saved successfully!");
+            // alert("Target saved successfully!");
+            message.success("Target saved successfully!");
             setShowSaveButton(false);
             setShowDeleteButton(false);
             setAction("View");
@@ -114,21 +118,24 @@ const Target = ({ userEmail, userRole, target, goToDashboard, goToManagerDashboa
             handleDashboardClick();
         } catch (error) {
             console.error("Error saving target:", error);
-            alert("Failed to save target.");
+            // alert("Failed to save target.");
+            message.error("Failed to save target.");
         }
     };
 
     const handleDeleteClick = async () => {
         try {
             if (!target["target-id"]) {
-                alert("Invalid target ID.");
+                // alert("Invalid target ID.");
+                message.error("Invalid target ID.");
                 return;
             }
     
             const targetId = target["target-id"];
 
             if (!userEmail) {
-                alert("User Email Missing");
+                // alert("User Email Missing");
+                message.error("User Email Missing");
                 return;
             }
     
@@ -142,13 +149,15 @@ const Target = ({ userEmail, userRole, target, goToDashboard, goToManagerDashboa
             // Remove target from usertargets.json
             await axios.post("http://localhost:4000/remove-target", { targetId, userEmail });
     
-            alert("Target deleted successfully!");
+            // alert("Target deleted successfully!");
+            message.success("Target deleted successfully!");
             
             // Redirect back to dashboard
             handleDashboardClick();
         } catch (error) {
             console.error("Error deleting target:", error);
-            alert("Failed to delete target.");
+            // alert("Failed to delete target.");
+            message.error("Failed to delete target.");
         }
     };
 
