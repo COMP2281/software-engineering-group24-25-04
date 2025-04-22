@@ -6,6 +6,8 @@ import user_icon from '../Assets/person.png';
 import email_icon from '../Assets/email.png';
 import password_icon from '../Assets/password.png';
 
+import { message } from 'antd';
+
 const LoginSignup = ({ goToDashboard, goToManagerDashboard }) => {
   const [action, setAction] = useState("Log In");
 
@@ -24,7 +26,8 @@ const LoginSignup = ({ goToDashboard, goToManagerDashboard }) => {
       } else if (loginResult.reset === true) {
         setAction("Forgot Password");
       } else {
-        alert("Login failed. Please check your credentials.");
+        // alert("Login failed. Please check your credentials.");
+        message.error("Login failed. Please check your credentials.");
       }
     }
   };
