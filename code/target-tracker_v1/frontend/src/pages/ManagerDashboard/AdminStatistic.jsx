@@ -13,6 +13,20 @@ const AdminStatistic = () => {
 
   const navigate = useNavigate();
 
+  const [userRoleData, setUserRoleData] = useState([
+    { type: 'manager', value: 0 },
+    { type: 'user', value: 0 },
+  ])
+
+  const [progressData, setProgressData] = useState([
+    { type: '0-25%', value: 0 },
+    { type: '25-50%', value: 0 },
+    { type: '50-75%', value: 0 },
+    { type: '75-100%', value: 0 },
+    { type: '100%', value: 0 },
+  ])
+
+
   const [statisticData, setStatisticData] = useState({
     totalUsers: 0,
     totalTargets: 0,
@@ -27,6 +41,16 @@ const AdminStatistic = () => {
         const response_users = await axios.get('http://localhost:4000/user');
         console.log('用户信息', response_users)
         const count_users = response_users.data.length;
+        const managers = response_users.data.filter(user => user.role === 'manager').length;
+        const users = response_users.data.filter(user => user.role === 'user').length;
+        console.log('管理员数量', managers)
+        console.log('普通用户数量', users)
+
+        setUserRoleData([
+          { type: 'manager', value: managers },
+          { type: 'user', value: users },
+        ])
+        console.log('用户角色数据', userRoleData)
         
         // Fetch all targets
         const response = await axios.get('http://localhost:4000/targets');
@@ -120,6 +144,24 @@ const AdminStatistic = () => {
             </Card>
           </Col>
         </Row>
+        <Row gutter={[16, 16]} style={{ marginTop: '20px' }}>
+          <Col span={12} style={{ marginTop: '20px' }}>
+            <Card title="User Role Distribution" variant="borderless" hoverable style={{ background: '#fff', padding: '20px' }}>
+              <Pie
+                angleField={'value'}
+                colorField={'type'}
+                data={userRoleData}
+                radius={0.8}
+                style={{ height: '400px' }}
+                lengend={{
+                  position: 'bottom',
+                }}
+                tooltip={false}
+              />
+            </Card>
+          </Col>
+        </Row>
+        {/* <Button type='primary' onClick={()=>{console.log(userRoleData)}} style={{ marginTop: '20px' }}>console</Button> */}
       </div>
       )
 };
