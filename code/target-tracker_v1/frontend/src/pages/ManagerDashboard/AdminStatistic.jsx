@@ -73,6 +73,21 @@ const AdminStatistic = () => {
         const count_processing_targets = response.data.filter(target => getProgressPercentage(target) !== 100).length;
         const count_completed_targets = response.data.filter(target => getProgressPercentage(target) === 100).length;
 
+        const progress0_25 = response.data.filter(target => getProgressPercentage(target) >= 0 && getProgressPercentage(target) < 25).length;
+        const progress25_50 = response.data.filter(target => getProgressPercentage(target) >= 25 && getProgressPercentage(target) < 50).length;
+        const progress50_75 = response.data.filter(target => getProgressPercentage(target) >= 50 && getProgressPercentage(target) < 75).length;
+        const progress75_100 = response.data.filter(target => getProgressPercentage(target) >= 75 && getProgressPercentage(target) < 100).length;
+        const progress100 = response.data.filter(target => getProgressPercentage(target) === 100).length;
+
+        setProgressData([
+          { type: '0-25%', value: progress0_25 },
+          { type: '25-50%', value: progress25_50 },
+          { type: '50-75%', value: progress50_75 },
+          { type: '75-100%', value: progress75_100 },
+          { type: '100%', value: progress100 },
+        ])
+
+
         setStatisticData({
           totalUsers: count_users,
           totalTargets: count_targets,
@@ -157,6 +172,15 @@ const AdminStatistic = () => {
                   position: 'bottom',
                 }}
                 tooltip={false}
+              />
+            </Card>
+          </Col>
+          <Col span={12} style={{ marginTop: '20px' }}>
+            <Card title="Target Completion Distribution" variant="borderless" hoverable style={{ background: '#fff', padding: '20px' }}>
+              <Column
+                yField={'value'}
+                xField={'type'}
+                data={progressData}
               />
             </Card>
           </Col>
