@@ -239,8 +239,6 @@ const AdminDashboard = ({ userEmail, goToProfile, goToTarget }) => {
         </div>
         <div className="dashboard-header-right">
           <Button onClick={handleStatisticClick} >View Statistic</Button>
-        </div>
-        <div className="dashboard-header-right">
           <img 
             src={icon} 
             alt="Icon" 
